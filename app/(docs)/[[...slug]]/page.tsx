@@ -10,9 +10,7 @@ import { createRelativeLink } from "fumadocs-ui/mdx";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 
-export default async function Page(
-  props: PageProps<"/[[...slug]]">
-) {
+export default async function Page(props: PageProps<"/[[...slug]]">) {
   const params = await props.params;
   const page = source.getPage(params.slug);
   if (!page) notFound();
@@ -54,4 +52,3 @@ export async function generateMetadata(
     },
   };
 }
-

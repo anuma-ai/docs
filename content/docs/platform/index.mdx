@@ -1,0 +1,122 @@
+---
+title: Portal Platform Overview
+---
+
+Portal is a prepaid, escrow-backed gateway that lets wallets access large
+language models (LLMs) through a single, resilient interface. It reconciles
+usage costs off-chain, redeems batches on-chain, and exposes a unified
+OpenAI-compatible surface to client applications while preserving self-custody
+of funds.
+
+## Value Proposition
+
+- Wallet-native authentication with optional short-lived session tokens for
+  streamlined UX.
+- Unified LLM access across multiple providers with automatic failover and
+  provider-aware routing.
+- Real-time cost tracking per request, including token accounting and markup
+  rules.
+- Escrow safeguards that verify balance coverage before forwarding any
+  inference.
+- Automated settlement pipeline that redeems accumulated usage on-chain in
+  batched transactions.
+
+## Core Components
+
+### API Server
+
+Front door for client requests. Handles wallet signature verification or
+session-token validation, enforces request schemas, manages streaming responses,
+and surfaces standardized metadata about costs, providers, and token
+consumption.
+
+### Escrow Guard
+
+Confirms that a wallet’s on-chain balance, net of unsettled debits, can cover
+the incoming request. Rejects requests early if coverage is insufficient,
+protecting both the user experience and the settlement contract.
+
+### Usage Recorder
+
+Captures each inference with a globally unique `inferenceId`, recording
+prompt/response token counts, provider choice, USD cost, and escrow debit. This
+ledger drives analytics, billing dashboards, and settlement eligibility.
+
+### Settlement Worker
+
+Aggregates unsettled debits per wallet, submits batched redemption transactions
+to the `Escrow` contract, and tracks confirmation status. Retries intelligently,
+reconciles on-chain events, and updates local state to reflect settlement
+progress.
+
+### Session Token Service
+
+Issues scoped, expiring spending allowances that let integrators avoid
+repetitive wallet signatures while retaining strict cost ceilings and easy
+revocation.
+
+### LLM Gateway
+
+Proxies requests to upstream providers (e.g., OpenAI, Anthropic, Bedrock)
+through an OpenAI-compatible interface. Implements provider selection,
+latency-aware failover, and provider-specific cost normalization. Currently
+powered by the Bifrost gateway solution.
+
+### Persistence Layer
+
+PostgreSQL schemas store wallets, requests, settlements, and session tokens. The
+database supports auditing, analytics, and settlement reconciliation while
+keeping a clear separation between wallet identity and individual usage records.
+
+## Request Lifecycle
+
+1. **Authenticate**: Client proves control of a wallet via signed nonce or
+   presents a valid session token.
+2. **Authorize**: Escrow guard subtracts unsettled debits from on-chain balance
+   to ensure sufficient coverage.
+3. **Route**: API server forwards the canonical OpenAI-style request to the LLM
+   gateway, which chooses the optimal upstream provider.
+4. **Stream & Respond**: Responses stream back to the client with structured
+   metadata describing provider, model, and usage cost.
+5. **Record**: Usage recorder logs the request, debits escrow allocation, and
+   attaches the unique inference identifier for settlement.
+
+## Escrow and Settlement
+
+- **Prepaid Funding**: Wallets deposit into the on-chain escrow contract in
+  advance; no credit risk accumulates.
+- **Coverage Enforcement**: Balance checks run before every inference, ensuring
+  the platform never fronts usage costs.
+- **Batch Redemptions**: The settlement worker groups multiple inferences into a
+  single redemption call, lowering on-chain gas costs.
+- **Double-Charge Prevention**: Each inference carries a unique identifier that
+  the contract recognizes, preventing replay or duplicate settlement.
+
+## Reliability and Resilience
+
+- **Provider Diversity**: Abstracts over multiple LLM vendors, enabling seamless
+  failover when a provider throttles or experiences outages.
+- **Streaming Passthrough**: Maintains low-latency, event-streaming semantics
+  even while proxying through the gateway.
+- **Cost Transparency**: Embeds provider and token metrics in every response,
+  giving integrators immediate feedback about spend.
+- **Operational Metrics**: System-wide statistics, settlement visibility, and
+  provider credit monitoring inform operators about health and capacity.
+
+## Data and Privacy Considerations
+
+- **Structured Ledger**: Requests and settlements retain sufficient metadata for
+  audits without persisting raw prompts unnecessarily.
+- **Session Controls**: Tokens carry configurable lifetimes and caps, letting
+  operators align risk tolerance with user convenience.
+- **Future Enhancements**: Planned encrypted synchronization of chat history
+  will store only client-managed ciphertext, mitigating server-side data
+  exposure.
+
+## Roadmap Highlights
+
+- **Data Sync**: End-to-end encrypted history synchronization across devices,
+  including conflict resolution and incremental delta storage.
+- **Data Connector**: Secure ingestion from user-authorized storage providers
+  (e.g., Google Drive, Dropbox) with semantic indexing for contextual LLM
+  interactions.
