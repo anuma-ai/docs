@@ -7,11 +7,17 @@ import {
   DocsTitle,
 } from "fumadocs-ui/page";
 import { createRelativeLink } from "fumadocs-ui/mdx";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import type { Metadata } from "next";
 
 export default async function Page(props: PageProps<"/[[...slug]]">) {
   const params = await props.params;
+
+  // Redirect root path to /platform
+  if (!params.slug || params.slug.length === 0) {
+    redirect("/platform");
+  }
+
   const page = source.getPage(params.slug);
   if (!page) notFound();
 
