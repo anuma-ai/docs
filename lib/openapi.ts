@@ -1,5 +1,5 @@
 import { createOpenAPI } from "fumadocs-openapi/server";
-import spec from "../public/swagger.json";
+import spec from "@reverbia/portal/swagger.json";
 
 export const openapi = createOpenAPI({
   input: () => ({
