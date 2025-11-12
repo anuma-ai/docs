@@ -9,6 +9,17 @@ import {
 import { createRelativeLink } from "fumadocs-ui/mdx";
 import { notFound, redirect } from "next/navigation";
 import type { Metadata } from "next";
+import type { DocData } from "fumadocs-mdx";
+import type { PageData } from "fumadocs-core/source";
+
+type DocsPageData = PageData &
+  DocData & {
+    full?: boolean;
+  };
+
+function isDocsPageData(data: PageData): data is DocsPageData {
+  return typeof (data as Partial<DocData>).body !== "undefined";
+}
 
 export default async function Page(props: PageProps<"/[[...slug]]">) {
   const params = await props.params;
@@ -21,12 +32,16 @@ export default async function Page(props: PageProps<"/[[...slug]]">) {
   const page = source.getPage(params.slug);
   if (!page) notFound();
 
-  const MDX = page.data.body;
+  if (!isDocsPageData(page.data)) {
+    notFound();
+  }
+
+  const { body: MDX, toc, full, title, description } = page.data;
 
   return (
-    <DocsPage toc={page.data.toc} full={page.data.full}>
-      <DocsTitle>{page.data.title}</DocsTitle>
-      <DocsDescription>{page.data.description}</DocsDescription>
+    <DocsPage toc={toc} full={full}>
+      <DocsTitle>{title}</DocsTitle>
+      <DocsDescription>{description}</DocsDescription>
       <DocsBody>
         <MDX
           components={getMDXComponents({
