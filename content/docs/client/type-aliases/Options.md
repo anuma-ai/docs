@@ -2,17 +2,13 @@
 title: Options
 ---
 
-[**ai-sdk**](../README.md)
-
-***
-
-[ai-sdk](../README.md) / Options
+[ai-sdk](../globals.md) / Options
 
 # Type Alias: Options\<TData, ThrowOnError\>
 
 > **Options**\<`TData`, `ThrowOnError`\> = `Options2`\<`TData`, `ThrowOnError`\> & `object`
 
-Defined in: [sdk.gen.ts:7](https://github.com/zeta-chain/ai-sdk/blob/5c8e243af9a466a50f7d4fa3d6a0b9627b185419/src/client/sdk.gen.ts#L7)
+Defined in: [sdk.gen.ts:7](https://github.com/zeta-chain/ai-sdk/blob/e5804b4d535bf817f8c12176e0766786d890a81a/src/client/sdk.gen.ts#L7)
 
 ## Type Declaration
 

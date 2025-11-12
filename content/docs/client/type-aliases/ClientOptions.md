@@ -2,17 +2,13 @@
 title: ClientOptions
 ---
 
-[**ai-sdk**](../README.md)
-
-***
-
-[ai-sdk](../README.md) / ClientOptions
+[ai-sdk](../globals.md) / ClientOptions
 
 # Type Alias: ClientOptions
 
 > **ClientOptions** = `object`
 
-Defined in: [types.gen.ts:3](https://github.com/zeta-chain/ai-sdk/blob/5c8e243af9a466a50f7d4fa3d6a0b9627b185419/src/client/types.gen.ts#L3)
+Defined in: [types.gen.ts:3](https://github.com/zeta-chain/ai-sdk/blob/e5804b4d535bf817f8c12176e0766786d890a81a/src/client/types.gen.ts#L3)
 
 ## Properties
 
@@ -20,4 +16,4 @@ Defined in: [types.gen.ts:3](https://github.com/zeta-chain/ai-sdk/blob/5c8e243af
 
 > **baseUrl**: `` `${string}://${string}` `` \| `string` & `object`
 
-Defined in: [types.gen.ts:4](https://github.com/zeta-chain/ai-sdk/blob/5c8e243af9a466a50f7d4fa3d6a0b9627b185419/src/client/types.gen.ts#L4)
+Defined in: [types.gen.ts:4](https://github.com/zeta-chain/ai-sdk/blob/e5804b4d535bf817f8c12176e0766786d890a81a/src/client/types.gen.ts#L4)
