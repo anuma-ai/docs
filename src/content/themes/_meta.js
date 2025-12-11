@@ -1,4 +1,3 @@
 export default {
-  docs: 'Docs Theme',
-  blog: 'Blog Theme'
+  docs: 'Docs Theme'
 }
