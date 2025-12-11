@@ -1,0 +1,50 @@
+import { Cards } from "nextra/components";
+import { ReactIcon, ExpoIcon } from "../components/icons";
+
+# Introduction
+
+Reverbia SDK is the TypeScript toolkit for building AI-powered applications with
+the Reverbia Portal API. It provides React hooks, streaming utilities, and
+framework integrations that let you add chat, image generation, embeddings, and
+more to your app with minimal setup.
+
+```bash
+npm install @reverbia/sdk
+```
+
+## Quick Example
+
+```tsx
+import { useChat } from "@reverbia/sdk/react";
+
+function Chat() {
+  const [response, setResponse] = useState("");
+  const { isLoading, sendMessage } = useChat({
+    getToken: async () => getAuthToken(),
+    onData: (chunk) => setResponse((prev) => prev + chunk),
+  });
+
+  return (
+    <button
+      onClick={() =>
+        sendMessage({
+          messages: [{ role: "user", content: "Hello!" }],
+          model: "gpt-4o-mini",
+        })
+      }
+    >
+      {isLoading ? "Thinking..." : "Send"}
+    </button>
+  );
+}
+```
+
+The SDK handles streaming, authentication, and state management so you can focus
+on building your product.
+
+## Frameworks
+
+<Cards num={2}>
+  <Cards.Card icon={<ReactIcon />} title="React" href="/docs/react" />
+  <Cards.Card icon={<ExpoIcon />} title="Expo" href="/docs/expo" />
+</Cards>
