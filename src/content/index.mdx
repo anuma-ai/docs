@@ -1,14 +1,50 @@
-import { Bleed } from 'nextra/components'
+import { Cards } from "nextra/components";
+import { ReactIcon, ExpoIcon } from "../components/icons";
 
 # Introduction
 
-**Nextra** is a [Next.js](https://nextjs.org) based static site generator.
+Reverbia SDK is the TypeScript toolkit for building AI-powered applications with
+the Reverbia Portal API. It provides React hooks, streaming utilities, and
+framework integrations that let you add chat, image generation, embeddings, and
+more to your app with minimal setup.
 
-It supports Markdown and React components ([MDX](/features/mdx)), automatically
-generated [sidebar and anchor links](/get-started#sidebar-and-anchor-links),
-file-system based routing, built-in syntax highlighting, image optimization,
-custom layouts, i18n, and all the features you love about Next.js.
+```bash
+npm install @reverbia/sdk
+```
 
-Here's what you will get in 1 minute:
+## Quick Example
 
-<Bleed>![Nextra Example](/demo.png)</Bleed>
+```tsx
+import { useChat } from "@reverbia/sdk/react";
+
+function Chat() {
+  const [response, setResponse] = useState("");
+  const { isLoading, sendMessage } = useChat({
+    getToken: async () => getAuthToken(),
+    onData: (chunk) => setResponse((prev) => prev + chunk),
+  });
+
+  return (
+    <button
+      onClick={() =>
+        sendMessage({
+          messages: [{ role: "user", content: "Hello!" }],
+          model: "gpt-4o-mini",
+        })
+      }
+    >
+      {isLoading ? "Thinking..." : "Send"}
+    </button>
+  );
+}
+```
+
+The SDK handles streaming, authentication, and state management so you can focus
+on building your product.
+
+## Frameworks
+
+<Cards num={2}>
+  <Cards.Card icon={<ReactIcon />} title="React" href="/docs/react" />
+  <Cards.Card icon={<ExpoIcon />} title="Expo" href="/docs/expo" />
+</Cards>

@@ -1,11 +1,10 @@
 export default {
-  index: '',
-  'get-started': '',
-  features: '',
-  themes: '',
-  advanced: {
-    theme: {
-      copyPage: false
-    }
-  }
-}
+  index: "",
+  "##": {
+    type: "separator",
+    title: "SDK",
+  },
+  docs: {
+    display: "children",
+  },
+};
