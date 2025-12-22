@@ -1,3 +1,5 @@
+# Sending messages
+
 The `useChatStorage` hook from `@reverbia/sdk/react` provides persistent chat
 storage with WatermelonDB. It manages conversations, message history, and
 handles syncing between local storage and the server.
@@ -29,36 +31,62 @@ const {
 ## Sending Messages
 
 ```ts
+const streamingTextRef = useRef<string>("");
+
 const handleSendMessage = useCallback(
   async (text: string, model: string) => {
     const userMessage: Message = {
       id: `user-${Date.now()}`,
       role: "user",
-      content: text,
+      parts: [{ type: "text", text }],
     };
-    setMessages((prev) => [...prev, userMessage]);
+
+    // Create assistant placeholder message immediately for streaming
+    const assistantMessageId = `assistant-${Date.now()}`;
+    const assistantMessage: Message = {
+      id: assistantMessageId,
+      role: "assistant",
+      parts: [{ type: "text", text: "" }],
+    };
+
+    // Add both messages to state immediately
+    setMessages((prev) => [...prev, userMessage, assistantMessage]);
+
+    // Reset streaming text accumulator
+    streamingTextRef.current = "";
 
     const response = await sendMessage({
       content: text,
       model,
       includeHistory: true,
       onData: (chunk: string) => {
-        console.log("Received chunk:", chunk);
+        // Accumulate text
+        streamingTextRef.current += chunk;
+
+        // Notify callback for streaming updates
+        if (onStreamingData) {
+          onStreamingData(chunk, streamingTextRef.current);
+        }
       },
     });
 
-    if (response?.content) {
-      const assistantMessage: Message = {
-        id: `assistant-${Date.now()}`,
-        role: "assistant",
-        content: response.content,
-      };
-      setMessages((prev) => [...prev, assistantMessage]);
-    }
+    // Sync final streamed text to React state after streaming completes
+    const finalText = streamingTextRef.current;
+    setMessages((prev) =>
+      prev.map((msg) => {
+        if (msg.id === assistantMessageId) {
+          return {
+            ...msg,
+            parts: [{ type: "text", text: finalText }],
+          };
+        }
+        return msg;
+      })
+    );
 
     return response;
   },
-  [sendMessage]
+  [sendMessage, onStreamingData]
 );
 ```
 
