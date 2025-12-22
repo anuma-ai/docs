@@ -2,7 +2,7 @@
 
 set -e
 
-DOCS_DIR="src/content/docs"
+DOCS_DIR="src/content/sdk"
 TUTORIAL_DIR="src/content/tutorial"
 SDK_REPO_URL="https://github.com/zeta-chain/ai-sdk.git"
 EXAMPLES_REPO_URL="https://github.com/zeta-chain/ai-examples.git"
