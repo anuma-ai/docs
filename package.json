@@ -6,7 +6,8 @@
     "build": "next build --webpack",
     "dev": "next",
     "postbuild": "pagefind --site .next/server/app --output-path public/_pagefind",
-    "start": "next start"
+    "start": "next start",
+    "update:docs": "./scripts/update-docs.sh"
   },
   "dependencies": {
     "@theguild/remark-mermaid": "^0.3.0",
