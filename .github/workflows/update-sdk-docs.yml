@@ -1,0 +1,49 @@
+name: Update AI SDK docs
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # scheduled to run every day at midnight
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update-docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Checkout zeta-chain/ai-sdk repository
+        uses: actions/checkout@v4
+        with:
+          repository: zeta-chain/ai-sdk
+          token: ${{ secrets.GITHUB_TOKEN }}
+          path: ai-sdk
+
+      - name: Update docs
+        run: |
+          mkdir -p src/content/docs/
+          rm -rf src/content/docs/*
+          cp -r ai-sdk/docs/* src/content/docs/
+          rm -rf ai-sdk
+
+      - name: Check for changes
+        id: check-changes
+        run: |
+          git add src/content/docs
+          git diff --cached --exit-code || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          title: "docs(sdk): update AI SDK docs"
+          body: |
+            This PR syncs the docs with zeta-chain/ai-sdk
+          commit-message: "docs(sdk): update AI SDK docs"
+          base: main
+          branch: docs/updates-from-ai-sdk
+        if: steps.check-changes.outputs.changed == 'true'
