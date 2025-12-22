@@ -21,7 +21,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: zeta-chain/ai-sdk
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GH_PAT }}
           path: ai-sdk
 
       - name: Update docs
