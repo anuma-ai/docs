@@ -38,6 +38,7 @@ export default async function RootLayout({ children }) {
     </Navbar>
   );
   const pageMap = await getPageMap();
+  const filteredPageMap = pageMap.filter((item) => item.name !== "spec");
   return (
     <html lang="en" dir="ltr" suppressHydrationWarning>
       <Head faviconGlyph="✦" />
@@ -48,7 +49,7 @@ export default async function RootLayout({ children }) {
           editLink="Edit this page on GitHub"
           docsRepositoryBase="https://github.com/shuding/nextra/blob/main/examples/docs"
           sidebar={{ defaultMenuCollapseLevel: 1 }}
-          pageMap={pageMap}
+          pageMap={filteredPageMap}
         >
           {children}
         </Layout>
