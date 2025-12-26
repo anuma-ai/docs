@@ -1,13 +1,11 @@
 export default {
   index: {
-    display: 'hidden'
+    title: 'Docs',
+    type: 'page'
   },
-  docs: {
+  spec: {
+    title: 'Spec',
     type: 'page',
-    title: 'Documentation'
-  },
-  blog: {
-    type: 'page',
-    title: 'Blog'
+    href: '/spec'
   }
 }

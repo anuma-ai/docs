@@ -25,16 +25,17 @@ export const metadata = {
 };
 
 export default async function RootLayout({ children }) {
+  const linkClass =
+    "x:text-sm x:whitespace-nowrap x:text-gray-600 x:hover:text-black x:dark:text-gray-400 x:dark:hover:text-gray-200 x:transition-colors";
   const navbar = (
-    <Navbar
-      logo={
-        <div>
-          <b>SDK</b>
-        </div>
-      }
-      // Next.js discord server
-      chatLink="https://discord.gg/hEM84NMkRv"
-    />
+    <Navbar logo={<b>SDK</b>} logoLink="/">
+      <a href="/" className={linkClass}>
+        Docs
+      </a>
+      <a href="/spec" className={linkClass}>
+        Spec
+      </a>
+    </Navbar>
   );
   const pageMap = await getPageMap();
   return (
@@ -43,7 +44,7 @@ export default async function RootLayout({ children }) {
       <body>
         <Layout
           navbar={navbar}
-          footer={<Footer>MIT {new Date().getFullYear()} © Nextra.</Footer>}
+          footer={<Footer />}
           editLink="Edit this page on GitHub"
           docsRepositoryBase="https://github.com/shuding/nextra/blob/main/examples/docs"
           sidebar={{ defaultMenuCollapseLevel: 1 }}
