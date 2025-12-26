@@ -10,6 +10,8 @@ export default function SpecPage() {
         url: "https://ai-portal-dev.zetachain.com/api/v1/docs/swagger.json",
         theme: "none",
         hideModels: false,
+        showDeveloperTools: "never",
+        hideClientButton: true,
         defaultHttpClient: {
           targetKey: "node",
           clientKey: "fetch",
