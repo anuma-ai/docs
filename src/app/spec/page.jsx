@@ -28,13 +28,28 @@ export default function SpecPage() {
         darkMode: isDark,
         forceDarkModeState: isDark ? "dark" : "light",
         hideDarkModeToggle: true,
-        hideModels: false,
+        hideModels: true,
         showDeveloperTools: "never",
         hideClientButton: true,
         defaultHttpClient: {
           targetKey: "node",
           clientKey: "fetch",
         },
+        customCss: `
+          .scalar-api-reference {
+            --full-height: calc(100dvh - var(--nextra-navbar-height, 64px)) !important;
+            min-height: calc(100dvh - var(--nextra-navbar-height, 64px)) !important;
+            height: calc(100dvh - var(--nextra-navbar-height, 64px)) !important;
+            overflow: auto !important;
+            box-sizing: border-box !important;
+          }
+          .t-doc__sidebar {
+            height: calc(100dvh - var(--nextra-navbar-height, 64px)) !important;
+          }
+          .darklight-reference {
+            display: none !important;
+          }
+        `,
       }}
     />
   );
