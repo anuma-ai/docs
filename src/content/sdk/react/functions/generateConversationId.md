@@ -2,7 +2,7 @@
 
 > **generateConversationId**(): `string`
 
-Defined in: [src/lib/db/chat/types.ts:165](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L165)
+Defined in: [src/lib/db/chat/types.ts:233](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L233)
 
 ## Returns
 
