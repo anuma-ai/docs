@@ -1,22 +1,17 @@
 # decryptDataBytes()
 
-> **decryptDataBytes**(`encryptedHex`, `address`): `Promise`\<`Uint8Array`\<`ArrayBufferLike`\>\>
+> **decryptDataBytes**(`encryptedHex`: `string`, `address`: `string`): `Promise`\<`Uint8Array`\<`ArrayBufferLike`\>\>
 
-Defined in: [src/react/useEncryption.ts:187](https://github.com/zeta-chain/ai-sdk/blob/main/src/react/useEncryption.ts#L187)
+Defined in: [src/react/useEncryption.ts:487](https://github.com/zeta-chain/ai-sdk/blob/main/src/react/useEncryption.ts#L487)
 
 Decrypts data and returns as Uint8Array (for binary data)
 
 ## Parameters
 
-### encryptedHex
-
-`string`
-
-Encrypted data as hex string (IV + ciphertext + auth tag)
-
-### address
-
-`string`
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `encryptedHex` | `string` | Encrypted data as hex string (IV + ciphertext + auth tag) |
+| `address` | `string` | - |
 
 ## Returns
 

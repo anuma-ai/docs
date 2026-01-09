@@ -1,16 +1,16 @@
 # hasEncryptionKey()
 
-> **hasEncryptionKey**(`address`): `boolean`
+> **hasEncryptionKey**(`address`: `string`): `boolean`
 
-Defined in: [src/react/useEncryption.ts:216](https://github.com/zeta-chain/ai-sdk/blob/main/src/react/useEncryption.ts#L216)
+Defined in: [src/react/useEncryption.ts:516](https://github.com/zeta-chain/ai-sdk/blob/main/src/react/useEncryption.ts#L516)
 
-Checks if an encryption key exists for the given wallet address
+Checks if an encryption key exists in memory for the given wallet address
 
 ## Parameters
 
-### address
-
-`string`
+| Parameter | Type |
+| ------ | ------ |
+| `address` | `string` |
 
 ## Returns
 

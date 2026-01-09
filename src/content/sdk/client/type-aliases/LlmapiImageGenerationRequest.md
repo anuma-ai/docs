@@ -1,8 +1,8 @@
 # LlmapiImageGenerationRequest
 
-> **LlmapiImageGenerationRequest** = `object`
+> **LlmapiImageGenerationRequest** = \{ `model`: `string`; `prompt`: `string`; `quality?`: `string`; `response_format?`: `string`; `size?`: `string`; \}
 
-Defined in: [src/client/types.gen.ts:270](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L270)
+Defined in: [src/client/types.gen.ts:353](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L353)
 
 ## Properties
 
@@ -10,7 +10,7 @@ Defined in: [src/client/types.gen.ts:270](https://github.com/zeta-chain/ai-sdk/b
 
 > **model**: `string`
 
-Defined in: [src/client/types.gen.ts:274](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L274)
+Defined in: [src/client/types.gen.ts:357](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L357)
 
 Model is the model identifier to use for generation (e.g., "gpt-image-1").
 
@@ -20,7 +20,7 @@ Model is the model identifier to use for generation (e.g., "gpt-image-1").
 
 > **prompt**: `string`
 
-Defined in: [src/client/types.gen.ts:278](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L278)
+Defined in: [src/client/types.gen.ts:361](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L361)
 
 Prompt is the text description of the desired image.
 
@@ -30,7 +30,7 @@ Prompt is the text description of the desired image.
 
 > `optional` **quality**: `string`
 
-Defined in: [src/client/types.gen.ts:282](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L282)
+Defined in: [src/client/types.gen.ts:365](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L365)
 
 Quality targets a quality preset (e.g., "auto", "high").
 
@@ -40,7 +40,7 @@ Quality targets a quality preset (e.g., "auto", "high").
 
 > `optional` **response\_format**: `string`
 
-Defined in: [src/client/types.gen.ts:286](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L286)
+Defined in: [src/client/types.gen.ts:369](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L369)
 
 ResponseFormat controls how the generated image is returned (e.g., "url" or "b64_json").
 
@@ -50,6 +50,6 @@ ResponseFormat controls how the generated image is returned (e.g., "url" or "b64
 
 > `optional` **size**: `string`
 
-Defined in: [src/client/types.gen.ts:290](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L290)
+Defined in: [src/client/types.gen.ts:373](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L373)
 
 Size controls the dimensions of the generated image (e.g., "1024x1024").

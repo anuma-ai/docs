@@ -1,8 +1,8 @@
 # useMemoryStorage()
 
-> **useMemoryStorage**(`options`): `BaseUseMemoryStorageResult`
+> **useMemoryStorage**(`options`: `BaseUseMemoryStorageOptions`): `BaseUseMemoryStorageResult`
 
-Defined in: [src/expo/useMemoryStorage.ts:160](https://github.com/zeta-chain/ai-sdk/blob/main/src/expo/useMemoryStorage.ts#L160)
+Defined in: [src/expo/useMemoryStorage.ts:151](https://github.com/zeta-chain/ai-sdk/blob/main/src/expo/useMemoryStorage.ts#L151)
 
 A React hook that wraps useMemory with automatic memory persistence using WatermelonDB.
 
@@ -11,11 +11,9 @@ API-based embeddings. Local embeddings require web APIs not available in React N
 
 ## Parameters
 
-### options
-
-[`UseMemoryStorageOptions`](../interfaces/UseMemoryStorageOptions.md)
-
-Configuration options
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `options` | `BaseUseMemoryStorageOptions` | Configuration options |
 
 ## Returns
 
@@ -37,7 +35,6 @@ function MemoryScreen({ database }: { database: Database }) {
   } = useMemoryStorage({
     database,
     getToken: async () => getAuthToken(),
-    embeddingProvider: 'api', // Only API embeddings supported in Expo
   });
 
   const handleExtract = async () => {

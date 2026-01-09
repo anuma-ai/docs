@@ -1,8 +1,8 @@
 # PostApiV1SearchData
 
-> **PostApiV1SearchData** = `object`
+> **PostApiV1SearchData** = \{ `body`: [`LlmapiSearchRequest`](LlmapiSearchRequest.md); `path?`: `never`; `query?`: `never`; `url`: `"/api/v1/search"`; \}
 
-Defined in: [src/client/types.gen.ts:1001](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1001)
+Defined in: [src/client/types.gen.ts:1205](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1205)
 
 ## Properties
 
@@ -10,7 +10,7 @@ Defined in: [src/client/types.gen.ts:1001](https://github.com/zeta-chain/ai-sdk/
 
 > **body**: [`LlmapiSearchRequest`](LlmapiSearchRequest.md)
 
-Defined in: [src/client/types.gen.ts:1005](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1005)
+Defined in: [src/client/types.gen.ts:1209](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1209)
 
 Search request
 
@@ -20,7 +20,7 @@ Search request
 
 > `optional` **path**: `never`
 
-Defined in: [src/client/types.gen.ts:1006](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1006)
+Defined in: [src/client/types.gen.ts:1210](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1210)
 
 ***
 
@@ -28,7 +28,7 @@ Defined in: [src/client/types.gen.ts:1006](https://github.com/zeta-chain/ai-sdk/
 
 > `optional` **query**: `never`
 
-Defined in: [src/client/types.gen.ts:1007](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1007)
+Defined in: [src/client/types.gen.ts:1211](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1211)
 
 ***
 
@@ -36,4 +36,4 @@ Defined in: [src/client/types.gen.ts:1007](https://github.com/zeta-chain/ai-sdk/
 
 > **url**: `"/api/v1/search"`
 
-Defined in: [src/client/types.gen.ts:1008](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1008)
+Defined in: [src/client/types.gen.ts:1212](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1212)

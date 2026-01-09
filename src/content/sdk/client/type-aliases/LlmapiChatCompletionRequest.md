@@ -1,8 +1,8 @@
 # LlmapiChatCompletionRequest
 
-> **LlmapiChatCompletionRequest** = `object`
+> **LlmapiChatCompletionRequest** = \{ `messages`: [`LlmapiMessage`](LlmapiMessage.md)[]; `model`: `string`; `stream?`: `boolean`; `tool_choice?`: `unknown`; `tools?`: [`LlmapiTool`](LlmapiTool.md)[]; \}
 
-Defined in: [src/client/types.gen.ts:80](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L80)
+Defined in: [src/client/types.gen.ts:145](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L145)
 
 ## Properties
 
@@ -10,7 +10,7 @@ Defined in: [src/client/types.gen.ts:80](https://github.com/zeta-chain/ai-sdk/bl
 
 > **messages**: [`LlmapiMessage`](LlmapiMessage.md)[]
 
-Defined in: [src/client/types.gen.ts:84](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L84)
+Defined in: [src/client/types.gen.ts:149](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L149)
 
 Messages is the conversation history
 
@@ -20,7 +20,7 @@ Messages is the conversation history
 
 > **model**: `string`
 
-Defined in: [src/client/types.gen.ts:88](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L88)
+Defined in: [src/client/types.gen.ts:153](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L153)
 
 Model is the model identifier
 
@@ -30,6 +30,29 @@ Model is the model identifier
 
 > `optional` **stream**: `boolean`
 
-Defined in: [src/client/types.gen.ts:92](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L92)
+Defined in: [src/client/types.gen.ts:157](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L157)
 
 Stream indicates if response should be streamed
+
+***
+
+### tool\_choice?
+
+> `optional` **tool\_choice**: `unknown`
+
+Defined in: [src/client/types.gen.ts:164](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L164)
+
+ToolChoice controls which tool to use. Can be:
+- string: "auto", "none", "required", or a function name
+- object: {"type": "function", "function": {"name": "my_function"}}
+Using 'any' to match OpenAI's flexible API format.
+
+***
+
+### tools?
+
+> `optional` **tools**: [`LlmapiTool`](LlmapiTool.md)[]
+
+Defined in: [src/client/types.gen.ts:168](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L168)
+
+Tools is an array of tool definitions the model can use

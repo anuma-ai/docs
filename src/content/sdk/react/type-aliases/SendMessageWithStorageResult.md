@@ -1,9 +1,7 @@
 # SendMessageWithStorageResult
 
-> **SendMessageWithStorageResult** = \{ `assistantMessage`: [`StoredMessage`](../interfaces/StoredMessage.md); `data`: [`LlmapiChatCompletionResponse`](../../client/type-aliases/LlmapiChatCompletionResponse.md); `error`: `null`; `toolExecution?`: [`ToolExecutionResult`](../interfaces/ToolExecutionResult.md); `userMessage`: [`StoredMessage`](../interfaces/StoredMessage.md); \} \| \{ `assistantMessage?`: `undefined`; `data`: `null`; `error`: `string`; `toolExecution?`: [`ToolExecutionResult`](../interfaces/ToolExecutionResult.md); `userMessage?`: [`StoredMessage`](../interfaces/StoredMessage.md); \}
+> **SendMessageWithStorageResult** = \{ `assistantMessage`: [`StoredMessage`](../interfaces/StoredMessage.md); `data`: [`LlmapiResponseResponse`](../../client/type-aliases/LlmapiResponseResponse.md); `error`: `null`; `userMessage`: [`StoredMessage`](../interfaces/StoredMessage.md); \} \| \{ `assistantMessage?`: `undefined`; `data`: `null`; `error`: `string`; `userMessage?`: [`StoredMessage`](../interfaces/StoredMessage.md); \}
 
-Defined in: [src/react/useChatStorage.ts:103](https://github.com/zeta-chain/ai-sdk/blob/main/src/react/useChatStorage.ts#L103)
+Defined in: [src/react/useChatStorage.ts:113](https://github.com/zeta-chain/ai-sdk/blob/main/src/react/useChatStorage.ts#L113)
 
 Result from sendMessage with storage (React version)
-
-Extends base result with tool execution information.

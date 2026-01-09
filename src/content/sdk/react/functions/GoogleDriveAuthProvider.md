@@ -1,8 +1,8 @@
 # GoogleDriveAuthProvider()
 
-> **GoogleDriveAuthProvider**(`__namedParameters`): `Element`
+> **GoogleDriveAuthProvider**(`__namedParameters`: [`GoogleDriveAuthProviderProps`](../interfaces/GoogleDriveAuthProviderProps.md)): `Element`
 
-Defined in: [src/react/useGoogleDriveAuth.ts:88](https://github.com/zeta-chain/ai-sdk/blob/main/src/react/useGoogleDriveAuth.ts#L88)
+Defined in: [src/react/useGoogleDriveAuth.ts:95](https://github.com/zeta-chain/ai-sdk/blob/main/src/react/useGoogleDriveAuth.ts#L95)
 
 Provider component for Google Drive OAuth authentication.
 
@@ -11,9 +11,9 @@ It handles the OAuth 2.0 Authorization Code flow with refresh tokens.
 
 ## Parameters
 
-### \_\_namedParameters
-
-[`GoogleDriveAuthProviderProps`](../interfaces/GoogleDriveAuthProviderProps.md)
+| Parameter | Type |
+| ------ | ------ |
+| `__namedParameters` | [`GoogleDriveAuthProviderProps`](../interfaces/GoogleDriveAuthProviderProps.md) |
 
 ## Returns
 

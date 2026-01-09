@@ -1,8 +1,8 @@
 # PostApiV1ImagesGenerationsData
 
-> **PostApiV1ImagesGenerationsData** = `object`
+> **PostApiV1ImagesGenerationsData** = \{ `body`: [`LlmapiImageGenerationRequest`](LlmapiImageGenerationRequest.md); `path?`: `never`; `query?`: `never`; `url`: `"/api/v1/images/generations"`; \}
 
-Defined in: [src/client/types.gen.ts:891](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L891)
+Defined in: [src/client/types.gen.ts:1087](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1087)
 
 ## Properties
 
@@ -10,7 +10,7 @@ Defined in: [src/client/types.gen.ts:891](https://github.com/zeta-chain/ai-sdk/b
 
 > **body**: [`LlmapiImageGenerationRequest`](LlmapiImageGenerationRequest.md)
 
-Defined in: [src/client/types.gen.ts:895](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L895)
+Defined in: [src/client/types.gen.ts:1091](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1091)
 
 Image generation request
 
@@ -20,7 +20,7 @@ Image generation request
 
 > `optional` **path**: `never`
 
-Defined in: [src/client/types.gen.ts:896](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L896)
+Defined in: [src/client/types.gen.ts:1092](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1092)
 
 ***
 
@@ -28,7 +28,7 @@ Defined in: [src/client/types.gen.ts:896](https://github.com/zeta-chain/ai-sdk/b
 
 > `optional` **query**: `never`
 
-Defined in: [src/client/types.gen.ts:897](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L897)
+Defined in: [src/client/types.gen.ts:1093](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1093)
 
 ***
 
@@ -36,4 +36,4 @@ Defined in: [src/client/types.gen.ts:897](https://github.com/zeta-chain/ai-sdk/b
 
 > **url**: `"/api/v1/images/generations"`
 
-Defined in: [src/client/types.gen.ts:898](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L898)
+Defined in: [src/client/types.gen.ts:1094](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1094)

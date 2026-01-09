@@ -1,8 +1,8 @@
 # HandlersRefreshRequest
 
-> **HandlersRefreshRequest** = `object`
+> **HandlersRefreshRequest** = \{ `refresh_token`: `string`; \}
 
-Defined in: [src/client/types.gen.ts:30](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L30)
+Defined in: [src/client/types.gen.ts:71](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L71)
 
 ## Properties
 
@@ -10,4 +10,4 @@ Defined in: [src/client/types.gen.ts:30](https://github.com/zeta-chain/ai-sdk/bl
 
 > **refresh\_token**: `string`
 
-Defined in: [src/client/types.gen.ts:31](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L31)
+Defined in: [src/client/types.gen.ts:72](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L72)

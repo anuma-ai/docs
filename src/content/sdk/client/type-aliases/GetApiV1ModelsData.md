@@ -1,8 +1,8 @@
 # GetApiV1ModelsData
 
-> **GetApiV1ModelsData** = `object`
+> **GetApiV1ModelsData** = \{ `body?`: `never`; `path?`: `never`; `query?`: \{ `page_size?`: `number`; `page_token?`: `string`; `provider?`: `string`; \}; `url`: `"/api/v1/models"`; \}
 
-Defined in: [src/client/types.gen.ts:927](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L927)
+Defined in: [src/client/types.gen.ts:1123](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1123)
 
 ## Properties
 
@@ -10,7 +10,7 @@ Defined in: [src/client/types.gen.ts:927](https://github.com/zeta-chain/ai-sdk/b
 
 > `optional` **body**: `never`
 
-Defined in: [src/client/types.gen.ts:928](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L928)
+Defined in: [src/client/types.gen.ts:1124](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1124)
 
 ***
 
@@ -18,15 +18,15 @@ Defined in: [src/client/types.gen.ts:928](https://github.com/zeta-chain/ai-sdk/b
 
 > `optional` **path**: `never`
 
-Defined in: [src/client/types.gen.ts:929](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L929)
+Defined in: [src/client/types.gen.ts:1125](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1125)
 
 ***
 
 ### query?
 
-> `optional` **query**: `object`
+> `optional` **query**: \{ `page_size?`: `number`; `page_token?`: `string`; `provider?`: `string`; \}
 
-Defined in: [src/client/types.gen.ts:930](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L930)
+Defined in: [src/client/types.gen.ts:1126](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1126)
 
 #### page\_size?
 
@@ -52,4 +52,4 @@ Filter by provider (e.g., openai, anthropic)
 
 > **url**: `"/api/v1/models"`
 
-Defined in: [src/client/types.gen.ts:944](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L944)
+Defined in: [src/client/types.gen.ts:1140](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1140)

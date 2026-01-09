@@ -1,16 +1,16 @@
 # PostAuthOauthByProviderRevokeResponses
 
-> **PostAuthOauthByProviderRevokeResponses** = `object`
+> **PostAuthOauthByProviderRevokeResponses** = \{ `200`: \{\[`key`: `string`\]: `unknown`; \}; \}
 
-Defined in: [src/client/types.gen.ts:1135](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1135)
+Defined in: [src/client/types.gen.ts:1535](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1535)
 
 ## Properties
 
 ### 200
 
-> **200**: `object`
+> **200**: \{\[`key`: `string`\]: `unknown`; \}
 
-Defined in: [src/client/types.gen.ts:1139](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1139)
+Defined in: [src/client/types.gen.ts:1539](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1539)
 
 Empty object on success
 

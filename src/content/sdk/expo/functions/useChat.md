@@ -1,8 +1,8 @@
 # useChat()
 
-> **useChat**(`options?`): `UseChatResult`
+> **useChat**(`options?`: `BaseUseChatOptions`): `UseChatResult`
 
-Defined in: [src/expo/useChat.ts:110](https://github.com/zeta-chain/ai-sdk/blob/main/src/expo/useChat.ts#L110)
+Defined in: [src/expo/useChat.ts:114](https://github.com/zeta-chain/ai-sdk/blob/main/src/expo/useChat.ts#L114)
 
 A React hook for managing chat completions with authentication.
 
@@ -12,11 +12,9 @@ in React Native.
 
 ## Parameters
 
-### options?
-
-`BaseUseChatOptions`
-
-Optional configuration object
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `options?` | `BaseUseChatOptions` | Optional configuration object |
 
 ## Returns
 

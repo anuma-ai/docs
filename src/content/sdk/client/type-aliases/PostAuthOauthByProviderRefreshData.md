@@ -1,8 +1,8 @@
 # PostAuthOauthByProviderRefreshData
 
-> **PostAuthOauthByProviderRefreshData** = `object`
+> **PostAuthOauthByProviderRefreshData** = \{ `body`: [`HandlersRefreshRequest`](HandlersRefreshRequest.md); `path`: \{ `provider`: `string`; \}; `query?`: `never`; `url`: `"/auth/oauth/{provider}/refresh"`; \}
 
-Defined in: [src/client/types.gen.ts:1070](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1070)
+Defined in: [src/client/types.gen.ts:1470](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1470)
 
 ## Properties
 
@@ -10,7 +10,7 @@ Defined in: [src/client/types.gen.ts:1070](https://github.com/zeta-chain/ai-sdk/
 
 > **body**: [`HandlersRefreshRequest`](HandlersRefreshRequest.md)
 
-Defined in: [src/client/types.gen.ts:1074](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1074)
+Defined in: [src/client/types.gen.ts:1474](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1474)
 
 Refresh request
 
@@ -18,9 +18,9 @@ Refresh request
 
 ### path
 
-> **path**: `object`
+> **path**: \{ `provider`: `string`; \}
 
-Defined in: [src/client/types.gen.ts:1075](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1075)
+Defined in: [src/client/types.gen.ts:1475](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1475)
 
 #### provider
 
@@ -34,7 +34,7 @@ OAuth provider (google-drive, dropbox)
 
 > `optional` **query**: `never`
 
-Defined in: [src/client/types.gen.ts:1081](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1081)
+Defined in: [src/client/types.gen.ts:1481](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1481)
 
 ***
 
@@ -42,4 +42,4 @@ Defined in: [src/client/types.gen.ts:1081](https://github.com/zeta-chain/ai-sdk/
 
 > **url**: `"/auth/oauth/{provider}/refresh"`
 
-Defined in: [src/client/types.gen.ts:1082](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1082)
+Defined in: [src/client/types.gen.ts:1482](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1482)
