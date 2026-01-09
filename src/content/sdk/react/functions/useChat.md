@@ -1,8 +1,8 @@
 # useChat()
 
-> **useChat**(`options?`): `UseChatResult`
+> **useChat**(`options?`: `UseChatOptions`): `UseChatResult`
 
-Defined in: [src/react/useChat.ts:128](https://github.com/zeta-chain/ai-sdk/blob/main/src/react/useChat.ts#L128)
+Defined in: [src/react/useChat.ts:139](https://github.com/zeta-chain/ai-sdk/blob/main/src/react/useChat.ts#L139)
 
 A React hook for managing chat completions with authentication.
 
@@ -12,11 +12,9 @@ Streaming is enabled by default for better user experience.
 
 ## Parameters
 
-### options?
-
-`BaseUseChatOptions`
-
-Optional configuration object
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `options?` | `UseChatOptions` | Optional configuration object |
 
 ## Returns
 

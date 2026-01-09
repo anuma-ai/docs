@@ -1,18 +1,16 @@
 # clearKeyPair()
 
-> **clearKeyPair**(`address`): `void`
+> **clearKeyPair**(`address`: `string`): `void`
 
-Defined in: [src/react/useEncryption.ts:577](https://github.com/zeta-chain/ai-sdk/blob/main/src/react/useEncryption.ts#L577)
+Defined in: [src/react/useEncryption.ts:919](https://github.com/zeta-chain/ai-sdk/blob/main/src/react/useEncryption.ts#L919)
 
-Clears the key pair for a wallet address from memory
+Clears the key pair for a wallet address from memory and localStorage
 
 ## Parameters
 
-### address
-
-`string`
-
-The wallet address
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `address` | `string` | The wallet address |
 
 ## Returns
 
