@@ -6,25 +6,46 @@ message, it's saved along with the response.
 
 ## How It Works
 
-When you send a message, the SDK:
+When you send a message, the SDK handles the complete lifecycle:
 
-1. Saves the user message to the local database
-2. Sends the request to the Portal API
-3. Streams the response back to your app
-4. Saves the assistant response to the local database
+1. **Conversation setup** — If no conversation exists, one is created
+   automatically. You can also create conversations manually or switch between
+   existing ones.
 
-The SDK can automatically create a new conversation on the first message, or you
-can create and switch between conversations manually.
+2. **User message storage** — The user's message is saved to the local database
+   before the API request. This ensures the message is preserved even if the
+   request fails.
+
+3. **API request** — The message (plus conversation history if enabled) is sent
+   to the Portal API. The request includes your chosen model, any tools, and
+   configuration like temperature.
+
+4. **Streaming response** — The API streams the response back in chunks. Your
+   app receives each chunk as it arrives through a callback, letting you update
+   the UI in real-time.
+
+5. **Assistant message storage** — When streaming completes, the full response
+   is saved to the database along with metadata like token usage and which model
+   generated it.
+
+If the user cancels mid-stream, the partial response is still saved so no data
+is lost.
 
 ## Persistence
 
-The Portal API is stateless — it doesn't store your conversations. The SDK
-handles persistence by saving everything to a local database in the browser.
-This means:
+The Portal API is stateless — it processes your request and returns a response,
+but doesn't remember anything. Every request is independent. This design keeps
+the API simple and privacy-friendly.
 
-- Conversations persist across sessions
-- Data stays on the user's device
-- Users own their data
+The SDK handles persistence by saving everything to a local database in the
+browser. Conversations and messages are stored on the user's device:
+
+- **Survives page refreshes** — Users can close the browser and come back to
+  their conversations.
+- **No server storage** — Conversation data never leaves the device unless you
+  explicitly send it.
+- **User ownership** — Users control their data. They can delete conversations
+  or export them.
 
 ## History
 
@@ -32,30 +53,12 @@ When sending a new message, the SDK can automatically include previous messages
 from the conversation as context. This gives the model awareness of the ongoing
 discussion without you managing message arrays manually.
 
-## Streaming
+By default, history is included. The SDK fetches recent messages from the
+database and prepends them to your request. You can configure how many messages
+to include (to manage context window size) or disable history entirely for
+standalone requests.
 
-Responses stream back from the API in chunks. Your app receives each chunk as it
-arrives, so you can display partial responses in real-time. The SDK buffers the
-complete response and saves it when streaming finishes.
-
-## Files and Images
-
-Messages can include file attachments — images, documents, and other files. The
-SDK stores file metadata with the message. For images, the content is sent to
-the model as part of the request.
-
-## Tools
-
-The SDK supports two types of tools:
-
-- **Server-side tools** run on the Portal API. These include image generation
-  and web search. The model decides when to use them based on the conversation.
-
-- **Client-side tools** run in your app. You define the tool and provide a
-  function to execute it. Useful for integrating with your app's features.
-
-## Models
-
-You can use any model available through the Portal API. Switch models per
-message — each response records which model generated it. This lets you use
-different models for different tasks within the same conversation.
+When history is included, the model sees the full conversation flow — user
+messages, assistant responses, and any system prompts. This enables coherent
+multi-turn conversations where the model can reference earlier parts of the
+discussion.

@@ -1,0 +1,52 @@
+# Tools
+
+Tools let the model take actions beyond generating text. When the model decides
+a tool would help answer a question, it emits a tool call with the tool name and
+arguments. The tool executes, returns a result, and the model continues
+generating with that information.
+
+## How Tool Calling Works
+
+1. You send a message with tools available
+2. The model decides a tool would help and emits a tool call
+3. The tool executes (server-side or client-side)
+4. The result is sent back to the model
+5. The model incorporates the result into its response
+
+This can happen multiple times in a single response. The model might call
+several tools in sequence, using each result to inform the next step.
+
+## Server-Side Tools
+
+Server-side tools run on the Portal API. When the model calls one, the API
+executes it and returns the result — your app doesn't need to do anything.
+
+Built-in server tools include:
+
+- **Image generation** — Create images from text descriptions
+- **Web search** — Search the internet and include results in responses
+
+Server tools are automatically available. The model decides when to use them
+based on the conversation.
+
+## Client-Side Tools
+
+Client-side tools run in your app. You define the tool schema (name, description,
+parameters) and provide a function to execute it. When the model calls the tool,
+the SDK runs your function and sends the result back.
+
+This is useful for integrating with your app's features:
+
+- Looking up user data from your database
+- Calling internal APIs
+- Performing calculations
+- Triggering app actions
+
+## Execution Modes
+
+Tools can execute automatically or manually:
+
+- **Auto-execute** — The SDK handles the round-trip. The tool runs and the
+  conversation continues without your intervention.
+- **Manual execution** — Your app receives the tool call and decides what to do.
+  Useful when you need user confirmation or custom handling.

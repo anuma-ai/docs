@@ -2,6 +2,10 @@ export default {
   index: "",
   authentication: "Authentication",
   conversations: "Conversations",
+  streaming: "Streaming",
+  files: "Files and Images",
+  tools: "Tools",
+  models: "Models",
   "#": {
     type: "separator",
     title: "SDK",

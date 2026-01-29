@@ -1,0 +1,31 @@
+# Files and Images
+
+Messages can include file attachments — images, PDFs, spreadsheets, and other
+documents. This enables multimodal conversations where users can share visual
+and document content with the AI.
+
+## Images
+
+For images, the content is sent to the model as part of the request. Vision
+models can analyze and describe what they see — identifying objects, reading
+text, understanding charts, or answering questions about visual content.
+
+Multiple images can be included in a single message. The model sees all of them
+and can compare, contrast, or reference specific images in its response.
+
+## Documents
+
+For documents like PDFs and spreadsheets, the SDK can extract text content and
+include it as context for the model. This lets users ask questions about
+document content without manually copying text.
+
+The original file metadata is preserved so your app can display attachments in
+the conversation UI. Users see what files they shared even though the model
+receives extracted text.
+
+## Generated Images
+
+When the model generates images (via the image generation tool), those are saved
+with the assistant message. The SDK handles downloading and storing generated
+content locally, so images remain available even if the original generation URL
+expires.
