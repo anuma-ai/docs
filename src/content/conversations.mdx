@@ -4,28 +4,14 @@ A conversation is a container for a sequence of messages between a user and an
 AI assistant. The SDK manages conversations automatically — when you send a
 message, it's saved along with the response.
 
-## Messages
+## How It Works
 
-Each message in a conversation includes:
+When you send a message, the SDK:
 
-- Role (user, assistant, or system)
-- Content
-- Model used for the response
-- File attachments (if any)
-- Embedding vector for semantic search
-- Token usage stats
-
-When you send a message, the SDK saves the user message before the API call and
-the assistant response after streaming completes.
-
-## Conversations
-
-Conversations group related messages together. Each conversation has:
-
-- Unique ID
-- Title
-- Timestamps (created, updated)
-- Optional project ID for grouping
+1. Saves the user message to the local database
+2. Sends the request to the Portal API
+3. Streams the response back to your app
+4. Saves the assistant response to the local database
 
 The SDK can automatically create a new conversation on the first message, or you
 can create and switch between conversations manually.
@@ -33,12 +19,11 @@ can create and switch between conversations manually.
 ## Persistence
 
 The Portal API is stateless — it doesn't store your conversations. The SDK
-handles persistence by saving everything to a local database (WatermelonDB) in
-the browser. This means:
+handles persistence by saving everything to a local database in the browser.
+This means:
 
 - Conversations persist across sessions
 - Data stays on the user's device
-- The app works offline
 - Users own their data
 
 ## History
@@ -46,3 +31,31 @@ the browser. This means:
 When sending a new message, the SDK can automatically include previous messages
 from the conversation as context. This gives the model awareness of the ongoing
 discussion without you managing message arrays manually.
+
+## Streaming
+
+Responses stream back from the API in chunks. Your app receives each chunk as it
+arrives, so you can display partial responses in real-time. The SDK buffers the
+complete response and saves it when streaming finishes.
+
+## Files and Images
+
+Messages can include file attachments — images, documents, and other files. The
+SDK stores file metadata with the message. For images, the content is sent to
+the model as part of the request.
+
+## Tools
+
+The SDK supports two types of tools:
+
+- **Server-side tools** run on the Portal API. These include image generation
+  and web search. The model decides when to use them based on the conversation.
+
+- **Client-side tools** run in your app. You define the tool and provide a
+  function to execute it. Useful for integrating with your app's features.
+
+## Models
+
+You can use any model available through the Portal API. Switch models per
+message — each response records which model generated it. This lets you use
+different models for different tasks within the same conversation.
