@@ -1,6 +1,6 @@
 # UseChatStorageResult
 
-Defined in: [src/react/useChatStorage.ts:145](https://github.com/zeta-chain/ai-sdk/blob/main/src/react/useChatStorage.ts#L145)
+Defined in: [src/react/useChatStorage.ts:426](https://github.com/zeta-chain/ai-sdk/blob/main/src/react/useChatStorage.ts#L426)
 
 Result returned by useChatStorage hook (React version)
 
@@ -16,7 +16,7 @@ Extends base result with React-specific sendMessage signature.
 
 > **clearMessages**: (`conversationId`: `string`) => `Promise`<`void`>
 
-Defined in: [src/lib/db/chat/types.ts:240](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L240)
+Defined in: [src/lib/db/chat/types.ts:435](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L435)
 
 **Parameters**
 
@@ -57,7 +57,7 @@ Defined in: [src/lib/db/chat/types.ts:240](https://github.com/zeta-chain/ai-sdk/
 
 > **conversationId**: `string` | `null`
 
-Defined in: [src/lib/db/chat/types.ts:229](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L229)
+Defined in: [src/lib/db/chat/types.ts:424](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L424)
 
 **Inherited from**
 
@@ -69,7 +69,7 @@ Defined in: [src/lib/db/chat/types.ts:229](https://github.com/zeta-chain/ai-sdk/
 
 > **createConversation**: (`options?`: [`CreateConversationOptions`](CreateConversationOptions.md)) => `Promise`<[`StoredConversation`](StoredConversation.md)>
 
-Defined in: [src/lib/db/chat/types.ts:231](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L231)
+Defined in: [src/lib/db/chat/types.ts:426](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L426)
 
 **Parameters**
 
@@ -110,7 +110,7 @@ Defined in: [src/lib/db/chat/types.ts:231](https://github.com/zeta-chain/ai-sdk/
 
 > **deleteConversation**: (`id`: `string`) => `Promise`<`boolean`>
 
-Defined in: [src/lib/db/chat/types.ts:237](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L237)
+Defined in: [src/lib/db/chat/types.ts:432](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L432)
 
 **Parameters**
 
@@ -151,7 +151,7 @@ Defined in: [src/lib/db/chat/types.ts:237](https://github.com/zeta-chain/ai-sdk/
 
 > **extractSourcesFromAssistantMessage**: (`assistantMessage`: `object`) => [`SearchSource`](SearchSource.md)\[]
 
-Defined in: [src/react/useChatStorage.ts:189](https://github.com/zeta-chain/ai-sdk/blob/main/src/react/useChatStorage.ts#L189)
+Defined in: [src/react/useChatStorage.ts:470](https://github.com/zeta-chain/ai-sdk/blob/main/src/react/useChatStorage.ts#L470)
 
 Extract all links from assistant message content as SearchSource objects
 
@@ -210,11 +210,75 @@ Extract all links from assistant message content as SearchSource objects
 
 ***
 
+### getAllFiles()
+
+> **getAllFiles**: (`options?`: `object`) => `Promise`<[`StoredFileWithContext`](StoredFileWithContext.md)\[]>
+
+Defined in: [src/react/useChatStorage.ts:483](https://github.com/zeta-chain/ai-sdk/blob/main/src/react/useChatStorage.ts#L483)
+
+Get all files from all conversations, sorted by creation date (newest first).
+Returns files with conversation context for building file browser UIs.
+
+**Parameters**
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`options?`
+
+</td>
+<td>
+
+`object`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`options.conversationId?`
+
+</td>
+<td>
+
+`string`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`options.limit?`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+**Returns**
+
+`Promise`<[`StoredFileWithContext`](StoredFileWithContext.md)\[]>
+
+***
+
 ### getConversation()
 
 > **getConversation**: (`id`: `string`) => `Promise`<[`StoredConversation`](StoredConversation.md) | `null`>
 
-Defined in: [src/lib/db/chat/types.ts:234](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L234)
+Defined in: [src/lib/db/chat/types.ts:429](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L429)
 
 **Parameters**
 
@@ -255,7 +319,7 @@ Defined in: [src/lib/db/chat/types.ts:234](https://github.com/zeta-chain/ai-sdk/
 
 > **getConversations**: () => `Promise`<[`StoredConversation`](StoredConversation.md)\[]>
 
-Defined in: [src/lib/db/chat/types.ts:235](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L235)
+Defined in: [src/lib/db/chat/types.ts:430](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L430)
 
 **Returns**
 
@@ -271,7 +335,7 @@ Defined in: [src/lib/db/chat/types.ts:235](https://github.com/zeta-chain/ai-sdk/
 
 > **getMessageCount**: (`conversationId`: `string`) => `Promise`<`number`>
 
-Defined in: [src/lib/db/chat/types.ts:239](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L239)
+Defined in: [src/lib/db/chat/types.ts:434](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L434)
 
 **Parameters**
 
@@ -312,7 +376,7 @@ Defined in: [src/lib/db/chat/types.ts:239](https://github.com/zeta-chain/ai-sdk/
 
 > **getMessages**: (`conversationId`: `string`) => `Promise`<[`StoredMessage`](StoredMessage.md)\[]>
 
-Defined in: [src/lib/db/chat/types.ts:238](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L238)
+Defined in: [src/lib/db/chat/types.ts:433](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L433)
 
 **Parameters**
 
@@ -353,7 +417,7 @@ Defined in: [src/lib/db/chat/types.ts:238](https://github.com/zeta-chain/ai-sdk/
 
 > **isLoading**: `boolean`
 
-Defined in: [src/lib/db/chat/types.ts:227](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L227)
+Defined in: [src/lib/db/chat/types.ts:422](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L422)
 
 **Inherited from**
 
@@ -365,7 +429,7 @@ Defined in: [src/lib/db/chat/types.ts:227](https://github.com/zeta-chain/ai-sdk/
 
 > **searchMessages**: (`queryVector`: `number`\[], `options?`: [`SearchMessagesOptions`](SearchMessagesOptions.md)) => `Promise`<[`StoredMessageWithSimilarity`](StoredMessageWithSimilarity.md)\[]>
 
-Defined in: [src/react/useChatStorage.ts:178](https://github.com/zeta-chain/ai-sdk/blob/main/src/react/useChatStorage.ts#L178)
+Defined in: [src/react/useChatStorage.ts:459](https://github.com/zeta-chain/ai-sdk/blob/main/src/react/useChatStorage.ts#L459)
 
 Search messages by vector similarity
 
@@ -416,7 +480,7 @@ Search messages by vector similarity
 
 > **sendMessage**: (`args`: `object`) => `Promise`<[`SendMessageWithStorageResult`](../type-aliases/SendMessageWithStorageResult.md)>
 
-Defined in: [src/react/useChatStorage.ts:174](https://github.com/zeta-chain/ai-sdk/blob/main/src/react/useChatStorage.ts#L174)
+Defined in: [src/react/useChatStorage.ts:455](https://github.com/zeta-chain/ai-sdk/blob/main/src/react/useChatStorage.ts#L455)
 
 Sends a message to the AI and automatically persists both the user message
 and assistant response to the database.
@@ -471,15 +535,37 @@ This method handles the complete message lifecycle:
 </td>
 <td>
 
-Override the API type for this request only.
-Useful when different models need different APIs.
+Override the API type for this specific request.
+
+* "responses": OpenAI Responses API (supports thinking, reasoning, conversations)
+* "completions": OpenAI Chat Completions API (wider model compatibility)
+
+Useful when different models need different APIs within the same hook instance.
 
 </td>
 </tr>
 <tr>
 <td>
 
-`args.content`
+`args.clientTools?`
+
+</td>
+<td>
+
+[`LlmapiChatCompletionTool`](../../../client/Internal/type-aliases/LlmapiChatCompletionTool.md)\[]
+
+</td>
+<td>
+
+Client-side tools with optional executors.
+These tools run in the browser/app and can have JavaScript executor functions.
+
+</td>
+</tr>
+<tr>
+<td>
+
+`args.conversationId?`
 
 </td>
 <td>
@@ -489,7 +575,29 @@ Useful when different models need different APIs.
 </td>
 <td>
 
-‐
+Explicitly specify the conversation ID to send this message to.
+If provided, bypasses the automatic conversation detection/creation.
+Useful when sending a message immediately after creating a conversation,
+to avoid race conditions with React state updates.
+
+</td>
+</tr>
+<tr>
+<td>
+
+`args.fileContext?`
+
+</td>
+<td>
+
+`string`
+
+</td>
+<td>
+
+Additional context from preprocessed file attachments.
+Contains extracted text from Excel, Word, PDF, and other document files.
+Injected as a system message so it's available throughout the conversation.
 
 </td>
 </tr>
@@ -506,7 +614,9 @@ Useful when different models need different APIs.
 </td>
 <td>
 
-‐
+File attachments to include with the message (images, documents, etc.).
+Files with image MIME types and URLs are sent as image content parts.
+File metadata is stored with the message (URLs are stripped if they're data URIs).
 
 </td>
 </tr>
@@ -523,7 +633,8 @@ Useful when different models need different APIs.
 </td>
 <td>
 
-Custom headers
+Custom HTTP headers to include with the API request.
+Useful for passing additional authentication, tracking, or feature flags.
 
 </td>
 </tr>
@@ -540,7 +651,15 @@ Custom headers
 </td>
 <td>
 
-‐
+Whether to automatically include previous messages from the conversation as context.
+When true, fetches stored messages and prepends them to the request.
+Ignored if `messages` is provided.
+
+**Default**
+
+```ts
+true
+```
 
 </td>
 </tr>
@@ -557,7 +676,14 @@ Custom headers
 </td>
 <td>
 
-‐
+Maximum number of historical messages to include when `includeHistory` is true.
+Only the most recent N messages are included to manage context window size.
+
+**Default**
+
+```ts
+50
+```
 
 </td>
 </tr>
@@ -575,6 +701,7 @@ Custom headers
 <td>
 
 Maximum number of tokens to generate in the response.
+Use this to limit response length and control costs.
 
 </td>
 </tr>
@@ -591,14 +718,15 @@ Maximum number of tokens to generate in the response.
 </td>
 <td>
 
-‐
+Additional context from memory/RAG system to include in the request.
+Typically contains retrieved relevant information from past conversations.
 
 </td>
 </tr>
 <tr>
 <td>
 
-`args.messages?`
+`args.messages`
 
 </td>
 <td>
@@ -608,7 +736,43 @@ Maximum number of tokens to generate in the response.
 </td>
 <td>
 
-‐
+The message array to send to the AI.
+
+Uses the modern array format that supports multimodal content (text, images, files).
+The last user message in this array will be extracted and stored in the database.
+
+When `includeHistory` is true (default), conversation history is prepended.
+When `includeHistory` is false, only these messages are sent.
+
+**Example**
+
+```ts
+// Simple usage
+sendMessage({
+  messages: [
+    { role: "user", content: [{ type: "text", text: "Hello!" }] }
+  ]
+})
+
+// With system prompt and history disabled
+sendMessage({
+  messages: [
+    { role: "system", content: [{ type: "text", text: "You are helpful" }] },
+    { role: "user", content: [{ type: "text", text: "Question" }] },
+  ],
+  includeHistory: false
+})
+
+// With images
+sendMessage({
+  messages: [
+    { role: "user", content: [
+      { type: "text", text: "What's in this image?" },
+      { type: "image_url", image_url: { url: "data:image/png;base64,..." } }
+    ]}
+  ]
+})
+```
 
 </td>
 </tr>
@@ -625,7 +789,8 @@ Maximum number of tokens to generate in the response.
 </td>
 <td>
 
-‐
+The model identifier to use for this request (e.g., "gpt-4o", "claude-sonnet-4-20250514").
+If not specified, uses the default model configured on the server.
 
 </td>
 </tr>
@@ -642,7 +807,9 @@ Maximum number of tokens to generate in the response.
 </td>
 <td>
 
-‐
+Per-request callback invoked with each streamed response chunk.
+Overrides the hook-level `onData` callback for this request only.
+Use this to update UI as the response streams in.
 
 </td>
 </tr>
@@ -661,24 +828,7 @@ Maximum number of tokens to generate in the response.
 
 Per-request callback for thinking/reasoning chunks.
 Called with delta chunks as the model "thinks" through a problem.
-
-</td>
-</tr>
-<tr>
-<td>
-
-`args.previousResponseId?`
-
-</td>
-<td>
-
-`string`
-
-</td>
-<td>
-
-ID of a previous response to continue from.
-Enables multi-turn conversations without resending full history.
+Use this to display thinking progress in the UI.
 
 </td>
 </tr>
@@ -696,7 +846,7 @@ Enables multi-turn conversations without resending full history.
 <td>
 
 Reasoning configuration for o-series and other reasoning models.
-Controls reasoning effort and summary output.
+Controls reasoning effort level and whether to include reasoning summary.
 
 </td>
 </tr>
@@ -713,24 +863,39 @@ Controls reasoning effort and summary output.
 </td>
 <td>
 
-‐
+Additional context from search results to include in the request.
+Typically contains relevant information from web or document searches.
 
 </td>
 </tr>
 <tr>
 <td>
 
-`args.serverConversation?`
+`args.serverTools?`
 
 </td>
 <td>
 
-`string`
+`string`\[]
 
 </td>
 <td>
 
-Conversation ID for grouping related responses on the server.
+Server-side tools to include from /api/v1/tools.
+
+* undefined: Include all server-side tools (default)
+* string\[]: Include only tools with these names
+* \[]: Include no server-side tools
+
+**Example**
+
+```ts
+// Include only specific server tools
+serverTools: ["generate_cloud_image", "perplexity_search"]
+
+// Disable server tools for this request
+serverTools: []
+```
 
 </td>
 </tr>
@@ -747,25 +912,8 @@ Conversation ID for grouping related responses on the server.
 </td>
 <td>
 
-‐
-
-</td>
-</tr>
-<tr>
-<td>
-
-`args.store?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
-
-Whether to store the response server-side.
-When true, the response can be retrieved later using the response ID.
+Search sources to attach to the stored message for citation/reference.
+These are combined with any sources extracted from the assistant's response.
 
 </td>
 </tr>
@@ -783,6 +931,7 @@ When true, the response can be retrieved later using the response ID.
 <td>
 
 Controls randomness in the response (0.0 to 2.0).
+Lower values make output more deterministic, higher values more creative.
 
 </td>
 </tr>
@@ -800,7 +949,8 @@ Controls randomness in the response (0.0 to 2.0).
 <td>
 
 Extended thinking configuration for Anthropic models (Claude).
-Enables the model to think through complex problems step by step.
+Enables the model to think through complex problems step by step
+before generating the final response.
 
 </td>
 </tr>
@@ -817,7 +967,9 @@ Enables the model to think through complex problems step by step.
 </td>
 <td>
 
-‐
+Activity phases for tracking the request lifecycle in the UI.
+Each phase represents a step like "Searching", "Thinking", "Generating".
+The final phase is automatically marked as completed when stored.
 
 </td>
 </tr>
@@ -834,24 +986,13 @@ Enables the model to think through complex problems step by step.
 </td>
 <td>
 
-Controls which tool to use: "auto", "any", "none", "required", or a specific tool name.
+Controls which tool the model should use:
 
-</td>
-</tr>
-<tr>
-<td>
-
-`args.tools?`
-
-</td>
-<td>
-
-[`LlmapiTool`](../../../client/Internal/type-aliases/LlmapiTool.md)\[]
-
-</td>
-<td>
-
-Array of tool definitions available to the model.
+* "auto": Model decides whether to use a tool (default)
+* "any": Model must use one of the provided tools
+* "none": Model cannot use any tools
+* "required": Model must use a tool
+* Specific tool name: Model must use that specific tool
 
 </td>
 </tr>
@@ -868,7 +1009,12 @@ Array of tool definitions available to the model.
 </td>
 <td>
 
-Function to write files to storage (for MCP image processing). Optional - if not provided, MCP images won't be processed.
+Function to write files to storage (for MCP image processing).
+When provided, MCP-generated images in the response are automatically
+downloaded and stored locally via this function. The content is updated
+with placeholders that can be resolved to the stored files.
+
+If not provided, MCP images remain as URLs in the response content.
 
 </td>
 </tr>
@@ -902,7 +1048,7 @@ if (result.error) {
 
 > **setConversationId**: (`id`: `string` | `null`) => `void`
 
-Defined in: [src/lib/db/chat/types.ts:230](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L230)
+Defined in: [src/lib/db/chat/types.ts:425](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L425)
 
 **Parameters**
 
@@ -943,7 +1089,7 @@ Defined in: [src/lib/db/chat/types.ts:230](https://github.com/zeta-chain/ai-sdk/
 
 > **stop**: () => `void`
 
-Defined in: [src/lib/db/chat/types.ts:228](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L228)
+Defined in: [src/lib/db/chat/types.ts:423](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L423)
 
 **Returns**
 
@@ -959,7 +1105,7 @@ Defined in: [src/lib/db/chat/types.ts:228](https://github.com/zeta-chain/ai-sdk/
 
 > **updateConversationTitle**: (`id`: `string`, `title`: `string`) => `Promise`<`boolean`>
 
-Defined in: [src/lib/db/chat/types.ts:236](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L236)
+Defined in: [src/lib/db/chat/types.ts:431](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L431)
 
 **Parameters**
 
@@ -1012,7 +1158,7 @@ Defined in: [src/lib/db/chat/types.ts:236](https://github.com/zeta-chain/ai-sdk/
 
 > **updateMessage**: (`uniqueId`: `string`, `options`: `UpdateMessageOptions`) => `Promise`<[`StoredMessage`](StoredMessage.md) | `null`>
 
-Defined in: [src/react/useChatStorage.ts:194](https://github.com/zeta-chain/ai-sdk/blob/main/src/react/useChatStorage.ts#L194)
+Defined in: [src/react/useChatStorage.ts:475](https://github.com/zeta-chain/ai-sdk/blob/main/src/react/useChatStorage.ts#L475)
 
 Update a message's fields (content, embedding, files, etc). Returns updated message or null if not found.
 
@@ -1063,7 +1209,7 @@ Update a message's fields (content, embedding, files, etc). Returns updated mess
 
 > **updateMessageEmbedding**: (`uniqueId`: `string`, `vector`: `number`\[], `embeddingModel`: `string`) => `Promise`<[`StoredMessage`](StoredMessage.md) | `null`>
 
-Defined in: [src/react/useChatStorage.ts:183](https://github.com/zeta-chain/ai-sdk/blob/main/src/react/useChatStorage.ts#L183)
+Defined in: [src/react/useChatStorage.ts:464](https://github.com/zeta-chain/ai-sdk/blob/main/src/react/useChatStorage.ts#L464)
 
 Update a message's embedding vector. Returns updated message or null if not found.
 
