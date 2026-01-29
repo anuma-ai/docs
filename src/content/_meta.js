@@ -1,6 +1,7 @@
 export default {
   index: "",
   authentication: "Authentication",
+  conversations: "Conversations",
   "#": {
     type: "separator",
     title: "SDK",

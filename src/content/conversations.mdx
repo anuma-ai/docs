@@ -1,0 +1,48 @@
+# Conversations
+
+A conversation is a container for a sequence of messages between a user and an
+AI assistant. The SDK manages conversations automatically — when you send a
+message, it's saved along with the response.
+
+## Messages
+
+Each message in a conversation includes:
+
+- Role (user, assistant, or system)
+- Content
+- Model used for the response
+- File attachments (if any)
+- Embedding vector for semantic search
+- Token usage stats
+
+When you send a message, the SDK saves the user message before the API call and
+the assistant response after streaming completes.
+
+## Conversations
+
+Conversations group related messages together. Each conversation has:
+
+- Unique ID
+- Title
+- Timestamps (created, updated)
+- Optional project ID for grouping
+
+The SDK can automatically create a new conversation on the first message, or you
+can create and switch between conversations manually.
+
+## Persistence
+
+The Portal API is stateless — it doesn't store your conversations. The SDK
+handles persistence by saving everything to a local database (WatermelonDB) in
+the browser. This means:
+
+- Conversations persist across sessions
+- Data stays on the user's device
+- The app works offline
+- Users own their data
+
+## History
+
+When sending a new message, the SDK can automatically include previous messages
+from the conversation as context. This gives the model awareness of the ongoing
+discussion without you managing message arrays manually.
