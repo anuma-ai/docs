@@ -37,6 +37,8 @@ Use API keys for server-side applications or when you (the developer) pay for
 inference costs.
 
 ```typescript
+import { useChat } from "@reverbia/sdk/react";
+
 const { sendMessage } = useChat({
   getToken: async () => process.env.ANUMA_API_KEY,
 });
@@ -62,13 +64,3 @@ type GetToken = () => Promise<string | null>;
 
 The SDK calls this function before each API request to get a fresh token. Return
 `null` if the user is not authenticated.
-
-## Which Should I Use?
-
-| Use Case | Auth Method |
-| --- | --- |
-| Server-side app / API | API Key |
-| You pay for all inference | API Key |
-| Client-side app | Privy |
-| Users pay for their own inference | Privy |
-| Building a SaaS product | Either (depends on billing model) |
