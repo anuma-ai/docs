@@ -12,8 +12,8 @@ encrypted with keys only they control.
 
 ## SDK
 
-For React and React Native apps. The SDK provides hooks that handle streaming,
-authentication, and state management.
+For React and React Native apps. The SDK provides hooks for chat, memory, tool
+calling, image generation, web search, and encryption.
 
 ```bash
 npm install @reverbia/sdk
@@ -32,17 +32,6 @@ await sendMessage({
   model: "gpt-4o-mini",
 });
 ```
-
-### Capabilities
-
-<Cards num={3}>
-  <Cards.Card title="Chat" href="/sdk/react/Hooks/useChatStorage" />
-  <Cards.Card title="Memory" href="/sdk/react/Hooks/useMemoryStorage" />
-  <Cards.Card title="Tool Calling" href="/sdk/react/Hooks/useChatStorage" />
-  <Cards.Card title="Image Generation" href="/sdk/react/Hooks/useChatStorage" />
-  <Cards.Card title="Web Search" href="/sdk/react/Hooks/useChatStorage" />
-  <Cards.Card title="Encryption" href="/sdk/react/Hooks/useEncryption" />
-</Cards>
 
 ## Portal API
 
