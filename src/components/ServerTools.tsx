@@ -39,5 +39,14 @@ export async function ServerTools() {
     },
   ];
 
-  return <ReferenceTable columns={columns} data={tools} />;
+  const sourceUrl = `${PORTAL_API_URL}/api/v1/tools`;
+
+  return (
+    <>
+      <ReferenceTable columns={columns} data={tools} />
+      <p style={{ fontSize: "0.75rem", color: "var(--x-color-slate-500)", marginTop: "1rem" }}>
+        Source: <a href={sourceUrl} target="_blank" rel="noopener noreferrer">{sourceUrl}</a>
+      </p>
+    </>
+  );
 }
