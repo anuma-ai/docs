@@ -1,31 +1,56 @@
 # Files and Images
 
-Messages can include file attachments — images, PDFs, spreadsheets, and other
-documents. This enables multimodal conversations where users can share visual
-and document content with the AI.
+Messages can include files in two directions: attachments you send to the model,
+and content the model generates. These work differently.
 
-## Images
+## Attachments
 
-For images, the content is sent to the model as part of the request. Vision
-models can analyze and describe what they see — identifying objects, reading
-text, understanding charts, or answering questions about visual content.
+Attachments are files users share with the AI — documents, images, spreadsheets,
+archives. The SDK processes these before sending to make them useful as context.
+
+### Document Processing
+
+For documents, the SDK extracts text content so the model can understand what's
+in the file. Raw binary files aren't useful to language models — they need text.
+
+The SDK includes processors for common document types:
+
+- **PDF** — Extracts text content from all pages
+- **Word (.docx)** — Extracts raw text without formatting
+- **Excel (.xlsx, .xls)** — Converts spreadsheets to structured JSON, preserving
+  sheet names and data organization
+- **ZIP archives** — Extracts and processes nested files recursively, returning
+  a structured summary with content from each supported file inside
+
+Processors run automatically when you send a message with file attachments. The
+extracted text is included as context for the model. File metadata is preserved
+separately so your app can display what files were attached.
+
+You can extend the processor system with custom processors for additional file
+types.
+
+### Images
+
+Images are sent directly to the model without text extraction. Vision models
+analyze the visual content — identifying objects, reading text in images,
+understanding charts, or answering questions about what they see.
 
 Multiple images can be included in a single message. The model sees all of them
-and can compare, contrast, or reference specific images in its response.
+and can compare or reference specific images in its response.
 
-## Documents
+For images that contain text you want extracted, OCR is available as a separate
+utility.
 
-For documents like PDFs and spreadsheets, the SDK can extract text content and
-include it as context for the model. This lets users ask questions about
-document content without manually copying text.
+## Generated Content
 
-The original file metadata is preserved so your app can display attachments in
-the conversation UI. Users see what files they shared even though the model
-receives extracted text.
+When the model generates files (like images from the image generation tool),
+the SDK handles downloading and storing them locally.
 
-## Generated Images
+Generated image URLs from the API are temporary. The SDK downloads images
+automatically and stores them encrypted on the user's device. This ensures
+images remain available in conversation history even after the original URLs
+expire.
 
-When the model generates images (via the image generation tool), those are saved
-with the assistant message. The SDK handles downloading and storing generated
-content locally, so images remain available even if the original generation URL
-expires.
+The stored files are encrypted at rest and tied to the user's session. When
+displaying messages, the SDK resolves stored files to displayable URLs
+on-demand.
