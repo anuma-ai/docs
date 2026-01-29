@@ -1,46 +1,17 @@
 # Models
 
-The Portal API provides access to models from multiple providers through a
-single interface. You don't need separate API keys or SDKs for each provider —
-Anuma handles the routing.
+The Portal API supports multiple AI models from different providers. When
+sending a message, you specify which model to use. Each model has different
+capabilities, pricing, and performance characteristics.
 
-## Available Providers
+Models fall into several categories based on their modalities:
 
-- **OpenAI** — GPT-4o, GPT-4o-mini, o1, o3-mini
-- **Anthropic** — Claude Sonnet, Claude Haiku
-- **Google** — Gemini Pro, Gemini Flash
-- **xAI** — Grok
-- **Open source** — Various models via OpenRouter
+- **LLM** — Text generation and conversation
+- **Vision** — Image understanding and analysis
+- **Reasoning** — Extended thinking for complex problems
+- **Image** — Image generation
 
-The exact model list is available through the API. New models are added as
-providers release them.
+Some models support multiple modalities. For example, vision-capable LLMs can
+both generate text and analyze images.
 
-## Switching Models
-
-You can switch models per message. Each response records which model generated
-it, so you can see the model used for any message in the conversation.
-
-Switching mid-conversation is seamless. The conversation history works the same
-regardless of which model responds. This lets you:
-
-- Use fast, cheap models for simple queries
-- Switch to more capable models for complex tasks
-- Try different models to compare responses
-
-## Model Capabilities
-
-Different models have different capabilities:
-
-- **Vision** — Some models can analyze images. Send images as part of your
-  message and the model can describe, analyze, or answer questions about them.
-
-- **Extended thinking** — Claude can think through complex problems step by step
-  before responding. You see the thinking process separately from the final
-  answer.
-
-- **Reasoning** — OpenAI's o-series models show their reasoning process. They
-  work through problems methodically and can explain their logic.
-
-The SDK handles provider differences transparently. You specify the model and
-any special options (like enabling extended thinking), and the request is
-formatted appropriately.
+See the [full list of available models](/reference/models-list).
