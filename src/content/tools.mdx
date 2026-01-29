@@ -1,5 +1,7 @@
 # Tools
 
+import { ServerTools } from "../components/ServerTools";
+
 Tools let the model take actions beyond generating text. When the model decides
 a tool would help answer a question, it emits a tool call with the tool name and
 arguments. Something executes the tool, and the model incorporates the result
@@ -21,9 +23,6 @@ request:
 Your app doesn't need to handle anything — the API manages execution and
 continuation automatically. The model's response arrives as one streaming
 response, even though tool execution happened in the middle.
-
-Common server tools include image generation, image analysis, and web search.
-The full list is available through the API.
 
 To use server tools, specify which ones you want by name. Pass an array of tool
 names to filter which server tools are available for the request.
@@ -71,3 +70,7 @@ then continues with all the information.
 
 For server-side tools, the API handles multiple calls internally before
 returning the response.
+
+## Available Server Tools
+
+<ServerTools />
