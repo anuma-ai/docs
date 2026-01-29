@@ -1,20 +1,45 @@
 import { Cards } from "nextra/components";
 import { ReactIcon, ExpoIcon } from "../components/icons";
 
-# Introduction
+# Anuma
 
-Reverbia SDK is the TypeScript toolkit for building AI-powered applications with
-the Reverbia Portal API. It provides React hooks, streaming utilities, and
-framework integrations that let you add chat, image generation, embeddings, and
-more to your app with minimal setup.
+Build AI-powered apps with a unified API, persistent memory, and user-owned encryption.
+
+Anuma is an AI platform that gives you access to models from OpenAI, Google,
+Anthropic, xAI, and open-source providers through a single API. Built-in support
+for streaming, persistent memory, tool calling, and client-side encryption.
 
 ```bash
 npm install @reverbia/sdk
 ```
 
+## Why Anuma?
+
+- **One API, many models** — Switch between GPT-4, Gemini, Claude, DeepSeek, and
+  more without changing your code
+- **Private Memory Layer** — Semantic memory that persists across sessions,
+  encrypted with user-controlled keys
+- **Streaming built-in** — Real-time responses with hooks that handle state
+  management
+- **Client & server tools** — Define functions the model can call, with support
+  for both client-side and server-side execution
+- **React & React Native** — First-class support for web and mobile
+
+## Capabilities
+
+<Cards num={3}>
+  <Cards.Card title="Chat" href="/sdk/react/Hooks/useChat" />
+  <Cards.Card title="Image Generation" href="/sdk/react/Hooks/useImageGeneration" />
+  <Cards.Card title="Memory" href="/sdk/react/Hooks/useMemoryStorage" />
+  <Cards.Card title="Tool Calling" href="/sdk/react/Hooks/useChat" />
+  <Cards.Card title="Embeddings" href="/sdk/client/Internal/functions/postApiV1Embeddings" />
+  <Cards.Card title="Web Search" href="/sdk/react/Hooks/useSearch" />
+</Cards>
+
 ## Quick Example
 
 ```tsx
+import { useState } from "react";
 import { useChat } from "@reverbia/sdk/react";
 
 function Chat() {
@@ -25,16 +50,19 @@ function Chat() {
   });
 
   return (
-    <button
-      onClick={() =>
-        sendMessage({
-          messages: [{ role: "user", content: "Hello!" }],
-          model: "gpt-4o-mini",
-        })
-      }
-    >
-      {isLoading ? "Thinking..." : "Send"}
-    </button>
+    <div>
+      <p>{response}</p>
+      <button
+        onClick={() =>
+          sendMessage({
+            messages: [{ role: "user", content: "Hello!" }],
+            model: "gpt-4o-mini",
+          })
+        }
+      >
+        {isLoading ? "Thinking..." : "Send"}
+      </button>
+    </div>
   );
 }
 ```
@@ -42,7 +70,15 @@ function Chat() {
 The SDK handles streaming, authentication, and state management so you can focus
 on building your product.
 
-## Frameworks
+## Next Steps
+
+<Cards num={3}>
+  <Cards.Card title="Getting Started" href="/tutorial/intro" />
+  <Cards.Card title="Tutorials" href="/tutorial/intro" />
+  <Cards.Card title="API Reference" href="/spec" />
+</Cards>
+
+## SDK
 
 <Cards num={2}>
   <Cards.Card icon={<ReactIcon />} title="React" href="/sdk/react/README" />
