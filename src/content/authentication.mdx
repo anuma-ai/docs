@@ -55,8 +55,8 @@ generate API keys and top up your balance with USDC or Stripe.
 
 ## The `getToken` Function
 
-Every SDK hook accepts a `getToken` option — an async function that returns the
-authentication token.
+SDK hooks that make API requests accept a `getToken` option — an async function
+that returns the authentication token.
 
 ```typescript
 type GetToken = () => Promise<string | null>;
