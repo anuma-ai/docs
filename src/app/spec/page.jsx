@@ -23,7 +23,7 @@ export default function SpecPage() {
     <ApiReferenceReact
       key={resolvedTheme}
       configuration={{
-        url: "https://ai-portal-dev.zetachain.com/api/v1/docs/swagger.json",
+        url: "https://portal.anuma-dev.ai/api/v1/docs/swagger.json",
         theme: "none",
         darkMode: isDark,
         forceDarkModeState: isDark ? "dark" : "light",
