@@ -35,20 +35,9 @@ await sendMessage({
 
 ## Portal API
 
-For other languages or direct HTTP access. The API follows the OpenAI format, so
-you can use existing tools and libraries — including the official OpenAI SDKs.
-
-```bash
-curl https://api.anuma.ai/v1/chat/completions \
-  -H "Authorization: Bearer $ANUMA_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "model": "gpt-4o-mini",
-    "messages": [{"role": "user", "content": "Hello!"}]
-  }'
-```
-
-Chat completions, embeddings, and tool calling are all available via the API.
+For other languages or direct HTTP access. OpenAI-compatible, so you can use
+existing tools and libraries. Chat completions with streaming, embeddings, tool
+calling, and server-side tools for image generation and web search.
 
 [API Reference →](/spec)
 
