@@ -5,27 +5,35 @@ import { ReactIcon, ExpoIcon } from "../components/icons";
 
 Build AI-powered apps with a unified API, persistent memory, and user-owned encryption.
 
-Anuma is an AI platform that gives you access to models from OpenAI, Google,
-Anthropic, xAI, and open-source providers through a single API. Built-in support
-for streaming, persistent memory, tool calling, and client-side encryption.
+Anuma gives you access to models from OpenAI, Google, Anthropic, xAI, and
+open-source providers through a single API. Switch models without changing your
+code, store semantic memories that persist across sessions, and keep user data
+encrypted with keys only they control.
+
+## SDK
+
+For React and React Native apps. The SDK provides hooks that handle streaming,
+authentication, and state management.
 
 ```bash
 npm install @reverbia/sdk
 ```
 
-## Why Anuma?
+```tsx
+import { useChat } from "@reverbia/sdk/react";
 
-- **One API, many models** — Switch between GPT-4, Gemini, Claude, DeepSeek, and
-  more without changing your code
-- **Private Memory Layer** — Semantic memory that persists across sessions,
-  encrypted with user-controlled keys
-- **Streaming built-in** — Real-time responses with hooks that handle state
-  management
-- **Client & server tools** — Define functions the model can call, with support
-  for both client-side and server-side execution
-- **React & React Native** — First-class support for web and mobile
+const { sendMessage, isLoading } = useChat({
+  getToken: async () => authToken,
+  onData: (chunk) => setResponse((prev) => prev + chunk),
+});
 
-## Capabilities
+await sendMessage({
+  messages: [{ role: "user", content: "Hello!" }],
+  model: "gpt-4o-mini",
+});
+```
+
+### Capabilities
 
 <Cards num={3}>
   <Cards.Card title="Chat" href="/sdk/react/Hooks/useChatStorage" />
@@ -36,51 +44,16 @@ npm install @reverbia/sdk
   <Cards.Card title="Encryption" href="/sdk/react/Hooks/useEncryption" />
 </Cards>
 
-## Quick Example
+## Portal API
 
-```tsx
-import { useState } from "react";
-import { useChat } from "@reverbia/sdk/react";
+For other languages or direct HTTP access. The API follows the OpenAI format, so
+you can use existing tools and libraries.
 
-function Chat() {
-  const [response, setResponse] = useState("");
-  const { isLoading, sendMessage } = useChat({
-    getToken: async () => getAuthToken(),
-    onData: (chunk) => setResponse((prev) => prev + chunk),
-  });
+[API Reference →](/spec)
 
-  return (
-    <div>
-      <p>{response}</p>
-      <button
-        onClick={() =>
-          sendMessage({
-            messages: [{ role: "user", content: "Hello!" }],
-            model: "gpt-4o-mini",
-          })
-        }
-      >
-        {isLoading ? "Thinking..." : "Send"}
-      </button>
-    </div>
-  );
-}
-```
-
-The SDK handles streaming, authentication, and state management so you can focus
-on building your product.
-
-## Next Steps
-
-<Cards num={3}>
-  <Cards.Card title="Getting Started" href="/tutorial/intro" />
-  <Cards.Card title="Tutorials" href="/tutorial/intro" />
-  <Cards.Card title="API Reference" href="/spec" />
-</Cards>
-
-## SDK
+## Examples
 
 <Cards num={2}>
-  <Cards.Card icon={<ReactIcon />} title="React" href="/sdk/react/README" />
-  <Cards.Card icon={<ExpoIcon />} title="Expo" href="/sdk/expo/README" />
+  <Cards.Card icon={<ReactIcon />} title="Next.js" href="/tutorial/start" />
+  <Cards.Card icon={<ExpoIcon />} title="Expo (coming soon)" href="/sdk/expo/README" />
 </Cards>
