@@ -1,5 +1,6 @@
 export default {
   index: "",
+  authentication: "Authentication",
   "#": {
     type: "separator",
     title: "SDK",

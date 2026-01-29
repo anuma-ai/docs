@@ -11,4 +11,9 @@ refreshing the list.
 
 ## Hook Initialization
 
-{@includeCode ../hooks/useAppModels.ts#hookInit}
+```ts
+const { models, refetch, isLoading, error } = useModels({
+  getToken,
+  baseUrl: baseUrl || process.env.NEXT_PUBLIC_API_URL,
+});
+```
