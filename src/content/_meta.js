@@ -4,6 +4,7 @@ export default {
   conversations: "Conversations",
   streaming: "Streaming",
   files: "Files and Images",
+  backups: "Backups",
   tools: "Tools",
   models: "Models",
   "#": {
