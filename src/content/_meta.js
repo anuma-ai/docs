@@ -18,11 +18,4 @@ export default {
     title: "Tutorials",
   },
   tutorial: "Next.js",
-  "###": {
-    type: "separator",
-    title: "Reference",
-  },
-  reference: {
-    display: "children",
-  },
 };
