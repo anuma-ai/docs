@@ -3,8 +3,11 @@ import { ReferenceTable } from "./ReferenceTable";
 
 interface Tool {
   name: string;
-  description: string;
-  parameters: unknown;
+  schema: {
+    name: string;
+    description: string;
+    parameters: unknown;
+  };
 }
 
 interface ToolsResponse {
@@ -21,9 +24,12 @@ export async function ServerTools() {
   }
 
   const data: ToolsResponse = await res.json();
-  const tools = Object.values(data).sort((a, b) =>
-    a.name.localeCompare(b.name)
-  );
+  const tools = Object.values(data)
+    .map((tool) => ({
+      name: tool.name,
+      description: tool.schema.description,
+    }))
+    .sort((a, b) => a.name.localeCompare(b.name));
 
   const columns = [
     {
