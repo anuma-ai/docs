@@ -1,0 +1,34 @@
+# Streaming
+
+Responses stream back from the API in chunks rather than arriving all at once.
+This enables real-time UI updates where users see the response being generated
+word by word.
+
+## Callbacks
+
+The SDK provides callbacks for different events during streaming:
+
+- **Data** — Called with each content chunk as it arrives. Use this to append to
+  a displayed response.
+- **Thinking** — Called with reasoning content for models that support extended
+  thinking. Shows how the model works through a problem.
+- **Finish** — Called when streaming completes successfully with the full
+  response object.
+- **Error** — Called if something goes wrong during the request.
+
+## Cancellation
+
+You can abort a streaming request at any time. The SDK handles cleanup
+gracefully — the connection is terminated cleanly and any partial content
+received so far is preserved. The partial response is saved to the conversation
+so no data is lost.
+
+## Thinking and Reasoning
+
+Some models emit their reasoning process separately from the final response.
+OpenAI's o-series models show a reasoning summary. Claude with extended thinking
+reveals step-by-step problem solving before the answer.
+
+The SDK surfaces this through a dedicated callback so you can display the
+thinking process in your UI. This helps users understand how the model arrived
+at its answer and builds trust in complex responses.

@@ -1,0 +1,71 @@
+# Tools
+
+Tools let the model take actions beyond generating text. When the model decides
+a tool would help answer a question, it emits a tool call with the tool name and
+arguments. Something executes the tool, and the model incorporates the result
+into its response.
+
+There are two types of tools, and they work differently.
+
+## Server-Side Tools
+
+Server-side tools run on the Portal API. The entire flow happens in a single
+request:
+
+1. You send a message with server tools enabled
+2. The model decides to call a tool (e.g., web search)
+3. The API executes the tool internally
+4. The model sees the result and continues generating
+5. You receive the final response with tool results incorporated
+
+Your app doesn't need to handle anything — the API manages execution and
+continuation automatically. The model's response arrives as one streaming
+response, even though tool execution happened in the middle.
+
+To use server tools, specify which ones you want by name. Pass an array of tool
+names to filter which server tools are available for the request. See the
+[full list of server tools](/reference/server-tools).
+
+## Client-Side Tools
+
+Client-side tools run in your app. The flow requires multiple API calls:
+
+1. You send a message with client tools defined
+2. The model decides to call a tool and returns the tool call
+3. The SDK executes your tool function locally
+4. The SDK sends a new request with the tool result
+5. The model continues generating with the result
+6. You receive the final response
+
+This is a multi-turn conversation under the hood. The SDK handles steps 3-5
+automatically when using auto-execute mode.
+
+To use client tools, pass complete tool definitions with each request. Each tool
+needs:
+
+- **Name and description** — Helps the model understand when to use it
+- **Parameters schema** — What arguments the tool accepts
+- **Executor function** — Your code that runs when the tool is called
+
+Client tools are useful when the tool needs access to user data or local
+resources. The SDK includes pre-built tools for Google Calendar (list, create,
+and update events) and Google Drive (search and read files). These require user
+OAuth and run in the browser — they can't be server-side.
+
+Client-side tools support two execution modes:
+
+- **Auto-execute (default)** — The SDK runs your function and continues the
+  conversation automatically. You don't need to handle anything.
+
+- **Manual** — The SDK emits an event with the tool call. Your app decides
+  whether to execute it, can ask for user confirmation, or handle it custom.
+  You're responsible for continuing the conversation.
+
+## Multiple Tool Calls
+
+The model can call multiple tools in a single turn. For client-side tools, the
+SDK executes them in parallel and sends all results back together. The model
+then continues with all the information.
+
+For server-side tools, the API handles multiple calls internally before
+returning the response.

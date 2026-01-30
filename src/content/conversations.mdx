@@ -1,0 +1,76 @@
+# Conversations
+
+A conversation is a container for a sequence of messages between a user and an
+AI assistant. The SDK manages conversations automatically — when you send a
+message, it's saved along with the response.
+
+## Creating and Switching
+
+By default, a new conversation is created automatically when you send your first
+message. You can also create conversations manually or switch between existing
+ones.
+
+## Persistence
+
+The Portal API is stateless — it processes your request and returns a response,
+but doesn't remember anything. Every request is independent.
+
+The SDK handles persistence by saving everything to a local database in the
+browser. Conversations and messages are stored on the user's device:
+
+- **Survives page refreshes** — Users can close the browser and come back to
+  their conversations.
+- **No server storage** — Conversation data never leaves the device unless you
+  explicitly send it.
+- **User ownership** — Users control their data.
+
+## Sending Messages
+
+When you send a message, the SDK handles the complete lifecycle:
+
+1. **User message storage** — The user's message is saved to the local database
+   before the API request. This ensures the message is preserved even if the
+   request fails.
+
+2. **API request** — The message (plus conversation history if enabled) is sent
+   to the Portal API. The request includes your chosen model, any tools, and
+   configuration like temperature.
+
+3. **Streaming response** — The API streams the response back in chunks. Your
+   app receives each chunk as it arrives through a callback, letting you update
+   the UI in real-time.
+
+4. **Assistant message storage** — When streaming completes, the full response
+   is saved to the database along with metadata like token usage and which model
+   generated it.
+
+If the user cancels mid-stream, the partial response is still saved so no data
+is lost.
+
+## History
+
+When sending a new message, the SDK can automatically include previous messages
+from the conversation as context. This gives the model awareness of the ongoing
+discussion without you managing message arrays manually.
+
+By default, history is included. The SDK fetches recent messages from the
+database and prepends them to your request. You can configure how many messages
+to include (to manage context window size) or disable history entirely for
+standalone requests.
+
+## Projects
+
+Conversations can optionally belong to a project. Projects let users organize
+related conversations together — for example, grouping all chats about a
+specific topic or task.
+
+A conversation can be moved between projects or removed from a project entirely.
+
+## Deleting
+
+When you delete a conversation, it's soft-deleted — marked as deleted but not
+immediately removed from the database. Soft-deleted conversations don't appear
+in conversation lists and their messages aren't included in queries.
+
+This approach allows for potential recovery and avoids data integrity issues
+with related records.

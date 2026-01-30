@@ -1,0 +1,64 @@
+# Authentication
+
+The Anuma Portal API supports two authentication methods depending on your use
+case.
+
+## User Authentication with Privy
+
+Use [Privy](https://www.privy.io/) for client-side applications where users
+authenticate with their own wallet and pay for inference directly.
+
+```typescript
+import { useIdentityToken } from "@privy-io/react-auth";
+
+function Chat() {
+  const { identityToken } = useIdentityToken();
+
+  const { sendMessage } = useChat({
+    getToken: async () => identityToken,
+  });
+}
+```
+
+This approach:
+
+- Users pay for their own inference using USDC from their wallet
+- No inference costs for the developer
+- Works with embedded wallets (no browser extension required)
+
+See the [Next.js Example](/tutorial/start) for a complete Privy implementation.
+
+
+## API Key Authentication (coming soon)
+
+Use API keys for server-side applications or when you (the developer) pay for
+inference costs.
+
+```typescript
+import { useChat } from "@reverbia/sdk/react";
+
+const { sendMessage } = useChat({
+  getToken: async () => process.env.ANUMA_API_KEY,
+});
+```
+
+API keys are passed via the `Authorization` header:
+
+```
+Authorization: Bearer <your-api-key>
+```
+
+**Getting an API key:** Developer dashboard coming soon. You'll be able to
+generate API keys and top up your balance with USDC or Stripe.
+
+## The `getToken` Function
+
+SDK hooks that make API requests accept a `getToken` option — an async function
+that returns the authentication token.
+
+```typescript
+type GetToken = () => Promise<string | null>;
+```
+
+The SDK calls this function before each API request to get a fresh token. Return
+`null` if the user is not authenticated.

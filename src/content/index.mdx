@@ -1,50 +1,53 @@
 import { Cards } from "nextra/components";
 import { ReactIcon, ExpoIcon } from "../components/icons";
 
-# Introduction
+# Anuma
 
-Reverbia SDK is the TypeScript toolkit for building AI-powered applications with
-the Reverbia Portal API. It provides React hooks, streaming utilities, and
-framework integrations that let you add chat, image generation, embeddings, and
-more to your app with minimal setup.
+Build AI-powered apps with a unified API, persistent memory, and user-owned encryption.
+
+Anuma gives you access to models from OpenAI, Google, Anthropic, xAI, and
+open-source providers through a single API. No juggling provider keys, no
+managing multiple SDKs. Switch models without changing your code, store semantic
+memories that persist across sessions, and keep user data encrypted with keys
+only they control.
+
+Your users can pay for their own inference directly — you don't have to subsidize
+API costs or manage billing.
+
+## SDK
+
+For React and React Native apps. The SDK provides hooks for chat, memory, tool
+calling, image generation, web search, and encryption.
 
 ```bash
 npm install @reverbia/sdk
 ```
 
-## Quick Example
-
 ```tsx
 import { useChat } from "@reverbia/sdk/react";
 
-function Chat() {
-  const [response, setResponse] = useState("");
-  const { isLoading, sendMessage } = useChat({
-    getToken: async () => getAuthToken(),
-    onData: (chunk) => setResponse((prev) => prev + chunk),
-  });
+const { sendMessage, isLoading } = useChat({
+  getToken: async () => authToken,
+  onData: (chunk) => setResponse((prev) => prev + chunk),
+});
 
-  return (
-    <button
-      onClick={() =>
-        sendMessage({
-          messages: [{ role: "user", content: "Hello!" }],
-          model: "gpt-4o-mini",
-        })
-      }
-    >
-      {isLoading ? "Thinking..." : "Send"}
-    </button>
-  );
-}
+await sendMessage({
+  messages: [{ role: "user", content: "Hello!" }],
+  model: "gpt-4o-mini",
+});
 ```
 
-The SDK handles streaming, authentication, and state management so you can focus
-on building your product.
+## Portal API
 
-## Frameworks
+For other languages or direct HTTP access. OpenAI-compatible, so you can use
+existing tools and libraries. Chat completions with streaming, embeddings, tool
+calling, and server-side tools for image generation and web search.
+
+[API Reference →](/spec)
+
+## Examples
 
 <Cards num={2}>
-  <Cards.Card icon={<ReactIcon />} title="React" href="/sdk/react/README" />
-  <Cards.Card icon={<ExpoIcon />} title="Expo" href="/sdk/expo/README" />
+  <Cards.Card icon={<ReactIcon />} title="Next.js" href="/tutorial/start" />
+  <Cards.Card icon={<ExpoIcon />} title="Expo (coming soon)" href="/sdk/expo/README" />
 </Cards>
