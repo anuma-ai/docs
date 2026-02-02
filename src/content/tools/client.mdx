@@ -19,6 +19,30 @@ needs:
 - Parameters schema — What arguments the tool accepts
 - Executor function — Your code that runs when the tool is called
 
+## Tool Definition Format
+
+Tools are defined as function objects with a JSON Schema for parameters:
+
+```json
+{
+  "type": "function",
+  "name": "get_weather",
+  "description": "Get current weather for a location",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "location": {
+        "type": "string",
+        "description": "City name or coordinates"
+      }
+    },
+    "required": ["location"]
+  }
+}
+```
+
+Pass an array of these definitions in the `tools` field of your request.
+
 Client tools are useful when the tool needs access to user data or local
 resources. The SDK includes pre-built tools for Google Calendar (list, create,
 and update events) and Google Drive (search and read files). These require user
@@ -67,3 +91,19 @@ The relevant fields are:
 For streaming responses, arguments arrive incrementally through
 `response.function_call_arguments.delta` events before the final
 `response.function_call_arguments.done` event.
+
+## Returning Tool Results
+
+After executing a tool, send the result back to continue the conversation. Add a
+message with `role: "tool"` to the input array:
+
+```json
+{
+  "role": "tool",
+  "content": [{"type": "text", "text": "{\"temperature\": 72, \"conditions\": \"sunny\"}"}],
+  "tool_call_id": "call_34f3LxadP4vC240vPZHHrjNB"
+}
+```
+
+The `tool_call_id` must match the `id` from the tool call. The model will then
+continue generating with this information.
