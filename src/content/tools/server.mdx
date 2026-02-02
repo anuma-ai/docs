@@ -1,0 +1,18 @@
+# Server-Side Tools
+
+Server-side tools run on the Portal API. The entire flow happens in a single
+request:
+
+1. You send a message with server tools enabled
+2. The model decides to call a tool (e.g., web search)
+3. The API executes the tool internally
+4. The model sees the result and continues generating
+5. You receive the final response with tool results incorporated
+
+Your app doesn't need to handle anything — the API manages execution and
+continuation automatically. The model's response arrives as one streaming
+response, even though tool execution happened in the middle.
+
+To use server tools, specify which ones you want by name. Pass an array of tool
+names to filter which server tools are available for the request. See the
+[full list of server tools](/tools/list).

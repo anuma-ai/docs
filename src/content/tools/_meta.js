@@ -1,4 +1,6 @@
 export default {
   overview: "Overview",
-  list: "Tools List",
+  server: "Server-Side",
+  client: "Client-Side",
+  list: "List",
 };
