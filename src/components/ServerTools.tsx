@@ -26,6 +26,7 @@ export async function ServerTools() {
 
   const data: ToolsResponse = await res.json();
   const tools = Object.values(data)
+    .filter((tool) => tool.name)
     .map((tool) => ({
       name: tool.name,
       description: tool.schema?.description ?? tool.description ?? "",
