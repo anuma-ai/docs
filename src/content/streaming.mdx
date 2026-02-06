@@ -4,9 +4,9 @@ Users expect to see responses as they're generated, not after a long wait. The S
 
 ## Callbacks
 
-The SDK provides callbacks for each phase of the streaming lifecycle. The `onData` callback receives each content chunk as it arrives — use this to append to a displayed response. When streaming completes, `onFinish` is called with the full response object. If something goes wrong, `onError` handles it.
+The SDK provides [callbacks](/sdk/react/Hooks/useChat#parameters) for each phase of the streaming lifecycle. The `onData` callback receives each content chunk as it arrives — use this to append to a displayed response. When streaming completes, `onFinish` is called with the full response object. If something goes wrong, `onError` handles it.
 
-You can cancel streaming at any time by calling `stop()`. Partial responses are automatically saved to the conversation, so nothing is lost.
+You can cancel streaming at any time by calling [`stop()`](/sdk/react/Hooks/useChat#returns). Partial responses are automatically saved to the conversation, so nothing is lost.
 
 ## Usage
 

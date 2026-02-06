@@ -25,7 +25,7 @@ const {
 } = useChatStorage({ database, getToken });
 ```
 
-When you call `sendMessage`, the message is saved to the database first, then sent to the Portal API along with conversation history. The response streams back in real-time, and once complete, it's saved locally. If the user cancels mid-stream, partial responses are still preserved.
+When you call [`sendMessage`](/sdk/react/Internal/interfaces/UseChatStorageResult#sendmessage), the message is saved to the database first, then sent to the Portal API along with conversation history. The response streams back in real-time, and once complete, it's saved locally. If the user cancels mid-stream, partial responses are still preserved.
 
 The [Chat with Storage](/tutorial/useChatStorage) tutorial walks through a complete implementation.
 

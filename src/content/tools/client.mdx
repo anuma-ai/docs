@@ -40,7 +40,7 @@ Pass tools through [`useChat`](/sdk/react/Hooks/useChat) for basic tool calling,
 
 By default, auto-execute mode runs your function automatically and continues the conversation seamlessly.
 
-For cases where you want user confirmation before executing a tool, use manual mode. The `onToolCall` callback gives you control over whether and how the tool runs:
+For cases where you want user confirmation before executing a tool, use manual mode. The [`onToolCall`](/sdk/react/Hooks/useChat#parameters) callback gives you control over whether and how the tool runs:
 
 ```tsx
 const { sendMessage } = useChat({
