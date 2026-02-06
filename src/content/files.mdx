@@ -1,56 +1,33 @@
 # Files and Images
 
-Messages can include files in two directions: attachments you send to the model,
-and content the model generates. These work differently.
+Language models work with text, but users want to share documents and images. The SDK bridges this gap by automatically extracting text from files before sending them as context.
 
-## Attachments
+## Document Processing
 
-Attachments are files users share with the AI — documents, images, spreadsheets,
-archives. The SDK processes these before sending to make them useful as context.
+The SDK extracts text from PDF (all pages), Word documents (raw text), Excel spreadsheets (structured JSON with sheet names), and ZIP archives (recursively processing files inside). Processing happens automatically when you attach files to a message. The extracted text is sent as context to the model, while original metadata is preserved for your UI.
 
-### Document Processing
+For more control over individual file types, see [`usePdf`](/sdk/react/Hooks/usePdf) and [`useOCR`](/sdk/react/Hooks/useOCR). To manage file attachments directly, use [`useFiles`](/sdk/react/Hooks/useFiles).
 
-For documents, the SDK extracts text content so the model can understand what's
-in the file. Raw binary files aren't useful to language models — they need text.
+## Images
 
-The SDK includes processors for common document types:
+Images are sent directly to vision models without text extraction. Models can identify objects, read text in images, understand charts, and answer questions about visual content. If you need text extracted from images specifically, use the OCR utility separately.
 
-- **PDF** — Extracts text content from all pages
-- **Word (.docx)** — Extracts raw text without formatting
-- **Excel (.xlsx, .xls)** — Converts spreadsheets to structured JSON, preserving
-  sheet names and data organization
-- **ZIP archives** — Extracts and processes nested files recursively, returning
-  a structured summary with content from each supported file inside
+## With Chat
 
-Processors run automatically when you send a message with file attachments. The
-extracted text is included as context for the model. File metadata is preserved
-separately so your app can display what files were attached.
+[`useChatStorage`](/sdk/react/Chat/useChatStorage) handles file processing automatically when you send messages with attachments. You can configure processing behavior:
 
-You can extend the processor system with custom processors for additional file
-types.
-
-### Images
-
-Images are sent directly to the model without text extraction. Vision models
-analyze the visual content — identifying objects, reading text in images,
-understanding charts, or answering questions about what they see.
-
-Multiple images can be included in a single message. The model sees all of them
-and can compare or reference specific images in its response.
-
-For images that contain text you want extracted, OCR is available as a separate
-utility.
+```tsx
+const { sendMessage } = useChatStorage({
+  database,
+  getToken,
+  fileProcessingOptions: {
+    maxFileSizeBytes: 10 * 1024 * 1024, // 10MB
+    keepOriginalFiles: true,
+    onProgress: (current, total) => setProgress(current / total),
+  },
+});
+```
 
 ## Generated Content
 
-When the model generates files (like images from the image generation tool),
-the SDK handles downloading and storing them locally.
-
-Generated image URLs from the API are temporary. The SDK downloads images
-automatically and stores them encrypted on the user's device. This ensures
-images remain available in conversation history even after the original URLs
-expire.
-
-The stored files are encrypted at rest and tied to the user's session. When
-displaying messages, the SDK resolves stored files to displayable URLs
-on-demand.
+When models generate images through the image generation tool, the SDK downloads them automatically, stores them encrypted locally, and persists them in conversation history. Temporary API URLs are replaced with permanent local storage, so images remain available even after the original URLs expire.

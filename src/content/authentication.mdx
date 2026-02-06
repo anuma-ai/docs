@@ -1,12 +1,16 @@
 # Authentication
 
-The Anuma Portal API supports two authentication methods depending on your use
-case.
+Every API request needs an authentication token. The SDK handles this through a `getToken` function you provide to any hook that makes API requests.
+
+```typescript
+type GetToken = () => Promise<string | null>;
+```
+
+The SDK calls this function before each request to get a fresh token. Return `null` if the user is not authenticated.
 
 ## User Authentication with Privy
 
-Use [Privy](https://www.privy.io/) for client-side applications where users
-authenticate with their own wallet and pay for inference directly.
+Use [Privy](https://www.privy.io/) for client-side applications where users authenticate with their own wallet and pay for inference directly. Users pay using USDC from their wallet, which means no inference costs for you as the developer. Privy supports embedded wallets, so users don't need a browser extension.
 
 ```typescript
 import { useIdentityToken } from "@privy-io/react-auth";
@@ -20,19 +24,15 @@ function Chat() {
 }
 ```
 
-This approach:
-
-- Users pay for their own inference using USDC from their wallet
-- No inference costs for the developer
-- Works with embedded wallets (no browser extension required)
-
 See the [Next.js Example](/tutorial/start) for a complete Privy implementation.
-
 
 ## API Key Authentication (coming soon)
 
-Use API keys for server-side applications or when you (the developer) pay for
-inference costs.
+Use API keys for server-side applications or when you as the developer pay for inference costs. API keys are passed via the `Authorization` header:
+
+```
+Authorization: Bearer <your-api-key>
+```
 
 ```typescript
 import { useChat } from "@reverbia/sdk/react";
@@ -42,23 +42,4 @@ const { sendMessage } = useChat({
 });
 ```
 
-API keys are passed via the `Authorization` header:
-
-```
-Authorization: Bearer <your-api-key>
-```
-
-**Getting an API key:** Developer dashboard coming soon. You'll be able to
-generate API keys and top up your balance with USDC or Stripe.
-
-## The `getToken` Function
-
-SDK hooks that make API requests accept a `getToken` option — an async function
-that returns the authentication token.
-
-```typescript
-type GetToken = () => Promise<string | null>;
-```
-
-The SDK calls this function before each API request to get a fresh token. Return
-`null` if the user is not authenticated.
+A developer dashboard is coming soon where you'll be able to generate API keys and top up your balance with USDC or Stripe.

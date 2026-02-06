@@ -2,7 +2,7 @@
 
 > **useChatStorage**(`options`: `object`): [`UseChatStorageResult`](../Internal/interfaces/UseChatStorageResult.md)
 
-Defined in: [src/expo/useChatStorage.ts:175](https://github.com/zeta-chain/ai-sdk/blob/main/src/expo/useChatStorage.ts#L175)
+Defined in: [src/expo/useChatStorage.ts:194](https://github.com/zeta-chain/ai-sdk/blob/main/src/expo/useChatStorage.ts#L194)
 
 A React hook that wraps useChat with automatic message persistence using WatermelonDB.
 
@@ -77,6 +77,30 @@ Automatically create a new conversation if none is set (default: true)
 <tr>
 <td>
 
+`options.autoEmbedMessages?`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+<td>
+
+Automatically generate embeddings for messages after saving.
+Enables semantic search over past conversations via searchMessages().
+
+**Default**
+
+```ts
+true
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
 `options.baseUrl?`
 
 </td>
@@ -139,6 +163,29 @@ WatermelonDB database instance for storing conversations and messages
 <td>
 
 Title for auto-created conversations (default: "New conversation")
+
+</td>
+</tr>
+<tr>
+<td>
+
+`options.embeddingModel?`
+
+</td>
+<td>
+
+`string`
+
+</td>
+<td>
+
+Embedding model to use when autoEmbedMessages is enabled.
+
+**Default**
+
+```ts
+DEFAULT_API_EMBEDDING_MODEL
+```
 
 </td>
 </tr>
@@ -262,6 +309,30 @@ File preprocessors to use for automatic text extraction.
 <td>
 
 Function to retrieve the auth token for API requests
+
+</td>
+</tr>
+<tr>
+<td>
+
+`options.minContentLength?`
+
+</td>
+<td>
+
+`number`
+
+</td>
+<td>
+
+Minimum content length required to generate embeddings.
+Messages shorter than this are skipped as they provide limited semantic value.
+
+**Default**
+
+```ts
+10
+```
 
 </td>
 </tr>

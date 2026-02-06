@@ -2,7 +2,7 @@
 
 > **PostApiV1SubscriptionsRenewData** = `object`
 
-Defined in: [src/client/types.gen.ts:1342](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1342)
+Defined in: [src/client/types.gen.ts:1996](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1996)
 
 ## Properties
 
@@ -10,7 +10,7 @@ Defined in: [src/client/types.gen.ts:1342](https://github.com/zeta-chain/ai-sdk/
 
 > `optional` **body**: `never`
 
-Defined in: [src/client/types.gen.ts:1343](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1343)
+Defined in: [src/client/types.gen.ts:1997](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1997)
 
 ***
 
@@ -18,7 +18,7 @@ Defined in: [src/client/types.gen.ts:1343](https://github.com/zeta-chain/ai-sdk/
 
 > `optional` **path**: `never`
 
-Defined in: [src/client/types.gen.ts:1344](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1344)
+Defined in: [src/client/types.gen.ts:1998](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1998)
 
 ***
 
@@ -26,7 +26,7 @@ Defined in: [src/client/types.gen.ts:1344](https://github.com/zeta-chain/ai-sdk/
 
 > `optional` **query**: `never`
 
-Defined in: [src/client/types.gen.ts:1345](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1345)
+Defined in: [src/client/types.gen.ts:1999](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1999)
 
 ***
 
@@ -34,4 +34,4 @@ Defined in: [src/client/types.gen.ts:1345](https://github.com/zeta-chain/ai-sdk/
 
 > **url**: `"/api/v1/subscriptions/renew"`
 
-Defined in: [src/client/types.gen.ts:1346](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1346)
+Defined in: [src/client/types.gen.ts:2000](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L2000)

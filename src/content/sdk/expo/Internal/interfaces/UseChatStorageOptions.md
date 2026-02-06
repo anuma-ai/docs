@@ -1,6 +1,6 @@
 # UseChatStorageOptions
 
-Defined in: [src/expo/useChatStorage.ts:78](https://github.com/zeta-chain/ai-sdk/blob/main/src/expo/useChatStorage.ts#L78)
+Defined in: [src/expo/useChatStorage.ts:88](https://github.com/zeta-chain/ai-sdk/blob/main/src/expo/useChatStorage.ts#L88)
 
 Options for useChatStorage hook (Expo version)
 
@@ -16,7 +16,7 @@ Uses the base options without React-specific features (no local chat, no tools).
 
 > `optional` **apiType**: `ApiType`
 
-Defined in: [src/expo/useChatStorage.ts:84](https://github.com/zeta-chain/ai-sdk/blob/main/src/expo/useChatStorage.ts#L84)
+Defined in: [src/expo/useChatStorage.ts:94](https://github.com/zeta-chain/ai-sdk/blob/main/src/expo/useChatStorage.ts#L94)
 
 Which API endpoint to use. Default: "responses"
 
@@ -29,7 +29,7 @@ Which API endpoint to use. Default: "responses"
 
 > `optional` **autoCreateConversation**: `boolean`
 
-Defined in: [src/lib/db/chat/types.ts:177](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L177)
+Defined in: [src/lib/db/chat/types.ts:235](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L235)
 
 Automatically create a new conversation if none is set (default: true)
 
@@ -39,11 +39,32 @@ Automatically create a new conversation if none is set (default: true)
 
 ***
 
+### autoEmbedMessages?
+
+> `optional` **autoEmbedMessages**: `boolean`
+
+Defined in: [src/lib/db/chat/types.ts:283](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L283)
+
+Automatically generate embeddings for messages after saving.
+Enables semantic search over past conversations via searchMessages().
+
+**Default**
+
+```ts
+true
+```
+
+**Inherited from**
+
+`BaseUseChatStorageOptions.autoEmbedMessages`
+
+***
+
 ### baseUrl?
 
 > `optional` **baseUrl**: `string`
 
-Defined in: [src/lib/db/chat/types.ts:183](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L183)
+Defined in: [src/lib/db/chat/types.ts:241](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L241)
 
 Base URL for the chat API endpoint
 
@@ -57,7 +78,7 @@ Base URL for the chat API endpoint
 
 > `optional` **conversationId**: `string`
 
-Defined in: [src/lib/db/chat/types.ts:175](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L175)
+Defined in: [src/lib/db/chat/types.ts:233](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L233)
 
 ID of an existing conversation to load and continue
 
@@ -71,7 +92,7 @@ ID of an existing conversation to load and continue
 
 > **database**: `Database`
 
-Defined in: [src/lib/db/chat/types.ts:173](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L173)
+Defined in: [src/lib/db/chat/types.ts:231](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L231)
 
 WatermelonDB database instance for storing conversations and messages
 
@@ -85,7 +106,7 @@ WatermelonDB database instance for storing conversations and messages
 
 > `optional` **defaultConversationTitle**: `string`
 
-Defined in: [src/lib/db/chat/types.ts:179](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L179)
+Defined in: [src/lib/db/chat/types.ts:237](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L237)
 
 Title for auto-created conversations (default: "New conversation")
 
@@ -95,11 +116,31 @@ Title for auto-created conversations (default: "New conversation")
 
 ***
 
+### embeddingModel?
+
+> `optional` **embeddingModel**: `string`
+
+Defined in: [src/lib/db/chat/types.ts:288](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L288)
+
+Embedding model to use when autoEmbedMessages is enabled.
+
+**Default**
+
+```ts
+DEFAULT_API_EMBEDDING_MODEL
+```
+
+**Inherited from**
+
+`BaseUseChatStorageOptions.embeddingModel`
+
+***
+
 ### fileProcessingOptions?
 
 > `optional` **fileProcessingOptions**: `object`
 
-Defined in: [src/lib/db/chat/types.ts:202](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L202)
+Defined in: [src/lib/db/chat/types.ts:260](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L260)
 
 Options for file preprocessing behavior
 
@@ -231,7 +272,7 @@ Callback for progress updates
 
 > `optional` **fileProcessors**: `any`\[] | `null`
 
-Defined in: [src/lib/db/chat/types.ts:198](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L198)
+Defined in: [src/lib/db/chat/types.ts:256](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L256)
 
 File preprocessors to use for automatic text extraction.
 
@@ -249,7 +290,7 @@ File preprocessors to use for automatic text extraction.
 
 > `optional` **getToken**: () => `Promise`<`string` | `null`>
 
-Defined in: [src/lib/db/chat/types.ts:181](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L181)
+Defined in: [src/lib/db/chat/types.ts:239](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L239)
 
 Function to retrieve the auth token for API requests
 
@@ -263,11 +304,32 @@ Function to retrieve the auth token for API requests
 
 ***
 
+### minContentLength?
+
+> `optional` **minContentLength**: `number`
+
+Defined in: [src/lib/db/chat/types.ts:294](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L294)
+
+Minimum content length required to generate embeddings.
+Messages shorter than this are skipped as they provide limited semantic value.
+
+**Default**
+
+```ts
+10
+```
+
+**Inherited from**
+
+`BaseUseChatStorageOptions.minContentLength`
+
+***
+
 ### onData()?
 
 > `optional` **onData**: (`chunk`: `string`) => `void`
 
-Defined in: [src/lib/db/chat/types.ts:185](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L185)
+Defined in: [src/lib/db/chat/types.ts:243](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L243)
 
 Callback invoked with each streamed response chunk
 
@@ -310,7 +372,7 @@ Callback invoked with each streamed response chunk
 
 > `optional` **onError**: (`error`: `Error`) => `void`
 
-Defined in: [src/lib/db/chat/types.ts:191](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L191)
+Defined in: [src/lib/db/chat/types.ts:249](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L249)
 
 Callback invoked when an error occurs during the request
 
@@ -353,7 +415,7 @@ Callback invoked when an error occurs during the request
 
 > `optional` **onFinish**: (`response`: [`LlmapiResponseResponse`](../../../client/Internal/type-aliases/LlmapiResponseResponse.md)) => `void`
 
-Defined in: [src/lib/db/chat/types.ts:189](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L189)
+Defined in: [src/lib/db/chat/types.ts:247](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L247)
 
 Callback invoked when the response completes successfully
 
@@ -396,7 +458,7 @@ Callback invoked when the response completes successfully
 
 > `optional` **onThinking**: (`chunk`: `string`) => `void`
 
-Defined in: [src/lib/db/chat/types.ts:187](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L187)
+Defined in: [src/lib/db/chat/types.ts:245](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L245)
 
 Callback invoked when thinking/reasoning content is received (from `<think>` tags or API reasoning)
 
@@ -439,7 +501,7 @@ Callback invoked when thinking/reasoning content is received (from `<think>` tag
 
 > `optional` **serverTools**: `object`
 
-Defined in: [src/lib/db/chat/types.ts:216](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L216)
+Defined in: [src/lib/db/chat/types.ts:274](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L274)
 
 Configuration for server-side tools fetching and caching.
 Server tools are fetched from /api/v1/tools and cached in localStorage.

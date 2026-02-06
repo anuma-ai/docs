@@ -2,7 +2,7 @@
 
 > **GetApiV1DocsSwaggerJsonResponses** = `object`
 
-Defined in: [src/client/types.gen.ts:1104](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1104)
+Defined in: [src/client/types.gen.ts:1758](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1758)
 
 ## Properties
 
@@ -10,7 +10,7 @@ Defined in: [src/client/types.gen.ts:1104](https://github.com/zeta-chain/ai-sdk/
 
 > **200**: `object`
 
-Defined in: [src/client/types.gen.ts:1108](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1108)
+Defined in: [src/client/types.gen.ts:1762](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1762)
 
 OK
 

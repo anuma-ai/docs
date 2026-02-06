@@ -2,7 +2,7 @@
 
 > **HandlersSetSubscriptionTierRequest** = `object`
 
-Defined in: [src/client/types.gen.ts:159](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L159)
+Defined in: [src/client/types.gen.ts:250](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L250)
 
 ## Properties
 
@@ -10,7 +10,7 @@ Defined in: [src/client/types.gen.ts:159](https://github.com/zeta-chain/ai-sdk/b
 
 > `optional` **tier**: `string`
 
-Defined in: [src/client/types.gen.ts:163](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L163)
+Defined in: [src/client/types.gen.ts:254](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L254)
 
 "basic" or "pro"
 
@@ -20,4 +20,4 @@ Defined in: [src/client/types.gen.ts:163](https://github.com/zeta-chain/ai-sdk/b
 
 > `optional` **user\_address**: `string`
 
-Defined in: [src/client/types.gen.ts:164](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L164)
+Defined in: [src/client/types.gen.ts:255](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L255)

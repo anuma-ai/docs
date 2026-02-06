@@ -53,6 +53,12 @@ function ChatComponent() {
 }
 ```
 
+## Chat
+
+| Function | Description |
+| ------ | ------ |
+| [useChatStorage](Chat/useChatStorage.md) | A React hook that wraps useChat with automatic message persistence using WatermelonDB. |
+
 ## Encryption
 
 | Function | Description |
@@ -70,10 +76,10 @@ function ChatComponent() {
 | [useBackup](Hooks/useBackup.md) | Unified React hook for backup and restore functionality. |
 | [useBackupAuth](Hooks/useBackupAuth.md) | Hook to access unified backup authentication state and methods. |
 | [useChat](Hooks/useChat.md) | A React hook for managing chat completions with authentication. |
-| [useChatStorage](Hooks/useChatStorage.md) | A React hook that wraps useChat with automatic message persistence using WatermelonDB. |
 | [useDropboxAuth](Hooks/useDropboxAuth.md) | Hook to access Dropbox authentication state and methods. |
 | [useDropboxBackup](Hooks/useDropboxBackup.md) | React hook for Dropbox backup and restore functionality. |
 | [useEncryption](Hooks/useEncryption.md) | Hook that provides encryption key management for securing local data. |
+| [useFiles](Hooks/useFiles.md) | A React hook for managing files (images, videos, audio, documents). |
 | [useGoogleDriveAuth](Hooks/useGoogleDriveAuth.md) | Hook to access Google Drive authentication state and methods. |
 | [useGoogleDriveBackup](Hooks/useGoogleDriveBackup.md) | React hook for Google Drive backup and restore functionality. |
 | [useICloudAuth](Hooks/useICloudAuth.md) | Hook to access iCloud authentication state and methods. |
@@ -84,6 +90,8 @@ function ChatComponent() {
 | [usePdf](Hooks/usePdf.md) | React hook for extracting text from PDF files. |
 | [useProjects](Hooks/useProjects.md) | A React hook for managing projects (conversation groups). |
 | [useSettings](Hooks/useSettings.md) | A React hook for managing user settings with automatic persistence using WatermelonDB. |
+| [useSubscription](Hooks/useSubscription.md) | React hook for managing subscription status and billing operations. Provides methods to check status, upgrade, manage billing, cancel, and renew subscriptions. |
+| [useTools](Hooks/useTools.md) | React hook for fetching and caching server-side tools. |
 
 ## Other
 

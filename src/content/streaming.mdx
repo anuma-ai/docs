@@ -1,34 +1,19 @@
 # Streaming
 
-Responses stream back from the API in chunks rather than arriving all at once.
-This enables real-time UI updates where users see the response being generated
-word by word.
+Users expect to see responses as they're generated, not after a long wait. The SDK streams responses back from the API in chunks, enabling real-time UI updates where text appears word by word.
 
 ## Callbacks
 
-The SDK provides callbacks for different events during streaming:
+The SDK provides callbacks for each phase of the streaming lifecycle. The `onData` callback receives each content chunk as it arrives — use this to append to a displayed response. When streaming completes, `onFinish` is called with the full response object. If something goes wrong, `onError` handles it.
 
-- **Data** — Called with each content chunk as it arrives. Use this to append to
-  a displayed response.
-- **Thinking** — Called with reasoning content for models that support extended
-  thinking. Shows how the model works through a problem.
-- **Finish** — Called when streaming completes successfully with the full
-  response object.
-- **Error** — Called if something goes wrong during the request.
+You can cancel streaming at any time by calling `stop()`. Partial responses are automatically saved to the conversation, so nothing is lost.
 
-## Cancellation
+## Usage
 
-You can abort a streaming request at any time. The SDK handles cleanup
-gracefully — the connection is terminated cleanly and any partial content
-received so far is preserved. The partial response is saved to the conversation
-so no data is lost.
+All chat hooks support streaming out of the box. For basic streaming without persistence, use [`useChat`](/sdk/react/Hooks/useChat). For streaming with automatic message storage, use [`useChatStorage`](/sdk/react/Chat/useChatStorage).
 
-## Thinking and Reasoning
+The [Chat with Storage](/tutorial/useChatStorage) tutorial shows a complete streaming chat UI implementation.
 
-Some models emit their reasoning process separately from the final response.
-OpenAI's o-series models show a reasoning summary. Claude with extended thinking
-reveals step-by-step problem solving before the answer.
+## Extended Thinking
 
-The SDK surfaces this through a dedicated callback so you can display the
-thinking process in your UI. This helps users understand how the model arrived
-at its answer and builds trust in complex responses.
+Some models like OpenAI's o-series or Claude with extended thinking emit their reasoning process separately from the final answer. The `onThinking` callback surfaces this, letting you show users how the model works through a problem before delivering the response.

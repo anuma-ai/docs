@@ -1,109 +1,57 @@
 # Client-Side Tools
 
-Client-side tools run in your app. The flow requires multiple API calls:
+When a tool needs access to local data, user permissions, or browser APIs, it has to run in your app rather than on the server. Client-side tools let you define custom functions that the model can call during a conversation.
 
-1. You send a message with client tools defined
-2. The model decides to call a tool and returns the tool call
-3. The SDK executes your tool function locally
-4. The SDK sends a new request with the tool result
-5. The model continues generating with the result
-6. You receive the final response
+## How It Works
 
-This is a multi-turn conversation under the hood. The SDK handles steps 3-5
-automatically when using auto-execute mode.
+You send a message with tool definitions attached. When the model decides to call a tool, the SDK executes your function locally, sends the result back to the model, and the model continues with that information. In auto-execute mode, the SDK handles this entire flow automatically.
 
-To use client tools, pass complete tool definitions with each request. Each tool
-needs:
+## Tool Definition
 
-- Name and description — Helps the model understand when to use it
-- Parameters schema — What arguments the tool accepts
-- Executor function — Your code that runs when the tool is called
+Each tool needs a name and description to help the model decide when to use it, a parameters schema using JSON Schema, and an executor function with your code:
 
-## Tool Definition Format
-
-Tools are defined as function objects with a JSON Schema for parameters:
-
-```json
-{
-  "type": "function",
-  "name": "get_weather",
-  "description": "Get current weather for a location",
-  "parameters": {
-    "type": "object",
-    "properties": {
-      "location": {
-        "type": "string",
-        "description": "City name or coordinates"
-      }
+```tsx
+const tools = [{
+  type: "function",
+  name: "get_weather",
+  description: "Get current weather for a location",
+  parameters: {
+    type: "object",
+    properties: {
+      location: { type: "string", description: "City name" }
     },
-    "required": ["location"]
+    required: ["location"]
+  },
+  executor: async (args) => {
+    const response = await fetch(`/api/weather?city=${args.location}`);
+    return response.json();
   }
-}
+}];
+
+await sendMessage({
+  content: "What's the weather in SF?",
+  clientTools: tools,
+});
 ```
 
-Pass an array of these definitions in the `tools` field of your request.
-
-Client tools are useful when the tool needs access to user data or local
-resources. The SDK includes pre-built tools for Google Calendar (list, create,
-and update events) and Google Drive (search and read files). These require user
-OAuth and run in the browser — they can't be server-side.
+Pass tools through [`useChat`](/sdk/react/Hooks/useChat) for basic tool calling, or [`useChatStorage`](/sdk/react/Chat/useChatStorage) for tool calling with message persistence.
 
 ## Execution Modes
 
-Client-side tools support two execution modes:
+By default, auto-execute mode runs your function automatically and continues the conversation seamlessly.
 
-- Auto-execute (default) — The SDK runs your function and continues the
-  conversation automatically. You don't need to handle anything.
+For cases where you want user confirmation before executing a tool, use manual mode. The `onToolCall` callback gives you control over whether and how the tool runs:
 
-- Manual — The SDK emits an event with the tool call. Your app decides
-  whether to execute it, can ask for user confirmation, or handle it custom.
-  You're responsible for continuing the conversation.
-
-## Tool Call Response Format
-
-When the model decides to call a tool, the streaming response includes events
-that signal the tool call. The key event is `response.output_item.done` with
-`type: "function_call"`:
-
-```json
-{
-  "type": "response.output_item.done",
-  "item": {
-    "id": "fc_03cad38947ccbe7700698053198f28819590593d7fcd70cdba",
-    "type": "function_call",
-    "name": "google_calendar_list_events",
-    "call_id": "call_34f3LxadP4vC240vPZHHrjNB",
-    "arguments": "{}",
-    "status": "completed"
-  }
-}
+```tsx
+const { sendMessage } = useChat({
+  onToolCall: (toolCall) => {
+    if (confirm(`Allow ${toolCall.name}?`)) {
+      // Execute and continue manually
+    }
+  },
+});
 ```
 
-The relevant fields are:
+## Pre-Built Tools
 
-- type — Always `"function_call"` for tool calls
-- name — The name of the tool the model wants to call
-- call_id — Unique identifier for this tool call, used when sending results
-  back
-- arguments — JSON string containing the arguments for the tool
-- status — `"completed"` when the model has finished specifying the call
-
-For streaming responses, arguments arrive incrementally through
-`response.function_call_arguments.delta` events before the final
-`response.function_call_arguments.done` event.
-
-## Returning Tool Results
-
-After executing a tool, send the result back to continue the conversation. Add a
-message with `role: "tool"` to the input array:
-
-```json
-{
-  "role": "tool",
-  "content": [{"type": "text", "text": "{\"temperature\": 72, \"conditions\": \"sunny\"}"}],
-  "tool_call_id": "call_34f3LxadP4vC240vPZHHrjNB"
-}
-```
-
-The `tool_call_id` must match the `id` from the tool call. The model will then
-continue generating with this information.
+The SDK includes tools for Google Calendar (list, create, update events) and Google Drive (search, read files). These require user OAuth and run client-side only.

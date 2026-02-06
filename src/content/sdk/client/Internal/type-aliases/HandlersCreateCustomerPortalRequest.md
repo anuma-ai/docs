@@ -2,7 +2,7 @@
 
 > **HandlersCreateCustomerPortalRequest** = `object`
 
-Defined in: [src/client/types.gen.ts:87](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L87)
+Defined in: [src/client/types.gen.ts:146](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L146)
 
 ## Properties
 
@@ -10,4 +10,4 @@ Defined in: [src/client/types.gen.ts:87](https://github.com/zeta-chain/ai-sdk/bl
 
 > `optional` **return\_url**: `string`
 
-Defined in: [src/client/types.gen.ts:88](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L88)
+Defined in: [src/client/types.gen.ts:147](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L147)
