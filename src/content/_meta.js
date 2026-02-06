@@ -8,6 +8,7 @@ export default {
   conversations: "Conversations",
   streaming: "Streaming",
   files: "Files and Images",
+  memory: "Memory",
   tools: "Tools",
   models: "Models",
   "##": {
