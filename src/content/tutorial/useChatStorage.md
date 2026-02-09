@@ -23,6 +23,7 @@ const {
   setConversationId,
   deleteConversation,
   getAllFiles,
+  createMemoryRetrievalTool,
 } = useChatStorage({
   database,
   getToken,
@@ -148,6 +149,12 @@ const handleSendMessage = useCallback(
     // Reset streaming text accumulator
     streamingTextRef.current = "";
 
+    // Mark this conversation as streaming so we can preserve state when switching
+    if (explicitConversationId) {
+      streamingConversationIdRef.current = explicitConversationId;
+      setStreamingConversationIdState(explicitConversationId);
+    }
+
     // Use displayText for storage (clean user input), text for API (may include OCR/context)
     const textForStorage = displayText || text;
 
@@ -209,8 +216,15 @@ const handleSendMessage = useCallback(
     // If we have OCR/memory context that differs from displayText, pass it via memoryContext
     const memoryContext = displayText && text !== displayText ? text : undefined;
 
+    // Build messages array with optional system prompt
+    const messagesArray: Array<{ role: "system" | "user"; content: typeof contentParts }> = [];
+    if (systemPrompt) {
+      messagesArray.push({ role: "system" as const, content: [{ type: "text", text: systemPrompt }] });
+    }
+    messagesArray.push({ role: "user" as const, content: contentParts });
+
     const response = await sendMessage({
-      messages: [{ role: "user" as const, content: contentParts }],
+      messages: messagesArray,
       model,
       includeHistory: true,
       ...(temperature !== undefined && { temperature }),
@@ -221,7 +235,7 @@ const handleSendMessage = useCallback(
       ...(onThinking && { onThinking }),
       ...(sdkFiles && sdkFiles.length > 0 && { files: sdkFiles }),
       ...(memoryContext && { memoryContext }),
-      ...(serverTools && serverTools.length > 0 && { serverTools }),
+      ...(serverTools && (typeof serverTools === "function" || serverTools.length > 0) && { serverTools }),
       ...(clientTools && clientTools.length > 0 && { clientTools }),
       ...(toolChoice && { toolChoice }),
       ...(apiType && { apiType }),
@@ -230,8 +244,11 @@ const handleSendMessage = useCallback(
         // Accumulate text
         streamingTextRef.current += chunk;
 
-        // Notify callback for streaming updates
-        if (onStreamingData) {
+        // Only notify subscribers if user is viewing the streaming conversation
+        // This prevents streaming content from conversation A appearing in conversation B
+        const isViewingStreamingConversation =
+          loadedConversationIdRef.current === streamingConversationIdRef.current;
+        if (onStreamingData && isViewingStreamingConversation) {
           onStreamingData(chunk, streamingTextRef.current);
         }
       },
@@ -261,9 +278,13 @@ const handleSendMessage = useCallback(
           else if (currentResponse.tool_calls) {
             toolCalls = currentResponse.tool_calls;
           }
-          // SDK wrapped format: response.data.output with function_call items
+          // SDK wrapped format: response.data.output with function_call items (Responses API)
           else if (currentResponse.data?.output && Array.isArray(currentResponse.data.output)) {
             toolCalls = currentResponse.data.output.filter((item: any) => item.type === 'function_call');
+          }
+          // SDK wrapped format: response.data.choices with tool_calls (Completions API)
+          else if (currentResponse.data?.choices && currentResponse.data.choices[0]?.message?.tool_calls) {
+            toolCalls = currentResponse.data.choices[0].message.tool_calls;
           }
           // Responses API format: output array with function_call items
           else if (currentResponse.output && Array.isArray(currentResponse.output)) {
@@ -362,7 +383,10 @@ const handleSendMessage = useCallback(
             ...(explicitConversationId && { conversationId: explicitConversationId }),
             onData: (chunk: string) => {
               streamingTextRef.current += chunk;
-              if (onStreamingData) {
+              // Only notify if viewing the streaming conversation
+              const isViewingStreamingConversation =
+                loadedConversationIdRef.current === streamingConversationIdRef.current;
+              if (onStreamingData && isViewingStreamingConversation) {
                 onStreamingData(chunk, streamingTextRef.current);
               }
             },
@@ -383,49 +407,92 @@ const handleSendMessage = useCallback(
     // Sync final streamed text to React state after streaming completes
     const finalText = streamingTextRef.current;
 
-    setMessages((prev) =>
-      prev.map((msg) => {
-        if (msg.id === assistantMessageId) {
-          return {
-            ...msg,
-            parts: [{ type: "text", text: finalText }],
-          };
-        }
-        return msg;
-      })
-    );
+    // IMPORTANT: Only update if we're still on the same conversation
+    // This prevents overwriting a different conversation's messages when user switches mid-stream
+    // Use explicitConversationId (what this message was sent to) vs loadedConversationIdRef (what user is viewing)
+    const messageConversationId = explicitConversationId;
+    const viewingConversationId = loadedConversationIdRef.current;
+
+    if (messageConversationId && viewingConversationId && messageConversationId !== viewingConversationId) {
+      // Don't update messages - user has switched to a different conversation
+      // The message is saved to DB, so it will appear when user switches back to that conversation
+    } else {
+      setMessages((prev) => {
+        return prev.map((msg) => {
+          if (msg.id === assistantMessageId) {
+            return {
+              ...msg,
+              parts: [{ type: "text", text: finalText }],
+            };
+          }
+          return msg;
+        });
+      });
+    }
 
     // Generate title for the first message only
     // Use isFirstMessage captured at the start of handleSendMessage
-    if (isFirstMessage) {
+    // Use messageConversationId (the conversation this message was sent to), not the current viewing conversation
+    if (isFirstMessage && messageConversationId) {
       const userText = textForStorage || text;
       const assistantText = finalText;
 
-      const messagesForTitle = [
+      const conversationContext = [
         { role: "user", text: userText.slice(0, 200) },
         { role: "assistant", text: assistantText.slice(0, 200) },
-      ].filter((m) => m.text);
+      ]
+        .filter((m) => m.text)
+        .map((m) => `${m.role}: ${m.text}`)
+        .join("\n");
 
-      // Delay slightly to ensure conversation ID is available
-      setTimeout(() => {
-        const currentConvId = currentConversationIdRef.current;
-        if (!currentConvId) return;
+      // Generate title using sendMessage with skipStorage to avoid polluting the database
+      // Delay slightly to ensure main message is saved first
+      setTimeout(async () => {
+        try {
+          const titleResponse = await sendMessage({
+            messages: [
+              {
+                role: "user" as const,
+                content: [
+                  {
+                    type: "text",
+                    text: `Generate a short, descriptive title (3-6 words) for this conversation. Return ONLY the title, nothing else.\n\nConversation:\n${conversationContext}`,
+                  },
+                ],
+              },
+            ],
+            model: "openai/gpt-4o-mini",
+            maxOutputTokens: 50,
+            skipStorage: true,
+            includeHistory: false,
+          });
 
-        generateConversationTitle(messagesForTitle, getToken).then(
-          (newTitle) => {
-            if (newTitle) {
-              storeConversationTitle(currentConvId, newTitle);
-              setConversations((prevConversations) =>
-                prevConversations.map((conv) =>
-                  conv.id === currentConvId ||
-                  conv.conversationId === currentConvId
-                    ? { ...conv, title: newTitle }
-                    : conv
-                )
-              );
+          if (titleResponse.error || !titleResponse.data) return;
+
+          // Extract title from response
+          let newTitle = extractTextFromResponse(titleResponse.data);
+          if (newTitle) {
+            // Clean up the title - remove quotes, trim whitespace
+            newTitle = newTitle.replace(/^["']|["']$/g, "").trim();
+            // Limit to reasonable length
+            if (newTitle.length > 50) {
+              newTitle = newTitle.slice(0, 47) + "...";
             }
+
+            // Use the conversation ID this message was sent to, not where user is currently viewing
+            storeConversationTitle(messageConversationId, newTitle);
+            setConversations((prevConversations) =>
+              prevConversations.map((conv) =>
+                conv.id === messageConversationId ||
+                conv.conversationId === messageConversationId
+                  ? { ...conv, title: newTitle }
+                  : conv
+              )
+            );
           }
-        );
+        } catch {
+          // Title generation is non-critical, silently fail
+        }
       }, 500);
     }
 
@@ -434,6 +501,13 @@ const handleSendMessage = useCallback(
     setTimeout(() => {
       isSendingMessageRef.current = false;
     }, 100);
+
+    // Clear streaming state - streaming is complete
+    if (messageConversationId) {
+      streamingConversationIdRef.current = null;
+      setStreamingConversationIdState(null);
+      streamingMessagesCacheRef.current.delete(messageConversationId);
+    }
 
     return response;
   },
@@ -533,6 +607,13 @@ const handleNewConversation = useCallback(async (opts?: { projectId?: string; cr
   // Otherwise, just reset state - conversation will be created on first message via autoCreateConversation
   if (opts?.createImmediately || opts?.projectId) {
     const conv = await createConversation(opts);
+
+    // Mark this conversation as already "loaded" to prevent useEffect from loading empty DB results
+    // The caller will add optimistic messages after we return
+    if (conv?.conversationId) {
+      loadedConversationIdRef.current = conv.conversationId;
+    }
+
     return conv;
   }
 
@@ -543,16 +624,46 @@ const handleNewConversation = useCallback(async (opts?: { projectId?: string; cr
 
 const handleSwitchConversation = useCallback(
   async (id: string) => {
+    // Skip if this conversation is already loaded (prevents overwriting optimistic messages)
+    // This handles the case where page.tsx syncs from URL after chatbot.tsx created a new conversation
+    if (loadedConversationIdRef.current === id) {
+      currentConversationIdRef.current = id;
+      setConversationId(id);
+      return;
+    }
+
+    // If switching away from a streaming conversation, cache its messages
+    const currentLoadedId = loadedConversationIdRef.current;
+    if (currentLoadedId && streamingConversationIdRef.current === currentLoadedId) {
+      streamingMessagesCacheRef.current.set(currentLoadedId, messagesRef.current);
+    }
+
     // Update currentConversationIdRef immediately so title generation has the correct ID
     // This avoids waiting for the SDK state update cycle
     currentConversationIdRef.current = id;
 
-    // If we're actively sending a message, don't overwrite optimistic messages
-    // Just update the conversation ID in the SDK
-    if (isSendingMessageRef.current) {
-      loadedConversationIdRef.current = id;
-      setConversationId(id);
-      return;
+    // If switching TO a streaming conversation, restore from cache
+    if (streamingConversationIdRef.current === id) {
+      const cachedMessages = streamingMessagesCacheRef.current.get(id);
+      if (cachedMessages) {
+        loadedConversationIdRef.current = id;
+        // Update the assistant message with current streaming text before restoring
+        // The streaming text accumulates in streamingTextRef while user is on another conversation
+        const currentStreamingText = streamingTextRef.current;
+        const assistantMsgId = currentAssistantMessageIdRef.current;
+        const updatedMessages = cachedMessages.map((msg) => {
+          if (msg.id === assistantMsgId && currentStreamingText) {
+            return {
+              ...msg,
+              parts: [{ type: "text" as const, text: currentStreamingText }],
+            };
+          }
+          return msg;
+        });
+        setMessages(updatedMessages);
+        setConversationId(id);
+        return;
+      }
     }
 
     // Preload messages before switching to prevent flicker
@@ -565,16 +676,19 @@ const handleSwitchConversation = useCallback(
           parts.push({ type: "reasoning" as const, text: msg.thinking });
         }
 
-        // Add text content - strip memory context prefix if present
         // For assistant messages, SDK resolves image placeholders to markdown in content
-        const textContent = stripMemoryContext(msg.content);
+        const textContent = msg.content;
         if (textContent) {
           parts.push({ type: "text" as const, text: textContent });
         }
 
-        // Files may have `url` (direct data URI) or need to be read from OPFS
-        // Generated images (from MCP tools) have `sourceUrl` - they're embedded in content as markdown
+        // SDK stores file metadata in two ways:
+        // 1. `files` - Old style with full FileMetadata (includes url, id, etc.)
+        // 2. `fileIds` - New style with just media IDs (for OPFS-stored files)
         const storedFiles = msg.files || [];
+        const storedFileIds = msg.fileIds || [];
+
+        // Handle old-style files array
         if (storedFiles.length > 0) {
           for (const file of storedFiles) {
             const mimeType = file.type || "";
@@ -611,6 +725,36 @@ const handleSwitchConversation = useCallback(
           }
         }
 
+        // Handle new-style fileIds (media IDs for OPFS-stored files)
+        if (storedFiles.length === 0 && storedFileIds.length > 0 && walletAddress && hasEncryptionKey(walletAddress)) {
+          for (const mediaId of storedFileIds) {
+            try {
+              const encryptionKey = await getEncryptionKey(walletAddress);
+              const result = await readEncryptedFile(mediaId, encryptionKey);
+              if (result) {
+                const fileUrl = await blobToDataUrl(result.blob);
+                const mimeType = result.metadata?.type || "application/octet-stream";
+
+                if (mimeType.startsWith("image/")) {
+                  parts.push({
+                    type: "image_url" as const,
+                    image_url: { url: fileUrl },
+                  });
+                } else {
+                  parts.push({
+                    type: "file" as const,
+                    url: fileUrl,
+                    mediaType: mimeType,
+                    filename: result.metadata?.name || mediaId,
+                  });
+                }
+              }
+            } catch (err) {
+              console.error(`Failed to read file ${mediaId} from OPFS:`, err);
+            }
+          }
+        }
+
         return {
           id: msg.uniqueId ?? `msg-${Date.now()}-${Math.random()}`,
           role: msg.role,
@@ -630,9 +774,16 @@ const handleSwitchConversation = useCallback(
 
 const handleDeleteConversation = useCallback(
   async (id: string) => {
-    await deleteConversation(id);
-    if (conversationId === id) {
-      setMessages([]);
+    console.log("[useAppChatStorage] Deleting conversation:", id);
+    try {
+      const result = await deleteConversation(id);
+      console.log("[useAppChatStorage] Delete result:", result);
+      if (conversationId === id) {
+        setMessages([]);
+      }
+    } catch (error) {
+      console.error("[useAppChatStorage] Delete failed:", error);
+      throw error;
     }
   },
   [deleteConversation, conversationId]
