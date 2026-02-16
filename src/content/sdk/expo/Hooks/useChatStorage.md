@@ -2,7 +2,7 @@
 
 > **useChatStorage**(`options`: `object`): [`UseChatStorageResult`](../Internal/interfaces/UseChatStorageResult.md)
 
-Defined in: [src/expo/useChatStorage.ts:194](https://github.com/zeta-chain/ai-sdk/blob/main/src/expo/useChatStorage.ts#L194)
+Defined in: [src/expo/useChatStorage.ts:250](https://github.com/zeta-chain/ai-sdk/blob/main/src/expo/useChatStorage.ts#L250)
 
 A React hook that wraps useChat with automatic message persistence using WatermelonDB.
 
@@ -101,6 +101,29 @@ true
 <tr>
 <td>
 
+`options.autoFlushOnKeyAvailable?`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+<td>
+
+Auto-flush queued operations when key becomes available.
+
+**Default**
+
+```ts
+true
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
 `options.baseUrl?`
 
 </td>
@@ -169,6 +192,23 @@ Title for auto-created conversations (default: "New conversation")
 <tr>
 <td>
 
+`options.embeddedWalletSigner?`
+
+</td>
+<td>
+
+[`EmbeddedWalletSignerFn`](../../react/Internal/type-aliases/EmbeddedWalletSignerFn.md)
+
+</td>
+<td>
+
+Function for silent signing with Privy embedded wallets.
+
+</td>
+</tr>
+<tr>
+<td>
+
 `options.embeddingModel?`
 
 </td>
@@ -185,6 +225,29 @@ Embedding model to use when autoEmbedMessages is enabled.
 
 ```ts
 DEFAULT_API_EMBEDDING_MODEL
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+`options.enableQueue?`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+<td>
+
+Enable the in-memory write queue.
+
+**Default**
+
+```ts
+true
 ```
 
 </td>
@@ -315,6 +378,23 @@ Function to retrieve the auth token for API requests
 <tr>
 <td>
 
+`options.getWalletAddress?`
+
+</td>
+<td>
+
+() => `Promise`<`string` | `null`>
+
+</td>
+<td>
+
+Async function to poll for wallet address during Privy initialization.
+
+</td>
+</tr>
+<tr>
+<td>
+
 `options.minContentLength?`
 
 </td>
@@ -390,6 +470,24 @@ Callback invoked when the response completes successfully
 <tr>
 <td>
 
+`options.onServerToolCall?`
+
+</td>
+<td>
+
+(`toolCall`: `ServerToolCallEvent`) => `void`
+
+</td>
+<td>
+
+Callback invoked when a server-side tool (MCP) is called during streaming.
+Use this to show activity indicators like "Searching..." in the UI.
+
+</td>
+</tr>
+<tr>
+<td>
+
 `options.onThinking?`
 
 </td>
@@ -436,6 +534,41 @@ Server tools are fetched from /api/v1/tools and cached in localStorage.
 <td>
 
 Cache expiration time in milliseconds (default: 86400000 = 1 day)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`options.signMessage?`
+
+</td>
+<td>
+
+[`SignMessageFn`](../../react/Internal/type-aliases/SignMessageFn.md)
+
+</td>
+<td>
+
+Function to sign a message for encryption key derivation.
+
+</td>
+</tr>
+<tr>
+<td>
+
+`options.walletAddress?`
+
+</td>
+<td>
+
+`string`
+
+</td>
+<td>
+
+Wallet address for field-level encryption.
+When provided with signMessage, all sensitive content is encrypted at rest.
 
 </td>
 </tr>

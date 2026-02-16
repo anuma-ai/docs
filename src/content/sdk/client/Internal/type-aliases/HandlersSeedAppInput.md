@@ -2,7 +2,7 @@
 
 > **HandlersSeedAppInput** = `object`
 
-Defined in: [src/client/types.gen.ts:223](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L223)
+Defined in: [src/client/types.gen.ts:269](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L269)
 
 ## Properties
 
@@ -10,7 +10,7 @@ Defined in: [src/client/types.gen.ts:223](https://github.com/zeta-chain/ai-sdk/b
 
 > `optional` **api\_keys**: [`HandlersSeedApiKeyInput`](HandlersSeedApiKeyInput.md)\[]
 
-Defined in: [src/client/types.gen.ts:224](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L224)
+Defined in: [src/client/types.gen.ts:270](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L270)
 
 ***
 
@@ -18,7 +18,7 @@ Defined in: [src/client/types.gen.ts:224](https://github.com/zeta-chain/ai-sdk/b
 
 > `optional` **credit\_reset\_enabled**: `boolean`
 
-Defined in: [src/client/types.gen.ts:225](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L225)
+Defined in: [src/client/types.gen.ts:271](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L271)
 
 ***
 
@@ -26,7 +26,7 @@ Defined in: [src/client/types.gen.ts:225](https://github.com/zeta-chain/ai-sdk/b
 
 > `optional` **escrow\_contract**: `string`
 
-Defined in: [src/client/types.gen.ts:226](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L226)
+Defined in: [src/client/types.gen.ts:272](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L272)
 
 ***
 
@@ -34,7 +34,7 @@ Defined in: [src/client/types.gen.ts:226](https://github.com/zeta-chain/ai-sdk/b
 
 > `optional` **is\_active**: `boolean`
 
-Defined in: [src/client/types.gen.ts:227](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L227)
+Defined in: [src/client/types.gen.ts:273](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L273)
 
 ***
 
@@ -42,7 +42,7 @@ Defined in: [src/client/types.gen.ts:227](https://github.com/zeta-chain/ai-sdk/b
 
 > `optional` **name**: `string`
 
-Defined in: [src/client/types.gen.ts:228](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L228)
+Defined in: [src/client/types.gen.ts:274](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L274)
 
 ***
 
@@ -50,7 +50,7 @@ Defined in: [src/client/types.gen.ts:228](https://github.com/zeta-chain/ai-sdk/b
 
 > `optional` **privy\_app\_id**: `string`
 
-Defined in: [src/client/types.gen.ts:229](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L229)
+Defined in: [src/client/types.gen.ts:275](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L275)
 
 ***
 
@@ -58,4 +58,4 @@ Defined in: [src/client/types.gen.ts:229](https://github.com/zeta-chain/ai-sdk/b
 
 > `optional` **privy\_verification\_key**: `string`
 
-Defined in: [src/client/types.gen.ts:230](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L230)
+Defined in: [src/client/types.gen.ts:276](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L276)

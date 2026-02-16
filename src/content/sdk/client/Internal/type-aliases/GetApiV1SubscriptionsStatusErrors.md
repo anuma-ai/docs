@@ -2,7 +2,7 @@
 
 > **GetApiV1SubscriptionsStatusErrors** = `object`
 
-Defined in: [src/client/types.gen.ts:2040](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L2040)
+Defined in: [src/client/types.gen.ts:2295](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L2295)
 
 ## Properties
 
@@ -10,7 +10,7 @@ Defined in: [src/client/types.gen.ts:2040](https://github.com/zeta-chain/ai-sdk/
 
 > **401**: [`ResponseErrorResponse`](ResponseErrorResponse.md)
 
-Defined in: [src/client/types.gen.ts:2044](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L2044)
+Defined in: [src/client/types.gen.ts:2299](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L2299)
 
 Unauthorized
 
@@ -20,6 +20,6 @@ Unauthorized
 
 > **500**: [`ResponseErrorResponse`](ResponseErrorResponse.md)
 
-Defined in: [src/client/types.gen.ts:2048](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L2048)
+Defined in: [src/client/types.gen.ts:2303](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L2303)
 
 Internal Server Error

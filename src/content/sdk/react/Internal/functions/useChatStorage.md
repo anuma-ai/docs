@@ -1,14 +1,8 @@
 # useChatStorage
 
-> **useChatStorage**(`options`: `object`): [`UseChatStorageResult`](../Internal/interfaces/UseChatStorageResult.md)
+> **useChatStorage**(`options`: `object`): [`UseChatStorageResult`](../interfaces/UseChatStorageResult.md)
 
-Defined in: [src/react/useChatStorage.ts:453](https://github.com/zeta-chain/ai-sdk/blob/main/src/react/useChatStorage.ts#L453)
-
-A React hook that wraps useChat with automatic message persistence using WatermelonDB.
-
-This hook provides all the functionality of useChat plus automatic storage of
-messages and conversations to a WatermelonDB database. Messages are automatically
-saved when sent and when responses are received.
+Defined in: [src/react/useChatStorage.ts:548](https://github.com/zeta-chain/ai-sdk/blob/main/src/react/useChatStorage.ts#L548)
 
 ## Parameters
 
@@ -34,7 +28,7 @@ saved when sent and when responses are received.
 </td>
 <td>
 
-Configuration options
+‐
 
 </td>
 </tr>
@@ -90,6 +84,30 @@ Automatically create a new conversation if none is set (default: true)
 
 Automatically generate embeddings for messages after saving.
 Enables semantic search over past conversations via searchMessages().
+
+**Default**
+
+```ts
+true
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+`options.autoFlushOnKeyAvailable?`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+<td>
+
+Automatically flush queued operations when the encryption key becomes
+available. Requires `enableQueue` to be true.
 
 **Default**
 
@@ -170,6 +188,25 @@ Title for auto-created conversations (default: "New conversation")
 <tr>
 <td>
 
+`options.embeddedWalletSigner?`
+
+</td>
+<td>
+
+[`EmbeddedWalletSignerFn`](../type-aliases/EmbeddedWalletSignerFn.md)
+
+</td>
+<td>
+
+Function for silent signing with Privy embedded wallets.
+When provided, enables automatic encryption key derivation without
+user confirmation modals.
+
+</td>
+</tr>
+<tr>
+<td>
+
 `options.embeddingModel?`
 
 </td>
@@ -186,6 +223,31 @@ Embedding model to use when autoEmbedMessages is enabled.
 
 ```ts
 DEFAULT_API_EMBEDDING_MODEL
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+`options.enableQueue?`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+<td>
+
+Enable the in-memory write queue for operations when encryption key
+isn't yet available. When enabled, operations are held in memory and
+flushed to encrypted storage once the key becomes available.
+
+**Default**
+
+```ts
+true
 ```
 
 </td>
@@ -316,6 +378,25 @@ Function to retrieve the auth token for API requests
 <tr>
 <td>
 
+`options.getWalletAddress?`
+
+</td>
+<td>
+
+() => `Promise`<`string` | `null`>
+
+</td>
+<td>
+
+Async function that returns the wallet address when available.
+Used for polling during Privy embedded wallet initialization.
+When the wallet isn't ready yet, should return null.
+
+</td>
+</tr>
+<tr>
+<td>
+
 `options.minContentLength?`
 
 </td>
@@ -379,12 +460,30 @@ Callback invoked when an error occurs during the request
 </td>
 <td>
 
-(`response`: [`LlmapiResponseResponse`](../../client/Internal/type-aliases/LlmapiResponseResponse.md)) => `void`
+(`response`: [`LlmapiResponseResponse`](../../../client/Internal/type-aliases/LlmapiResponseResponse.md)) => `void`
 
 </td>
 <td>
 
 Callback invoked when the response completes successfully
+
+</td>
+</tr>
+<tr>
+<td>
+
+`options.onServerToolCall?`
+
+</td>
+<td>
+
+(`toolCall`: `ServerToolCallEvent`) => `void`
+
+</td>
+<td>
+
+Callback invoked when a server-side tool (MCP) is called during streaming.
+Use this to show activity indicators like "Searching..." in the UI.
 
 </td>
 </tr>
@@ -443,6 +542,25 @@ Cache expiration time in milliseconds (default: 86400000 = 1 day)
 <tr>
 <td>
 
+`options.signMessage?`
+
+</td>
+<td>
+
+[`SignMessageFn`](../type-aliases/SignMessageFn.md)
+
+</td>
+<td>
+
+Function to sign a message for encryption key derivation.
+Typically from Privy's useSignMessage hook.
+Required together with walletAddress for field-level encryption.
+
+</td>
+</tr>
+<tr>
+<td>
+
 `options.walletAddress?`
 
 </td>
@@ -453,16 +571,16 @@ Cache expiration time in milliseconds (default: 86400000 = 1 day)
 </td>
 <td>
 
-Wallet address for encrypted file storage.
-When provided, MCP-generated images are automatically encrypted and stored
-in OPFS using wallet-derived keys. Messages are returned with working blob URLs.
+Wallet address for encrypted file storage and field-level encryption.
+When provided with signMessage, all sensitive message content, conversation titles,
+and media metadata are encrypted at rest using AES-GCM with wallet-derived keys.
 
 Requires:
 
-* OPFS browser support
-* Encryption key to be requested via `requestEncryptionKey` first
+* OPFS browser support (for file storage)
+* signMessage function (for encryption key derivation)
 
-When not provided, falls back to the `writeFile` callback in sendMessage args.
+When not provided, data is stored in plaintext (backwards compatible).
 
 </td>
 </tr>
@@ -471,48 +589,4 @@ When not provided, falls back to the `writeFile` callback in sendMessage args.
 
 ## Returns
 
-[`UseChatStorageResult`](../Internal/interfaces/UseChatStorageResult.md)
-
-An object containing chat state, methods, and storage operations
-
-## Example
-
-```tsx
-import { Database } from '@nozbe/watermelondb';
-import { useChatStorage } from '@reverbia/sdk/react';
-
-function ChatComponent({ database }: { database: Database }) {
-  const {
-    isLoading,
-    sendMessage,
-    conversationId,
-    getMessages,
-    createConversation,
-  } = useChatStorage({
-    database,
-    getToken: async () => getAuthToken(),
-    onData: (chunk) => setResponse((prev) => prev + chunk),
-  });
-
-  const handleSend = async () => {
-    const result = await sendMessage({
-      content: 'Hello, how are you?',
-      model: 'gpt-4o-mini',
-      includeHistory: true, // Include previous messages from this conversation
-    });
-
-    if (result.error) {
-      console.error('Error:', result.error);
-    } else {
-      console.log('User message stored:', result.userMessage);
-      console.log('Assistant message stored:', result.assistantMessage);
-    }
-  };
-
-  return (
-    <div>
-      <button onClick={handleSend} disabled={isLoading}>Send</button>
-    </div>
-  );
-}
-```
+[`UseChatStorageResult`](../interfaces/UseChatStorageResult.md)

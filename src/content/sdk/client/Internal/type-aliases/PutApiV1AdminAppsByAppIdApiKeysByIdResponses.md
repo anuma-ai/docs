@@ -2,7 +2,7 @@
 
 > **PutApiV1AdminAppsByAppIdApiKeysByIdResponses** = `object`
 
-Defined in: [src/client/types.gen.ts:1452](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1452)
+Defined in: [src/client/types.gen.ts:1527](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1527)
 
 ## Properties
 
@@ -10,6 +10,6 @@ Defined in: [src/client/types.gen.ts:1452](https://github.com/zeta-chain/ai-sdk/
 
 > **200**: [`HandlersApiKeyResponse`](HandlersApiKeyResponse.md)
 
-Defined in: [src/client/types.gen.ts:1456](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1456)
+Defined in: [src/client/types.gen.ts:1531](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1531)
 
 OK
