@@ -5,11 +5,51 @@
 | Type Alias | Description |
 | ------ | ------ |
 | [ClientOptions](Internal/type-aliases/ClientOptions.md) | - |
+| [DeleteApiV1AdminAppsByAppIdApiKeysByIdData](Internal/type-aliases/DeleteApiV1AdminAppsByAppIdApiKeysByIdData.md) | - |
+| [DeleteApiV1AdminAppsByAppIdApiKeysByIdError](Internal/type-aliases/DeleteApiV1AdminAppsByAppIdApiKeysByIdError.md) | - |
+| [DeleteApiV1AdminAppsByAppIdApiKeysByIdErrors](Internal/type-aliases/DeleteApiV1AdminAppsByAppIdApiKeysByIdErrors.md) | - |
+| [DeleteApiV1AdminAppsByAppIdApiKeysByIdResponse](Internal/type-aliases/DeleteApiV1AdminAppsByAppIdApiKeysByIdResponse.md) | - |
+| [DeleteApiV1AdminAppsByAppIdApiKeysByIdResponses](Internal/type-aliases/DeleteApiV1AdminAppsByAppIdApiKeysByIdResponses.md) | - |
+| [DeleteApiV1AdminAppsByIdData](Internal/type-aliases/DeleteApiV1AdminAppsByIdData.md) | - |
+| [DeleteApiV1AdminAppsByIdError](Internal/type-aliases/DeleteApiV1AdminAppsByIdError.md) | - |
+| [DeleteApiV1AdminAppsByIdErrors](Internal/type-aliases/DeleteApiV1AdminAppsByIdErrors.md) | - |
+| [DeleteApiV1AdminAppsByIdResponse](Internal/type-aliases/DeleteApiV1AdminAppsByIdResponse.md) | - |
+| [DeleteApiV1AdminAppsByIdResponses](Internal/type-aliases/DeleteApiV1AdminAppsByIdResponses.md) | - |
+| [GetApiV1AdminAppsByAppIdApiKeysByIdData](Internal/type-aliases/GetApiV1AdminAppsByAppIdApiKeysByIdData.md) | - |
+| [GetApiV1AdminAppsByAppIdApiKeysByIdError](Internal/type-aliases/GetApiV1AdminAppsByAppIdApiKeysByIdError.md) | - |
+| [GetApiV1AdminAppsByAppIdApiKeysByIdErrors](Internal/type-aliases/GetApiV1AdminAppsByAppIdApiKeysByIdErrors.md) | - |
+| [GetApiV1AdminAppsByAppIdApiKeysByIdResponse](Internal/type-aliases/GetApiV1AdminAppsByAppIdApiKeysByIdResponse.md) | - |
+| [GetApiV1AdminAppsByAppIdApiKeysByIdResponses](Internal/type-aliases/GetApiV1AdminAppsByAppIdApiKeysByIdResponses.md) | - |
+| [GetApiV1AdminAppsByAppIdApiKeysData](Internal/type-aliases/GetApiV1AdminAppsByAppIdApiKeysData.md) | - |
+| [GetApiV1AdminAppsByAppIdApiKeysError](Internal/type-aliases/GetApiV1AdminAppsByAppIdApiKeysError.md) | - |
+| [GetApiV1AdminAppsByAppIdApiKeysErrors](Internal/type-aliases/GetApiV1AdminAppsByAppIdApiKeysErrors.md) | - |
+| [GetApiV1AdminAppsByAppIdApiKeysResponse](Internal/type-aliases/GetApiV1AdminAppsByAppIdApiKeysResponse.md) | - |
+| [GetApiV1AdminAppsByAppIdApiKeysResponses](Internal/type-aliases/GetApiV1AdminAppsByAppIdApiKeysResponses.md) | - |
+| [GetApiV1AdminAppsByIdData](Internal/type-aliases/GetApiV1AdminAppsByIdData.md) | - |
+| [GetApiV1AdminAppsByIdError](Internal/type-aliases/GetApiV1AdminAppsByIdError.md) | - |
+| [GetApiV1AdminAppsByIdErrors](Internal/type-aliases/GetApiV1AdminAppsByIdErrors.md) | - |
+| [GetApiV1AdminAppsByIdResponse](Internal/type-aliases/GetApiV1AdminAppsByIdResponse.md) | - |
+| [GetApiV1AdminAppsByIdResponses](Internal/type-aliases/GetApiV1AdminAppsByIdResponses.md) | - |
+| [GetApiV1AdminAppsData](Internal/type-aliases/GetApiV1AdminAppsData.md) | - |
+| [GetApiV1AdminAppsError](Internal/type-aliases/GetApiV1AdminAppsError.md) | - |
+| [GetApiV1AdminAppsErrors](Internal/type-aliases/GetApiV1AdminAppsErrors.md) | - |
+| [GetApiV1AdminAppsResponse](Internal/type-aliases/GetApiV1AdminAppsResponse.md) | - |
+| [GetApiV1AdminAppsResponses](Internal/type-aliases/GetApiV1AdminAppsResponses.md) | - |
 | [GetApiV1ConfigData](Internal/type-aliases/GetApiV1ConfigData.md) | - |
 | [GetApiV1ConfigError](Internal/type-aliases/GetApiV1ConfigError.md) | - |
 | [GetApiV1ConfigErrors](Internal/type-aliases/GetApiV1ConfigErrors.md) | - |
 | [GetApiV1ConfigResponse](Internal/type-aliases/GetApiV1ConfigResponse.md) | - |
 | [GetApiV1ConfigResponses](Internal/type-aliases/GetApiV1ConfigResponses.md) | - |
+| [GetApiV1CreditsBalanceData](Internal/type-aliases/GetApiV1CreditsBalanceData.md) | - |
+| [GetApiV1CreditsBalanceError](Internal/type-aliases/GetApiV1CreditsBalanceError.md) | - |
+| [GetApiV1CreditsBalanceErrors](Internal/type-aliases/GetApiV1CreditsBalanceErrors.md) | - |
+| [GetApiV1CreditsBalanceResponse](Internal/type-aliases/GetApiV1CreditsBalanceResponse.md) | - |
+| [GetApiV1CreditsBalanceResponses](Internal/type-aliases/GetApiV1CreditsBalanceResponses.md) | - |
+| [GetApiV1CreditsPacksData](Internal/type-aliases/GetApiV1CreditsPacksData.md) | - |
+| [GetApiV1CreditsPacksError](Internal/type-aliases/GetApiV1CreditsPacksError.md) | - |
+| [GetApiV1CreditsPacksErrors](Internal/type-aliases/GetApiV1CreditsPacksErrors.md) | - |
+| [GetApiV1CreditsPacksResponse](Internal/type-aliases/GetApiV1CreditsPacksResponse.md) | - |
+| [GetApiV1CreditsPacksResponses](Internal/type-aliases/GetApiV1CreditsPacksResponses.md) | - |
 | [GetApiV1DocsSwaggerJsonData](Internal/type-aliases/GetApiV1DocsSwaggerJsonData.md) | - |
 | [GetApiV1DocsSwaggerJsonResponse](Internal/type-aliases/GetApiV1DocsSwaggerJsonResponse.md) | - |
 | [GetApiV1DocsSwaggerJsonResponses](Internal/type-aliases/GetApiV1DocsSwaggerJsonResponses.md) | - |
@@ -23,9 +63,15 @@
 | [GetApiV1SubscriptionsStatusErrors](Internal/type-aliases/GetApiV1SubscriptionsStatusErrors.md) | - |
 | [GetApiV1SubscriptionsStatusResponse](Internal/type-aliases/GetApiV1SubscriptionsStatusResponse.md) | - |
 | [GetApiV1SubscriptionsStatusResponses](Internal/type-aliases/GetApiV1SubscriptionsStatusResponses.md) | - |
+| [GetApiV1TasksData](Internal/type-aliases/GetApiV1TasksData.md) | - |
+| [GetApiV1TasksError](Internal/type-aliases/GetApiV1TasksError.md) | - |
+| [GetApiV1TasksErrors](Internal/type-aliases/GetApiV1TasksErrors.md) | - |
+| [GetApiV1TasksResponse](Internal/type-aliases/GetApiV1TasksResponse.md) | - |
+| [GetApiV1TasksResponses](Internal/type-aliases/GetApiV1TasksResponses.md) | - |
 | [GetApiV1ToolsData](Internal/type-aliases/GetApiV1ToolsData.md) | - |
 | [GetApiV1ToolsError](Internal/type-aliases/GetApiV1ToolsError.md) | - |
 | [GetApiV1ToolsErrors](Internal/type-aliases/GetApiV1ToolsErrors.md) | - |
+| [GetApiV1ToolsResponse](Internal/type-aliases/GetApiV1ToolsResponse.md) | - |
 | [GetApiV1ToolsResponses](Internal/type-aliases/GetApiV1ToolsResponses.md) | - |
 | [GetHealthData](Internal/type-aliases/GetHealthData.md) | - |
 | [GetHealthError](Internal/type-aliases/GetHealthError.md) | - |
@@ -34,15 +80,29 @@
 | [GetHealthResponses](Internal/type-aliases/GetHealthResponses.md) | - |
 | [HandlersAddCreditsRequest](Internal/type-aliases/HandlersAddCreditsRequest.md) | - |
 | [HandlersAddCreditsResponse](Internal/type-aliases/HandlersAddCreditsResponse.md) | - |
+| [HandlersApiKeyResponse](Internal/type-aliases/HandlersApiKeyResponse.md) | - |
+| [HandlersApiKeyWithKeyResponse](Internal/type-aliases/HandlersApiKeyWithKeyResponse.md) | - |
 | [HandlersAppConfig](Internal/type-aliases/HandlersAppConfig.md) | - |
+| [HandlersAppResponse](Internal/type-aliases/HandlersAppResponse.md) | - |
 | [HandlersCancelSubscriptionResponse](Internal/type-aliases/HandlersCancelSubscriptionResponse.md) | - |
 | [HandlersCheckoutSessionResponse](Internal/type-aliases/HandlersCheckoutSessionResponse.md) | - |
+| [HandlersClaimDailyCreditsResponse](Internal/type-aliases/HandlersClaimDailyCreditsResponse.md) | - |
 | [HandlersConfigResponse](Internal/type-aliases/HandlersConfigResponse.md) | - |
+| [HandlersCreateApiKeyRequest](Internal/type-aliases/HandlersCreateApiKeyRequest.md) | - |
+| [HandlersCreateAppRequest](Internal/type-aliases/HandlersCreateAppRequest.md) | - |
 | [HandlersCreateCheckoutSessionRequest](Internal/type-aliases/HandlersCreateCheckoutSessionRequest.md) | - |
+| [HandlersCreateCreditPackCheckoutRequest](Internal/type-aliases/HandlersCreateCreditPackCheckoutRequest.md) | - |
 | [HandlersCreateCustomerPortalRequest](Internal/type-aliases/HandlersCreateCustomerPortalRequest.md) | - |
+| [HandlersCreditBalanceResponse](Internal/type-aliases/HandlersCreditBalanceResponse.md) | - |
+| [HandlersCreditPack](Internal/type-aliases/HandlersCreditPack.md) | - |
+| [HandlersCreditPacksResponse](Internal/type-aliases/HandlersCreditPacksResponse.md) | - |
 | [HandlersCustomerPortalResponse](Internal/type-aliases/HandlersCustomerPortalResponse.md) | - |
 | [HandlersExchangeRequest](Internal/type-aliases/HandlersExchangeRequest.md) | - |
+| [HandlersGeneratedApiKey](Internal/type-aliases/HandlersGeneratedApiKey.md) | - |
+| [HandlersGetToolsResponse](Internal/type-aliases/HandlersGetToolsResponse.md) | - |
 | [HandlersHealthResponse](Internal/type-aliases/HandlersHealthResponse.md) | - |
+| [HandlersListApiKeysResponse](Internal/type-aliases/HandlersListApiKeysResponse.md) | - |
+| [HandlersListAppsResponse](Internal/type-aliases/HandlersListAppsResponse.md) | - |
 | [HandlersRefreshRequest](Internal/type-aliases/HandlersRefreshRequest.md) | - |
 | [HandlersRenewSubscriptionResponse](Internal/type-aliases/HandlersRenewSubscriptionResponse.md) | - |
 | [HandlersRevokeRequest](Internal/type-aliases/HandlersRevokeRequest.md) | - |
@@ -53,7 +113,13 @@
 | [HandlersSetSubscriptionTierRequest](Internal/type-aliases/HandlersSetSubscriptionTierRequest.md) | - |
 | [HandlersSetSubscriptionTierResponse](Internal/type-aliases/HandlersSetSubscriptionTierResponse.md) | - |
 | [HandlersSubscriptionStatusResponse](Internal/type-aliases/HandlersSubscriptionStatusResponse.md) | - |
+| [HandlersSyncSnagResponse](Internal/type-aliases/HandlersSyncSnagResponse.md) | - |
+| [HandlersTaskResponse](Internal/type-aliases/HandlersTaskResponse.md) | - |
 | [HandlersTokenResponse](Internal/type-aliases/HandlersTokenResponse.md) | - |
+| [HandlersTool](Internal/type-aliases/HandlersTool.md) | - |
+| [HandlersUpdateApiKeyRequest](Internal/type-aliases/HandlersUpdateApiKeyRequest.md) | - |
+| [HandlersUpdateAppRequest](Internal/type-aliases/HandlersUpdateAppRequest.md) | - |
+| [HandlersWalletDetails](Internal/type-aliases/HandlersWalletDetails.md) | Wallet account details |
 | [LlmapiChatCompletionExtraFields](Internal/type-aliases/LlmapiChatCompletionExtraFields.md) | ExtraFields contains additional metadata |
 | [LlmapiChatCompletionRequest](Internal/type-aliases/LlmapiChatCompletionRequest.md) | - |
 | [LlmapiChatCompletionResponse](Internal/type-aliases/LlmapiChatCompletionResponse.md) | - |
@@ -91,13 +157,25 @@
 | [LlmapiRole](Internal/type-aliases/LlmapiRole.md) | Role is the message role (system, user, assistant, tool) |
 | [LlmapiThinkingOptions](Internal/type-aliases/LlmapiThinkingOptions.md) | Thinking configures extended thinking for Anthropic models |
 | [LlmapiToolCall](Internal/type-aliases/LlmapiToolCall.md) | - |
+| [LlmapiToolCallEvent](Internal/type-aliases/LlmapiToolCallEvent.md) | - |
 | [LlmapiToolCallFunction](Internal/type-aliases/LlmapiToolCallFunction.md) | Function contains the function call details |
+| [McpToolSchema](Internal/type-aliases/McpToolSchema.md) | - |
 | [Options](Internal/type-aliases/Options.md) | - |
 | [PostApiV1AdminAddCreditsData](Internal/type-aliases/PostApiV1AdminAddCreditsData.md) | - |
 | [PostApiV1AdminAddCreditsError](Internal/type-aliases/PostApiV1AdminAddCreditsError.md) | - |
 | [PostApiV1AdminAddCreditsErrors](Internal/type-aliases/PostApiV1AdminAddCreditsErrors.md) | - |
 | [PostApiV1AdminAddCreditsResponse](Internal/type-aliases/PostApiV1AdminAddCreditsResponse.md) | - |
 | [PostApiV1AdminAddCreditsResponses](Internal/type-aliases/PostApiV1AdminAddCreditsResponses.md) | - |
+| [PostApiV1AdminAppsByAppIdApiKeysData](Internal/type-aliases/PostApiV1AdminAppsByAppIdApiKeysData.md) | - |
+| [PostApiV1AdminAppsByAppIdApiKeysError](Internal/type-aliases/PostApiV1AdminAppsByAppIdApiKeysError.md) | - |
+| [PostApiV1AdminAppsByAppIdApiKeysErrors](Internal/type-aliases/PostApiV1AdminAppsByAppIdApiKeysErrors.md) | - |
+| [PostApiV1AdminAppsByAppIdApiKeysResponse](Internal/type-aliases/PostApiV1AdminAppsByAppIdApiKeysResponse.md) | - |
+| [PostApiV1AdminAppsByAppIdApiKeysResponses](Internal/type-aliases/PostApiV1AdminAppsByAppIdApiKeysResponses.md) | - |
+| [PostApiV1AdminAppsData](Internal/type-aliases/PostApiV1AdminAppsData.md) | - |
+| [PostApiV1AdminAppsError](Internal/type-aliases/PostApiV1AdminAppsError.md) | - |
+| [PostApiV1AdminAppsErrors](Internal/type-aliases/PostApiV1AdminAppsErrors.md) | - |
+| [PostApiV1AdminAppsResponse](Internal/type-aliases/PostApiV1AdminAppsResponse.md) | - |
+| [PostApiV1AdminAppsResponses](Internal/type-aliases/PostApiV1AdminAppsResponses.md) | - |
 | [PostApiV1AdminSeedAppsData](Internal/type-aliases/PostApiV1AdminSeedAppsData.md) | - |
 | [PostApiV1AdminSeedAppsError](Internal/type-aliases/PostApiV1AdminSeedAppsError.md) | - |
 | [PostApiV1AdminSeedAppsErrors](Internal/type-aliases/PostApiV1AdminSeedAppsErrors.md) | - |
@@ -113,6 +191,21 @@
 | [PostApiV1ChatCompletionsErrors](Internal/type-aliases/PostApiV1ChatCompletionsErrors.md) | - |
 | [PostApiV1ChatCompletionsResponse](Internal/type-aliases/PostApiV1ChatCompletionsResponse.md) | - |
 | [PostApiV1ChatCompletionsResponses](Internal/type-aliases/PostApiV1ChatCompletionsResponses.md) | - |
+| [PostApiV1CreditsClaimDailyData](Internal/type-aliases/PostApiV1CreditsClaimDailyData.md) | - |
+| [PostApiV1CreditsClaimDailyError](Internal/type-aliases/PostApiV1CreditsClaimDailyError.md) | - |
+| [PostApiV1CreditsClaimDailyErrors](Internal/type-aliases/PostApiV1CreditsClaimDailyErrors.md) | - |
+| [PostApiV1CreditsClaimDailyResponse](Internal/type-aliases/PostApiV1CreditsClaimDailyResponse.md) | - |
+| [PostApiV1CreditsClaimDailyResponses](Internal/type-aliases/PostApiV1CreditsClaimDailyResponses.md) | - |
+| [PostApiV1CreditsPurchaseData](Internal/type-aliases/PostApiV1CreditsPurchaseData.md) | - |
+| [PostApiV1CreditsPurchaseError](Internal/type-aliases/PostApiV1CreditsPurchaseError.md) | - |
+| [PostApiV1CreditsPurchaseErrors](Internal/type-aliases/PostApiV1CreditsPurchaseErrors.md) | - |
+| [PostApiV1CreditsPurchaseResponse](Internal/type-aliases/PostApiV1CreditsPurchaseResponse.md) | - |
+| [PostApiV1CreditsPurchaseResponses](Internal/type-aliases/PostApiV1CreditsPurchaseResponses.md) | - |
+| [PostApiV1CreditsSyncSnagData](Internal/type-aliases/PostApiV1CreditsSyncSnagData.md) | - |
+| [PostApiV1CreditsSyncSnagError](Internal/type-aliases/PostApiV1CreditsSyncSnagError.md) | - |
+| [PostApiV1CreditsSyncSnagErrors](Internal/type-aliases/PostApiV1CreditsSyncSnagErrors.md) | - |
+| [PostApiV1CreditsSyncSnagResponse](Internal/type-aliases/PostApiV1CreditsSyncSnagResponse.md) | - |
+| [PostApiV1CreditsSyncSnagResponses](Internal/type-aliases/PostApiV1CreditsSyncSnagResponses.md) | - |
 | [PostApiV1EmbeddingsData](Internal/type-aliases/PostApiV1EmbeddingsData.md) | - |
 | [PostApiV1EmbeddingsError](Internal/type-aliases/PostApiV1EmbeddingsError.md) | - |
 | [PostApiV1EmbeddingsErrors](Internal/type-aliases/PostApiV1EmbeddingsErrors.md) | - |
@@ -163,22 +256,46 @@
 | [PostAuthOauthByProviderRevokeErrors](Internal/type-aliases/PostAuthOauthByProviderRevokeErrors.md) | - |
 | [PostAuthOauthByProviderRevokeResponse](Internal/type-aliases/PostAuthOauthByProviderRevokeResponse.md) | - |
 | [PostAuthOauthByProviderRevokeResponses](Internal/type-aliases/PostAuthOauthByProviderRevokeResponses.md) | - |
+| [PutApiV1AdminAppsByAppIdApiKeysByIdData](Internal/type-aliases/PutApiV1AdminAppsByAppIdApiKeysByIdData.md) | - |
+| [PutApiV1AdminAppsByAppIdApiKeysByIdError](Internal/type-aliases/PutApiV1AdminAppsByAppIdApiKeysByIdError.md) | - |
+| [PutApiV1AdminAppsByAppIdApiKeysByIdErrors](Internal/type-aliases/PutApiV1AdminAppsByAppIdApiKeysByIdErrors.md) | - |
+| [PutApiV1AdminAppsByAppIdApiKeysByIdResponse](Internal/type-aliases/PutApiV1AdminAppsByAppIdApiKeysByIdResponse.md) | - |
+| [PutApiV1AdminAppsByAppIdApiKeysByIdResponses](Internal/type-aliases/PutApiV1AdminAppsByAppIdApiKeysByIdResponses.md) | - |
+| [PutApiV1AdminAppsByIdData](Internal/type-aliases/PutApiV1AdminAppsByIdData.md) | - |
+| [PutApiV1AdminAppsByIdError](Internal/type-aliases/PutApiV1AdminAppsByIdError.md) | - |
+| [PutApiV1AdminAppsByIdErrors](Internal/type-aliases/PutApiV1AdminAppsByIdErrors.md) | - |
+| [PutApiV1AdminAppsByIdResponse](Internal/type-aliases/PutApiV1AdminAppsByIdResponse.md) | - |
+| [PutApiV1AdminAppsByIdResponses](Internal/type-aliases/PutApiV1AdminAppsByIdResponses.md) | - |
 | [ResponseErrorResponse](Internal/type-aliases/ResponseErrorResponse.md) | - |
 
 ## Functions
 
 | Function | Description |
 | ------ | ------ |
+| [deleteApiV1AdminAppsByAppIdApiKeysById](Internal/functions/deleteApiV1AdminAppsByAppIdApiKeysById.md) | Delete API key |
+| [deleteApiV1AdminAppsById](Internal/functions/deleteApiV1AdminAppsById.md) | Delete app |
+| [getApiV1AdminApps](Internal/functions/getApiV1AdminApps.md) | List all apps |
+| [getApiV1AdminAppsByAppIdApiKeys](Internal/functions/getApiV1AdminAppsByAppIdApiKeys.md) | List API keys for an app |
+| [getApiV1AdminAppsByAppIdApiKeysById](Internal/functions/getApiV1AdminAppsByAppIdApiKeysById.md) | Get API key by ID |
+| [getApiV1AdminAppsById](Internal/functions/getApiV1AdminAppsById.md) | Get app by ID |
 | [getApiV1Config](Internal/functions/getApiV1Config.md) | Get configuration |
+| [getApiV1CreditsBalance](Internal/functions/getApiV1CreditsBalance.md) | Get credit balance |
+| [getApiV1CreditsPacks](Internal/functions/getApiV1CreditsPacks.md) | List available credit packs |
 | [getApiV1DocsSwaggerJson](Internal/functions/getApiV1DocsSwaggerJson.md) | Get OpenAPI specification |
 | [getApiV1Models](Internal/functions/getApiV1Models.md) | List available models |
 | [getApiV1SubscriptionsStatus](Internal/functions/getApiV1SubscriptionsStatus.md) | Get subscription status |
+| [getApiV1Tasks](Internal/functions/getApiV1Tasks.md) | Get available tasks |
 | [getApiV1Tools](Internal/functions/getApiV1Tools.md) | List available tools |
 | [getHealth](Internal/functions/getHealth.md) | Health check |
 | [postApiV1AdminAddCredits](Internal/functions/postApiV1AdminAddCredits.md) | Add credits to user |
+| [postApiV1AdminApps](Internal/functions/postApiV1AdminApps.md) | Create app |
+| [postApiV1AdminAppsByAppIdApiKeys](Internal/functions/postApiV1AdminAppsByAppIdApiKeys.md) | Create API key |
 | [postApiV1AdminSeedApps](Internal/functions/postApiV1AdminSeedApps.md) | Seed apps and API keys |
 | [postApiV1AdminSubscriptionTier](Internal/functions/postApiV1AdminSubscriptionTier.md) | Set user subscription tier |
 | [postApiV1ChatCompletions](Internal/functions/postApiV1ChatCompletions.md) | Create chat completion |
+| [postApiV1CreditsClaimDaily](Internal/functions/postApiV1CreditsClaimDaily.md) | Claim daily credits |
+| [postApiV1CreditsPurchase](Internal/functions/postApiV1CreditsPurchase.md) | Create credit pack checkout session |
+| [postApiV1CreditsSyncSnag](Internal/functions/postApiV1CreditsSyncSnag.md) | Sync Snag points |
 | [postApiV1Embeddings](Internal/functions/postApiV1Embeddings.md) | Create embeddings |
 | [postApiV1Responses](Internal/functions/postApiV1Responses.md) | Create response |
 | [postApiV1SubscriptionsCancel](Internal/functions/postApiV1SubscriptionsCancel.md) | Cancel subscription |
@@ -189,3 +306,5 @@
 | [postAuthOauthByProviderExchange](Internal/functions/postAuthOauthByProviderExchange.md) | Exchange authorization code for tokens |
 | [postAuthOauthByProviderRefresh](Internal/functions/postAuthOauthByProviderRefresh.md) | Refresh access token |
 | [postAuthOauthByProviderRevoke](Internal/functions/postAuthOauthByProviderRevoke.md) | Revoke OAuth token |
+| [putApiV1AdminAppsByAppIdApiKeysById](Internal/functions/putApiV1AdminAppsByAppIdApiKeysById.md) | Update API key |
+| [putApiV1AdminAppsById](Internal/functions/putApiV1AdminAppsById.md) | Update app |

@@ -2,7 +2,7 @@
 
 > **LlmapiResponseRequest** = `object`
 
-Defined in: [src/client/types.gen.ts:755](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L755)
+Defined in: [src/client/types.gen.ts:991](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L991)
 
 ## Properties
 
@@ -10,7 +10,7 @@ Defined in: [src/client/types.gen.ts:755](https://github.com/zeta-chain/ai-sdk/b
 
 > `optional` **background**: `boolean`
 
-Defined in: [src/client/types.gen.ts:759](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L759)
+Defined in: [src/client/types.gen.ts:995](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L995)
 
 Background indicates if request should be processed in background
 
@@ -20,7 +20,7 @@ Background indicates if request should be processed in background
 
 > **input**: [`LlmapiResponseInput`](LlmapiResponseInput.md)
 
-Defined in: [src/client/types.gen.ts:760](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L760)
+Defined in: [src/client/types.gen.ts:996](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L996)
 
 ***
 
@@ -28,7 +28,7 @@ Defined in: [src/client/types.gen.ts:760](https://github.com/zeta-chain/ai-sdk/b
 
 > `optional` **max\_output\_tokens**: `number`
 
-Defined in: [src/client/types.gen.ts:764](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L764)
+Defined in: [src/client/types.gen.ts:1000](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1000)
 
 MaxOutputTokens is the maximum number of tokens to generate
 
@@ -38,7 +38,7 @@ MaxOutputTokens is the maximum number of tokens to generate
 
 > **model**: `string`
 
-Defined in: [src/client/types.gen.ts:768](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L768)
+Defined in: [src/client/types.gen.ts:1004](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1004)
 
 Model is the model identifier in 'provider/model' format
 
@@ -48,7 +48,7 @@ Model is the model identifier in 'provider/model' format
 
 > `optional` **reasoning**: [`LlmapiResponseReasoning`](LlmapiResponseReasoning.md)
 
-Defined in: [src/client/types.gen.ts:769](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L769)
+Defined in: [src/client/types.gen.ts:1005](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1005)
 
 ***
 
@@ -56,7 +56,7 @@ Defined in: [src/client/types.gen.ts:769](https://github.com/zeta-chain/ai-sdk/b
 
 > `optional` **stream**: `boolean`
 
-Defined in: [src/client/types.gen.ts:773](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L773)
+Defined in: [src/client/types.gen.ts:1009](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1009)
 
 Stream indicates if response should be streamed
 
@@ -66,7 +66,7 @@ Stream indicates if response should be streamed
 
 > `optional` **temperature**: `number`
 
-Defined in: [src/client/types.gen.ts:777](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L777)
+Defined in: [src/client/types.gen.ts:1013](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1013)
 
 Temperature controls randomness (0.0 to 2.0)
 
@@ -76,7 +76,7 @@ Temperature controls randomness (0.0 to 2.0)
 
 > `optional` **thinking**: [`LlmapiThinkingOptions`](LlmapiThinkingOptions.md)
 
-Defined in: [src/client/types.gen.ts:778](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L778)
+Defined in: [src/client/types.gen.ts:1014](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1014)
 
 ***
 
@@ -84,7 +84,7 @@ Defined in: [src/client/types.gen.ts:778](https://github.com/zeta-chain/ai-sdk/b
 
 > `optional` **tool\_choice**: [`LlmapiResponseToolChoice`](LlmapiResponseToolChoice.md)
 
-Defined in: [src/client/types.gen.ts:779](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L779)
+Defined in: [src/client/types.gen.ts:1015](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1015)
 
 ***
 
@@ -92,6 +92,6 @@ Defined in: [src/client/types.gen.ts:779](https://github.com/zeta-chain/ai-sdk/b
 
 > `optional` **tools**: [`LlmapiResponseTool`](LlmapiResponseTool.md)\[]
 
-Defined in: [src/client/types.gen.ts:783](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L783)
+Defined in: [src/client/types.gen.ts:1019](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L1019)
 
 Tools is an array of tool schemas describing which tools the model can use

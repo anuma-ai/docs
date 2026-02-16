@@ -1,6 +1,6 @@
 # SignMessageOptions
 
-Defined in: [src/react/useEncryption.ts:528](https://github.com/zeta-chain/ai-sdk/blob/main/src/react/useEncryption.ts#L528)
+Defined in: [src/react/useEncryption.ts:694](https://github.com/zeta-chain/ai-sdk/blob/main/src/react/useEncryption.ts#L694)
 
 Options for signing messages.
 
@@ -10,6 +10,6 @@ Options for signing messages.
 
 > `optional` **showWalletUIs**: `boolean`
 
-Defined in: [src/react/useEncryption.ts:530](https://github.com/zeta-chain/ai-sdk/blob/main/src/react/useEncryption.ts#L530)
+Defined in: [src/react/useEncryption.ts:696](https://github.com/zeta-chain/ai-sdk/blob/main/src/react/useEncryption.ts#L696)
 
 Whether to show wallet UI during signing. Default: true

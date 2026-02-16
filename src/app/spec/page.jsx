@@ -49,6 +49,11 @@ export default function SpecPage() {
           .darklight-reference {
             display: none !important;
           }
+          .sidebar-heading-type {
+            background-color: color-mix(in srgb, var(--method-color, var(--scalar-color-1)) 15%, transparent);
+            padding: 1px 6px;
+            border-radius: 4px;
+          }
         `,
       }}
     />

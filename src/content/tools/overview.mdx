@@ -1,23 +1,19 @@
 # Tools
 
-Tools let the model take actions beyond generating text. When the model decides
-a tool would help answer a question, it emits a tool call with the tool name and
-arguments. Something executes the tool, and the model incorporates the result
-into its response.
+Sometimes a model needs more than its training data to answer a question — it might need to search the web, check a calendar, or query a database. Tools give models the ability to take actions and incorporate real-time results into their responses.
 
-There are two types of tools:
+## Server-Side vs Client-Side
 
-- [Server-side tools](/tools/server) — Run on the Portal API. The entire
-  flow happens in a single request with no client-side handling needed.
+[Server-side tools](/tools/server) run on the Portal API. The entire flow happens in a single request with no client-side handling needed. You just specify which tools to enable by name. Examples include web search and image generation.
 
-- [Client-side tools](/tools/client) — Run in your app. You define the
-  tool and provide an executor function that runs locally.
+[Client-side tools](/tools/client) run in your app. You define the tool with a JSON Schema for parameters and provide an executor function that runs locally. These are useful when the tool needs access to local data, user permissions, or browser APIs.
+
+Server tools are simpler to integrate since everything happens API-side. Client tools give you full control but require a multi-turn request flow where the SDK sends tool results back to the model automatically.
 
 ## Multiple Tool Calls
 
-The model can call multiple tools in a single turn. For client-side tools, the
-SDK executes them in parallel and sends all results back together. The model
-then continues with all the information.
+Models can call multiple tools in one turn. For server tools, the API handles parallel execution internally. For client tools, the SDK executes them in parallel and sends all results together before the model continues.
 
-For server-side tools, the API handles multiple calls internally before
-returning the response.
+## Available Tools
+
+Browse [all server tools](/tools/list) for a live list from the API. The SDK also includes pre-built client tools for Google Calendar and Google Drive.

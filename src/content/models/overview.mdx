@@ -1,19 +1,18 @@
 # Models
 
-The Portal API supports multiple AI models from different providers. When
-sending a message, you specify which model to use. Each model has different
-capabilities, pricing, and performance characteristics.
+One of the main advantages of building with Anuma is access to models from OpenAI, Google, Anthropic, xAI, and open-source providers through a single API. You specify the model per request, so you can use a lightweight model for simple tasks and a reasoning model for complex ones — without changing any integration code.
 
-Models fall into several categories based on their modalities:
+Models span different capabilities: text generation, vision (image understanding), reasoning (extended thinking), image generation, code generation, and audio processing. Many models combine multiple capabilities — for example, GPT-4o and Claude handle both text and vision in one model.
 
-- **LLM** — Text generation and conversation
-- **Vision** — Image understanding and analysis
-- **Reasoning** — Extended thinking for complex problems
-- **Image** — Image generation
-- **Code** — Programming and code generation
-- **Audio** — Speech and audio processing
+To specify a model, pass its identifier when calling [`sendMessage`](/sdk/react/Internal/interfaces/UseChatStorageResult#sendmessage):
 
-Some models support multiple modalities. For example, vision-capable LLMs can
-both generate text and analyze images.
+```tsx
+await sendMessage({
+  content: "Explain quantum computing",
+  model: "gpt-4o-mini",
+});
+```
+
+To fetch the list of available models at runtime, use [`useModels`](/sdk/react/Hooks/useModels). This returns the current models from the Portal API, so your app always reflects what's available without hardcoding model names.
 
 See the [full list of available models](/models/list).

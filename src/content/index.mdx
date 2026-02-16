@@ -5,23 +5,17 @@ import { ReactIcon, ExpoIcon } from "../components/icons";
 
 Build AI-powered apps with a unified API, persistent memory, and user-owned encryption.
 
-Anuma gives you access to models from OpenAI, Google, Anthropic, xAI, and
-open-source providers through a single API. No juggling provider keys, no
-managing multiple SDKs. Switch models without changing your code, store semantic
-memories that persist across sessions, and keep user data encrypted with keys
-only they control.
+Building AI applications typically means managing multiple provider SDKs, handling API key logistics, and figuring out how to persist conversations. Anuma simplifies this by giving you access to models from OpenAI, Google, Anthropic, xAI, and open-source providers through a single API. Switch models without changing code, store semantic memories that persist across sessions, and keep user data encrypted with keys only they control.
 
-Your users can pay for their own inference directly — you don't have to subsidize
-API costs or manage billing.
+Your users pay for their own inference directly — no API cost subsidies or billing management needed.
 
-## SDK
-
-For React and React Native apps. The SDK provides hooks for chat, memory, tool
-calling, image generation, web search, and encryption.
+## Quick Start
 
 ```bash
 npm install @reverbia/sdk
 ```
+
+The simplest way to send a message:
 
 ```tsx
 import { useChat } from "@reverbia/sdk/react";
@@ -32,22 +26,30 @@ const { sendMessage, isLoading } = useChat({
 });
 
 await sendMessage({
-  messages: [{ role: "user", content: "Hello!" }],
+  messages: [{ role: "user", content: [{ type: "text", text: "Hello!" }] }],
   model: "gpt-4o-mini",
 });
 ```
 
-## Portal API
+For persistent conversations with message history, use [`useChatStorage`](/sdk/react/Chat/useChatStorage) which adds automatic WatermelonDB storage on top of `useChat`.
 
-For other languages or direct HTTP access. OpenAI-compatible, so you can use
-existing tools and libraries. Chat completions with streaming, embeddings, tool
-calling, and server-side tools for image generation and web search.
+[Authentication Setup →](/authentication) | [Full Tutorial →](/tutorial/README)
 
-[API Reference →](/spec)
+## What's Included
+
+The SDK provides [chat completions](/conversations) with streaming and tool calling, [persistent memory](/memory) that searches past conversations semantically across sessions, [server](/tools/server) and [client-side tools](/tools/client) for web search, calendars, and custom functions, and automatic [file processing](/files) for PDFs, Word docs, Excel, and images with OCR.
+
+For the full API surface, see the [SDK Reference](/sdk/react/README).
 
 ## Examples
 
 <Cards num={2}>
-  <Cards.Card icon={<ReactIcon />} title="Next.js" href="/tutorial/start" />
-  <Cards.Card icon={<ExpoIcon />} title="Expo (coming soon)" href="/sdk/expo/README" />
+  <Cards.Card icon={<ReactIcon />} title="Next.js" href="/tutorial/README" />
+  <Cards.Card icon={<ExpoIcon />} title="React Native" href="/sdk/expo/README" />
 </Cards>
+
+## Portal API
+
+For other languages or direct HTTP access. The API is OpenAI-compatible, so you can use existing tools and libraries.
+
+[API Reference →](/spec)
