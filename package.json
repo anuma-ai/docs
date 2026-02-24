@@ -7,9 +7,13 @@
     "dev": "next",
     "postbuild": "pagefind --site .next/server/app --output-path public/_pagefind",
     "start": "next start",
-    "update:docs": "./scripts/update-docs.sh"
+    "update:docs": "./scripts/update-docs.sh",
+    "build:cloudflare": "pnpm build && opennextjs-cloudflare build",
+    "preview:cloudflare": "pnpm build:cloudflare && opennextjs-cloudflare preview",
+    "deploy:cloudflare": "pnpm build:cloudflare && opennextjs-cloudflare deploy"
   },
   "dependencies": {
+    "@opennextjs/cloudflare": "^1.17.0",
     "@reverbia/portal": "1.0.0-next.20251224001045",
     "@scalar/api-reference-react": "^0.8.15",
     "@theguild/remark-mermaid": "^0.3.0",
@@ -21,6 +25,7 @@
     "react-dom": "^19.2.1"
   },
   "devDependencies": {
-    "pagefind": "^1.3.0"
+    "pagefind": "^1.3.0",
+    "wrangler": "^4.68.1"
   }
 }
