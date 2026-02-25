@@ -12,13 +12,13 @@ Your users pay for their own inference directly — no API cost subsidies or bil
 ## Quick Start
 
 ```bash
-npm install @reverbia/sdk
+npm install @anuma/sdk
 ```
 
 The simplest way to send a message:
 
 ```tsx
-import { useChat } from "@reverbia/sdk/react";
+import { useChat } from "@anuma/sdk/react";
 
 const { sendMessage, isLoading } = useChat({
   getToken: async () => authToken,
