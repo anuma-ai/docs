@@ -1,4 +1,7 @@
 import nextra from 'nextra'
+import { initOpenNextCloudflareForDev } from '@opennextjs/cloudflare'
+
+initOpenNextCloudflareForDev()
 
 const withNextra = nextra({
   latex: true,
