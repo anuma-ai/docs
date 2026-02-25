@@ -22,5 +22,7 @@ export default {
     type: "separator",
     title: "Examples",
   },
-  tutorial: "Next.js",
+  tutorials: {
+    display: "children",
+  },
 };
