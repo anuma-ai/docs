@@ -2,7 +2,7 @@
 
 > **encryptData**(`plaintext`: `string` | `Uint8Array`<`ArrayBufferLike`>, `address`: `string`): `Promise`<`string`>
 
-Defined in: [src/react/useEncryption.ts:456](https://github.com/zeta-chain/ai-sdk/blob/main/src/react/useEncryption.ts#L456)
+Defined in: [src/react/useEncryption.ts:459](https://github.com/anuma-ai/sdk/blob/main/src/react/useEncryption.ts#459)
 
 Encrypts data using AES-GCM with the stored encryption key.
 
@@ -71,7 +71,7 @@ Error if encryption key is not found in memory
 ## Example
 
 ```tsx
-import { encryptData, requestEncryptionKey } from "@reverbia/sdk/react";
+import { encryptData, requestEncryptionKey } from "@anuma/sdk/react";
 
 // First, ensure encryption key exists
 await requestEncryptionKey(walletAddress);

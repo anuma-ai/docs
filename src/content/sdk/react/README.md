@@ -1,6 +1,6 @@
 # Overview
 
-The `@reverbia/sdk/react` package provides a collection of React hooks
+The `@anuma/sdk/react` package provides a collection of React hooks
 designed to simplify building AI features in your applications. These hooks
 abstract away the complexity of managing streaming responses, loading states,
 authentication, and real-time updates, letting you focus on creating great
@@ -29,7 +29,7 @@ production-ready abstractions that handle these complexities out of the box.
 ## Quick Start
 
 ```tsx
-import { useChat } from "@reverbia/sdk/react";
+import { useChat } from "@anuma/sdk/react";
 
 function ChatComponent() {
   const { isLoading, sendMessage, stop } = useChat({
@@ -74,6 +74,7 @@ function ChatComponent() {
 | [useBackup](Hooks/useBackup.md) | Unified React hook for backup and restore functionality. |
 | [useBackupAuth](Hooks/useBackupAuth.md) | Hook to access unified backup authentication state and methods. |
 | [useChat](Hooks/useChat.md) | A React hook for managing chat completions with authentication. |
+| [useChatStorage](Hooks/useChatStorage.md) | A React hook that wraps useChat with automatic message persistence using WatermelonDB. |
 | [useCredits](Hooks/useCredits.md) | React hook for managing credits: checking balance, claiming daily credits, browsing packs, and purchasing credits. |
 | [useDropboxAuth](Hooks/useDropboxAuth.md) | Hook to access Dropbox authentication state and methods. |
 | [useDropboxBackup](Hooks/useDropboxBackup.md) | React hook for Dropbox backup and restore functionality. |
@@ -83,7 +84,6 @@ function ChatComponent() {
 | [useGoogleDriveBackup](Hooks/useGoogleDriveBackup.md) | React hook for Google Drive backup and restore functionality. |
 | [useICloudAuth](Hooks/useICloudAuth.md) | Hook to access iCloud authentication state and methods. |
 | [useICloudBackup](Hooks/useICloudBackup.md) | React hook for iCloud backup and restore functionality. |
-| [useMemoryStorage](Hooks/useMemoryStorage.md) | A React hook that wraps useMemory with automatic memory persistence using WatermelonDB. |
 | [useModels](Hooks/useModels.md) | React hook for fetching available LLM models. Automatically fetches all available models. |
 | [useOCR](Hooks/useOCR.md) | React hook for extracting text from images using OCR. |
 | [usePdf](Hooks/usePdf.md) | React hook for extracting text from PDF files. |

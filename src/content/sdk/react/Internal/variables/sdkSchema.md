@@ -2,7 +2,7 @@
 
 > `const` **sdkSchema**: `Readonly`<{ `tables`: `TableMap`; `unsafeSql?`: (`_`: `string`, `__`: `AppSchemaUnsafeSqlKind`) => `string`; `version`: `number`; }>
 
-Defined in: [src/lib/db/schema.ts:69](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/schema.ts#L69)
+Defined in: [src/lib/db/schema.ts:70](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/schema.ts#70)
 
 Combined WatermelonDB schema for all SDK storage modules.
 
@@ -10,7 +10,7 @@ This unified schema includes all tables needed by the SDK:
 
 * `history`: Chat message storage with embeddings and metadata
 * `conversations`: Conversation metadata and organization
-* `memories`: Persistent memory storage with semantic search
+* `memory_vault`: Persistent memory vault for curated facts
 * `modelPreferences`: User model preferences (deprecated, use userPreferences)
 * `userPreferences`: Unified user preferences (profile, personality, models)
 
@@ -19,7 +19,7 @@ This unified schema includes all tables needed by the SDK:
 ```typescript
 import { Database } from '@nozbe/watermelondb';
 import LokiJSAdapter from '@nozbe/watermelondb/adapters/lokijs';
-import { sdkSchema, sdkMigrations, sdkModelClasses } from '@reverbia/sdk/react';
+import { sdkSchema, sdkMigrations, sdkModelClasses } from '@anuma/sdk/react';
 
 const adapter = new LokiJSAdapter({
   schema: sdkSchema,

@@ -2,7 +2,7 @@
 
 > **ICloudAuthProvider**(`__namedParameters`: [`ICloudAuthProviderProps`](../interfaces/ICloudAuthProviderProps.md)): `Element`
 
-Defined in: [src/react/useICloudAuth.ts:81](https://github.com/zeta-chain/ai-sdk/blob/main/src/react/useICloudAuth.ts#L81)
+Defined in: [src/react/useICloudAuth.ts:81](https://github.com/anuma-ai/sdk/blob/main/src/react/useICloudAuth.ts#81)
 
 Provider component for iCloud authentication.
 
@@ -41,7 +41,7 @@ CloudKit JS is loaded automatically when needed.
 ## Example
 
 ```tsx
-import { ICloudAuthProvider } from "@reverbia/sdk/react";
+import { ICloudAuthProvider } from "@anuma/sdk/react";
 
 function App() {
   return (

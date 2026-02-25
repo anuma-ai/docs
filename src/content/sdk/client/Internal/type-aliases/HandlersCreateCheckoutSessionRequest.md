@@ -2,7 +2,7 @@
 
 > **HandlersCreateCheckoutSessionRequest** = `object`
 
-Defined in: [src/client/types.gen.ts:146](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L146)
+Defined in: [src/client/types.gen.ts:146](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#146)
 
 ## Properties
 
@@ -10,7 +10,25 @@ Defined in: [src/client/types.gen.ts:146](https://github.com/zeta-chain/ai-sdk/b
 
 > `optional` **cancel\_url**: `string`
 
-Defined in: [src/client/types.gen.ts:147](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L147)
+Defined in: [src/client/types.gen.ts:147](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#147)
+
+***
+
+### interval?
+
+> `optional` **interval**: `string`
+
+Defined in: [src/client/types.gen.ts:151](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#151)
+
+"month" or "year"
+
+***
+
+### price\_id?
+
+> `optional` **price\_id**: `string`
+
+Defined in: [src/client/types.gen.ts:152](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#152)
 
 ***
 
@@ -18,4 +36,14 @@ Defined in: [src/client/types.gen.ts:147](https://github.com/zeta-chain/ai-sdk/b
 
 > `optional` **success\_url**: `string`
 
-Defined in: [src/client/types.gen.ts:148](https://github.com/zeta-chain/ai-sdk/blob/main/src/client/types.gen.ts#L148)
+Defined in: [src/client/types.gen.ts:153](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#153)
+
+***
+
+### tier?
+
+> `optional` **tier**: `string`
+
+Defined in: [src/client/types.gen.ts:157](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#157)
+
+"starter" or "pro"

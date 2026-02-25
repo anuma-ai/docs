@@ -1,6 +1,6 @@
 # UseChatStorageResult
 
-Defined in: [src/react/useChatStorage.ts:390](https://github.com/zeta-chain/ai-sdk/blob/main/src/react/useChatStorage.ts#L390)
+Defined in: [src/react/useChatStorage.ts:512](https://github.com/anuma-ai/sdk/blob/main/src/react/useChatStorage.ts#512)
 
 Result returned by useChatStorage hook (React version)
 
@@ -16,7 +16,7 @@ Extends base result with React-specific sendMessage signature.
 
 > **clearQueue**: () => `void`
 
-Defined in: [src/react/useChatStorage.ts:461](https://github.com/zeta-chain/ai-sdk/blob/main/src/react/useChatStorage.ts#L461)
+Defined in: [src/react/useChatStorage.ts:648](https://github.com/anuma-ai/sdk/blob/main/src/react/useChatStorage.ts#648)
 
 Clear all queued operations for the current wallet.
 Discards pending operations without writing them.
@@ -31,7 +31,7 @@ Discards pending operations without writing them.
 
 > **conversationId**: `string` | `null`
 
-Defined in: [src/lib/db/chat/types.ts:581](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L581)
+Defined in: [src/lib/db/chat/types.ts:626](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#626)
 
 **Inherited from**
 
@@ -43,7 +43,7 @@ Defined in: [src/lib/db/chat/types.ts:581](https://github.com/zeta-chain/ai-sdk/
 
 > **createConversation**: (`options?`: [`CreateConversationOptions`](CreateConversationOptions.md)) => `Promise`<[`StoredConversation`](StoredConversation.md)>
 
-Defined in: [src/lib/db/chat/types.ts:583](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L583)
+Defined in: [src/lib/db/chat/types.ts:628](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#628)
 
 **Parameters**
 
@@ -84,7 +84,7 @@ Defined in: [src/lib/db/chat/types.ts:583](https://github.com/zeta-chain/ai-sdk/
 
 > **createMemoryRetrievalTool**: (`searchOptions?`: `Partial`<[`MemoryRetrievalSearchOptions`](MemoryRetrievalSearchOptions.md)>) => `ToolConfig`
 
-Defined in: [src/react/useChatStorage.ts:446](https://github.com/zeta-chain/ai-sdk/blob/main/src/react/useChatStorage.ts#L446)
+Defined in: [src/react/useChatStorage.ts:566](https://github.com/anuma-ai/sdk/blob/main/src/react/useChatStorage.ts#566)
 
 Create a memory retrieval tool for LLM to search past conversations.
 The tool is pre-configured with the hook's storage context and auth.
@@ -138,11 +138,170 @@ await sendMessage({
 
 ***
 
+### createMemoryVaultSearchTool()
+
+> **createMemoryVaultSearchTool**: (`searchOptions?`: [`MemoryVaultSearchOptions`](MemoryVaultSearchOptions.md)) => `ToolConfig`
+
+Defined in: [src/react/useChatStorage.ts:585](https://github.com/anuma-ai/sdk/blob/main/src/react/useChatStorage.ts#585)
+
+Create a memory vault search tool for LLM to search vault memories
+using semantic similarity. Pre-configured with vault context, auth, and
+a shared embedding cache that is pre-populated on init.
+
+**Parameters**
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`searchOptions?`
+
+</td>
+<td>
+
+[`MemoryVaultSearchOptions`](MemoryVaultSearchOptions.md)
+
+</td>
+<td>
+
+Optional search configuration (limit, minSimilarity)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+**Returns**
+
+`ToolConfig`
+
+A ToolConfig that can be passed to sendMessage's clientTools
+
+***
+
+### createMemoryVaultTool()
+
+> **createMemoryVaultTool**: (`options?`: [`MemoryVaultToolOptions`](MemoryVaultToolOptions.md)) => `ToolConfig`
+
+Defined in: [src/react/useChatStorage.ts:575](https://github.com/anuma-ai/sdk/blob/main/src/react/useChatStorage.ts#575)
+
+Create a memory vault tool for LLM to save/update persistent memories.
+The tool is pre-configured with the hook's vault context and encryption.
+
+**Parameters**
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`options?`
+
+</td>
+<td>
+
+[`MemoryVaultToolOptions`](MemoryVaultToolOptions.md)
+
+</td>
+<td>
+
+Optional configuration (onSave callback for confirmation)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+**Returns**
+
+`ToolConfig`
+
+A ToolConfig that can be passed to sendMessage's clientTools
+
+***
+
+### createVaultMemory()
+
+> **createVaultMemory**: (`content`: `string`, `scope?`: `string`) => `Promise`<[`StoredVaultMemory`](StoredVaultMemory.md)>
+
+Defined in: [src/react/useChatStorage.ts:618](https://github.com/anuma-ai/sdk/blob/main/src/react/useChatStorage.ts#618)
+
+Create a new vault memory with the given content.
+
+**Parameters**
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`content`
+
+</td>
+<td>
+
+`string`
+
+</td>
+<td>
+
+The memory text
+
+</td>
+</tr>
+<tr>
+<td>
+
+`scope?`
+
+</td>
+<td>
+
+`string`
+
+</td>
+<td>
+
+Optional scope (defaults to "private")
+
+</td>
+</tr>
+</tbody>
+</table>
+
+**Returns**
+
+`Promise`<[`StoredVaultMemory`](StoredVaultMemory.md)>
+
+***
+
 ### deleteConversation()
 
 > **deleteConversation**: (`id`: `string`) => `Promise`<`boolean`>
 
-Defined in: [src/lib/db/chat/types.ts:589](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L589)
+Defined in: [src/lib/db/chat/types.ts:632](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#632)
 
 **Parameters**
 
@@ -179,11 +338,52 @@ Defined in: [src/lib/db/chat/types.ts:589](https://github.com/zeta-chain/ai-sdk/
 
 ***
 
+### deleteVaultMemory()
+
+> **deleteVaultMemory**: (`id`: `string`) => `Promise`<`boolean`>
+
+Defined in: [src/react/useChatStorage.ts:635](https://github.com/anuma-ai/sdk/blob/main/src/react/useChatStorage.ts#635)
+
+Delete a vault memory by its ID (soft delete).
+
+**Parameters**
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`id`
+
+</td>
+<td>
+
+`string`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+**Returns**
+
+`Promise`<`boolean`>
+
+true if the memory was found and deleted
+
+***
+
 ### flushQueue()
 
 > **flushQueue**: () => `Promise`<[`FlushResult`](FlushResult.md)>
 
-Defined in: [src/react/useChatStorage.ts:455](https://github.com/zeta-chain/ai-sdk/blob/main/src/react/useChatStorage.ts#L455)
+Defined in: [src/react/useChatStorage.ts:642](https://github.com/anuma-ai/sdk/blob/main/src/react/useChatStorage.ts#642)
 
 Manually flush all queued operations for the current wallet.
 Operations are encrypted and written to the database.
@@ -199,7 +399,7 @@ Requires the encryption key to be available.
 
 > **getAllFiles**: (`options?`: `object`) => `Promise`<[`StoredFileWithContext`](StoredFileWithContext.md)\[]>
 
-Defined in: [src/react/useChatStorage.ts:426](https://github.com/zeta-chain/ai-sdk/blob/main/src/react/useChatStorage.ts#L426)
+Defined in: [src/react/useChatStorage.ts:546](https://github.com/anuma-ai/sdk/blob/main/src/react/useChatStorage.ts#546)
 
 Get all files from all conversations, sorted by creation date (newest first).
 Returns files with conversation context for building file browser UIs.
@@ -263,7 +463,7 @@ Returns files with conversation context for building file browser UIs.
 
 > **getConversation**: (`id`: `string`) => `Promise`<[`StoredConversation`](StoredConversation.md) | `null`>
 
-Defined in: [src/lib/db/chat/types.ts:586](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L586)
+Defined in: [src/lib/db/chat/types.ts:629](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#629)
 
 **Parameters**
 
@@ -304,7 +504,7 @@ Defined in: [src/lib/db/chat/types.ts:586](https://github.com/zeta-chain/ai-sdk/
 
 > **getConversations**: () => `Promise`<[`StoredConversation`](StoredConversation.md)\[]>
 
-Defined in: [src/lib/db/chat/types.ts:587](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L587)
+Defined in: [src/lib/db/chat/types.ts:630](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#630)
 
 **Returns**
 
@@ -320,7 +520,7 @@ Defined in: [src/lib/db/chat/types.ts:587](https://github.com/zeta-chain/ai-sdk/
 
 > **getMessages**: (`conversationId`: `string`) => `Promise`<[`StoredMessage`](StoredMessage.md)\[]>
 
-Defined in: [src/lib/db/chat/types.ts:590](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L590)
+Defined in: [src/lib/db/chat/types.ts:633](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#633)
 
 **Parameters**
 
@@ -357,11 +557,74 @@ Defined in: [src/lib/db/chat/types.ts:590](https://github.com/zeta-chain/ai-sdk/
 
 ***
 
+### getVaultMemories()
+
+> **getVaultMemories**: (`options?`: `object`) => `Promise`<[`StoredVaultMemory`](StoredVaultMemory.md)\[]>
+
+Defined in: [src/react/useChatStorage.ts:611](https://github.com/anuma-ai/sdk/blob/main/src/react/useChatStorage.ts#611)
+
+Get all vault memories for context injection.
+Returns non-deleted memories sorted by creation date (newest first).
+
+**Parameters**
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`options?`
+
+</td>
+<td>
+
+`object`
+
+</td>
+<td>
+
+Optional filtering (scopes to include)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`options.scopes?`
+
+</td>
+<td>
+
+`string`\[]
+
+</td>
+<td>
+
+‐
+
+</td>
+</tr>
+</tbody>
+</table>
+
+**Returns**
+
+`Promise`<[`StoredVaultMemory`](StoredVaultMemory.md)\[]>
+
+***
+
 ### isLoading
 
 > **isLoading**: `boolean`
 
-Defined in: [src/lib/db/chat/types.ts:579](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L579)
+Defined in: [src/lib/db/chat/types.ts:624](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#624)
 
 **Inherited from**
 
@@ -373,9 +636,73 @@ Defined in: [src/lib/db/chat/types.ts:579](https://github.com/zeta-chain/ai-sdk/
 
 > **queueStatus**: [`QueueStatus`](QueueStatus.md)
 
-Defined in: [src/react/useChatStorage.ts:466](https://github.com/zeta-chain/ai-sdk/blob/main/src/react/useChatStorage.ts#L466)
+Defined in: [src/react/useChatStorage.ts:653](https://github.com/anuma-ai/sdk/blob/main/src/react/useChatStorage.ts#653)
 
 Current status of the write queue.
+
+***
+
+### searchVaultMemories()
+
+> **searchVaultMemories**: (`query`: `string`, `searchOptions?`: [`MemoryVaultSearchOptions`](MemoryVaultSearchOptions.md)) => `Promise`<[`VaultSearchResult`](VaultSearchResult.md)\[]>
+
+Defined in: [src/react/useChatStorage.ts:595](https://github.com/anuma-ai/sdk/blob/main/src/react/useChatStorage.ts#595)
+
+Search vault memories programmatically using semantic similarity.
+Returns structured results sorted by descending similarity.
+Gracefully returns \[] when auth is unavailable.
+
+**Parameters**
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`query`
+
+</td>
+<td>
+
+`string`
+
+</td>
+<td>
+
+Natural language search query
+
+</td>
+</tr>
+<tr>
+<td>
+
+`searchOptions?`
+
+</td>
+<td>
+
+[`MemoryVaultSearchOptions`](MemoryVaultSearchOptions.md)
+
+</td>
+<td>
+
+Optional search configuration (limit, minSimilarity, scopes)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+**Returns**
+
+`Promise`<[`VaultSearchResult`](VaultSearchResult.md)\[]>
 
 ***
 
@@ -383,7 +710,7 @@ Current status of the write queue.
 
 > **sendMessage**: (`args`: `object`) => `Promise`<[`SendMessageWithStorageResult`](../type-aliases/SendMessageWithStorageResult.md)>
 
-Defined in: [src/react/useChatStorage.ts:419](https://github.com/zeta-chain/ai-sdk/blob/main/src/react/useChatStorage.ts#L419)
+Defined in: [src/react/useChatStorage.ts:541](https://github.com/anuma-ai/sdk/blob/main/src/react/useChatStorage.ts#541)
 
 Sends a message to the AI and automatically persists both the user message
 and assistant response to the database.
@@ -462,6 +789,35 @@ Useful when different models need different APIs within the same hook instance.
 
 Client-side tools with optional executors.
 These tools run in the browser/app and can have JavaScript executor functions.
+
+</td>
+</tr>
+<tr>
+<td>
+
+`args.clientToolsFilter?`
+
+</td>
+<td>
+
+[`ClientToolsFilterFn`](../type-aliases/ClientToolsFilterFn.md)
+
+</td>
+<td>
+
+Dynamic filter for client-side tools based on prompt embeddings.
+Receives the prompt embedding(s) (or null for short messages) and all client tools,
+returns tool names to include. Tools not in the returned list are excluded from the request.
+
+**Example**
+
+```ts
+clientToolsFilter: (embeddings, tools) => {
+  if (!embeddings) return []; // Short message — no client tools
+  const matches = findMatchingTools(embeddings, pseudoServerTools);
+  return matches.map(m => m.tool.name);
+}
+```
 
 </td>
 </tr>
@@ -565,6 +921,23 @@ Useful for passing additional authentication, tracking, or feature flags.
 <tr>
 <td>
 
+`args.imageModel?`
+
+</td>
+<td>
+
+`string`
+
+</td>
+<td>
+
+User-selected image generation model for server-side enforcement.
+
+</td>
+</tr>
+<tr>
+<td>
+
 `args.includeHistory?`
 
 </td>
@@ -626,6 +999,31 @@ Only the most recent N messages are included to manage context window size.
 
 Maximum number of tokens to generate in the response.
 Use this to limit response length and control costs.
+
+</td>
+</tr>
+<tr>
+<td>
+
+`args.maxToolRounds?`
+
+</td>
+<td>
+
+`number`
+
+</td>
+<td>
+
+Maximum number of tool execution rounds before forcing the model to respond with text.
+After this many rounds, `toolChoice` is set to `"none"` on the next continuation,
+so the model produces a text answer using whatever tool results it has gathered.
+
+**Default**
+
+```ts
+3
+```
 
 </td>
 </tr>
@@ -1022,7 +1420,7 @@ if (result.error) {
 
 > **setConversationId**: (`id`: `string` | `null`) => `void`
 
-Defined in: [src/lib/db/chat/types.ts:582](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L582)
+Defined in: [src/lib/db/chat/types.ts:627](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#627)
 
 **Parameters**
 
@@ -1063,7 +1461,7 @@ Defined in: [src/lib/db/chat/types.ts:582](https://github.com/zeta-chain/ai-sdk/
 
 > **stop**: () => `void`
 
-Defined in: [src/lib/db/chat/types.ts:580](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L580)
+Defined in: [src/lib/db/chat/types.ts:625](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#625)
 
 **Returns**
 
@@ -1079,7 +1477,7 @@ Defined in: [src/lib/db/chat/types.ts:580](https://github.com/zeta-chain/ai-sdk/
 
 > **updateConversationTitle**: (`id`: `string`, `title`: `string`) => `Promise`<`boolean`>
 
-Defined in: [src/lib/db/chat/types.ts:588](https://github.com/zeta-chain/ai-sdk/blob/main/src/lib/db/chat/types.ts#L588)
+Defined in: [src/lib/db/chat/types.ts:631](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#631)
 
 **Parameters**
 
@@ -1125,3 +1523,95 @@ Defined in: [src/lib/db/chat/types.ts:588](https://github.com/zeta-chain/ai-sdk/
 **Inherited from**
 
 `BaseUseChatStorageResult.updateConversationTitle`
+
+***
+
+### updateVaultMemory()
+
+> **updateVaultMemory**: (`id`: `string`, `content`: `string`, `scope?`: `string`) => `Promise`<[`StoredVaultMemory`](StoredVaultMemory.md) | `null`>
+
+Defined in: [src/react/useChatStorage.ts:625](https://github.com/anuma-ai/sdk/blob/main/src/react/useChatStorage.ts#625)
+
+Update an existing vault memory's content.
+
+**Parameters**
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`id`
+
+</td>
+<td>
+
+`string`
+
+</td>
+<td>
+
+‐
+
+</td>
+</tr>
+<tr>
+<td>
+
+`content`
+
+</td>
+<td>
+
+`string`
+
+</td>
+<td>
+
+‐
+
+</td>
+</tr>
+<tr>
+<td>
+
+`scope?`
+
+</td>
+<td>
+
+`string`
+
+</td>
+<td>
+
+Optional new scope for the memory
+
+</td>
+</tr>
+</tbody>
+</table>
+
+**Returns**
+
+`Promise`<[`StoredVaultMemory`](StoredVaultMemory.md) | `null`>
+
+the updated memory, or null if not found
+
+***
+
+### vaultEmbeddingCache
+
+> **vaultEmbeddingCache**: [`VaultEmbeddingCache`](../type-aliases/VaultEmbeddingCache.md)
+
+Defined in: [src/react/useChatStorage.ts:604](https://github.com/anuma-ai/sdk/blob/main/src/react/useChatStorage.ts#604)
+
+The shared vault embedding cache. Use this to eagerly embed content
+when saving vault memories (via eagerEmbedContent).

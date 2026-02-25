@@ -2,7 +2,7 @@
 
 > **useSettings**(`options`: `object`): [`UseSettingsResult`](../Internal/interfaces/UseSettingsResult.md)
 
-Defined in: [src/react/useSettings.ts:116](https://github.com/zeta-chain/ai-sdk/blob/main/src/react/useSettings.ts#L116)
+Defined in: [src/react/useSettings.ts:110](https://github.com/anuma-ai/sdk/blob/main/src/react/useSettings.ts#110)
 
 A React hook for managing user settings with automatic persistence using WatermelonDB.
 
@@ -88,7 +88,7 @@ An object containing settings state and methods
 
 ```tsx
 import { Database } from '@nozbe/watermelondb';
-import { useSettings } from '@reverbia/sdk/react';
+import { useSettings } from '@anuma/sdk/react';
 
 function SettingsComponent({ database }: { database: Database }) {
   const {

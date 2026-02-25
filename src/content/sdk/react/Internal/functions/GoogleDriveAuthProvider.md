@@ -2,7 +2,7 @@
 
 > **GoogleDriveAuthProvider**(`__namedParameters`: [`GoogleDriveAuthProviderProps`](../interfaces/GoogleDriveAuthProviderProps.md)): `Element`
 
-Defined in: [src/react/useGoogleDriveAuth.ts:94](https://github.com/zeta-chain/ai-sdk/blob/main/src/react/useGoogleDriveAuth.ts#L94)
+Defined in: [src/react/useGoogleDriveAuth.ts:93](https://github.com/anuma-ai/sdk/blob/main/src/react/useGoogleDriveAuth.ts#93)
 
 Provider component for Google Drive OAuth authentication.
 
@@ -41,7 +41,7 @@ It handles the OAuth 2.0 Authorization Code flow with refresh tokens.
 ## Example
 
 ```tsx
-import { GoogleDriveAuthProvider } from "@reverbia/sdk/react";
+import { GoogleDriveAuthProvider } from "@anuma/sdk/react";
 
 function App() {
   return (

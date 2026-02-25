@@ -2,7 +2,7 @@
 
 > **useICloudBackup**(`options`: `object`): [`UseICloudBackupResult`](../Internal/interfaces/UseICloudBackupResult.md)
 
-Defined in: [src/react/useICloudBackup.ts:106](https://github.com/zeta-chain/ai-sdk/blob/main/src/react/useICloudBackup.ts#L106)
+Defined in: [src/react/useICloudBackup.ts:103](https://github.com/anuma-ai/sdk/blob/main/src/react/useICloudBackup.ts#103)
 
 React hook for iCloud backup and restore functionality.
 
@@ -135,7 +135,7 @@ Current user address (null if not signed in)
 ## Example
 
 ```tsx
-import { useICloudBackup } from "@reverbia/sdk/react";
+import { useICloudBackup } from "@anuma/sdk/react";
 
 function BackupButton() {
   const { backup, restore, isConfigured, isAuthenticated, isAvailable } = useICloudBackup({

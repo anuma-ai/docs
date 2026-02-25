@@ -2,7 +2,7 @@
 
 > **useBackup**(`options`: `object`): [`UseBackupResult`](../Internal/interfaces/UseBackupResult.md)
 
-Defined in: [src/react/useBackup.ts:182](https://github.com/zeta-chain/ai-sdk/blob/main/src/react/useBackup.ts#L182)
+Defined in: [src/react/useBackup.ts:183](https://github.com/anuma-ai/sdk/blob/main/src/react/useBackup.ts#183)
 
 Unified React hook for backup and restore functionality.
 
@@ -186,7 +186,7 @@ Current user address (null if not signed in)
 ## Example
 
 ```tsx
-import { useBackup } from "@reverbia/sdk/react";
+import { useBackup } from "@anuma/sdk/react";
 
 function BackupManager() {
   const { dropbox, googleDrive, hasAnyProvider } = useBackup({
