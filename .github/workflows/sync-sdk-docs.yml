@@ -1,0 +1,39 @@
+name: Sync Docs
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Clone SDK repo
+        run: |
+          git clone --depth 1 https://x-access-token:${{ secrets.SDK_REPO_TOKEN }}@github.com/anuma-ai/sdk.git /tmp/sdk
+
+      - name: Clone starter-next repo
+        run: |
+          git clone --depth 1 https://x-access-token:${{ secrets.SDK_REPO_TOKEN }}@github.com/anuma-ai/starter-next.git /tmp/starter-next
+
+      - name: Replace SDK docs
+        run: |
+          rm -rf src/content/sdk
+          cp -r /tmp/sdk/docs src/content/sdk
+
+      - name: Replace Next.js tutorial docs
+        run: |
+          rm -rf src/content/tutorials/nextjs
+          cp -r /tmp/starter-next/docs/documents src/content/tutorials/nextjs
+
+      - name: Create or update PR
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: automated/sync-docs
+          title: "docs: sync documentation"
+          body: Automated sync of documentation from anuma-ai/sdk and anuma-ai/starter-next.
+          commit-message: "docs: sync documentation"
+          delete-branch: true
