@@ -2,7 +2,7 @@
 
 > **useICloudAuth**(): [`ICloudAuthContextValue`](../Internal/interfaces/ICloudAuthContextValue.md)
 
-Defined in: [src/react/useICloudAuth.ts:214](https://github.com/zeta-chain/ai-sdk/blob/main/src/react/useICloudAuth.ts#L214)
+Defined in: [src/react/useICloudAuth.ts:212](https://github.com/anuma-ai/sdk/blob/main/src/react/useICloudAuth.ts#212)
 
 Hook to access iCloud authentication state and methods.
 
@@ -15,7 +15,7 @@ Must be used within an ICloudAuthProvider.
 ## Example
 
 ```tsx
-import { useICloudAuth } from "@reverbia/sdk/react";
+import { useICloudAuth } from "@anuma/sdk/react";
 
 function ICloudStatus() {
   const { isAuthenticated, isAvailable, requestAccess, logout } = useICloudAuth();

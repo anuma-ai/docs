@@ -2,7 +2,7 @@
 
 > **useDropboxBackup**(`options`: `object`): [`UseDropboxBackupResult`](../Internal/interfaces/UseDropboxBackupResult.md)
 
-Defined in: [src/react/useDropboxBackup.ts:102](https://github.com/zeta-chain/ai-sdk/blob/main/src/react/useDropboxBackup.ts#L102)
+Defined in: [src/react/useDropboxBackup.ts:99](https://github.com/anuma-ai/sdk/blob/main/src/react/useDropboxBackup.ts#99)
 
 React hook for Dropbox backup and restore functionality.
 
@@ -152,7 +152,7 @@ Current user address (null if not signed in)
 ## Example
 
 ```tsx
-import { useDropboxBackup } from "@reverbia/sdk/react";
+import { useDropboxBackup } from "@anuma/sdk/react";
 
 function BackupButton() {
   const { backup, restore, isConfigured } = useDropboxBackup({

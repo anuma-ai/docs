@@ -2,7 +2,7 @@
 
 > **useGoogleDriveBackup**(`options`: `object`): [`UseGoogleDriveBackupResult`](../Internal/interfaces/UseGoogleDriveBackupResult.md)
 
-Defined in: [src/react/useGoogleDriveBackup.ts:105](https://github.com/zeta-chain/ai-sdk/blob/main/src/react/useGoogleDriveBackup.ts#L105)
+Defined in: [src/react/useGoogleDriveBackup.ts:102](https://github.com/anuma-ai/sdk/blob/main/src/react/useGoogleDriveBackup.ts#102)
 
 React hook for Google Drive backup and restore functionality.
 
@@ -169,7 +169,7 @@ Current user address (null if not signed in)
 ## Example
 
 ```tsx
-import { useGoogleDriveBackup } from "@reverbia/sdk/react";
+import { useGoogleDriveBackup } from "@anuma/sdk/react";
 
 function BackupButton() {
   const { backup, restore, isConfigured, isAuthenticated } = useGoogleDriveBackup({

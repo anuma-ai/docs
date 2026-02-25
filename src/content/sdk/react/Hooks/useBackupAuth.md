@@ -2,7 +2,7 @@
 
 > **useBackupAuth**(): [`BackupAuthContextValue`](../Internal/interfaces/BackupAuthContextValue.md)
 
-Defined in: [src/react/useBackupAuth.ts:523](https://github.com/zeta-chain/ai-sdk/blob/main/src/react/useBackupAuth.ts#L523)
+Defined in: [src/react/useBackupAuth.ts:494](https://github.com/anuma-ai/sdk/blob/main/src/react/useBackupAuth.ts#494)
 
 Hook to access unified backup authentication state and methods.
 
@@ -15,7 +15,7 @@ Must be used within a BackupAuthProvider.
 ## Example
 
 ```tsx
-import { useBackupAuth } from "@reverbia/sdk/react";
+import { useBackupAuth } from "@anuma/sdk/react";
 
 function BackupSettings() {
   const { dropbox, googleDrive, logoutAll } = useBackupAuth();

@@ -2,7 +2,7 @@
 
 > **useDatabaseManager**(`walletAddress`: `string` | `undefined`, `manager`: [`DatabaseManager`](../classes/DatabaseManager.md)): `Database`
 
-Defined in: [src/react/useDatabaseManager.ts:49](https://github.com/zeta-chain/ai-sdk/blob/main/src/react/useDatabaseManager.ts#L49)
+Defined in: [src/react/useDatabaseManager.ts:50](https://github.com/anuma-ai/sdk/blob/main/src/react/useDatabaseManager.ts#50)
 
 React hook that returns the correct WatermelonDB Database instance
 for the current wallet address.
@@ -73,7 +73,7 @@ The WatermelonDB Database instance for the current wallet
 ## Example
 
 ```tsx
-import { useDatabaseManager, DatabaseManager, webPlatformStorage } from '@reverbia/sdk/react';
+import { useDatabaseManager, DatabaseManager, webPlatformStorage } from '@anuma/sdk/react';
 import LokiJSAdapter from '@nozbe/watermelondb/adapters/lokijs';
 
 // Create once at app level

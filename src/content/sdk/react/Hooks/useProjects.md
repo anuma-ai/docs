@@ -2,7 +2,7 @@
 
 > **useProjects**(`options`: [`UseProjectsOptions`](../Internal/interfaces/UseProjectsOptions.md)): [`UseProjectsResult`](../Internal/interfaces/UseProjectsResult.md)
 
-Defined in: [src/react/useProjects.ts:137](https://github.com/zeta-chain/ai-sdk/blob/main/src/react/useProjects.ts#L137)
+Defined in: [src/react/useProjects.ts:129](https://github.com/anuma-ai/sdk/blob/main/src/react/useProjects.ts#129)
 
 A React hook for managing projects (conversation groups).
 
@@ -50,7 +50,7 @@ An object containing project state and methods
 ## Example
 
 ```tsx
-import { useProjects } from '@reverbia/sdk/react';
+import { useProjects } from '@anuma/sdk/react';
 
 function ProjectsComponent({ database }) {
   const {

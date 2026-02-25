@@ -2,7 +2,7 @@
 
 React Native hooks for building AI-powered mobile applications.
 
-The `@reverbia/sdk/expo` package provides React hooks optimized for
+The `@anuma/sdk/expo` package provides React hooks optimized for
 Expo and React Native environments. These hooks exclude web-only
 dependencies (like pdfjs-dist) that aren't compatible with React Native.
 
@@ -14,7 +14,7 @@ See the polyfills module documentation for complete setup instructions.
 Quick setup summary:
 
 ```bash
-pnpm install @reverbia/sdk@next web-streams-polyfill react-native-get-random-values @ethersproject/shims buffer
+pnpm install @anuma/sdk@next web-streams-polyfill react-native-get-random-values @ethersproject/shims buffer
 ```
 
 Then create an entrypoint file with all required polyfills. See
@@ -23,7 +23,7 @@ working example.
 
 ## Differences from React Package
 
-The Expo package is a lightweight subset of `@reverbia/sdk/react`:
+The Expo package is a lightweight subset of `@anuma/sdk/react`:
 
 * No PDF text extraction (pdfjs-dist is web-only)
 * Uses XMLHttpRequest for streaming (fetch streaming isn't supported in RN)
@@ -49,7 +49,7 @@ const { getIdentityToken } = useIdentityToken();
 
 ```tsx
 import { useIdentityToken } from "@privy-io/expo";
-import { useChat } from "@reverbia/sdk/expo";
+import { useChat } from "@anuma/sdk/expo";
 
 function ChatScreen() {
   const { getIdentityToken } = useIdentityToken();
@@ -91,7 +91,6 @@ function ChatScreen() {
 | ------ | ------ |
 | [useChat](Hooks/useChat.md) | A React hook for managing chat completions with authentication. |
 | [useChatStorage](Hooks/useChatStorage.md) | A React hook that wraps useChat with automatic message persistence using WatermelonDB. |
-| [useMemoryStorage](Hooks/useMemoryStorage.md) | A React hook that wraps useMemory with automatic memory persistence using WatermelonDB. |
 
 ## Other
 
@@ -155,21 +154,33 @@ Re-exports [CreateConversationOptions](../react/Internal/interfaces/CreateConver
 
 ***
 
-### CreateMemoryOptions
-
-Re-exports [CreateMemoryOptions](../react/Internal/interfaces/CreateMemoryOptions.md)
-
-***
-
 ### createMemoryRetrievalTool
 
 Re-exports [createMemoryRetrievalTool](../react/Internal/functions/createMemoryRetrievalTool.md)
 
 ***
 
+### createMemoryVaultTool
+
+Re-exports [createMemoryVaultTool](../react/Internal/functions/createMemoryVaultTool.md)
+
+***
+
 ### CreateMessageOptions
 
 Re-exports [CreateMessageOptions](../react/Internal/interfaces/CreateMessageOptions.md)
+
+***
+
+### createVaultMemoryOp
+
+Re-exports [createVaultMemoryOp](../react/Internal/functions/createVaultMemoryOp.md)
+
+***
+
+### CreateVaultMemoryOptions
+
+Re-exports [CreateVaultMemoryOptions](../react/Internal/interfaces/CreateVaultMemoryOptions.md)
 
 ***
 
@@ -194,6 +205,12 @@ Re-exports [DatabaseManagerOptions](../react/Internal/interfaces/DatabaseManager
 ### DEFAULT\_CACHE\_EXPIRATION\_MS
 
 Re-exports [DEFAULT\_CACHE\_EXPIRATION\_MS](../react/Internal/variables/DEFAULT_CACHE_EXPIRATION_MS.md)
+
+***
+
+### deleteVaultMemoryOp
+
+Re-exports [deleteVaultMemoryOp](../react/Internal/functions/deleteVaultMemoryOp.md)
 
 ***
 
@@ -227,12 +244,6 @@ Re-exports [FlushResult](../react/Internal/interfaces/FlushResult.md)
 
 ***
 
-### generateCompositeKey
-
-Re-exports [generateCompositeKey](../react/Internal/functions/generateCompositeKey.md)
-
-***
-
 ### generateConversationId
 
 Re-exports [generateConversationId](../react/Internal/functions/generateConversationId.md)
@@ -251,9 +262,9 @@ Re-exports [generateEmbeddings](../react/Internal/functions/generateEmbeddings.m
 
 ***
 
-### generateUniqueKey
+### getAllVaultMemoriesOp
 
-Re-exports [generateUniqueKey](../react/Internal/functions/generateUniqueKey.md)
+Re-exports [getAllVaultMemoriesOp](../react/Internal/functions/getAllVaultMemoriesOp.md)
 
 ***
 
@@ -269,15 +280,15 @@ Re-exports [getServerTools](../react/Internal/functions/getServerTools.md)
 
 ***
 
-### hasEncryptionKey
+### getVaultMemoryOp
 
-Re-exports [hasEncryptionKey](../react/Internal/functions/hasEncryptionKey.md)
+Re-exports [getVaultMemoryOp](../react/Internal/functions/getVaultMemoryOp.md)
 
 ***
 
-### MemoryItem
+### hasEncryptionKey
 
-Re-exports [MemoryItem](../react/Internal/interfaces/MemoryItem.md)
+Re-exports [hasEncryptionKey](../react/Internal/functions/hasEncryptionKey.md)
 
 ***
 
@@ -299,15 +310,9 @@ Re-exports [MemoryRetrievalSearchOptions](../react/Internal/interfaces/MemoryRet
 
 ***
 
-### memoryStorageSchema
+### MemoryVaultToolOptions
 
-Re-exports [memoryStorageSchema](../react/Internal/variables/memoryStorageSchema.md)
-
-***
-
-### MemoryType
-
-Re-exports [MemoryType](../react/Internal/type-aliases/MemoryType.md)
+Re-exports [MemoryVaultToolOptions](../react/Internal/interfaces/MemoryVaultToolOptions.md)
 
 ***
 
@@ -407,24 +412,6 @@ Re-exports [StoredConversation](../react/Internal/interfaces/StoredConversation.
 
 ***
 
-### StoredMemory
-
-Re-exports [StoredMemory](../react/Internal/interfaces/StoredMemory.md)
-
-***
-
-### StoredMemoryModel
-
-Re-exports [StoredMemoryModel](../react/Internal/classes/StoredMemoryModel.md)
-
-***
-
-### StoredMemoryWithSimilarity
-
-Re-exports [StoredMemoryWithSimilarity](../react/Internal/interfaces/StoredMemoryWithSimilarity.md)
-
-***
-
 ### StoredMessage
 
 Re-exports [StoredMessage](../react/Internal/interfaces/StoredMessage.md)
@@ -437,9 +424,27 @@ Re-exports [StoredMessageWithSimilarity](../react/Internal/interfaces/StoredMess
 
 ***
 
-### UpdateMemoryOptions
+### StoredVaultMemory
 
-Re-exports [UpdateMemoryOptions](../react/Internal/type-aliases/UpdateMemoryOptions.md)
+Re-exports [StoredVaultMemory](../react/Internal/interfaces/StoredVaultMemory.md)
+
+***
+
+### StoredVaultMemoryModel
+
+Re-exports [StoredVaultMemoryModel](../react/Internal/classes/StoredVaultMemoryModel.md)
+
+***
+
+### updateVaultMemoryOp
+
+Re-exports [updateVaultMemoryOp](../react/Internal/functions/updateVaultMemoryOp.md)
+
+***
+
+### UpdateVaultMemoryOptions
+
+Re-exports [UpdateVaultMemoryOptions](../react/Internal/interfaces/UpdateVaultMemoryOptions.md)
 
 ***
 
@@ -476,6 +481,18 @@ Re-exports [useModels](../react/Hooks/useModels.md)
 ### UseModelsResult
 
 Re-exports [UseModelsResult](../react/Internal/type-aliases/UseModelsResult.md)
+
+***
+
+### VaultMemoryOperationsContext
+
+Re-exports [VaultMemoryOperationsContext](../react/Internal/interfaces/VaultMemoryOperationsContext.md)
+
+***
+
+### VaultSaveOperation
+
+Re-exports [VaultSaveOperation](../react/Internal/interfaces/VaultSaveOperation.md)
 
 ***
 
