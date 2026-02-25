@@ -32,6 +32,7 @@ jobs:
       - name: Create or update PR
         uses: peter-evans/create-pull-request@v7
         with:
+          token: ${{ secrets.SDK_REPO_TOKEN }}
           branch: automated/sync-docs
           title: "docs: sync documentation"
           body: Automated sync of documentation from anuma-ai/sdk and anuma-ai/starter-next.
