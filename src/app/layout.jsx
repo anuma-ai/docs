@@ -45,13 +45,13 @@ export default async function RootLayout({ children }) {
       <a href="/" className={linkClass}>
         Docs
       </a>
-      <a href="/spec" className={linkClass}>
-        Spec
+      <a href="/api" className={linkClass}>
+        API
       </a>
     </Navbar>
   );
   const pageMap = await getPageMap();
-  const filteredPageMap = pageMap.filter((item) => item.name !== "spec");
+  const filteredPageMap = pageMap.filter((item) => item.name !== "api");
   return (
     <html lang="en" dir="ltr" suppressHydrationWarning>
       <Head>
