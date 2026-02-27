@@ -6,6 +6,8 @@ authentication, and [Next.js](https://nextjs.org). The entire app fits in a
 single file — `app/page.tsx` — making it a good starting point for understanding
 how the pieces connect.
 
+<video src="/demo.webm" autoplay loop muted playsinline style="border-radius: 8px"></video>
+
 This guide walks through the codebase section by section: project setup,
 authentication, the chat hook, streaming responses, and sending messages.
 
