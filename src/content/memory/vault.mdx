@@ -6,9 +6,9 @@ The memory engine searches past conversations, but some things are worth remembe
 
 The vault operates through two client-side tools that the model can call during conversation:
 
-`memory_vault_save` creates or updates a vault entry. When the model notices the user sharing something worth remembering ("I'm vegetarian" or "my budget is $5000"), it calls this tool to persist that fact. If an entry already exists on the same topic, the model updates it rather than creating a duplicate — keeping the vault compact with one entry per topic.
+[`memory_vault_save`](/sdk/react/Internal/functions/createMemoryVaultTool) creates or updates a vault entry. When the model notices the user sharing something worth remembering ("I'm vegetarian" or "my budget is $5000"), it calls this tool to persist that fact. If an entry already exists on the same topic, the model updates it rather than creating a duplicate — keeping the vault compact with one entry per topic.
 
-`memory_vault_search` queries the vault using semantic similarity, just like the memory engine searches conversations. The model calls this when the user asks something that might relate to a stored fact, or before saving a new entry to check for duplicates. Results come back with IDs that the model can reference for updates.
+[`memory_vault_search`](/sdk/react/Internal/functions/createMemoryVaultSearchTool) queries the vault using semantic similarity, just like the memory engine searches conversations. The model calls this when the user asks something that might relate to a stored fact, or before saving a new entry to check for duplicates. Results come back as [`VaultSearchResult`](/sdk/react/Internal/interfaces/VaultSearchResult) objects with IDs that the model can reference for updates.
 
 Both tools are powered by the same embedding infrastructure as the engine. Vault entries are embedded when saved, cached in an LRU cache for fast search, and compared against queries using cosine similarity.
 
@@ -71,12 +71,13 @@ When no `onSave` callback is provided, saves require manual approval through the
 
 ## Search Options
 
-Search behavior is configured through [`MemoryVaultSearchOptions`](/sdk/react/Internal/interfaces/MemoryVaultSearchOptions). The `limit` parameter sets the maximum number of results (default 5), and `minSimilarity` controls the minimum cosine similarity threshold (default 0.1). The vault uses a lower default threshold than the engine because vault entries are typically short and precise, so even lower similarity scores can be meaningful.
+Search behavior is configured through [`MemoryVaultSearchOptions`](/sdk/react/Internal/interfaces/MemoryVaultSearchOptions). The `limit` parameter sets the maximum number of results (default 5), and `minSimilarity` controls the minimum cosine similarity threshold (default 0.1). The vault uses a lower default threshold than the engine because vault entries are typically short and precise, so even lower similarity scores can be meaningful. You can also filter by `scopes` to search only specific partitions.
 
 ```tsx
 const searchTool = createMemoryVaultSearchTool({
   limit: 10,
   minSimilarity: 0.2,
+  scopes: ["private"],
 });
 ```
 
@@ -84,7 +85,7 @@ Vault entries are pre-embedded when the hook initializes, so search only needs t
 
 ## Managing Vault Entries
 
-Beyond the LLM tools, `useChatStorage` exposes CRUD methods for building a settings UI where users can view, edit, and delete their stored memories directly:
+Beyond the LLM tools, `useChatStorage` exposes methods for building a settings UI where users can view, edit, and delete their stored memories directly. Each memory is a [`StoredVaultMemory`](/sdk/react/Internal/interfaces/StoredVaultMemory) with a `scope` field (defaulting to "private") that can partition entries — for example, separating personal preferences from shared project context.
 
 ```tsx
 const {
@@ -106,5 +107,3 @@ await updateVaultMemory(memory.uniqueId, "Prefers dark mode with blue accent");
 // Delete (soft delete)
 await deleteVaultMemory(memory.uniqueId);
 ```
-
-Each memory has a `scope` field (defaulting to "private") that can be used to partition entries — for example, separating personal preferences from shared project context.
