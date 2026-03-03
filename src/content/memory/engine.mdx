@@ -1,10 +1,10 @@
-# Memory
+# Memory Engine
 
 A chat that forgets everything between sessions isn't very useful. Users expect the AI to remember what they've talked about before — their preferences, past questions, and ongoing projects. The SDK provides on-demand memory that searches past conversations using semantic similarity, so the model can recall relevant context without you building a separate memory system.
 
 ## How It Works
 
-Memory in the SDK isn't a separate database or extraction step. Your conversation messages are the memory. When [`useChatStorage`](/sdk/react/Chat/useChatStorage) saves a message, it automatically generates an embedding vector for that message and stores it alongside the text. Later, when the model needs to recall something, it searches across all stored messages by comparing embedding vectors using cosine similarity — finding past messages that are semantically related to the current question, even if they use different words.
+The memory engine doesn't require a separate extraction step — your conversation messages are the memory. When [`useChatStorage`](/sdk/react/Chat/useChatStorage) saves a message, it automatically generates an embedding vector for that message and stores it alongside the text. Later, when the model needs to recall something, it searches across all stored messages by comparing embedding vectors using cosine similarity — finding past messages that are semantically related to the current question, even if they use different words.
 
 This happens through [`createMemoryRetrievalTool`](/sdk/react/Internal/interfaces/UseChatStorageResult#creatememoryretrievaltool), a client-side tool that the model can call during a conversation. When the model decides it needs past context (for example, "what did the user say about their budget?"), it calls the tool with a search query. The SDK embeds that query, compares it against stored message embeddings, and returns the most relevant matches. The model then incorporates those memories into its response.
 

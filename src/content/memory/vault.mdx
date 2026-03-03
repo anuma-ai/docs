@@ -1,0 +1,110 @@
+# Memory Vault
+
+The memory engine searches past conversations, but some things are worth remembering more explicitly — a user's name, their timezone, dietary preferences, or project requirements. The memory vault is a persistent store for curated facts that the model saves on behalf of the user. Unlike the engine, which treats every message as potential memory, the vault contains only information that was deliberately captured.
+
+## How It Works
+
+The vault operates through two client-side tools that the model can call during conversation:
+
+`memory_vault_save` creates or updates a vault entry. When the model notices the user sharing something worth remembering ("I'm vegetarian" or "my budget is $5000"), it calls this tool to persist that fact. If an entry already exists on the same topic, the model updates it rather than creating a duplicate — keeping the vault compact with one entry per topic.
+
+`memory_vault_search` queries the vault using semantic similarity, just like the memory engine searches conversations. The model calls this when the user asks something that might relate to a stored fact, or before saving a new entry to check for duplicates. Results come back with IDs that the model can reference for updates.
+
+Both tools are powered by the same embedding infrastructure as the engine. Vault entries are embedded when saved, cached in an LRU cache for fast search, and compared against queries using cosine similarity.
+
+## Setup
+
+The vault tools are created through [`useChatStorage`](/sdk/react/Chat/useChatStorage), which sets up the database context, authentication, and embedding cache automatically.
+
+```tsx
+const {
+  sendMessage,
+  createMemoryVaultTool,
+  createMemoryVaultSearchTool,
+} = useChatStorage({
+  database,
+  getToken,
+});
+```
+
+Pass both tools as client tools when sending messages:
+
+```tsx
+const saveTool = createMemoryVaultTool({
+  onSave: async (operation) => {
+    // Show a confirmation UI, return true to proceed
+    return await confirmWithUser(operation);
+  },
+});
+
+const searchTool = createMemoryVaultSearchTool({
+  limit: 5,
+  minSimilarity: 0.1,
+});
+
+await sendMessage({
+  content: "Remember that I prefer dark mode.",
+  clientTools: [saveTool, searchTool],
+});
+```
+
+The model handles the workflow end to end. When something is worth saving, it first searches for an existing entry on the topic, then either creates a new entry or updates the existing one with merged information.
+
+## Save Confirmation
+
+The `onSave` callback in [`MemoryVaultToolOptions`](/sdk/react/Internal/interfaces/MemoryVaultToolOptions) lets you intercept every save before it happens. The callback receives a [`VaultSaveOperation`](/sdk/react/Internal/interfaces/VaultSaveOperation) describing what's about to change — whether it's a new entry or an update, the content, and for updates, the previous content so you can show a diff. Return `true` to confirm or `false` to cancel.
+
+```tsx
+const saveTool = createMemoryVaultTool({
+  onSave: async (operation) => {
+    if (operation.action === "update") {
+      console.log(`Updating: "${operation.previousContent}" → "${operation.content}"`);
+    } else {
+      console.log(`Saving: "${operation.content}"`);
+    }
+    return true;
+  },
+});
+```
+
+When no `onSave` callback is provided, saves require manual approval through the host app's `onToolCall` handler instead.
+
+## Search Options
+
+Search behavior is configured through [`MemoryVaultSearchOptions`](/sdk/react/Internal/interfaces/MemoryVaultSearchOptions). The `limit` parameter sets the maximum number of results (default 5), and `minSimilarity` controls the minimum cosine similarity threshold (default 0.1). The vault uses a lower default threshold than the engine because vault entries are typically short and precise, so even lower similarity scores can be meaningful.
+
+```tsx
+const searchTool = createMemoryVaultSearchTool({
+  limit: 10,
+  minSimilarity: 0.2,
+});
+```
+
+Vault entries are pre-embedded when the hook initializes, so search only needs to embed the query — not re-embed every vault entry on each call. When a new entry is saved, it's eagerly embedded and added to the cache so it's immediately searchable.
+
+## Managing Vault Entries
+
+Beyond the LLM tools, `useChatStorage` exposes CRUD methods for building a settings UI where users can view, edit, and delete their stored memories directly:
+
+```tsx
+const {
+  getVaultMemories,
+  createVaultMemory,
+  updateVaultMemory,
+  deleteVaultMemory,
+} = useChatStorage({ database, getToken });
+
+// List all memories
+const memories = await getVaultMemories();
+
+// Create manually
+await createVaultMemory("Prefers dark mode");
+
+// Update
+await updateVaultMemory(memory.uniqueId, "Prefers dark mode with blue accent");
+
+// Delete (soft delete)
+await deleteVaultMemory(memory.uniqueId);
+```
+
+Each memory has a `scope` field (defaulting to "private") that can be used to partition entries — for example, separating personal preferences from shared project context.
