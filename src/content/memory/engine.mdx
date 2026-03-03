@@ -1,0 +1,50 @@
+# Memory Engine
+
+A chat that forgets everything between sessions isn't very useful. Users expect the AI to remember what they've talked about before — their preferences, past questions, and ongoing projects. The memory engine searches past conversations using semantic similarity, so the model can recall relevant context without you building a separate memory system.
+
+## How It Works
+
+The memory engine doesn't require a separate extraction step — your conversation messages are the memory. When [`useChatStorage`](/sdk/react/Chat/useChatStorage) saves a message, it automatically generates an embedding vector and stores it alongside the text. Long messages are split into overlapping [chunks](/sdk/react/Internal/interfaces/TextChunk) first (default 400 characters with 50 character overlap), so search can match against specific parts of a message rather than the whole thing. Messages shorter than the minimum content length are skipped.
+
+When the model needs to recall something, it calls the [`search_memory`](/sdk/react/Internal/functions/createMemoryRetrievalTool) tool with a natural language query. The engine embeds that query, compares it against all stored chunk and message embeddings using cosine similarity, and returns the closest matches — even if they use different words than the original conversation.
+
+## Setup
+
+Embedding generation is enabled by default in [`useChatStorage`](/sdk/react/Chat/useChatStorage). Messages are embedded automatically after saving, and chunking happens transparently for longer messages.
+
+```tsx
+const { sendMessage, createMemoryEngineTool } = useChatStorage({
+  database,
+  getToken,
+  autoEmbedMessages: true, // default
+});
+```
+
+To give the model access to memory, create the engine tool and pass it as a client tool when sending messages:
+
+```tsx
+const memoryTool = createMemoryEngineTool({ limit: 5 });
+
+await sendMessage({
+  content: "What were we discussing last week?",
+  clientTools: [memoryTool],
+});
+```
+
+The model decides when to use the tool. If the user asks something that might benefit from past context, the model calls it, gets relevant chunks back, and weaves that information into its response. If the question is self-contained, it skips the tool entirely.
+
+## Search Options
+
+You can configure search behavior through [`MemoryEngineSearchOptions`](/sdk/react/Internal/interfaces/MemoryRetrievalSearchOptions):
+
+```tsx
+const memoryTool = createMemoryEngineTool({
+  limit: 5,
+  minSimilarity: 0.4,
+  excludeConversationId: conversationId,
+  includeAssistant: true,
+  sortBy: "chronological",
+});
+```
+
+`limit` controls how many results come back (default 8). `minSimilarity` sets a threshold between 0 and 1 for how closely a stored chunk must match the query (default 0.3). `excludeConversationId` filters out the current conversation so the model doesn't "remember" things already in its context window. By default only user messages are searched; set `includeAssistant` to `true` to also match against assistant responses. Results can be sorted by `similarity` (most relevant first, the default) or `chronological` (oldest first).
