@@ -19,6 +19,10 @@ jobs:
         run: |
           git clone --depth 1 https://x-access-token:${{ secrets.SDK_REPO_TOKEN }}@github.com/anuma-ai/starter-next.git /tmp/starter-next
 
+      - name: Clone starter-telegram repo
+        run: |
+          git clone --depth 1 https://x-access-token:${{ secrets.SDK_REPO_TOKEN }}@github.com/anuma-ai/starter-telegram.git /tmp/starter-telegram
+
       - name: Replace SDK docs
         run: |
           rm -rf src/content/sdk
@@ -29,12 +33,17 @@ jobs:
           rm -rf src/content/tutorials/nextjs
           cp -r /tmp/starter-next/docs/documents src/content/tutorials/nextjs
 
+      - name: Replace Telegram tutorial docs
+        run: |
+          rm -rf src/content/tutorials/telegram
+          cp -r /tmp/starter-telegram/docs/documents src/content/tutorials/telegram
+
       - name: Create or update PR
         uses: peter-evans/create-pull-request@v7
         with:
           token: ${{ secrets.SDK_REPO_TOKEN }}
           branch: automated/sync-docs
           title: "docs: sync documentation"
-          body: Automated sync of documentation from anuma-ai/sdk and anuma-ai/starter-next.
+          body: Automated sync of documentation from anuma-ai/sdk, anuma-ai/starter-next, and anuma-ai/starter-telegram.
           commit-message: "docs: sync documentation"
           delete-branch: true
