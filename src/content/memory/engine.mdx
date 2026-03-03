@@ -1,29 +1,29 @@
 # Memory Engine
 
-A chat that forgets everything between sessions isn't very useful. Users expect the AI to remember what they've talked about before — their preferences, past questions, and ongoing projects. The SDK provides on-demand memory that searches past conversations using semantic similarity, so the model can recall relevant context without you building a separate memory system.
+A chat that forgets everything between sessions isn't very useful. Users expect the AI to remember what they've talked about before — their preferences, past questions, and ongoing projects. The memory engine searches past conversations using semantic similarity, so the model can recall relevant context without you building a separate memory system.
 
 ## How It Works
 
-The memory engine doesn't require a separate extraction step — your conversation messages are the memory. When [`useChatStorage`](/sdk/react/Chat/useChatStorage) saves a message, it automatically generates an embedding vector for that message and stores it alongside the text. Later, when the model needs to recall something, it searches across all stored messages by comparing embedding vectors using cosine similarity — finding past messages that are semantically related to the current question, even if they use different words.
+The memory engine doesn't require a separate extraction step — your conversation messages are the memory. When [`useChatStorage`](/sdk/react/Chat/useChatStorage) saves a message, it automatically generates an embedding vector and stores it alongside the text. Long messages are split into chunks first (around 400 characters each, with some overlap), so that search can match against specific parts of a message rather than the whole thing. Short messages below a minimum content length are skipped since they carry little semantic value.
 
-This happens through [`createMemoryRetrievalTool`](/sdk/react/Internal/interfaces/UseChatStorageResult#creatememoryretrievaltool), a client-side tool that the model can call during a conversation. When the model decides it needs past context (for example, "what did the user say about their budget?"), it calls the tool with a search query. The SDK embeds that query, compares it against stored message embeddings, and returns the most relevant matches. The model then incorporates those memories into its response.
+Later, when the model needs to recall something, it calls the `search_memory` tool with a query. The engine embeds that query, compares it against all stored message and chunk embeddings using cosine similarity, and returns the most relevant matches — even if they use different words than the original conversation.
 
 ## Setup
 
-Embedding generation is enabled by default in [`useChatStorage`](/sdk/react/Chat/useChatStorage). Messages are embedded automatically after saving, as long as they meet a minimum content length (short messages like "ok" or "thanks" are skipped since they carry little semantic value).
+Embedding generation is enabled by default in [`useChatStorage`](/sdk/react/Chat/useChatStorage). Messages are embedded automatically after saving, and chunking happens transparently for longer messages.
 
 ```tsx
-const { sendMessage, createMemoryRetrievalTool } = useChatStorage({
+const { sendMessage, createMemoryEngineTool } = useChatStorage({
   database,
   getToken,
   autoEmbedMessages: true, // default
 });
 ```
 
-To give the model access to memory, create the retrieval tool and pass it as a client tool when sending messages:
+To give the model access to memory, create the engine tool and pass it as a client tool when sending messages:
 
 ```tsx
-const memoryTool = createMemoryRetrievalTool({ limit: 5 });
+const memoryTool = createMemoryEngineTool({ limit: 5 });
 
 await sendMessage({
   content: "What were we discussing last week?",
@@ -31,18 +31,18 @@ await sendMessage({
 });
 ```
 
-The model decides when to use the tool. If the user asks something that might benefit from past context, the model calls the memory tool, gets relevant messages back, and weaves that information into its response. If the question is self-contained, it skips the tool entirely.
+The model decides when to use the tool. If the user asks something that might benefit from past context, the model calls it, gets relevant chunks back, and weaves that information into its response. If the question is self-contained, it skips the tool entirely.
 
 ## Search Options
 
-You can configure how memory search behaves through [`MemoryRetrievalSearchOptions`](/sdk/react/Internal/interfaces/MemoryRetrievalSearchOptions). The `limit` parameter controls how many results come back (default 8), and `minSimilarity` sets a threshold between 0 and 1 for how closely a past message must match the query (default 0.3). Setting `excludeConversationId` to the current conversation prevents the model from "remembering" things that were just said moments ago — it's already aware of those through conversation history.
+You can configure how search behaves through [`MemoryEngineSearchOptions`](/sdk/react/Internal/interfaces/MemoryRetrievalSearchOptions). The `limit` parameter controls how many results come back (default 8), and `minSimilarity` sets a threshold between 0 and 1 for how closely a stored chunk must match the query (default 0.3). Setting `excludeConversationId` to the current conversation prevents the model from "remembering" things that were just said moments ago — it's already aware of those through conversation history.
 
 ```tsx
-const memoryTool = createMemoryRetrievalTool({
+const memoryTool = createMemoryEngineTool({
   limit: 5,
   minSimilarity: 0.4,
   excludeConversationId: conversationId,
 });
 ```
 
-Results can be sorted by `similarity` (most relevant first, the default) or `chronological` (oldest first), depending on whether recency or relevance matters more for your use case.
+Results can be sorted by `similarity` (most relevant first, the default) or `chronological` (oldest first), depending on whether recency or relevance matters more for your use case. By default only user messages are searched; set `includeAssistant` to `true` to also search assistant responses.
