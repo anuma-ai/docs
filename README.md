@@ -5,7 +5,7 @@ AI-powered apps. Anuma provides a single API to access models from OpenAI,
 Google, Anthropic, xAI, and open-source providers, with built-in conversation
 memory, user-owned encryption, and local-first data storage.
 
-https://docs.zetachain.workers.dev/
+https://docs.anuma.ai/
 
 ## Development
 
