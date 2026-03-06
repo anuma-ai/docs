@@ -2,44 +2,44 @@
 
 > **HandlersCreditPack** = `object`
 
-Defined in: [src/client/types.gen.ts:257](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#257)
+Defined in: [src/client/types.gen.ts:276](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#276)
 
 ## Properties
 
-### bonus\_percent?
+### bonus\_percent
 
-> `optional` **bonus\_percent**: `number`
+> **bonus\_percent**: `number`
 
-Defined in: [src/client/types.gen.ts:258](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#258)
-
-***
-
-### credits?
-
-> `optional` **credits**: `number`
-
-Defined in: [src/client/types.gen.ts:259](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#259)
+Defined in: [src/client/types.gen.ts:277](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#277)
 
 ***
 
-### currency?
+### credits
 
-> `optional` **currency**: `string`
+> **credits**: `number`
 
-Defined in: [src/client/types.gen.ts:260](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#260)
-
-***
-
-### pro\_credits?
-
-> `optional` **pro\_credits**: `number`
-
-Defined in: [src/client/types.gen.ts:261](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#261)
+Defined in: [src/client/types.gen.ts:278](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#278)
 
 ***
 
-### unit\_amount?
+### currency
 
-> `optional` **unit\_amount**: `number`
+> **currency**: `string`
 
-Defined in: [src/client/types.gen.ts:262](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#262)
+Defined in: [src/client/types.gen.ts:279](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#279)
+
+***
+
+### pro\_credits
+
+> **pro\_credits**: `number`
+
+Defined in: [src/client/types.gen.ts:280](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#280)
+
+***
+
+### unit\_amount
+
+> **unit\_amount**: `number`
+
+Defined in: [src/client/types.gen.ts:281](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#281)

@@ -2,12 +2,12 @@
 
 > **HandlersCheckoutSessionResponse** = `object`
 
-Defined in: [src/client/types.gen.ts:114](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#114)
+Defined in: [src/client/types.gen.ts:129](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#129)
 
 ## Properties
 
-### url?
+### url
 
-> `optional` **url**: `string`
+> **url**: `string`
 
-Defined in: [src/client/types.gen.ts:115](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#115)
+Defined in: [src/client/types.gen.ts:130](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#130)

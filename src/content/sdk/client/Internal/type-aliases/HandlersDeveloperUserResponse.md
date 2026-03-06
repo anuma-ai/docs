@@ -2,70 +2,70 @@
 
 > **HandlersDeveloperUserResponse** = `object`
 
-Defined in: [src/client/types.gen.ts:321](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#321)
+Defined in: [src/client/types.gen.ts:344](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#344)
 
 ## Properties
 
-### address?
+### address
 
-> `optional` **address**: `string`
+> **address**: `string`
 
-Defined in: [src/client/types.gen.ts:322](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#322)
-
-***
-
-### created\_at?
-
-> `optional` **created\_at**: `string`
-
-Defined in: [src/client/types.gen.ts:323](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#323)
+Defined in: [src/client/types.gen.ts:345](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#345)
 
 ***
 
-### credits?
+### created\_at
 
-> `optional` **credits**: `number`
+> **created\_at**: `string`
 
-Defined in: [src/client/types.gen.ts:327](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#327)
+Defined in: [src/client/types.gen.ts:346](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#346)
+
+***
+
+### credits
+
+> **credits**: `number`
+
+Defined in: [src/client/types.gen.ts:350](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#350)
 
 available credits (1 credit = $0.01)
 
 ***
 
-### is\_enrolled\_onchain?
+### is\_enrolled\_onchain
 
-> `optional` **is\_enrolled\_onchain**: `boolean`
+> **is\_enrolled\_onchain**: `boolean`
 
-Defined in: [src/client/types.gen.ts:331](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#331)
+Defined in: [src/client/types.gen.ts:354](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#354)
 
 on-chain enrollment status
 
 ***
 
-### lifetime\_credits?
+### lifetime\_credits
 
-> `optional` **lifetime\_credits**: `number`
+> **lifetime\_credits**: `number`
 
-Defined in: [src/client/types.gen.ts:335](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#335)
+Defined in: [src/client/types.gen.ts:358](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#358)
 
 total credits ever received
 
 ***
 
-### subscription\_tier?
+### subscription\_tier
 
-> `optional` **subscription\_tier**: `string`
+> **subscription\_tier**: `string`
 
-Defined in: [src/client/types.gen.ts:339](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#339)
+Defined in: [src/client/types.gen.ts:362](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#362)
 
 basic/pro
 
 ***
 
-### used\_credits?
+### used\_credits
 
-> `optional` **used\_credits**: `number`
+> **used\_credits**: `number`
 
-Defined in: [src/client/types.gen.ts:343](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#343)
+Defined in: [src/client/types.gen.ts:366](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#366)
 
 credits used/pending
