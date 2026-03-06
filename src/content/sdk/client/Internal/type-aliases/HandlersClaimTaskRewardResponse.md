@@ -2,15 +2,15 @@
 
 > **HandlersClaimTaskRewardResponse** = `object`
 
-Defined in: [src/client/types.gen.ts:136](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#136)
+Defined in: [src/client/types.gen.ts:151](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#151)
 
 ## Properties
 
-### already\_claimed?
+### already\_claimed
 
-> `optional` **already\_claimed**: `boolean`
+> **already\_claimed**: `boolean`
 
-Defined in: [src/client/types.gen.ts:137](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#137)
+Defined in: [src/client/types.gen.ts:152](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#152)
 
 ***
 
@@ -18,20 +18,20 @@ Defined in: [src/client/types.gen.ts:137](https://github.com/anuma-ai/sdk/blob/m
 
 > `optional` **credits\_awarded**: `number`
 
-Defined in: [src/client/types.gen.ts:138](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#138)
+Defined in: [src/client/types.gen.ts:153](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#153)
 
 ***
 
-### message?
+### message
 
-> `optional` **message**: `string`
+> **message**: `string`
 
-Defined in: [src/client/types.gen.ts:139](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#139)
+Defined in: [src/client/types.gen.ts:154](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#154)
 
 ***
 
-### success?
+### success
 
-> `optional` **success**: `boolean`
+> **success**: `boolean`
 
-Defined in: [src/client/types.gen.ts:140](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#140)
+Defined in: [src/client/types.gen.ts:155](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#155)

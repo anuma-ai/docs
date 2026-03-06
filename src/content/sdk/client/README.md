@@ -100,6 +100,11 @@
 | [GetApiV1DeveloperAppsErrors](Internal/type-aliases/GetApiV1DeveloperAppsErrors.md) | - |
 | [GetApiV1DeveloperAppsResponse](Internal/type-aliases/GetApiV1DeveloperAppsResponse.md) | - |
 | [GetApiV1DeveloperAppsResponses](Internal/type-aliases/GetApiV1DeveloperAppsResponses.md) | - |
+| [GetApiV1DeveloperBillingData](Internal/type-aliases/GetApiV1DeveloperBillingData.md) | - |
+| [GetApiV1DeveloperBillingError](Internal/type-aliases/GetApiV1DeveloperBillingError.md) | - |
+| [GetApiV1DeveloperBillingErrors](Internal/type-aliases/GetApiV1DeveloperBillingErrors.md) | - |
+| [GetApiV1DeveloperBillingResponse](Internal/type-aliases/GetApiV1DeveloperBillingResponse.md) | - |
+| [GetApiV1DeveloperBillingResponses](Internal/type-aliases/GetApiV1DeveloperBillingResponses.md) | - |
 | [GetApiV1DocsSwaggerJsonData](Internal/type-aliases/GetApiV1DocsSwaggerJsonData.md) | - |
 | [GetApiV1DocsSwaggerJsonResponse](Internal/type-aliases/GetApiV1DocsSwaggerJsonResponse.md) | - |
 | [GetApiV1DocsSwaggerJsonResponses](Internal/type-aliases/GetApiV1DocsSwaggerJsonResponses.md) | - |
@@ -146,6 +151,8 @@
 | [HandlersAppResponse](Internal/type-aliases/HandlersAppResponse.md) | - |
 | [HandlersAppUsageResponse](Internal/type-aliases/HandlersAppUsageResponse.md) | - |
 | [HandlersAppUserUsageResponse](Internal/type-aliases/HandlersAppUserUsageResponse.md) | - |
+| [HandlersBillingHistoryResponse](Internal/type-aliases/HandlersBillingHistoryResponse.md) | - |
+| [HandlersBillingRecordResponse](Internal/type-aliases/HandlersBillingRecordResponse.md) | - |
 | [HandlersCancelScheduledDowngradeResponse](Internal/type-aliases/HandlersCancelScheduledDowngradeResponse.md) | - |
 | [HandlersCancelSubscriptionResponse](Internal/type-aliases/HandlersCancelSubscriptionResponse.md) | - |
 | [HandlersCheckoutSessionResponse](Internal/type-aliases/HandlersCheckoutSessionResponse.md) | - |
@@ -176,6 +183,8 @@
 | [HandlersHealthResponse](Internal/type-aliases/HandlersHealthResponse.md) | - |
 | [HandlersListApiKeysResponse](Internal/type-aliases/HandlersListApiKeysResponse.md) | - |
 | [HandlersListAppsResponse](Internal/type-aliases/HandlersListAppsResponse.md) | - |
+| [HandlersListDeveloperApiKeysResponse](Internal/type-aliases/HandlersListDeveloperApiKeysResponse.md) | - |
+| [HandlersListDeveloperAppsResponse](Internal/type-aliases/HandlersListDeveloperAppsResponse.md) | - |
 | [HandlersListUsersResponse](Internal/type-aliases/HandlersListUsersResponse.md) | - |
 | [HandlersModelToolUsageItem](Internal/type-aliases/HandlersModelToolUsageItem.md) | - |
 | [HandlersModelUsageItem](Internal/type-aliases/HandlersModelUsageItem.md) | - |
@@ -204,6 +213,8 @@
 | [HandlersUpdateAppRequest](Internal/type-aliases/HandlersUpdateAppRequest.md) | - |
 | [HandlersUpdateDeveloperAppRequest](Internal/type-aliases/HandlersUpdateDeveloperAppRequest.md) | - |
 | [HandlersUpdateUserLimitRequest](Internal/type-aliases/HandlersUpdateUserLimitRequest.md) | - |
+| [HandlersUpgradeSubscriptionRequest](Internal/type-aliases/HandlersUpgradeSubscriptionRequest.md) | - |
+| [HandlersUpgradeSubscriptionResponse](Internal/type-aliases/HandlersUpgradeSubscriptionResponse.md) | - |
 | [HandlersUsageByModelResponse](Internal/type-aliases/HandlersUsageByModelResponse.md) | - |
 | [HandlersUsagePeriod](Internal/type-aliases/HandlersUsagePeriod.md) | - |
 | [HandlersUsageTimeseriesPoint](Internal/type-aliases/HandlersUsageTimeseriesPoint.md) | - |
@@ -316,6 +327,11 @@
 | [PostApiV1DeveloperAppsByAppUuidApiKeysErrors](Internal/type-aliases/PostApiV1DeveloperAppsByAppUuidApiKeysErrors.md) | - |
 | [PostApiV1DeveloperAppsByAppUuidApiKeysResponse](Internal/type-aliases/PostApiV1DeveloperAppsByAppUuidApiKeysResponse.md) | - |
 | [PostApiV1DeveloperAppsByAppUuidApiKeysResponses](Internal/type-aliases/PostApiV1DeveloperAppsByAppUuidApiKeysResponses.md) | - |
+| [PostApiV1DeveloperAppsByAppUuidFundData](Internal/type-aliases/PostApiV1DeveloperAppsByAppUuidFundData.md) | - |
+| [PostApiV1DeveloperAppsByAppUuidFundError](Internal/type-aliases/PostApiV1DeveloperAppsByAppUuidFundError.md) | - |
+| [PostApiV1DeveloperAppsByAppUuidFundErrors](Internal/type-aliases/PostApiV1DeveloperAppsByAppUuidFundErrors.md) | - |
+| [PostApiV1DeveloperAppsByAppUuidFundResponse](Internal/type-aliases/PostApiV1DeveloperAppsByAppUuidFundResponse.md) | - |
+| [PostApiV1DeveloperAppsByAppUuidFundResponses](Internal/type-aliases/PostApiV1DeveloperAppsByAppUuidFundResponses.md) | - |
 | [PostApiV1DeveloperAppsByAppUuidPrivyData](Internal/type-aliases/PostApiV1DeveloperAppsByAppUuidPrivyData.md) | - |
 | [PostApiV1DeveloperAppsByAppUuidPrivyError](Internal/type-aliases/PostApiV1DeveloperAppsByAppUuidPrivyError.md) | - |
 | [PostApiV1DeveloperAppsByAppUuidPrivyErrors](Internal/type-aliases/PostApiV1DeveloperAppsByAppUuidPrivyErrors.md) | - |
@@ -371,6 +387,11 @@
 | [PostApiV1SubscriptionsScheduleDowngradeErrors](Internal/type-aliases/PostApiV1SubscriptionsScheduleDowngradeErrors.md) | - |
 | [PostApiV1SubscriptionsScheduleDowngradeResponse](Internal/type-aliases/PostApiV1SubscriptionsScheduleDowngradeResponse.md) | - |
 | [PostApiV1SubscriptionsScheduleDowngradeResponses](Internal/type-aliases/PostApiV1SubscriptionsScheduleDowngradeResponses.md) | - |
+| [PostApiV1SubscriptionsUpgradeData](Internal/type-aliases/PostApiV1SubscriptionsUpgradeData.md) | - |
+| [PostApiV1SubscriptionsUpgradeError](Internal/type-aliases/PostApiV1SubscriptionsUpgradeError.md) | - |
+| [PostApiV1SubscriptionsUpgradeErrors](Internal/type-aliases/PostApiV1SubscriptionsUpgradeErrors.md) | - |
+| [PostApiV1SubscriptionsUpgradeResponse](Internal/type-aliases/PostApiV1SubscriptionsUpgradeResponse.md) | - |
+| [PostApiV1SubscriptionsUpgradeResponses](Internal/type-aliases/PostApiV1SubscriptionsUpgradeResponses.md) | - |
 | [PostApiV1SubscriptionsWebhookData](Internal/type-aliases/PostApiV1SubscriptionsWebhookData.md) | - |
 | [PostApiV1SubscriptionsWebhookError](Internal/type-aliases/PostApiV1SubscriptionsWebhookError.md) | - |
 | [PostApiV1SubscriptionsWebhookErrors](Internal/type-aliases/PostApiV1SubscriptionsWebhookErrors.md) | - |
@@ -391,11 +412,6 @@
 | [PostAuthOauthByProviderRevokeErrors](Internal/type-aliases/PostAuthOauthByProviderRevokeErrors.md) | - |
 | [PostAuthOauthByProviderRevokeResponse](Internal/type-aliases/PostAuthOauthByProviderRevokeResponse.md) | - |
 | [PostAuthOauthByProviderRevokeResponses](Internal/type-aliases/PostAuthOauthByProviderRevokeResponses.md) | - |
-| [PostDeveloperAppsByAppUuidFundData](Internal/type-aliases/PostDeveloperAppsByAppUuidFundData.md) | - |
-| [PostDeveloperAppsByAppUuidFundError](Internal/type-aliases/PostDeveloperAppsByAppUuidFundError.md) | - |
-| [PostDeveloperAppsByAppUuidFundErrors](Internal/type-aliases/PostDeveloperAppsByAppUuidFundErrors.md) | - |
-| [PostDeveloperAppsByAppUuidFundResponse](Internal/type-aliases/PostDeveloperAppsByAppUuidFundResponse.md) | - |
-| [PostDeveloperAppsByAppUuidFundResponses](Internal/type-aliases/PostDeveloperAppsByAppUuidFundResponses.md) | - |
 | [PutApiV1AdminAppsByAppIdApiKeysByIdData](Internal/type-aliases/PutApiV1AdminAppsByAppIdApiKeysByIdData.md) | - |
 | [PutApiV1AdminAppsByAppIdApiKeysByIdError](Internal/type-aliases/PutApiV1AdminAppsByAppIdApiKeysByIdError.md) | - |
 | [PutApiV1AdminAppsByAppIdApiKeysByIdErrors](Internal/type-aliases/PutApiV1AdminAppsByAppIdApiKeysByIdErrors.md) | - |
@@ -431,6 +447,7 @@
 | [getApiV1DeveloperAppsByAppUuidUsageUsers](Internal/functions/getApiV1DeveloperAppsByAppUuidUsageUsers.md) | Get app user usage |
 | [getApiV1DeveloperAppsByAppUuidUsers](Internal/functions/getApiV1DeveloperAppsByAppUuidUsers.md) | List users |
 | [getApiV1DeveloperAppsByAppUuidUsersByAddress](Internal/functions/getApiV1DeveloperAppsByAppUuidUsersByAddress.md) | Get user |
+| [getApiV1DeveloperBilling](Internal/functions/getApiV1DeveloperBilling.md) | Get billing history |
 | [getApiV1DocsSwaggerJson](Internal/functions/getApiV1DocsSwaggerJson.md) | Get OpenAPI specification |
 | [getApiV1Models](Internal/functions/getApiV1Models.md) | List available models |
 | [getApiV1SubscriptionsPlans](Internal/functions/getApiV1SubscriptionsPlans.md) | List available subscription plans |
@@ -453,6 +470,7 @@
 | [postApiV1CreditsSyncSnag](Internal/functions/postApiV1CreditsSyncSnag.md) | Sync Snag points |
 | [postApiV1DeveloperApps](Internal/functions/postApiV1DeveloperApps.md) | Create app |
 | [postApiV1DeveloperAppsByAppUuidApiKeys](Internal/functions/postApiV1DeveloperAppsByAppUuidApiKeys.md) | Create API key |
+| [postApiV1DeveloperAppsByAppUuidFund](Internal/functions/postApiV1DeveloperAppsByAppUuidFund.md) | Fund developer app balance |
 | [postApiV1DeveloperAppsByAppUuidPrivy](Internal/functions/postApiV1DeveloperAppsByAppUuidPrivy.md) | Configure Privy |
 | [postApiV1DeveloperAppsByAppUuidUsersByAddressTopUp](Internal/functions/postApiV1DeveloperAppsByAppUuidUsersByAddressTopUp.md) | Top up user credits |
 | [postApiV1Embeddings](Internal/functions/postApiV1Embeddings.md) | Create embeddings |
@@ -463,10 +481,10 @@
 | [postApiV1SubscriptionsCustomerPortal](Internal/functions/postApiV1SubscriptionsCustomerPortal.md) | Create customer portal session |
 | [postApiV1SubscriptionsRenew](Internal/functions/postApiV1SubscriptionsRenew.md) | Renew subscription |
 | [postApiV1SubscriptionsScheduleDowngrade](Internal/functions/postApiV1SubscriptionsScheduleDowngrade.md) | Schedule subscription downgrade |
+| [postApiV1SubscriptionsUpgrade](Internal/functions/postApiV1SubscriptionsUpgrade.md) | Upgrade subscription |
 | [postApiV1SubscriptionsWebhook](Internal/functions/postApiV1SubscriptionsWebhook.md) | Handle Stripe webhook |
 | [postAuthOauthByProviderExchange](Internal/functions/postAuthOauthByProviderExchange.md) | Exchange authorization code for tokens |
 | [postAuthOauthByProviderRefresh](Internal/functions/postAuthOauthByProviderRefresh.md) | Refresh access token |
 | [postAuthOauthByProviderRevoke](Internal/functions/postAuthOauthByProviderRevoke.md) | Revoke OAuth token |
-| [postDeveloperAppsByAppUuidFund](Internal/functions/postDeveloperAppsByAppUuidFund.md) | Fund developer app balance |
 | [putApiV1AdminAppsByAppIdApiKeysById](Internal/functions/putApiV1AdminAppsByAppIdApiKeysById.md) | Update API key |
 | [putApiV1AdminAppsById](Internal/functions/putApiV1AdminAppsById.md) | Update app |

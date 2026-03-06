@@ -2,64 +2,64 @@
 
 > **HandlersUserUsageResponse** = `object`
 
-Defined in: [src/client/types.gen.ts:709](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#709)
+Defined in: [src/client/types.gen.ts:765](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#765)
 
 ## Properties
 
-### address?
+### address
 
-> `optional` **address**: `string`
+> **address**: `string`
 
-Defined in: [src/client/types.gen.ts:710](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#710)
-
-***
-
-### cost\_credits?
-
-> `optional` **cost\_credits**: `number`
-
-Defined in: [src/client/types.gen.ts:711](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#711)
+Defined in: [src/client/types.gen.ts:766](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#766)
 
 ***
 
-### credits?
+### cost\_credits
 
-> `optional` **credits**: `number`
+> **cost\_credits**: `number`
 
-Defined in: [src/client/types.gen.ts:715](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#715)
+Defined in: [src/client/types.gen.ts:767](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#767)
+
+***
+
+### credits
+
+> **credits**: `number`
+
+Defined in: [src/client/types.gen.ts:771](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#771)
 
 available credits (remaining balance)
 
 ***
 
-### request\_count?
+### request\_count
 
-> `optional` **request\_count**: `number`
+> **request\_count**: `number`
 
-Defined in: [src/client/types.gen.ts:716](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#716)
-
-***
-
-### request\_tokens?
-
-> `optional` **request\_tokens**: `number`
-
-Defined in: [src/client/types.gen.ts:717](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#717)
+Defined in: [src/client/types.gen.ts:772](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#772)
 
 ***
 
-### response\_tokens?
+### request\_tokens
 
-> `optional` **response\_tokens**: `number`
+> **request\_tokens**: `number`
 
-Defined in: [src/client/types.gen.ts:718](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#718)
+Defined in: [src/client/types.gen.ts:773](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#773)
 
 ***
 
-### used\_credits?
+### response\_tokens
 
-> `optional` **used\_credits**: `number`
+> **response\_tokens**: `number`
 
-Defined in: [src/client/types.gen.ts:722](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#722)
+Defined in: [src/client/types.gen.ts:774](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#774)
+
+***
+
+### used\_credits
+
+> **used\_credits**: `number`
+
+Defined in: [src/client/types.gen.ts:778](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#778)
 
 credits pending/in-flight
