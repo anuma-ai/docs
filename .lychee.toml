@@ -11,9 +11,10 @@ exclude = [
   # Private GitHub repos (404 without auth)
   "^https://github\\.com/anuma-ai/",
   "^https://github\\.com/zeta-chain/ai-",
-  # Next.js app routes (not part of content directory)
+  # Next.js app routes and public assets (not part of content directory)
   "file://.*/src/content/api$",
   "file://.*/src/content/memory$",
+  "\\.webm$",
 ]
 
 include_fragments = true

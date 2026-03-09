@@ -4,13 +4,13 @@ A chat that forgets everything between sessions isn't very useful. Users expect 
 
 ## How It Works
 
-The memory engine doesn't require a separate extraction step — your conversation messages are the memory. When [`useChatStorage`](/sdk/react/Chat/useChatStorage) saves a message, it automatically generates an embedding vector and stores it alongside the text. Long messages are split into overlapping [chunks](/sdk/react/Internal/interfaces/TextChunk) first (default 400 characters with 50 character overlap), so search can match against specific parts of a message rather than the whole thing. Messages shorter than the minimum content length are skipped.
+The memory engine doesn't require a separate extraction step — your conversation messages are the memory. When [`useChatStorage`](/sdk/react/Hooks/useChatStorage) saves a message, it automatically generates an embedding vector and stores it alongside the text. Long messages are split into overlapping [chunks](/sdk/react/Internal/interfaces/TextChunk) first (default 400 characters with 50 character overlap), so search can match against specific parts of a message rather than the whole thing. Messages shorter than the minimum content length are skipped.
 
-When the model needs to recall something, it calls the [`search_memory`](/sdk/react/Internal/functions/createMemoryRetrievalTool) tool with a natural language query. The engine embeds that query, compares it against all stored chunk and message embeddings using cosine similarity, and returns the closest matches — even if they use different words than the original conversation.
+When the model needs to recall something, it calls the [`search_memory`](/sdk/react/Internal/functions/createMemoryEngineTool) tool with a natural language query. The engine embeds that query, compares it against all stored chunk and message embeddings using cosine similarity, and returns the closest matches — even if they use different words than the original conversation.
 
 ## Setup
 
-Embedding generation is enabled by default in [`useChatStorage`](/sdk/react/Chat/useChatStorage). Messages are embedded automatically after saving, and chunking happens transparently for longer messages.
+Embedding generation is enabled by default in [`useChatStorage`](/sdk/react/Hooks/useChatStorage). Messages are embedded automatically after saving, and chunking happens transparently for longer messages.
 
 ```tsx
 const { sendMessage, createMemoryEngineTool } = useChatStorage({
@@ -35,7 +35,7 @@ The model decides when to use the tool. If the user asks something that might be
 
 ## Search Options
 
-You can configure search behavior through [`MemoryEngineSearchOptions`](/sdk/react/Internal/interfaces/MemoryRetrievalSearchOptions):
+You can configure search behavior through [`MemoryEngineSearchOptions`](/sdk/react/Internal/interfaces/MemoryEngineSearchOptions):
 
 ```tsx
 const memoryTool = createMemoryEngineTool({
