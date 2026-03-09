@@ -18,6 +18,7 @@ jobs:
         uses: lycheeverse/lychee-action@v2
         with:
           args: >-
+            --config .lychee.toml
             --no-progress
             --root-dir src/content
             --fallback-extensions mdx,md
