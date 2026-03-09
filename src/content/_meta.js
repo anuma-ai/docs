@@ -1,5 +1,7 @@
 export default {
-  index: "",
+  index: {
+    display: "hidden",
+  },
   "#": {
     type: "separator",
     title: "Core Concepts",
@@ -13,16 +15,16 @@ export default {
   models: "Models",
   "##": {
     type: "separator",
-    title: "SDK Reference",
+    title: "Examples",
   },
-  sdk: {
+  tutorials: {
     display: "children",
   },
   "###": {
     type: "separator",
-    title: "Examples",
+    title: "SDK Reference",
   },
-  tutorials: {
+  sdk: {
     display: "children",
   },
 };
