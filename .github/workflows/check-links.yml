@@ -1,0 +1,27 @@
+name: Check Links
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "0 0 * * 1" # Weekly on Monday
+  workflow_dispatch:
+
+jobs:
+  check-links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --config .lychee.toml
+            --no-progress
+            --root-dir src/content
+            --fallback-extensions mdx,md
+            'src/content/**/*.mdx'
+            'src/content/**/*.md'
+          fail: true

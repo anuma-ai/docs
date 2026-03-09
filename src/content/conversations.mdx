@@ -12,7 +12,7 @@ Conversations can optionally belong to a [project](/sdk/react/Hooks/useProjects)
 
 ## Usage
 
-The [`useChatStorage`](/sdk/react/Chat/useChatStorage) hook handles persistent conversations:
+The [`useChatStorage`](/sdk/react/Hooks/useChatStorage) hook handles persistent conversations:
 
 ```tsx
 const {
@@ -27,6 +27,6 @@ const {
 
 When you call [`sendMessage`](/sdk/react/Internal/interfaces/UseChatStorageResult#sendmessage), the message is saved to the database first, then sent to the Portal API along with conversation history. The response streams back in real-time, and once complete, it's saved locally. If the user cancels mid-stream, partial responses are still preserved.
 
-The [Chat with Storage](/tutorial/useChatStorage) tutorial walks through a complete implementation.
+The [Chat with Storage](/tutorials/nextjs/conversations) tutorial walks through a complete implementation.
 
 For simple one-off completions without persistence, use [`useChat`](/sdk/react/Hooks/useChat) instead.
