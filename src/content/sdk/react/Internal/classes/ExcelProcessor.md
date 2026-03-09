@@ -1,8 +1,8 @@
 # ExcelProcessor
 
-Defined in: [src/lib/processors/ExcelProcessor.ts:8](https://github.com/anuma-ai/sdk/blob/main/src/lib/processors/ExcelProcessor.ts#8)
+Defined in: [src/lib/processors/ExcelProcessor.ts:9](https://github.com/anuma-ai/sdk/blob/main/src/lib/processors/ExcelProcessor.ts#9)
 
-Processor for Excel files (.xlsx, .xls) that converts to JSON structure
+Processor for Excel files (.xlsx) that converts to JSON structure
 
 ## Implements
 
@@ -24,7 +24,7 @@ Processor for Excel files (.xlsx, .xls) that converts to JSON structure
 
 > `readonly` **name**: `"excel"` = `"excel"`
 
-Defined in: [src/lib/processors/ExcelProcessor.ts:9](https://github.com/anuma-ai/sdk/blob/main/src/lib/processors/ExcelProcessor.ts#9)
+Defined in: [src/lib/processors/ExcelProcessor.ts:10](https://github.com/anuma-ai/sdk/blob/main/src/lib/processors/ExcelProcessor.ts#10)
 
 Unique identifier for this processor
 
@@ -52,7 +52,7 @@ File extensions this processor can handle (fallback if MIME type unavailable)
 
 > `readonly` **supportedMimeTypes**: `string`\[]
 
-Defined in: [src/lib/processors/ExcelProcessor.ts:10](https://github.com/anuma-ai/sdk/blob/main/src/lib/processors/ExcelProcessor.ts#10)
+Defined in: [src/lib/processors/ExcelProcessor.ts:11](https://github.com/anuma-ai/sdk/blob/main/src/lib/processors/ExcelProcessor.ts#11)
 
 MIME types this processor can handle
 
