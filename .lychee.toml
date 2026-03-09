@@ -15,8 +15,6 @@ exclude = [
   "file://.*/src/content/api$",
   "file://.*/src/content/memory$",
   "\\.webm$",
-  # Nextra treats README.md as directory index (resolves at runtime, not on disk)
-  "/README$",
 ]
 
 include_fragments = true
