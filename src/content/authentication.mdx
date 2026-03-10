@@ -28,7 +28,7 @@ API keys are a good fit when your application runs on a server or in an environm
 
 ## User Authentication with Privy
 
-Use [Privy](https://www.privy.io/) for client-side applications where end users authenticate with their own wallet and pay for inference directly. Users pay using USDC from their wallet, which means no inference costs for you as the developer. Privy supports embedded wallets, so users don't need a browser extension.
+Use [Privy](https://www.privy.io/) for client-side applications where each user authenticates with their own wallet. Privy supports embedded wallets, so users don't need a browser extension.
 
 ### Setup
 
@@ -58,4 +58,4 @@ See the [Next.js Example](/tutorials/quickstart) for a complete Privy implementa
 
 ### When to use
 
-Privy is a good fit for user-facing applications where each user has their own wallet and pays for their own usage. You don't need to manage balances or pay for inference — users handle that themselves. This works well for consumer apps, community tools, and any product where you want to ship without taking on inference costs.
+Privy is a good fit for user-facing applications where each user has their own identity and wallet. This works well for consumer apps, community tools, and any product where users need individual accounts.
