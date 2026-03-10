@@ -11,14 +11,21 @@ export default {
   memory: "Memory",
   tools: "Tools",
   models: "Models",
-  sdk: {
-    title: "Anuma SDK",
-  },
   "##": {
     type: "separator",
     title: "Examples",
   },
   tutorials: {
     display: "children",
+  },
+  "###": {
+    type: "separator",
+    title: "Reference",
+  },
+  sdk: {
+    title: "Anuma SDK",
+  },
+  cli: {
+    title: "Anuma CLI",
   },
 };

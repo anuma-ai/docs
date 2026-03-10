@@ -15,6 +15,10 @@ jobs:
         run: |
           git clone --depth 1 https://x-access-token:${{ secrets.SDK_REPO_TOKEN }}@github.com/anuma-ai/sdk.git /tmp/sdk
 
+      - name: Clone CLI repo
+        run: |
+          git clone --depth 1 https://x-access-token:${{ secrets.SDK_REPO_TOKEN }}@github.com/anuma-ai/cli.git /tmp/cli
+
       - name: Clone starter-next repo
         run: |
           git clone --depth 1 https://x-access-token:${{ secrets.SDK_REPO_TOKEN }}@github.com/anuma-ai/starter-next.git /tmp/starter-next
@@ -27,6 +31,11 @@ jobs:
         run: |
           rm -rf src/content/sdk
           cp -r /tmp/sdk/docs src/content/sdk
+
+      - name: Replace CLI docs
+        run: |
+          rm -rf src/content/cli
+          cp -r /tmp/cli/docs src/content/cli
 
       - name: Replace Next.js tutorial docs
         run: |
@@ -44,6 +53,6 @@ jobs:
           token: ${{ secrets.SDK_REPO_TOKEN }}
           branch: automated/sync-docs
           title: "docs: sync documentation"
-          body: Automated sync of documentation from anuma-ai/sdk, anuma-ai/starter-next, and anuma-ai/starter-telegram.
+          body: Automated sync of documentation from anuma-ai/sdk, anuma-ai/cli, anuma-ai/starter-next, and anuma-ai/starter-telegram.
           commit-message: "docs: sync documentation"
           delete-branch: true
