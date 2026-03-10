@@ -13,9 +13,6 @@ export default {
   models: "Models",
   sdk: {
     title: "Anuma SDK",
-    theme: {
-      collapsed: false,
-    },
   },
   "##": {
     type: "separator",
