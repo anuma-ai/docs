@@ -1,21 +1,11 @@
 import { Cards } from "nextra/components";
-import { ReactIcon, ExpoIcon } from "../components/icons";
+import { NextjsIcon, TelegramIcon } from "../components/icons";
 
 # Anuma
 
-Build AI-powered apps with a unified API, persistent memory, and user-owned encryption.
+Everything you need to build AI apps. One SDK across OpenAI, Anthropic, Google, xAI, and open-source models.
 
-Building AI applications typically means managing multiple provider SDKs, handling API key logistics, and figuring out how to persist conversations. Anuma simplifies this by giving you access to models from OpenAI, Google, Anthropic, xAI, and open-source providers through a single API. Switch models without changing code, store semantic memories that persist across sessions, and keep user data encrypted with keys only they control.
-
-Your users pay for their own inference directly — no API cost subsidies or billing management needed.
-
-## Quick Start
-
-```bash
-npm install @anuma/sdk
-```
-
-The simplest way to send a message:
+Switch providers without changing code. Add memory that persists across sessions. Give models tools to search the web, manage calendars, and call your own functions.
 
 ```tsx
 import { useChat } from "@anuma/sdk/react";
@@ -31,21 +21,25 @@ await sendMessage({
 });
 ```
 
-For persistent conversations with message history, use [`useChatStorage`](/sdk/react/Hooks/useChatStorage) which adds automatic WatermelonDB storage on top of `useChat`.
+For persistent conversations with message history, use [`useChatStorage`](/sdk/react/Hooks/useChatStorage) which adds automatic storage on top of `useChat`.
 
-[Authentication Setup →](/authentication) | [Full Tutorial →](/tutorials/quickstart)
+## Getting Started
+
+Create an app on [dashboard.anuma.ai](https://dashboard.anuma.ai), then follow the [quickstart tutorial](/tutorials/quickstart) or explore the [SDK reference](/sdk/react).
 
 ## What's Included
 
-The SDK provides [chat completions](/conversations) with streaming and tool calling, [persistent memory](/memory) that searches past conversations semantically across sessions, [server](/tools/server) and [client-side tools](/tools/client) for web search, calendars, and custom functions, and automatic [file processing](/files) for PDFs, Word docs, Excel, and images with OCR.
-
-For the full API surface, see the [SDK Reference](/sdk/react).
+- [Chat completions](/conversations) — streaming, tool calling, multi-model support
+- [Memory](/memory) — semantic search across past conversations
+- [Tools](/tools/overview) — web search, calendars, custom functions
+- [File processing](/files) — PDFs, Word, Excel, images with OCR
 
 ## Examples
 
-<Cards num={2}>
-  <Cards.Card icon={<ReactIcon />} title="Next.js" href="/tutorials/quickstart" />
-  <Cards.Card icon={<ExpoIcon />} title="React Native" href="/sdk/expo" />
+<Cards num={3}>
+  <Cards.Card icon={<NextjsIcon />} title="Quickstart" href="/tutorials/quickstart" />
+  <Cards.Card icon={<NextjsIcon />} title="Full-Featured App" href="/tutorials/nextjs" />
+  <Cards.Card icon={<TelegramIcon />} title="Telegram Bot" href="/tutorials/telegram" />
 </Cards>
 
 ## Portal API
