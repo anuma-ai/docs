@@ -1,16 +1,46 @@
 # Authentication
 
-Every API request needs an authentication token. The SDK handles this through a [`getToken`](/sdk/react/Hooks/useChat#parameters) function you provide to any hook that makes API requests.
+Every API request requires authentication. Anuma supports two methods: API keys and user authentication with Privy. Both require an app on [dashboard.anuma.ai](https://dashboard.anuma.ai).
 
-```typescript
-type GetToken = () => Promise<string | null>;
+## API Key Authentication
+
+Use API keys for server-side applications, backends, scripts, or when you as the developer pay for inference costs. This is the simplest way to get started.
+
+### Setup
+
+1. Create an app on [dashboard.anuma.ai](https://dashboard.anuma.ai)
+2. Go to the Auth tab and add an API key
+3. Copy the secret — it's only shown once
+
+API keys use the `anuma_live_` prefix (or `anuma_test_` for test keys).
+
+### Usage
+
+API keys are sent via the `X-API-KEY` header:
+
+```
+X-API-KEY: <your-api-key>
 ```
 
-The SDK calls this function before each request to get a fresh token. Return `null` if the user is not authenticated.
+### When to use
+
+API keys are a good fit when your application runs on a server or in an environment where you control the credentials. You pay for all inference costs from your app's balance. Typical use cases include backends, internal tools, and prototyping.
 
 ## User Authentication with Privy
 
-Use [Privy](https://www.privy.io/) for client-side applications where users authenticate with their own wallet and pay for inference directly. Users pay using USDC from their wallet, which means no inference costs for you as the developer. Privy supports embedded wallets, so users don't need a browser extension.
+Use [Privy](https://www.privy.io/) for client-side applications where end users authenticate with their own wallet and pay for inference directly. Users pay using USDC from their wallet, which means no inference costs for you as the developer. Privy supports embedded wallets, so users don't need a browser extension.
+
+### Setup
+
+1. Create an app on [dashboard.anuma.ai](https://dashboard.anuma.ai)
+2. Create a Privy app at [privy.io](https://www.privy.io/)
+3. In the Privy dashboard, go to Configuration → App Settings → Basics. Copy your App ID and click "Verify with key instead" to get the verification key.
+4. In the Privy dashboard, go to Authentication → Advanced and enable "Return user data in an identity token".
+5. In the Anuma dashboard, go to your app's Auth tab, add Privy as an auth method, and paste the App ID and verification key.
+
+### Usage
+
+Privy tokens are sent via the `Authorization: Bearer` header. Use the `useIdentityToken` hook from Privy to get the token:
 
 ```typescript
 import { useIdentityToken } from "@privy-io/react-auth";
@@ -26,20 +56,6 @@ function Chat() {
 
 See the [Next.js Example](/tutorials/quickstart) for a complete Privy implementation.
 
-## API Key Authentication (coming soon)
+### When to use
 
-Use API keys for server-side applications or when you as the developer pay for inference costs. API keys are passed via the `Authorization` header:
-
-```
-Authorization: Bearer <your-api-key>
-```
-
-```typescript
-import { useChat } from "@anuma/sdk/react";
-
-const { sendMessage } = useChat({
-  getToken: async () => process.env.ANUMA_API_KEY,
-});
-```
-
-A developer dashboard is coming soon where you'll be able to generate API keys and top up your balance with USDC or Stripe.
+Privy is a good fit for user-facing applications where each user has their own wallet and pays for their own usage. You don't need to manage balances or pay for inference — users handle that themselves. This works well for consumer apps, community tools, and any product where you want to ship without taking on inference costs.
