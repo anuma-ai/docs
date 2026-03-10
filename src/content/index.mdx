@@ -1,9 +1,11 @@
 import { Cards } from "nextra/components";
-import { ReactIcon, ExpoIcon } from "../components/icons";
+import { NextjsIcon, TelegramIcon } from "../components/icons";
 
 # Anuma
 
-One SDK for models from OpenAI, Google, Anthropic, xAI, and open-source providers. Switch models without changing code, add persistent memory across sessions, and process files out of the box.
+Everything you need to build AI apps. One SDK across OpenAI, Anthropic, Google, xAI, and open-source models.
+
+Switch providers without changing code. Add memory that persists across sessions. Give models tools to search the web, manage calendars, and call your own functions.
 
 ```tsx
 import { useChat } from "@anuma/sdk/react";
@@ -34,9 +36,10 @@ Create an app on [dashboard.anuma.ai](https://dashboard.anuma.ai), then follow t
 
 ## Examples
 
-<Cards num={2}>
-  <Cards.Card icon={<ReactIcon />} title="Next.js" href="/tutorials/quickstart" />
-  <Cards.Card icon={<ExpoIcon />} title="React Native" href="/sdk/expo" />
+<Cards num={3}>
+  <Cards.Card icon={<NextjsIcon />} title="Quickstart" href="/tutorials/quickstart" />
+  <Cards.Card icon={<NextjsIcon />} title="Full-Featured App" href="/tutorials/nextjs" />
+  <Cards.Card icon={<TelegramIcon />} title="Telegram Bot" href="/tutorials/telegram" />
 </Cards>
 
 ## Portal API
