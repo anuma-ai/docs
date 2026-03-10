@@ -1,7 +1,5 @@
 export default {
-  index: {
-    display: "hidden",
-  },
+  index: "Overview",
   "#": {
     type: "separator",
     title: "Core Concepts",
@@ -13,18 +11,17 @@ export default {
   memory: "Memory",
   tools: "Tools",
   models: "Models",
+  sdk: {
+    title: "Anuma SDK",
+    theme: {
+      collapsed: false,
+    },
+  },
   "##": {
     type: "separator",
     title: "Examples",
   },
   tutorials: {
-    display: "children",
-  },
-  "###": {
-    type: "separator",
-    title: "SDK Reference",
-  },
-  sdk: {
     display: "children",
   },
 };
