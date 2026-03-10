@@ -3,19 +3,7 @@ import { ReactIcon, ExpoIcon } from "../components/icons";
 
 # Anuma
 
-Build AI-powered apps with a unified API, persistent memory, and user-owned encryption.
-
-Building AI applications typically means managing multiple provider SDKs, handling API key logistics, and figuring out how to persist conversations. Anuma simplifies this by giving you access to models from OpenAI, Google, Anthropic, xAI, and open-source providers through a single API. Switch models without changing code, store semantic memories that persist across sessions, and keep user data encrypted with keys only they control.
-
-Authenticate with API keys when you want to manage costs yourself, or use Privy to let users pay for inference with their own wallets. See [Authentication](/authentication) for details.
-
-## Quick Start
-
-```bash
-npm install @anuma/sdk
-```
-
-The simplest way to send a message:
+One SDK for models from OpenAI, Google, Anthropic, xAI, and open-source providers. Switch models without changing code, add persistent memory across sessions, and process files out of the box.
 
 ```tsx
 import { useChat } from "@anuma/sdk/react";
@@ -31,15 +19,18 @@ await sendMessage({
 });
 ```
 
-For persistent conversations with message history, use [`useChatStorage`](/sdk/react/Hooks/useChatStorage) which adds automatic WatermelonDB storage on top of `useChat`.
+For persistent conversations with message history, use [`useChatStorage`](/sdk/react/Hooks/useChatStorage) which adds automatic storage on top of `useChat`.
 
-[Authentication Setup →](/authentication) | [Full Tutorial →](/tutorials/quickstart)
+## Getting Started
+
+Create an app on [dashboard.anuma.ai](https://dashboard.anuma.ai), then follow the [quickstart tutorial](/tutorials/quickstart) or explore the [SDK reference](/sdk/react).
 
 ## What's Included
 
-The SDK provides [chat completions](/conversations) with streaming and tool calling, [persistent memory](/memory) that searches past conversations semantically across sessions, [server](/tools/server) and [client-side tools](/tools/client) for web search, calendars, and custom functions, and automatic [file processing](/files) for PDFs, Word docs, Excel, and images with OCR.
-
-For the full API surface, see the [SDK Reference](/sdk/react).
+- [Chat completions](/conversations) — streaming, tool calling, multi-model support
+- [Memory](/memory) — semantic search across past conversations
+- [Server](/tools/server) and [client-side tools](/tools/client) — web search, calendars, custom functions
+- [File processing](/files) — PDFs, Word, Excel, images with OCR
 
 ## Examples
 

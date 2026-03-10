@@ -1,0 +1,9 @@
+# Memory
+
+Users expect AI to remember what they've talked about before. Anuma provides two complementary memory systems that work as client-side tools the model can call during conversation.
+
+The [memory engine](/memory/engine) searches past conversations using semantic similarity. Your messages are the memory — no separate extraction step needed. When the model needs to recall something, it searches stored messages and returns the closest matches, even if they use different words than the original conversation.
+
+The [memory vault](/memory/vault) stores curated facts the model saves on behalf of the user — things like names, preferences, and project requirements. Unlike the engine, which treats every message as potential memory, the vault contains only information that was deliberately captured.
+
+Both systems are built into [`useChatStorage`](/sdk/react/Hooks/useChatStorage) and use the same embedding infrastructure for semantic search.
