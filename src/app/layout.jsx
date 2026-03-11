@@ -30,7 +30,7 @@ export const metadata = {
     url: "https://docs.anuma.ai",
   },
   twitter: {
-    site: "https://docs.anuma.ai",
+    site: "@anumaai",
     card: "summary_large_image",
   },
 };
