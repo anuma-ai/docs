@@ -11,6 +11,8 @@ exclude = [
   # Private GitHub repos (404 without auth)
   "^https://github\\.com/anuma-ai/",
   "^https://github\\.com/zeta-chain/ai-",
+  # Telegram links (frequently time out in CI)
+  "^https://t\\.me/",
   # Next.js app routes and public assets (not part of content directory)
   "file://.*/src/content/api$",
   "file://.*/src/content/memory$",
