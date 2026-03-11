@@ -11,7 +11,7 @@ export function GET() {
 - [Streaming](https://docs.anuma.ai/streaming): Real-time streaming responses from AI models
 - [Files and Images](https://docs.anuma.ai/files): File upload, image input, and multimodal support
 - [Memory](https://docs.anuma.ai/memory): AI memory that persists across conversations and models
-- [Tools](https://docs.anuma.ai/tools): Give AI models tools to call functions and APIs
+- [Tools](https://docs.anuma.ai/tools/overview): Give AI models tools to call functions and APIs
 - [Models](https://docs.anuma.ai/models/overview): Supported AI models and providers
 
 ## Tutorials
