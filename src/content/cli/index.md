@@ -46,5 +46,5 @@ anuma <command> --help
 The CLI stores configuration in `~/.anuma/config.json`. You can override the API base URL per invocation with `--api-url <url>`:
 
 ```bash
-anuma --api-url https://portal.anuma.ai models list
+anuma api models list --api-url https://portal.anuma.ai
 ```
