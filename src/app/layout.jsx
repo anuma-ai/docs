@@ -5,12 +5,13 @@ import { getPageMap } from "nextra/page-map";
 import "nextra-theme-docs/style.css";
 
 export const metadata = {
-  metadataBase: new URL("https://nextra.site"),
+  metadataBase: new URL("https://docs.anuma.ai"),
   title: {
     default: "Anuma Docs",
     template: "%s - Anuma Docs",
   },
-  description: "Anuma SDK Documentation",
+  description:
+    "Developer documentation for the Anuma SDK. Build AI apps with multi-model chat, persistent memory, streaming, and tools across OpenAI, Anthropic, Google, and more.",
   applicationName: "Anuma Docs",
   generator: "Next.js",
   appleWebApp: {
@@ -23,8 +24,14 @@ export const metadata = {
     "msapplication-TileImage": "/ms-icon-144x144.png",
     "msapplication-TileColor": "#fff",
   },
+  openGraph: {
+    type: "website",
+    siteName: "Anuma Docs",
+    url: "https://docs.anuma.ai",
+  },
   twitter: {
-    site: "https://nextra.site",
+    site: "https://docs.anuma.ai",
+    card: "summary_large_image",
   },
 };
 
@@ -71,7 +78,7 @@ export default async function RootLayout({ children }) {
           navbar={navbar}
           footer={<Footer />}
           editLink="Edit this page on GitHub"
-          docsRepositoryBase="https://github.com/shuding/nextra/blob/main/examples/docs"
+          docsRepositoryBase="https://github.com/anuma-ai/docs/blob/main"
           sidebar={{ defaultMenuCollapseLevel: 1 }}
           pageMap={filteredPageMap}
         >
