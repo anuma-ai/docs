@@ -71,10 +71,6 @@ jobs:
           token: ${{ secrets.SDK_REPO_TOKEN }}
           branch: automated/sync-docs
           title: "docs: sync documentation"
-<<<<<<< HEAD
-          body: Automated sync of documentation from anuma-ai/sdk, anuma-ai/cli, anuma-ai/starter-next, anuma-ai/starter-telegram, and anuma-ai/starter-mini.
-=======
-          body: Automated sync of documentation from anuma-ai/sdk, anuma-ai/cli, anuma-ai/starter-next, anuma-ai/starter-telegram, and anuma-ai/starter-agent.
->>>>>>> main
+          body: Automated sync of documentation from anuma-ai/sdk, anuma-ai/cli, anuma-ai/starter-next, anuma-ai/starter-telegram, anuma-ai/starter-mini, and anuma-ai/starter-agent.
           commit-message: "docs: sync documentation"
           delete-branch: true
