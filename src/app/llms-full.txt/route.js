@@ -12,24 +12,6 @@ Documentation: https://docs.anuma.ai
 Developer Dashboard: https://dashboard.anuma.ai
 GitHub: https://github.com/anuma-ai/sdk
 
-## Quick Start
-
-\`\`\`tsx
-import { useChat } from "@anuma/sdk/react";
-
-const { sendMessage, isLoading } = useChat({
-  getToken: async () => authToken,
-  onData: (chunk) => setResponse((prev) => prev + chunk),
-});
-
-await sendMessage({
-  messages: [{ role: "user", content: [{ type: "text", text: "Hello!" }] }],
-  model: "gpt-4o-mini",
-});
-\`\`\`
-
-For persistent conversations with message history, use \`useChatStorage\` which adds automatic storage on top of \`useChat\`.
-
 ## Authentication
 
 Apps authenticate via tokens obtained from the Anuma developer dashboard at dashboard.anuma.ai. Create an app, get an API key, and use it to generate user tokens. Supports Privy for end-user authentication with email, Google, Apple login, and embedded wallets.
