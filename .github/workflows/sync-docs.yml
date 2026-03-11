@@ -55,17 +55,15 @@ jobs:
           rm -rf src/content/tutorials/telegram
           cp -r /tmp/starter-telegram/docs/documents src/content/tutorials/telegram
 
-<<<<<<< HEAD
       - name: Replace Quickstart tutorial docs
         run: |
           rm -rf src/content/tutorials/quickstart
           cp -r /tmp/starter-mini/docs/documents src/content/tutorials/quickstart
-=======
+
       - name: Replace Agent tutorial docs
         run: |
           rm -rf src/content/tutorials/agent
           cp -r /tmp/starter-agent/docs/documents src/content/tutorials/agent
->>>>>>> main
 
       - name: Create or update PR
         uses: peter-evans/create-pull-request@v7
