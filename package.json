@@ -5,6 +5,7 @@
   "scripts": {
     "build": "next build --webpack",
     "dev": "next",
+    "prebuild": "node scripts/generate-static.mjs",
     "postbuild": "pagefind --site .next/server/app --output-path public/_pagefind",
     "start": "next start",
     "update:docs": "./scripts/update-docs.sh",
