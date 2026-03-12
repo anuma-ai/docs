@@ -45,10 +45,15 @@ jobs:
           rm -rf src/content/cli
           cp -r /tmp/cli/docs src/content/cli
 
+      - name: Fetch starter-next demo branch README
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/anuma-ai/starter-next/refs/heads/demo/README.md -o /tmp/starter-next-features.md
+
       - name: Replace Next.js tutorial docs
         run: |
           rm -rf src/content/tutorials/nextjs
           cp -r /tmp/starter-next/docs/documents src/content/tutorials/nextjs
+          cp /tmp/starter-next-features.md src/content/tutorials/nextjs/features.md
 
       - name: Replace Telegram tutorial docs
         run: |
