@@ -45,13 +45,21 @@ function extractTitle(content) {
  * to produce plain markdown text.
  */
 function stripMdx(content) {
-  return content
-    .replace(/^import\s+.*$/gm, "")
-    .replace(/^export\s+.*$/gm, "")
-    .replace(/<[A-Z][a-zA-Z]*\b[^>]*\/>/g, "")
-    .replace(/<[A-Z][a-zA-Z]*\b[^>]*>[\s\S]*?<\/[A-Z][a-zA-Z]*>/g, "")
-    .replace(/\n{3,}/g, "\n\n")
-    .trim();
+  const codeBlockRegex = /(```[\s\S]*?```)/g;
+  const parts = content.split(codeBlockRegex);
+
+  const processed = parts.map((part) => {
+    if (part.startsWith("```")) {
+      return part;
+    }
+    return part
+      .replace(/^import\s+.*$/gm, "")
+      .replace(/^export\s+.*$/gm, "")
+      .replace(/<[A-Z][a-zA-Z]*\b[^>]*\/>/g, "")
+      .replace(/<[A-Z][a-zA-Z]*\b[^>]*>[\s\S]*?<\/[A-Z][a-zA-Z]*>/g, "");
+  });
+
+  return processed.join("").replace(/\n{3,}/g, "\n\n").trim();
 }
 
 /**
