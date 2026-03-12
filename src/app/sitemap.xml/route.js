@@ -1,5 +1,7 @@
 import { getContentPages, BASE_URL } from "../../lib/content";
 
+export const dynamic = "force-static";
+
 function getPriority(depth) {
   if (depth === 0) return 1.0;
   if (depth === 1) return 0.8;
