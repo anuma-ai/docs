@@ -13,6 +13,8 @@ exclude = [
   "^https://github\\.com/zeta-chain/ai-",
   # Telegram links (frequently time out in CI)
   "^https://t\\.me/",
+  # npm returns 403 for automated requests
+  "^https://www\\.npmjs\\.com/",
   # Next.js app routes and public assets (not part of content directory)
   "file://.*/src/content/api$",
   "file://.*/src/content/memory$",
