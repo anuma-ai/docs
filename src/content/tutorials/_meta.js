@@ -3,4 +3,5 @@ export default {
   nextjs: "Next.js",
   telegram: "Telegram Bot",
   agent: "Agent",
+  expo: "Mobile App",
 };

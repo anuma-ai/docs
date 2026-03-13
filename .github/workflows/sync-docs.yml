@@ -35,6 +35,10 @@ jobs:
         run: |
           git clone --depth 1 https://x-access-token:${{ secrets.SDK_REPO_TOKEN }}@github.com/anuma-ai/starter-agent.git /tmp/starter-agent
 
+      - name: Clone starter-expo repo
+        run: |
+          git clone --depth 1 https://x-access-token:${{ secrets.SDK_REPO_TOKEN }}@github.com/anuma-ai/starter-expo.git /tmp/starter-expo
+
       - name: Replace SDK docs
         run: |
           rm -rf src/content/sdk
@@ -70,12 +74,17 @@ jobs:
           rm -rf src/content/tutorials/agent
           cp -r /tmp/starter-agent/docs/documents src/content/tutorials/agent
 
+      - name: Replace Expo tutorial docs
+        run: |
+          rm -rf src/content/tutorials/expo
+          cp -r /tmp/starter-expo/docs/documents src/content/tutorials/expo
+
       - name: Create or update PR
         uses: peter-evans/create-pull-request@v7
         with:
           token: ${{ secrets.SDK_REPO_TOKEN }}
           branch: automated/sync-docs
           title: "docs: sync documentation"
-          body: Automated sync of documentation from anuma-ai/sdk, anuma-ai/cli, anuma-ai/starter-next, anuma-ai/starter-telegram, anuma-ai/starter-mini, and anuma-ai/starter-agent.
+          body: Automated sync of documentation from anuma-ai/sdk, anuma-ai/cli, anuma-ai/starter-next, anuma-ai/starter-telegram, anuma-ai/starter-mini, anuma-ai/starter-agent, and anuma-ai/starter-expo.
           commit-message: "docs: sync documentation"
           delete-branch: true
