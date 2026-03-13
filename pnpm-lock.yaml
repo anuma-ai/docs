@@ -2600,8 +2600,8 @@ packages:
     resolution: {integrity: sha512-S8KoZgRZN+a5rNwqTxlZZePjT/4cnm0ROV70LedRHZ0p8u9fRID0hJUZQpkKLzro8LfmC8sx23bY6tVNxv8pQA==}
     engines: {node: '>= 18.0.0'}
 
-  flatted@3.3.3:
-    resolution: {integrity: sha512-GX+ysw4PBCz0PzosHDepZGANEuFCMLrnRTiEy9McGjmkCQYwRq4A/X786G/fjM/+OjsWSU1ZrY5qyARZmO/uwg==}
+  flatted@3.4.1:
+    resolution: {integrity: sha512-IxfVbRFVlV8V/yRaGzk0UVIcsKKHMSfYw66T/u4nTwlWteQePsxe//LjudR1AMX4tZW3WFCh3Zqa/sjlqpbURQ==}
 
   focus-trap@7.7.0:
     resolution: {integrity: sha512-DJJDHpEgoSbP8ZE1MNeU2IzCpfFyFdNZZRilqmfH2XiQsPK6PtD8AfJqWzEBudUQB2yHwZc5iq54rjTaGQ+ljw==}
@@ -5937,7 +5937,7 @@ snapshots:
       '@scalar/themes': 0.13.26
       '@scalar/types': 0.5.4
       '@scalar/workspace-store': 0.24.1(typescript@5.9.3)
-      flatted: 3.3.3
+      flatted: 3.4.1
       type-fest: 5.0.0
       yaml: 2.8.2
       zod: 4.2.1
@@ -5948,7 +5948,7 @@ snapshots:
   '@scalar/object-utils@1.2.18':
     dependencies:
       '@scalar/helpers': 0.2.4
-      flatted: 3.3.3
+      flatted: 3.4.1
       just-clone: 6.2.0
       ts-deepmerge: 7.0.3
 
@@ -7539,7 +7539,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  flatted@3.3.3: {}
+  flatted@3.4.1: {}
 
   focus-trap@7.7.0:
     dependencies:
