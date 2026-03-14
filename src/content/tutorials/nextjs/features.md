@@ -13,7 +13,7 @@
 
 <video src="https://github.com/anuma-ai/starter-next/raw/refs/heads/demo/chat-chat-Attaching-a-spreadsheet-and-asking-about-it-full-chromium--video.webm" controls style="border-radius: 8px;"></video>
 
-### Attaching a zip  fc44f ing about its contents
+### Attaching a zip ing about its contents
 
 <video src="https://github.com/anuma-ai/starter-next/raw/refs/heads/demo/chat-chat-Attaching-a-zip--fc44f-ing-about-its-contents-full-chromium--video.webm" controls style="border-radius: 8px;"></video>
 
@@ -21,16 +21,20 @@
 
 <video src="https://github.com/anuma-ai/starter-next/raw/refs/heads/demo/chat-chat-Attaching-an-image-and-asking-about-it-full-chromium--video.webm" controls style="border-radius: 8px;"></video>
 
+### Clearing input after sending a message
+
+<video src="https://github.com/anuma-ai/starter-next/raw/refs/heads/demo/chat-chat-Clearing-input-after-sending-a-message-light-chromium--video.webm" controls style="border-radius: 8px;"></video>
+
 ### Generating an image from a prompt
 
 <video src="https://github.com/anuma-ai/starter-next/raw/refs/heads/demo/chat-chat-Generating-an-image-from-a-prompt-full-chromium--video.webm" controls style="border-radius: 8px;"></video>
-
-### Generating an image from a prompt full chromium retry1
-
-<video src="https://github.com/anuma-ai/starter-next/raw/refs/heads/demo/chat-chat-Generating-an-image-from-a-prompt-full-chromium-retry1--video.webm" controls style="border-radius: 8px;"></video>
 
 ### Sending a prompt and receiving a response
 
 <video src="https://github.com/anuma-ai/starter-next/raw/refs/heads/demo/chat-chat-Sending-a-prompt-and-receiving-a-response-full-chromium--video.webm" controls style="border-radius: 8px;"></video>
 
-Updated: 2026-03-12T16:57:11Z
+### Viewing the chat interface
+
+<video src="https://github.com/anuma-ai/starter-next/raw/refs/heads/demo/chat-chat-Viewing-the-chat-interface-light-chromium--video.webm" controls style="border-radius: 8px;"></video>
+
+Updated: 2026-03-12T17:34:06Z

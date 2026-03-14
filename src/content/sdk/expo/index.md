@@ -226,6 +226,12 @@ Re-exports [DEFAULT\_CACHE\_EXPIRATION\_MS](../react/Internal/variables/DEFAULT_
 
 ***
 
+### deleteAllVaultMemoriesForUserOp
+
+Re-exports [deleteAllVaultMemoriesForUserOp](../react/Internal/functions/deleteAllVaultMemoriesForUserOp.md)
+
+***
+
 ### deleteVaultFolderOp
 
 Re-exports [deleteVaultFolderOp](../react/Internal/functions/deleteVaultFolderOp.md)
@@ -253,6 +259,12 @@ Re-exports [EmbeddedWalletSignerFn](../react/Internal/type-aliases/EmbeddedWalle
 ### embedMessage
 
 Re-exports [embedMessage](../react/Internal/functions/embedMessage.md)
+
+***
+
+### ensureDefaultFoldersOp
+
+Re-exports [ensureDefaultFoldersOp](../react/Internal/functions/ensureDefaultFoldersOp.md)
 
 ***
 
@@ -313,6 +325,12 @@ Re-exports [getCachedServerTools](../react/Internal/functions/getCachedServerToo
 ### getServerTools
 
 Re-exports [getServerTools](../react/Internal/functions/getServerTools.md)
+
+***
+
+### getUnfiledVaultMemoriesOp
+
+Re-exports [getUnfiledVaultMemoriesOp](../react/Internal/functions/getUnfiledVaultMemoriesOp.md)
 
 ***
 
@@ -505,6 +523,12 @@ Re-exports [updateVaultFolderOp](../react/Internal/functions/updateVaultFolderOp
 ### UpdateVaultFolderOptions
 
 Re-exports [UpdateVaultFolderOptions](../react/Internal/interfaces/UpdateVaultFolderOptions.md)
+
+***
+
+### updateVaultMemoryEmbeddingOp
+
+Re-exports [updateVaultMemoryEmbeddingOp](../react/Internal/functions/updateVaultMemoryEmbeddingOp.md)
 
 ***
 
