@@ -85,7 +85,12 @@ async function embedQuery(text: string): Promise<number[]> {
 
 export async function POST(request: Request) {
   try {
-    const body = await request.json();
+    let body: any;
+    try {
+      body = await request.json();
+    } catch {
+      return Response.json({ error: "Invalid JSON in request body" }, { status: 400 });
+    }
     const { message, history } = body as {
       message: string;
       history?: Array<{ role: string; content: string }>;

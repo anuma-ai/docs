@@ -168,8 +168,12 @@ export function ChatWidget() {
         body: JSON.stringify({ message: text, history }),
       });
 
-      if (!res.ok) {
-        const err = await res.json().catch(() => ({ error: "Request failed" }));
+      const contentType = res.headers.get("content-type") || "";
+      if (!res.ok || !contentType.includes("text/event-stream")) {
+        const text = await res.text();
+        let errMsg = "Something went wrong.";
+        try { errMsg = JSON.parse(text).error || errMsg; } catch { errMsg = text || errMsg; }
+        const err = { error: errMsg };
         setMessages((prev) => {
           const updated = [...prev];
           updated[updated.length - 1] = {
