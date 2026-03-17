@@ -22,24 +22,26 @@ interface IndexEntry {
 
 let cachedIndex: IndexEntry[] | null = null;
 
-async function loadIndex(): Promise<IndexEntry[]> {
+async function loadIndex(requestUrl?: string): Promise<IndexEntry[]> {
   if (cachedIndex) return cachedIndex;
 
-  const url = new URL("/docs-index.json", "http://localhost");
+  let raw: string;
   try {
+    // Node.js / local dev: read from filesystem
     const fs = await import("fs");
     const path = await import("path");
-    const filePath = path.join(process.cwd(), "public/docs-index.json");
-    const data = fs.readFileSync(filePath, "utf-8");
-    const parsed = JSON.parse(data);
-    cachedIndex = Array.isArray(parsed) ? parsed : parsed.entries;
-    return cachedIndex!;
+    raw = fs.readFileSync(path.join(process.cwd(), "public/docs-index.json"), "utf-8");
   } catch {
-    const res = await fetch(new URL("/docs-index.json", url));
-    const parsed = await res.json();
-    cachedIndex = Array.isArray(parsed) ? parsed : parsed.entries;
-    return cachedIndex!;
+    // Cloudflare Workers: fetch from the same origin
+    const origin = requestUrl ? new URL(requestUrl).origin : "";
+    const res = await fetch(`${origin}/docs-index.json`);
+    if (!res.ok) throw new Error(`Failed to load index: ${res.status}`);
+    raw = await res.text();
   }
+
+  const parsed = JSON.parse(raw);
+  cachedIndex = Array.isArray(parsed) ? parsed : parsed.entries;
+  return cachedIndex!;
 }
 
 // ---------------------------------------------------------------------------
@@ -124,7 +126,7 @@ export async function POST(request: Request) {
     const queryEmbedding = await embedQuery(message);
 
     // 2. Search the index
-    const index = await loadIndex();
+    const index = await loadIndex(request.url);
     const scored = index.map((entry) => ({
       ...entry,
       score: cosineSimilarity(queryEmbedding, entry.embedding),
