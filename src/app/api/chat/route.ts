@@ -22,24 +22,13 @@ interface IndexEntry {
 
 let cachedIndex: IndexEntry[] | null = null;
 
-async function loadIndex(requestUrl?: string): Promise<IndexEntry[]> {
+function loadIndex(): IndexEntry[] {
   if (cachedIndex) return cachedIndex;
 
-  let raw: string;
-  try {
-    // Node.js / local dev: read from filesystem
-    const fs = await import("fs");
-    const path = await import("path");
-    raw = fs.readFileSync(path.join(process.cwd(), "public/docs-index.json"), "utf-8");
-  } catch {
-    // Cloudflare Workers: fetch from the same origin
-    const origin = requestUrl ? new URL(requestUrl).origin : "";
-    const res = await fetch(`${origin}/docs-index.json`);
-    if (!res.ok) throw new Error(`Failed to load index: ${res.status}`);
-    raw = await res.text();
-  }
-
-  const parsed = JSON.parse(raw);
+  // Use require() so webpack/turbopack bundles the JSON at build time.
+  // This works in both local dev (Node.js) and Cloudflare Workers.
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const parsed = require("../../../public/docs-index.json");
   cachedIndex = Array.isArray(parsed) ? parsed : parsed.entries;
   return cachedIndex!;
 }
@@ -126,7 +115,7 @@ export async function POST(request: Request) {
     const queryEmbedding = await embedQuery(message);
 
     // 2. Search the index
-    const index = await loadIndex(request.url);
+    const index = loadIndex();
     const scored = index.map((entry) => ({
       ...entry,
       score: cosineSimilarity(queryEmbedding, entry.embedding),
