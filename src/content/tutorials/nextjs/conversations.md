@@ -36,7 +36,7 @@ navigating to a project page where you need a conversation ID upfront.
   }, [createConversation, setConversationId]);
 ```
 
-[hooks/useAppChatStorage.ts](https://github.com/anuma-ai/starter-next/blob/main/hooks/useAppChatStorage.ts#L1023-L1045)
+[hooks/useAppChatStorage.ts](https://github.com/anuma-ai/starter-next/blob/main/hooks/useAppChatStorage.ts#L898-L920)
 
 ## Switching Conversations
 
@@ -124,7 +124,7 @@ before the state update to prevent flicker.
   );
 ```
 
-[hooks/useAppChatStorage.ts](https://github.com/anuma-ai/starter-next/blob/main/hooks/useAppChatStorage.ts#L1049-L1124)
+[hooks/useAppChatStorage.ts](https://github.com/anuma-ai/starter-next/blob/main/hooks/useAppChatStorage.ts#L924-L999)
 
 ## Deleting a Conversation
 
@@ -140,4 +140,4 @@ before the state update to prevent flicker.
   );
 ```
 
-[hooks/useAppChatStorage.ts](https://github.com/anuma-ai/starter-next/blob/main/hooks/useAppChatStorage.ts#L1128-L1136)
+[hooks/useAppChatStorage.ts](https://github.com/anuma-ai/starter-next/blob/main/hooks/useAppChatStorage.ts#L1003-L1011)

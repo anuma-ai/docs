@@ -75,9 +75,10 @@ Usage: anuma chat [options]
 Start an interactive chat session
 
 Options:
+  --api-url <url>    API base URL
   --model <name>     Model to use (default: "openai/gpt-4o")
   --system <prompt>  System prompt
-  --no-stream        Disable streaming
+  --no-tools         Disable client-side tools
   -h, --help         display help for command
 
 ```
@@ -103,23 +104,24 @@ Usage: anuma api [options] [command]
 Anuma platform API
 
 Options:
-  -h, --help      display help for command
+  --api-url <url>  API base URL (overrides ~/.anuma/config.json)
+  -h, --help       display help for command
 
 Commands:
-  agents          Manage agents
-  chat            Create chat completion
-  config          Get configuration
-  credits         Manage credits
-  developer       Manage developer
-  embeddings      Create embeddings
-  models          List available models
-  responses       Create response
-  subscriptions   Manage subscriptions
-  tasks           Get available tasks
-  text            Manage text
-  tools           List available tools
-  usage           Get usage by model
-  help [command]  display help for command
+  agents           Manage agents
+  chat             Create chat completion
+  config           Get configuration
+  credits          Manage credits
+  developer        Manage developer
+  embeddings       Create embeddings
+  models           List available models
+  responses        Create response
+  subscriptions    Manage subscriptions
+  tasks            Get available tasks
+  text             Manage text
+  tools            List available tools
+  usage            Get usage by model
+  help [command]   display help for command
 
 ```
 
