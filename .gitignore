@@ -88,6 +88,9 @@ public/sitemap.xml
 public/llms.txt
 public/llms-full.txt
 
+# Generated docs search index (pnpm ingest)
+public/docs-index.json
+
 # OpenNext / Cloudflare
 .open-next
 .wrangler

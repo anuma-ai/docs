@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
   pull-requests: write
 
 concurrency:
@@ -30,34 +30,8 @@ jobs:
 
       - run: pnpm install
 
-      - name: Rebuild docs index if stale
-        run: |
-          INDEX="public/docs-index.json"
-          REBUILD=false
-          if [ ! -f "$INDEX" ]; then
-            REBUILD=true
-          else
-            GENERATED=$(node -e "console.log(JSON.parse(require('fs').readFileSync('$INDEX','utf-8')).generatedAt || '')")
-            if [ -z "$GENERATED" ]; then
-              REBUILD=true
-            else
-              AGE=$(( ($(date +%s) - $(date -d "$GENERATED" +%s 2>/dev/null || date -j -f "%Y-%m-%dT%H:%M:%S" "${GENERATED%%.*}" +%s)) ))
-              WEEK=$((7 * 24 * 60 * 60))
-              if [ "$AGE" -gt "$WEEK" ]; then
-                REBUILD=true
-              fi
-            fi
-          fi
-          if [ "$REBUILD" = true ]; then
-            echo "Index is stale or missing, rebuilding..."
-            pnpm ingest
-            git config user.name "github-actions[bot]"
-            git config user.email "github-actions[bot]@users.noreply.github.com"
-            git add public/docs-index.json
-            git diff --cached --quiet || git commit -m "Update docs search index" && git push
-          else
-            echo "Index is fresh, skipping rebuild"
-          fi
+      - name: Generate docs search index
+        run: pnpm ingest
         env:
           ANUMA_API_KEY: ${{ secrets.ANUMA_API_KEY }}
 
@@ -117,6 +91,11 @@ jobs:
       - run: corepack enable
 
       - run: pnpm install
+
+      - name: Generate docs search index
+        run: pnpm ingest
+        env:
+          ANUMA_API_KEY: ${{ secrets.ANUMA_API_KEY }}
 
       - run: pnpm build:cloudflare
         env:

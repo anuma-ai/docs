@@ -91,8 +91,23 @@ export async function POST(request: Request) {
       history?: Array<{ role: string; content: string }>;
     };
 
-    if (!message || typeof message !== "string") {
-      return Response.json({ error: "message is required" }, { status: 400 });
+    if (!message || typeof message !== "string" || message.length > 2000) {
+      return Response.json({ error: "message is required and must be under 2000 characters" }, { status: 400 });
+    }
+
+    const MAX_HISTORY_TURNS = 20;
+    const MAX_HISTORY_CHARS = 20_000;
+    const safeHistory = (history ?? [])
+      .slice(-MAX_HISTORY_TURNS)
+      .filter(
+        (m) =>
+          typeof m.role === "string" &&
+          typeof m.content === "string" &&
+          ["user", "assistant"].includes(m.role),
+      );
+    const historyText = safeHistory.map((m) => m.content).join("");
+    if (historyText.length > MAX_HISTORY_CHARS) {
+      return Response.json({ error: "History too large" }, { status: 400 });
     }
 
     const apiKey = process.env.ANUMA_API_KEY;
@@ -125,7 +140,7 @@ export async function POST(request: Request) {
     // 4. Build messages array
     const messages: Array<{ role: string; content: string }> = [
       { role: "system", content: systemMessage },
-      ...(history || []),
+      ...safeHistory,
       { role: "user", content: message },
     ];
 
