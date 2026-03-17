@@ -8,6 +8,7 @@
     "prebuild": "node scripts/generate-static.mjs",
     "postbuild": "pagefind --site .next/server/app --output-path public/_pagefind",
     "start": "next start",
+    "ingest": "tsx scripts/ingest-docs.ts",
     "update:docs": "./scripts/update-docs.sh",
     "build:cloudflare": "pnpm build && opennextjs-cloudflare build",
     "preview:cloudflare": "pnpm build:cloudflare && opennextjs-cloudflare preview",
@@ -15,6 +16,7 @@
   },
   "dependencies": {
     "@anuma/portal": "1.0.0-next.20260224221541",
+    "@anuma/sdk": "1.0.0-next.20260317085051",
     "@opennextjs/cloudflare": "^1.17.1",
     "@scalar/api-reference-react": "^0.8.15",
     "@theguild/remark-mermaid": "^0.3.0",
@@ -27,6 +29,7 @@
   },
   "devDependencies": {
     "pagefind": "^1.3.0",
+    "tsx": "^4.21.0",
     "wrangler": "^4.68.1"
   }
 }
