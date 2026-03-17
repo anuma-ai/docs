@@ -9,6 +9,7 @@
  */
 import fs from "fs";
 import path from "path";
+import { postApiV1Embeddings } from "@anuma/sdk/client";
 
 // Load .env file so `pnpm ingest` picks up ANUMA_API_KEY automatically.
 const envPath = path.join(process.cwd(), ".env");
@@ -23,8 +24,6 @@ if (fs.existsSync(envPath)) {
 
 const CONTENT_DIR = path.join(process.cwd(), "src/content");
 const OUTPUT_PATH = path.join(process.cwd(), "public/docs-index.json");
-const PORTAL_API_URL =
-  process.env.PORTAL_API_URL || "https://portal.anuma-dev.ai";
 const API_KEY = process.env.ANUMA_API_KEY;
 const EMBEDDING_MODEL = "fireworks/accounts/fireworks/models/qwen3-embedding-8b";
 const CHUNK_TOKEN_LIMIT = 500;
@@ -164,29 +163,17 @@ async function generateEmbeddings(texts: string[]): Promise<number[][]> {
 
   for (let i = 0; i < texts.length; i += batchSize) {
     const batch = texts.slice(i, i + batchSize);
-    const response = await fetch(`${PORTAL_API_URL}/api/v1/embeddings`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "X-API-Key": API_KEY!,
-      },
-      body: JSON.stringify({
-        model: EMBEDDING_MODEL,
-        input: batch,
-      }),
+
+    const { data, error } = await postApiV1Embeddings({
+      body: { model: EMBEDDING_MODEL, input: batch as any },
+      headers: { "X-API-Key": API_KEY! },
     });
 
-    if (!response.ok) {
-      const errorText = await response.text();
-      throw new Error(
-        `Embeddings API error (${response.status}): ${errorText}`,
-      );
+    if (error || !data) {
+      throw new Error(`Embeddings API error: ${JSON.stringify(error)}`);
     }
 
-    const data = (await response.json()) as {
-      data: Array<{ embedding: number[] }>;
-    };
-    allEmbeddings.push(...data.data.map((d) => d.embedding));
+    allEmbeddings.push(...(data as any).data.map((d: any) => d.embedding));
 
     if (i + batchSize < texts.length) {
       console.log(

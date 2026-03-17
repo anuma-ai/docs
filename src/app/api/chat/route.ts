@@ -1,4 +1,5 @@
-import { PORTAL_API_URL } from "@/lib/config";
+import { postApiV1Embeddings } from "@anuma/sdk/client";
+import { runToolLoop } from "@anuma/sdk/server";
 
 const EMBEDDING_MODEL =
   "fireworks/accounts/fireworks/models/qwen3-embedding-8b";
@@ -24,11 +25,8 @@ let cachedIndex: IndexEntry[] | null = null;
 async function loadIndex(): Promise<IndexEntry[]> {
   if (cachedIndex) return cachedIndex;
 
-  // In production (Cloudflare Workers), load from the bundled JSON asset.
-  // In local dev, also load from the JSON file (run `pnpm ingest` first).
   const url = new URL("/docs-index.json", "http://localhost");
   try {
-    // Try filesystem first (works in Node / local dev)
     const fs = await import("fs");
     const path = await import("path");
     const filePath = path.join(process.cwd(), "public/docs-index.json");
@@ -37,7 +35,6 @@ async function loadIndex(): Promise<IndexEntry[]> {
     cachedIndex = parsed.entries ?? parsed;
     return cachedIndex!;
   } catch {
-    // Fallback: fetch as a static asset (Cloudflare Workers)
     const res = await fetch(new URL("/docs-index.json", url));
     const parsed = await res.json();
     cachedIndex = parsed.entries ?? parsed;
@@ -70,23 +67,16 @@ async function embedQuery(text: string): Promise<number[]> {
   const apiKey = process.env.ANUMA_API_KEY;
   if (!apiKey) throw new Error("ANUMA_API_KEY not set");
 
-  const res = await fetch(`${PORTAL_API_URL}/api/v1/embeddings`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "X-API-Key": apiKey,
-    },
-    body: JSON.stringify({ model: EMBEDDING_MODEL, input: text }),
+  const { data, error } = await postApiV1Embeddings({
+    body: { model: EMBEDDING_MODEL, input: text },
+    headers: { "X-API-Key": apiKey },
   });
 
-  if (!res.ok) {
-    throw new Error(`Embeddings API error: ${res.status}`);
+  if (error || !data) {
+    throw new Error(`Embeddings API error: ${JSON.stringify(error)}`);
   }
 
-  const data = (await res.json()) as {
-    data: Array<{ embedding: number[] }>;
-  };
-  return data.data[0].embedding;
+  return (data as any).data[0].embedding;
 }
 
 // ---------------------------------------------------------------------------
@@ -133,46 +123,17 @@ export async function POST(request: Request) {
     const systemMessage = `${SYSTEM_PROMPT}\n\n## Relevant documentation\n\n${contextBlock}`;
 
     // 4. Build messages array
-    const messages = [
+    const messages: Array<{ role: string; content: string }> = [
       { role: "system", content: systemMessage },
       ...(history || []),
       { role: "user", content: message },
     ];
 
-    // 5. Stream from Portal API
-    const portalRes = await fetch(
-      `${PORTAL_API_URL}/api/v1/chat/completions`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "X-API-Key": apiKey,
-        },
-        body: JSON.stringify({
-          model: CHAT_MODEL,
-          messages,
-          stream: true,
-        }),
-      },
-    );
-
-    if (!portalRes.ok) {
-      const errorText = await portalRes.text();
-      return Response.json(
-        { error: `LLM error: ${portalRes.status} ${errorText}` },
-        { status: 502 },
-      );
-    }
-
-    // 6. Forward the SSE stream, extracting content deltas
+    // 5. Stream via runToolLoop
     const encoder = new TextEncoder();
-    const decoder = new TextDecoder();
-
     const stream = new ReadableStream({
       async start(controller) {
-        const reader = portalRes.body!.getReader();
-
-        // Send sources metadata as the first message
+        // Send sources metadata first
         const sources = topChunks.map((c) => ({
           source: c.source,
           heading: c.heading,
@@ -184,41 +145,29 @@ export async function POST(request: Request) {
           ),
         );
 
-        let buffer = "";
-        try {
-          while (true) {
-            const { done, value } = await reader.read();
-            if (done) break;
+        const { error } = await runToolLoop({
+          messages: messages as any,
+          model: CHAT_MODEL,
+          headers: { "X-API-Key": apiKey },
+          onData: (chunk) => {
+            controller.enqueue(
+              encoder.encode(
+                `data: ${JSON.stringify({ type: "content", content: chunk })}\n\n`,
+              ),
+            );
+          },
+        });
 
-            buffer += decoder.decode(value, { stream: true });
-            const lines = buffer.split("\n");
-            buffer = lines.pop() || "";
-
-            for (const line of lines) {
-              if (!line.startsWith("data: ")) continue;
-              const payload = line.slice(6).trim();
-              if (payload === "[DONE]") {
-                controller.enqueue(encoder.encode("data: [DONE]\n\n"));
-                continue;
-              }
-              try {
-                const parsed = JSON.parse(payload);
-                const delta = parsed.choices?.[0]?.delta?.content;
-                if (delta) {
-                  controller.enqueue(
-                    encoder.encode(
-                      `data: ${JSON.stringify({ type: "content", content: delta })}\n\n`,
-                    ),
-                  );
-                }
-              } catch {
-                // skip malformed chunks
-              }
-            }
-          }
-        } finally {
-          controller.close();
+        if (error) {
+          controller.enqueue(
+            encoder.encode(
+              `data: ${JSON.stringify({ type: "error", error })}\n\n`,
+            ),
+          );
         }
+
+        controller.enqueue(encoder.encode("data: [DONE]\n\n"));
+        controller.close();
       },
     });
 
