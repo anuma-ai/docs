@@ -32,12 +32,12 @@ async function loadIndex(): Promise<IndexEntry[]> {
     const filePath = path.join(process.cwd(), "public/docs-index.json");
     const data = fs.readFileSync(filePath, "utf-8");
     const parsed = JSON.parse(data);
-    cachedIndex = parsed.entries ?? parsed;
+    cachedIndex = Array.isArray(parsed) ? parsed : parsed.entries;
     return cachedIndex!;
   } catch {
     const res = await fetch(new URL("/docs-index.json", url));
     const parsed = await res.json();
-    cachedIndex = parsed.entries ?? parsed;
+    cachedIndex = Array.isArray(parsed) ? parsed : parsed.entries;
     return cachedIndex!;
   }
 }
