@@ -106,14 +106,8 @@ jobs:
         env:
           ANUMA_API_KEY: ${{ secrets.ANUMA_API_KEY }}
 
-      - name: Upload docs index to R2
-        run: |
-          pnpm exec wrangler r2 object put docs-index/docs-index.json --file public/docs-index.json --remote
-          pnpm exec wrangler r2 object put docs-index/docs-index.bin --file public/docs-index.bin --remote
-          rm public/docs-index.json public/docs-index.bin
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN_PUBLIC_REPO }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      - name: Remove generated docs index files
+        run: rm public/docs-index.json public/docs-index.bin
 
       - run: pnpm build:cloudflare
         env:
