@@ -1,6 +1,6 @@
 # GoogleDriveAuthProviderProps
 
-Defined in: [src/react/useGoogleDriveAuth.ts:30](https://github.com/anuma-ai/sdk/blob/main/src/react/useGoogleDriveAuth.ts#30)
+Defined in: [src/react/useGoogleDriveAuth.ts:29](https://github.com/anuma-ai/sdk/blob/main/src/react/useGoogleDriveAuth.ts#29)
 
 Props for GoogleDriveAuthProvider
 
@@ -10,7 +10,7 @@ Props for GoogleDriveAuthProvider
 
 > `optional` **apiClient**: `Client`
 
-Defined in: [src/react/useGoogleDriveAuth.ts:39](https://github.com/anuma-ai/sdk/blob/main/src/react/useGoogleDriveAuth.ts#39)
+Defined in: [src/react/useGoogleDriveAuth.ts:38](https://github.com/anuma-ai/sdk/blob/main/src/react/useGoogleDriveAuth.ts#38)
 
 API client for backend OAuth requests. Optional - uses the default SDK client if not provided.
 Only needed if you have a custom client configuration (e.g., different baseUrl).
@@ -21,7 +21,7 @@ Only needed if you have a custom client configuration (e.g., different baseUrl).
 
 > `optional` **callbackPath**: `string`
 
-Defined in: [src/react/useGoogleDriveAuth.ts:34](https://github.com/anuma-ai/sdk/blob/main/src/react/useGoogleDriveAuth.ts#34)
+Defined in: [src/react/useGoogleDriveAuth.ts:33](https://github.com/anuma-ai/sdk/blob/main/src/react/useGoogleDriveAuth.ts#33)
 
 OAuth callback path (default: "/auth/google/callback")
 
@@ -31,7 +31,7 @@ OAuth callback path (default: "/auth/google/callback")
 
 > **children**: `ReactNode`
 
-Defined in: [src/react/useGoogleDriveAuth.ts:47](https://github.com/anuma-ai/sdk/blob/main/src/react/useGoogleDriveAuth.ts#47)
+Defined in: [src/react/useGoogleDriveAuth.ts:46](https://github.com/anuma-ai/sdk/blob/main/src/react/useGoogleDriveAuth.ts#46)
 
 Children to render
 
@@ -41,7 +41,7 @@ Children to render
 
 > **clientId**: `string` | `undefined`
 
-Defined in: [src/react/useGoogleDriveAuth.ts:32](https://github.com/anuma-ai/sdk/blob/main/src/react/useGoogleDriveAuth.ts#32)
+Defined in: [src/react/useGoogleDriveAuth.ts:31](https://github.com/anuma-ai/sdk/blob/main/src/react/useGoogleDriveAuth.ts#31)
 
 Google OAuth Client ID (from Google Cloud Console)
 
@@ -51,7 +51,7 @@ Google OAuth Client ID (from Google Cloud Console)
 
 > `optional` **walletAddress**: `string`
 
-Defined in: [src/react/useGoogleDriveAuth.ts:45](https://github.com/anuma-ai/sdk/blob/main/src/react/useGoogleDriveAuth.ts#45)
+Defined in: [src/react/useGoogleDriveAuth.ts:44](https://github.com/anuma-ai/sdk/blob/main/src/react/useGoogleDriveAuth.ts#44)
 
 Wallet address for encrypting OAuth tokens at rest.
 If provided, tokens will be encrypted before storing in localStorage.

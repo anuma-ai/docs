@@ -1,8 +1,8 @@
 # migrateDisplayResult
 
-> **migrateDisplayResult**(`result`: `any`, `fromVersion`: `number`, `toVersion`: `number`, `migrations`: [`DisplayToolMigrations`](../type-aliases/DisplayToolMigrations.md)): `any`
+> **migrateDisplayResult**(`result`: `unknown`, `fromVersion`: `number`, `toVersion`: `number`, `migrations`: [`DisplayToolMigrations`](../type-aliases/DisplayToolMigrations.md)): `unknown`
 
-Defined in: [src/tools/uiInteraction.ts:115](https://github.com/anuma-ai/sdk/blob/main/src/tools/uiInteraction.ts#115)
+Defined in: [src/tools/uiInteraction.ts:122](https://github.com/anuma-ai/sdk/blob/main/src/tools/uiInteraction.ts#122)
 
 Migrate a stored display result from an older version to the current version.
 
@@ -28,7 +28,7 @@ Returns the original result unchanged if fromVersion >= toVersion.
 </td>
 <td>
 
-`any`
+`unknown`
 
 </td>
 </tr>
@@ -73,7 +73,7 @@ Returns the original result unchanged if fromVersion >= toVersion.
 
 ## Returns
 
-`any`
+`unknown`
 
 ## Example
 
