@@ -24,7 +24,7 @@ Represents a pending user interaction that needs to be resolved
 </td>
 <td>
 
-`any`
+`unknown`
 
 </td>
 </tr>
@@ -36,7 +36,7 @@ Represents a pending user interaction that needs to be resolved
 </td>
 <td>
 
-`any`
+`unknown`
 
 </td>
 </tr>
@@ -103,6 +103,16 @@ Defined in: [src/react/useUIInteraction.ts:26](https://github.com/anuma-ai/sdk/b
 **Returns**
 
 `void`
+
+***
+
+### replacesInteractionId?
+
+> `optional` **replacesInteractionId**: `string`
+
+Defined in: [src/react/useUIInteraction.ts:33](https://github.com/anuma-ai/sdk/blob/main/src/react/useUIInteraction.ts#33)
+
+If set, this interaction replaces a previous one (e.g. an updated app)
 
 ***
 

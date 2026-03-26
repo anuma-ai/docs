@@ -351,7 +351,7 @@ Callback for progress updates
 </td>
 <td>
 
-`any`\[] | `null`
+[`FileProcessor`](../Internal/interfaces/FileProcessor.md)\[] | `null`
 
 </td>
 <td>
@@ -526,6 +526,24 @@ Use this to show activity indicators like "Searching..." in the UI.
 <td>
 
 Callback invoked when thinking/reasoning content is received (from `<think>` tags or API reasoning)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`options.onToolCallArgumentsDelta?`
+
+</td>
+<td>
+
+(`event`: [`ToolCallArgumentsDeltaEvent`](../Internal/type-aliases/ToolCallArgumentsDeltaEvent.md)) => `void`
+
+</td>
+<td>
+
+Called with partial tool call arguments as they stream in.
+Use for live preview of artifacts (HTML, slides) being generated.
 
 </td>
 </tr>
