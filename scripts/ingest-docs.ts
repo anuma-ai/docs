@@ -232,14 +232,30 @@ async function main() {
     embedding: embeddings[i],
   }));
 
-  const output = {
+  // Write content/metadata as JSON (small) and embeddings as binary (compact).
+  // This keeps total asset size well under Cloudflare's 25 MB per-file limit.
+  const dimensions = embeddings[0].length;
+  const jsonOutput = {
     generatedAt: new Date().toISOString(),
-    entries: index,
+    dimensions,
+    entries: index.map(({ embedding, ...rest }) => rest),
   };
 
+  // Pack all embeddings into a single Float32Array binary file.
+  // Layout: entry[0] embedding (dimensions floats), entry[1], …
+  const floatArray = new Float32Array(index.length * dimensions);
+  for (let i = 0; i < index.length; i++) {
+    floatArray.set(index[i].embedding, i * dimensions);
+  }
+
+  const BIN_PATH = OUTPUT_PATH.replace(/\.json$/, ".bin");
   fs.mkdirSync(path.dirname(OUTPUT_PATH), { recursive: true });
-  fs.writeFileSync(OUTPUT_PATH, JSON.stringify(output));
-  console.log(`Wrote ${index.length} entries to ${OUTPUT_PATH}`);
+  fs.writeFileSync(OUTPUT_PATH, JSON.stringify(jsonOutput));
+  fs.writeFileSync(BIN_PATH, Buffer.from(floatArray.buffer));
+
+  const jsonSize = (fs.statSync(OUTPUT_PATH).size / 1024 / 1024).toFixed(1);
+  const binSize = (fs.statSync(BIN_PATH).size / 1024 / 1024).toFixed(1);
+  console.log(`Wrote ${index.length} entries to ${OUTPUT_PATH} (${jsonSize} MB) + ${BIN_PATH} (${binSize} MB)`);
 }
 
 main().catch((err) => {

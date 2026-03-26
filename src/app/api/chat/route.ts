@@ -25,22 +25,39 @@ let cachedIndex: IndexEntry[] | null = null;
 async function loadIndex(): Promise<IndexEntry[]> {
   if (cachedIndex) return cachedIndex;
 
-  let raw: string;
+  let jsonRaw: string;
+  let binBuffer: ArrayBuffer;
+
   try {
     // Node.js / local dev: read from filesystem
     const fs = await import("fs");
     const path = await import("path");
-    raw = fs.readFileSync(path.join(process.cwd(), "public/docs-index.json"), "utf-8");
+    const base = path.join(process.cwd(), "public");
+    jsonRaw = fs.readFileSync(path.join(base, "docs-index.json"), "utf-8");
+    const buf = fs.readFileSync(path.join(base, "docs-index.bin"));
+    binBuffer = buf.buffer.slice(buf.byteOffset, buf.byteOffset + buf.byteLength);
   } catch {
-    // Cloudflare Workers: use ASSETS binding to fetch static files
+    // Cloudflare Workers: read from R2 bucket
     const { env } = await (await import("@opennextjs/cloudflare")).getCloudflareContext({ async: true });
-    const res = await env.ASSETS!.fetch(new URL("/docs-index.json", "http://assets.local"));
-    if (!res.ok) throw new Error(`Failed to load index from ASSETS: ${res.status}`);
-    raw = await res.text();
+    const [jsonObj, binObj] = await Promise.all([
+      (env as any).DOCS_INDEX.get("docs-index.json"),
+      (env as any).DOCS_INDEX.get("docs-index.bin"),
+    ]);
+    if (!jsonObj) throw new Error("docs-index.json not found in R2");
+    if (!binObj) throw new Error("docs-index.bin not found in R2");
+    jsonRaw = await jsonObj.text();
+    binBuffer = await binObj.arrayBuffer();
   }
 
-  const parsed = JSON.parse(raw);
-  cachedIndex = Array.isArray(parsed) ? parsed : parsed.entries;
+  const parsed = JSON.parse(jsonRaw);
+  const dimensions: number = parsed.dimensions;
+  const entries: Array<Omit<IndexEntry, "embedding">> = parsed.entries;
+  const floats = new Float32Array(binBuffer);
+
+  cachedIndex = entries.map((entry, i) => ({
+    ...entry,
+    embedding: Array.from(floats.subarray(i * dimensions, (i + 1) * dimensions)),
+  }));
   return cachedIndex!;
 }
 

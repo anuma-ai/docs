@@ -90,6 +90,7 @@ public/llms-full.txt
 
 # Generated docs search index (pnpm ingest)
 public/docs-index.json
+public/docs-index.bin
 
 # OpenNext / Cloudflare
 .open-next
