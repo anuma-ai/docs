@@ -2,7 +2,7 @@
 
 > **useChatStorage**(`options`: `object`): [`UseChatStorageResult`](../Internal/interfaces/UseChatStorageResult.md)
 
-Defined in: [src/react/useChatStorage.ts:791](https://github.com/anuma-ai/sdk/blob/main/src/react/useChatStorage.ts#791)
+Defined in: [src/react/useChatStorage.ts:787](https://github.com/anuma-ai/sdk/blob/main/src/react/useChatStorage.ts#787)
 
 A React hook that wraps useChat with automatic message persistence using WatermelonDB.
 
@@ -658,7 +658,7 @@ function ChatComponent({ database }: { database: Database }) {
   const handleSend = async () => {
     const result = await sendMessage({
       content: 'Hello, how are you?',
-      model: 'gpt-4o-mini',
+      model: 'fireworks/accounts/fireworks/models/kimi-k2p5',
       includeHistory: true, // Include previous messages from this conversation
     });
 

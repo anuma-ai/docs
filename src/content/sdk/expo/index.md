@@ -72,7 +72,7 @@ function ChatScreen() {
   const handleSend = async () => {
     await sendMessage({
       messages: [{ role: "user", content: [{ type: "text", text: "Hello!" }] }],
-      model: "openai/gpt-4o",
+      model: "fireworks/accounts/fireworks/models/kimi-k2p5",
     });
   };
 
@@ -133,6 +133,12 @@ Re-exports [chatStorageSchema](../react/Internal/variables/chatStorageSchema.md)
 ### clearAllEncryptionKeys
 
 Re-exports [clearAllEncryptionKeys](../react/Internal/functions/clearAllEncryptionKeys.md)
+
+***
+
+### clearAllEncryptionState
+
+Re-exports [clearAllEncryptionState](../react/Internal/functions/clearAllEncryptionState.md)
 
 ***
 
