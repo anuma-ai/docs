@@ -1,10 +1,6 @@
 export function GET() {
   const body = `User-agent: *
-Allow: /
-Disallow: /api/
-Disallow: /_pagefind/
-
-Sitemap: https://docs.anuma.ai/sitemap.xml
+Disallow: /
 `;
 
   return new Response(body, {

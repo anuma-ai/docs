@@ -15,6 +15,14 @@ export const metadata = {
     "Developer documentation for the Anuma SDK. Build AI apps with multi-model chat, persistent memory, streaming, and tools across OpenAI, Anthropic, Google, and more.",
   applicationName: "Anuma Docs",
   generator: "Next.js",
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: {
+      index: false,
+      follow: false,
+    },
+  },
   appleWebApp: {
     title: "Anuma Docs",
   },
