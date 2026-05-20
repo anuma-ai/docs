@@ -1,6 +1,6 @@
 export function GET() {
   const body = `User-agent: *
-Disallow: /
+Allow: /
 `;
 
   return new Response(body, {
