@@ -542,6 +542,29 @@ Use for live preview of artifacts (HTML, slides) being generated.
 <tr>
 <td>
 
+`options.preProcessors?`
+
+</td>
+<td>
+
+`PromptPreProcessor`\[]
+
+</td>
+<td>
+
+Pre-processors run after the last user message is received but before
+the first LLM request. Each receives the prompt text and a shared
+embedding (computed once per request) and may return messages to
+enrich the conversation. Forwarded to the underlying `useChat` hook.
+See `createWebSearchPreProcessor`, `createCryptoPricePreProcessor`,
+`createStockPricePreProcessor`, `createWeatherPreProcessor`, or write
+a custom one matching `PromptPreProcessor`.
+
+</td>
+</tr>
+<tr>
+<td>
+
 `options.serverTools?`
 
 </td>
@@ -639,7 +662,7 @@ function ChatScreen({ database }: { database: Database }) {
   const handleSend = async () => {
     const result = await sendMessage({
       content: 'Hello!',
-      model: 'gpt-4o-mini',
+      model: 'fireworks/accounts/fireworks/models/kimi-k2p5',
       includeHistory: true,
     });
   };

@@ -246,6 +246,29 @@ Use for live preview of artifacts (HTML, slides) being generated.
 <tr>
 <td>
 
+`options.preProcessors?`
+
+</td>
+<td>
+
+`PromptPreProcessor`\[]
+
+</td>
+<td>
+
+Pre-processors run after the last user message is received but before the
+first LLM request. Each receives the prompt text and a shared embedding
+(computed once per request) and may return messages to enrich the
+conversation. See `createWebSearchPreProcessor`,
+`createCryptoPricePreProcessor`, `createStockPricePreProcessor`,
+`createWeatherPreProcessor`, or write a custom one matching
+`PromptPreProcessor`.
+
+</td>
+</tr>
+<tr>
+<td>
+
 `options.smoothing?`
 
 </td>
@@ -292,22 +315,22 @@ const { isLoading, sendMessage, stop } = useChat({
 const handleSend = async () => {
   const result = await sendMessage({
     messages: [{ role: 'user', content: [{ type: 'text', text: 'Hello!' }] }],
-    model: 'gpt-4o-mini'
+    model: 'your-provider/your-model'
   });
 };
 
-// Using extended thinking (Anthropic Claude)
+// Using extended thinking
 const result = await sendMessage({
   messages: [{ role: 'user', content: [{ type: 'text', text: 'Solve this complex problem...' }] }],
-  model: 'anthropic/claude-3-7-sonnet-20250219',
+  model: 'your-provider/your-model',
   thinking: { type: 'enabled', budget_tokens: 10000 },
   onThinking: (chunk) => console.log('Thinking:', chunk)
 });
 
-// Using reasoning (OpenAI o-series)
+// Using reasoning
 const result = await sendMessage({
   messages: [{ role: 'user', content: [{ type: 'text', text: 'Reason through this...' }] }],
-  model: 'openai/o1',
+  model: 'your-provider/your-model',
   reasoning: { effort: 'high', summary: 'detailed' }
 });
 ```
