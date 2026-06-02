@@ -2,7 +2,7 @@
 
 > **PostApiV1ResponsesData** = `object`
 
-Defined in: [src/client/types.gen.ts:4871](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#4871)
+Defined in: [src/client/types.gen.ts:5938](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#5938)
 
 ## Properties
 
@@ -10,7 +10,7 @@ Defined in: [src/client/types.gen.ts:4871](https://github.com/anuma-ai/sdk/blob/
 
 > **body**: [`LlmapiResponseRequest`](LlmapiResponseRequest.md)
 
-Defined in: [src/client/types.gen.ts:4875](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#4875)
+Defined in: [src/client/types.gen.ts:5942](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#5942)
 
 Response request
 
@@ -20,7 +20,7 @@ Response request
 
 > `optional` **path**: `never`
 
-Defined in: [src/client/types.gen.ts:4876](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#4876)
+Defined in: [src/client/types.gen.ts:5943](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#5943)
 
 ***
 
@@ -28,7 +28,7 @@ Defined in: [src/client/types.gen.ts:4876](https://github.com/anuma-ai/sdk/blob/
 
 > `optional` **query**: `never`
 
-Defined in: [src/client/types.gen.ts:4877](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#4877)
+Defined in: [src/client/types.gen.ts:5944](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#5944)
 
 ***
 
@@ -36,4 +36,4 @@ Defined in: [src/client/types.gen.ts:4877](https://github.com/anuma-ai/sdk/blob/
 
 > **url**: `"/api/v1/responses"`
 
-Defined in: [src/client/types.gen.ts:4878](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#4878)
+Defined in: [src/client/types.gen.ts:5945](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#5945)

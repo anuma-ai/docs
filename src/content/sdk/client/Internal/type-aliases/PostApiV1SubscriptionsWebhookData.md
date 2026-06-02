@@ -2,7 +2,7 @@
 
 > **PostApiV1SubscriptionsWebhookData** = `object`
 
-Defined in: [src/client/types.gen.ts:5232](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#5232)
+Defined in: [src/client/types.gen.ts:6307](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#6307)
 
 ## Properties
 
@@ -10,7 +10,7 @@ Defined in: [src/client/types.gen.ts:5232](https://github.com/anuma-ai/sdk/blob/
 
 > `optional` **body**: `object`
 
-Defined in: [src/client/types.gen.ts:5233](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#5233)
+Defined in: [src/client/types.gen.ts:6308](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#6308)
 
 **Index Signature**
 
@@ -22,7 +22,7 @@ Defined in: [src/client/types.gen.ts:5233](https://github.com/anuma-ai/sdk/blob/
 
 > **headers**: `object`
 
-Defined in: [src/client/types.gen.ts:5236](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#5236)
+Defined in: [src/client/types.gen.ts:6311](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#6311)
 
 **Stripe-Signature**
 
@@ -36,7 +36,7 @@ Stripe webhook signature
 
 > `optional` **path**: `never`
 
-Defined in: [src/client/types.gen.ts:5242](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#5242)
+Defined in: [src/client/types.gen.ts:6317](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#6317)
 
 ***
 
@@ -44,7 +44,7 @@ Defined in: [src/client/types.gen.ts:5242](https://github.com/anuma-ai/sdk/blob/
 
 > `optional` **query**: `never`
 
-Defined in: [src/client/types.gen.ts:5243](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#5243)
+Defined in: [src/client/types.gen.ts:6318](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#6318)
 
 ***
 
@@ -52,4 +52,4 @@ Defined in: [src/client/types.gen.ts:5243](https://github.com/anuma-ai/sdk/blob/
 
 > **url**: `"/api/v1/subscriptions/webhook"`
 
-Defined in: [src/client/types.gen.ts:5244](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#5244)
+Defined in: [src/client/types.gen.ts:6319](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#6319)

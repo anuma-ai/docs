@@ -37,4 +37,4 @@
 
 <video src="https://github.com/anuma-ai/starter-next/raw/refs/heads/demo/chat-chat-Viewing-the-chat-interface-light-chromium--video.webm" controls style="border-radius: 8px;"></video>
 
-Updated: 2026-04-01T08:23:13Z
+Updated: 2026-05-13T07:55:38Z

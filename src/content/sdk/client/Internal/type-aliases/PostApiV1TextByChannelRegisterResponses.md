@@ -2,7 +2,7 @@
 
 > **PostApiV1TextByChannelRegisterResponses** = `object`
 
-Defined in: [src/client/types.gen.ts:5415](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#5415)
+Defined in: [src/client/types.gen.ts:6421](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#6421)
 
 ## Properties
 
@@ -10,6 +10,6 @@ Defined in: [src/client/types.gen.ts:5415](https://github.com/anuma-ai/sdk/blob/
 
 > **200**: [`HandlersRegisterTextResponse`](HandlersRegisterTextResponse.md)
 
-Defined in: [src/client/types.gen.ts:5419](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#5419)
+Defined in: [src/client/types.gen.ts:6425](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#6425)
 
 OK
