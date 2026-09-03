@@ -10,6 +10,8 @@
 | [ConfigCompactLists](Internal/type-aliases/ConfigCompactLists.md) | - |
 | [ConfigCuratedModel](Internal/type-aliases/ConfigCuratedModel.md) | - |
 | [ConfigCuratedModelsResponse](Internal/type-aliases/ConfigCuratedModelsResponse.md) | - |
+| [ConfigSmartGroup](Internal/type-aliases/ConfigSmartGroup.md) | - |
+| [CryptocompareQuote](Internal/type-aliases/CryptocompareQuote.md) | - |
 | [DeleteApiV1AccountData](Internal/type-aliases/DeleteApiV1AccountData.md) | - |
 | [DeleteApiV1AccountError](Internal/type-aliases/DeleteApiV1AccountError.md) | - |
 | [DeleteApiV1AccountErrors](Internal/type-aliases/DeleteApiV1AccountErrors.md) | - |
@@ -40,6 +42,11 @@
 | [DeleteApiV1AdminPersonasByIdErrors](Internal/type-aliases/DeleteApiV1AdminPersonasByIdErrors.md) | - |
 | [DeleteApiV1AdminPersonasByIdResponse](Internal/type-aliases/DeleteApiV1AdminPersonasByIdResponse.md) | - |
 | [DeleteApiV1AdminPersonasByIdResponses](Internal/type-aliases/DeleteApiV1AdminPersonasByIdResponses.md) | - |
+| [DeleteApiV1AdminSharesBySlugData](Internal/type-aliases/DeleteApiV1AdminSharesBySlugData.md) | - |
+| [DeleteApiV1AdminSharesBySlugError](Internal/type-aliases/DeleteApiV1AdminSharesBySlugError.md) | - |
+| [DeleteApiV1AdminSharesBySlugErrors](Internal/type-aliases/DeleteApiV1AdminSharesBySlugErrors.md) | - |
+| [DeleteApiV1AdminSharesBySlugResponse](Internal/type-aliases/DeleteApiV1AdminSharesBySlugResponse.md) | - |
+| [DeleteApiV1AdminSharesBySlugResponses](Internal/type-aliases/DeleteApiV1AdminSharesBySlugResponses.md) | - |
 | [DeleteApiV1AdminTextResetData](Internal/type-aliases/DeleteApiV1AdminTextResetData.md) | - |
 | [DeleteApiV1AdminTextResetError](Internal/type-aliases/DeleteApiV1AdminTextResetError.md) | - |
 | [DeleteApiV1AdminTextResetErrors](Internal/type-aliases/DeleteApiV1AdminTextResetErrors.md) | - |
@@ -70,11 +77,16 @@
 | [DeleteApiV1DeveloperAppsByAppUuidPrivyResponses](Internal/type-aliases/DeleteApiV1DeveloperAppsByAppUuidPrivyResponses.md) | - |
 | [DeleteApiV1DeveloperAppsByAppUuidResponse](Internal/type-aliases/DeleteApiV1DeveloperAppsByAppUuidResponse.md) | - |
 | [DeleteApiV1DeveloperAppsByAppUuidResponses](Internal/type-aliases/DeleteApiV1DeveloperAppsByAppUuidResponses.md) | - |
-| [DeleteApiV1TextByChannelUnregisterData](Internal/type-aliases/DeleteApiV1TextByChannelUnregisterData.md) | - |
-| [DeleteApiV1TextByChannelUnregisterError](Internal/type-aliases/DeleteApiV1TextByChannelUnregisterError.md) | - |
-| [DeleteApiV1TextByChannelUnregisterErrors](Internal/type-aliases/DeleteApiV1TextByChannelUnregisterErrors.md) | - |
-| [DeleteApiV1TextByChannelUnregisterResponse](Internal/type-aliases/DeleteApiV1TextByChannelUnregisterResponse.md) | - |
-| [DeleteApiV1TextByChannelUnregisterResponses](Internal/type-aliases/DeleteApiV1TextByChannelUnregisterResponses.md) | - |
+| [DeleteApiV1SharesBySlugData](Internal/type-aliases/DeleteApiV1SharesBySlugData.md) | - |
+| [DeleteApiV1SharesBySlugError](Internal/type-aliases/DeleteApiV1SharesBySlugError.md) | - |
+| [DeleteApiV1SharesBySlugErrors](Internal/type-aliases/DeleteApiV1SharesBySlugErrors.md) | - |
+| [DeleteApiV1SharesBySlugResponse](Internal/type-aliases/DeleteApiV1SharesBySlugResponse.md) | - |
+| [DeleteApiV1SharesBySlugResponses](Internal/type-aliases/DeleteApiV1SharesBySlugResponses.md) | - |
+| [DeleteApiV1UserAgentConsentsByAgentIdData](Internal/type-aliases/DeleteApiV1UserAgentConsentsByAgentIdData.md) | - |
+| [DeleteApiV1UserAgentConsentsByAgentIdError](Internal/type-aliases/DeleteApiV1UserAgentConsentsByAgentIdError.md) | - |
+| [DeleteApiV1UserAgentConsentsByAgentIdErrors](Internal/type-aliases/DeleteApiV1UserAgentConsentsByAgentIdErrors.md) | - |
+| [DeleteApiV1UserAgentConsentsByAgentIdResponse](Internal/type-aliases/DeleteApiV1UserAgentConsentsByAgentIdResponse.md) | - |
+| [DeleteApiV1UserAgentConsentsByAgentIdResponses](Internal/type-aliases/DeleteApiV1UserAgentConsentsByAgentIdResponses.md) | - |
 | [DeleteApiV1UserApiKeysByKeyIdData](Internal/type-aliases/DeleteApiV1UserApiKeysByKeyIdData.md) | - |
 | [DeleteApiV1UserApiKeysByKeyIdError](Internal/type-aliases/DeleteApiV1UserApiKeysByKeyIdError.md) | - |
 | [DeleteApiV1UserApiKeysByKeyIdErrors](Internal/type-aliases/DeleteApiV1UserApiKeysByKeyIdErrors.md) | - |
@@ -85,6 +97,16 @@
 | [DeleteApiV1UserOauthGrantsByIdErrors](Internal/type-aliases/DeleteApiV1UserOauthGrantsByIdErrors.md) | - |
 | [DeleteApiV1UserOauthGrantsByIdResponse](Internal/type-aliases/DeleteApiV1UserOauthGrantsByIdResponse.md) | - |
 | [DeleteApiV1UserOauthGrantsByIdResponses](Internal/type-aliases/DeleteApiV1UserOauthGrantsByIdResponses.md) | - |
+| [DeleteApiV1WalletsBindingByAddressData](Internal/type-aliases/DeleteApiV1WalletsBindingByAddressData.md) | - |
+| [DeleteApiV1WalletsBindingByAddressError](Internal/type-aliases/DeleteApiV1WalletsBindingByAddressError.md) | - |
+| [DeleteApiV1WalletsBindingByAddressErrors](Internal/type-aliases/DeleteApiV1WalletsBindingByAddressErrors.md) | - |
+| [DeleteApiV1WalletsBindingByAddressResponse](Internal/type-aliases/DeleteApiV1WalletsBindingByAddressResponse.md) | - |
+| [DeleteApiV1WalletsBindingByAddressResponses](Internal/type-aliases/DeleteApiV1WalletsBindingByAddressResponses.md) | - |
+| [GetAdminReferralGrantsStatsData](Internal/type-aliases/GetAdminReferralGrantsStatsData.md) | - |
+| [GetAdminReferralGrantsStatsError](Internal/type-aliases/GetAdminReferralGrantsStatsError.md) | - |
+| [GetAdminReferralGrantsStatsErrors](Internal/type-aliases/GetAdminReferralGrantsStatsErrors.md) | - |
+| [GetAdminReferralGrantsStatsResponse](Internal/type-aliases/GetAdminReferralGrantsStatsResponse.md) | - |
+| [GetAdminReferralGrantsStatsResponses](Internal/type-aliases/GetAdminReferralGrantsStatsResponses.md) | - |
 | [GetApiV1AdminAppsByAppIdApiKeysByIdData](Internal/type-aliases/GetApiV1AdminAppsByAppIdApiKeysByIdData.md) | - |
 | [GetApiV1AdminAppsByAppIdApiKeysByIdError](Internal/type-aliases/GetApiV1AdminAppsByAppIdApiKeysByIdError.md) | - |
 | [GetApiV1AdminAppsByAppIdApiKeysByIdErrors](Internal/type-aliases/GetApiV1AdminAppsByAppIdApiKeysByIdErrors.md) | - |
@@ -105,6 +127,26 @@
 | [GetApiV1AdminAppsErrors](Internal/type-aliases/GetApiV1AdminAppsErrors.md) | - |
 | [GetApiV1AdminAppsResponse](Internal/type-aliases/GetApiV1AdminAppsResponse.md) | - |
 | [GetApiV1AdminAppsResponses](Internal/type-aliases/GetApiV1AdminAppsResponses.md) | - |
+| [GetApiV1AdminBotStatusData](Internal/type-aliases/GetApiV1AdminBotStatusData.md) | - |
+| [GetApiV1AdminBotStatusError](Internal/type-aliases/GetApiV1AdminBotStatusError.md) | - |
+| [GetApiV1AdminBotStatusErrors](Internal/type-aliases/GetApiV1AdminBotStatusErrors.md) | - |
+| [GetApiV1AdminBotStatusResponse](Internal/type-aliases/GetApiV1AdminBotStatusResponse.md) | - |
+| [GetApiV1AdminBotStatusResponses](Internal/type-aliases/GetApiV1AdminBotStatusResponses.md) | - |
+| [GetApiV1AdminConnectorsData](Internal/type-aliases/GetApiV1AdminConnectorsData.md) | - |
+| [GetApiV1AdminConnectorsError](Internal/type-aliases/GetApiV1AdminConnectorsError.md) | - |
+| [GetApiV1AdminConnectorsErrors](Internal/type-aliases/GetApiV1AdminConnectorsErrors.md) | - |
+| [GetApiV1AdminConnectorsResponse](Internal/type-aliases/GetApiV1AdminConnectorsResponse.md) | - |
+| [GetApiV1AdminConnectorsResponses](Internal/type-aliases/GetApiV1AdminConnectorsResponses.md) | - |
+| [GetApiV1AdminNotificationsCampaignsByCampaignIdData](Internal/type-aliases/GetApiV1AdminNotificationsCampaignsByCampaignIdData.md) | - |
+| [GetApiV1AdminNotificationsCampaignsByCampaignIdError](Internal/type-aliases/GetApiV1AdminNotificationsCampaignsByCampaignIdError.md) | - |
+| [GetApiV1AdminNotificationsCampaignsByCampaignIdErrors](Internal/type-aliases/GetApiV1AdminNotificationsCampaignsByCampaignIdErrors.md) | - |
+| [GetApiV1AdminNotificationsCampaignsByCampaignIdResponse](Internal/type-aliases/GetApiV1AdminNotificationsCampaignsByCampaignIdResponse.md) | - |
+| [GetApiV1AdminNotificationsCampaignsByCampaignIdResponses](Internal/type-aliases/GetApiV1AdminNotificationsCampaignsByCampaignIdResponses.md) | - |
+| [GetApiV1AdminNotificationsCampaignsData](Internal/type-aliases/GetApiV1AdminNotificationsCampaignsData.md) | - |
+| [GetApiV1AdminNotificationsCampaignsError](Internal/type-aliases/GetApiV1AdminNotificationsCampaignsError.md) | - |
+| [GetApiV1AdminNotificationsCampaignsErrors](Internal/type-aliases/GetApiV1AdminNotificationsCampaignsErrors.md) | - |
+| [GetApiV1AdminNotificationsCampaignsResponse](Internal/type-aliases/GetApiV1AdminNotificationsCampaignsResponse.md) | - |
+| [GetApiV1AdminNotificationsCampaignsResponses](Internal/type-aliases/GetApiV1AdminNotificationsCampaignsResponses.md) | - |
 | [GetApiV1AdminOauthClientsByClientIdData](Internal/type-aliases/GetApiV1AdminOauthClientsByClientIdData.md) | - |
 | [GetApiV1AdminOauthClientsByClientIdError](Internal/type-aliases/GetApiV1AdminOauthClientsByClientIdError.md) | - |
 | [GetApiV1AdminOauthClientsByClientIdErrors](Internal/type-aliases/GetApiV1AdminOauthClientsByClientIdErrors.md) | - |
@@ -113,6 +155,11 @@
 | [GetApiV1AdminOauthClientsData](Internal/type-aliases/GetApiV1AdminOauthClientsData.md) | - |
 | [GetApiV1AdminOauthClientsResponse](Internal/type-aliases/GetApiV1AdminOauthClientsResponse.md) | - |
 | [GetApiV1AdminOauthClientsResponses](Internal/type-aliases/GetApiV1AdminOauthClientsResponses.md) | - |
+| [GetApiV1AdminPhoneHashesAuditData](Internal/type-aliases/GetApiV1AdminPhoneHashesAuditData.md) | - |
+| [GetApiV1AdminPhoneHashesAuditError](Internal/type-aliases/GetApiV1AdminPhoneHashesAuditError.md) | - |
+| [GetApiV1AdminPhoneHashesAuditErrors](Internal/type-aliases/GetApiV1AdminPhoneHashesAuditErrors.md) | - |
+| [GetApiV1AdminPhoneHashesAuditResponse](Internal/type-aliases/GetApiV1AdminPhoneHashesAuditResponse.md) | - |
+| [GetApiV1AdminPhoneHashesAuditResponses](Internal/type-aliases/GetApiV1AdminPhoneHashesAuditResponses.md) | - |
 | [GetApiV1AdminPrivyIdentifiersAuditData](Internal/type-aliases/GetApiV1AdminPrivyIdentifiersAuditData.md) | - |
 | [GetApiV1AdminPrivyIdentifiersAuditError](Internal/type-aliases/GetApiV1AdminPrivyIdentifiersAuditError.md) | - |
 | [GetApiV1AdminPrivyIdentifiersAuditErrors](Internal/type-aliases/GetApiV1AdminPrivyIdentifiersAuditErrors.md) | - |
@@ -148,11 +195,31 @@
 | [GetApiV1BootstrapErrors](Internal/type-aliases/GetApiV1BootstrapErrors.md) | - |
 | [GetApiV1BootstrapResponse](Internal/type-aliases/GetApiV1BootstrapResponse.md) | - |
 | [GetApiV1BootstrapResponses](Internal/type-aliases/GetApiV1BootstrapResponses.md) | - |
+| [GetApiV1ChatStreamsByInferenceIdData](Internal/type-aliases/GetApiV1ChatStreamsByInferenceIdData.md) | - |
+| [GetApiV1ChatStreamsByInferenceIdError](Internal/type-aliases/GetApiV1ChatStreamsByInferenceIdError.md) | - |
+| [GetApiV1ChatStreamsByInferenceIdErrors](Internal/type-aliases/GetApiV1ChatStreamsByInferenceIdErrors.md) | - |
+| [GetApiV1ChatStreamsByInferenceIdResponse](Internal/type-aliases/GetApiV1ChatStreamsByInferenceIdResponse.md) | - |
+| [GetApiV1ChatStreamsByInferenceIdResponses](Internal/type-aliases/GetApiV1ChatStreamsByInferenceIdResponses.md) | - |
 | [GetApiV1ConfigData](Internal/type-aliases/GetApiV1ConfigData.md) | - |
 | [GetApiV1ConfigError](Internal/type-aliases/GetApiV1ConfigError.md) | - |
 | [GetApiV1ConfigErrors](Internal/type-aliases/GetApiV1ConfigErrors.md) | - |
 | [GetApiV1ConfigResponse](Internal/type-aliases/GetApiV1ConfigResponse.md) | - |
 | [GetApiV1ConfigResponses](Internal/type-aliases/GetApiV1ConfigResponses.md) | - |
+| [GetApiV1ConnectorsByProviderScopesData](Internal/type-aliases/GetApiV1ConnectorsByProviderScopesData.md) | - |
+| [GetApiV1ConnectorsByProviderScopesError](Internal/type-aliases/GetApiV1ConnectorsByProviderScopesError.md) | - |
+| [GetApiV1ConnectorsByProviderScopesErrors](Internal/type-aliases/GetApiV1ConnectorsByProviderScopesErrors.md) | - |
+| [GetApiV1ConnectorsByProviderScopesResponse](Internal/type-aliases/GetApiV1ConnectorsByProviderScopesResponse.md) | - |
+| [GetApiV1ConnectorsByProviderScopesResponses](Internal/type-aliases/GetApiV1ConnectorsByProviderScopesResponses.md) | - |
+| [GetApiV1ConnectorsByProviderToolsData](Internal/type-aliases/GetApiV1ConnectorsByProviderToolsData.md) | - |
+| [GetApiV1ConnectorsByProviderToolsError](Internal/type-aliases/GetApiV1ConnectorsByProviderToolsError.md) | - |
+| [GetApiV1ConnectorsByProviderToolsErrors](Internal/type-aliases/GetApiV1ConnectorsByProviderToolsErrors.md) | - |
+| [GetApiV1ConnectorsByProviderToolsResponse](Internal/type-aliases/GetApiV1ConnectorsByProviderToolsResponse.md) | - |
+| [GetApiV1ConnectorsByProviderToolsResponses](Internal/type-aliases/GetApiV1ConnectorsByProviderToolsResponses.md) | - |
+| [GetApiV1ConnectorsData](Internal/type-aliases/GetApiV1ConnectorsData.md) | - |
+| [GetApiV1ConnectorsError](Internal/type-aliases/GetApiV1ConnectorsError.md) | - |
+| [GetApiV1ConnectorsErrors](Internal/type-aliases/GetApiV1ConnectorsErrors.md) | - |
+| [GetApiV1ConnectorsResponse](Internal/type-aliases/GetApiV1ConnectorsResponse.md) | - |
+| [GetApiV1ConnectorsResponses](Internal/type-aliases/GetApiV1ConnectorsResponses.md) | - |
 | [GetApiV1CreditsBalanceData](Internal/type-aliases/GetApiV1CreditsBalanceData.md) | - |
 | [GetApiV1CreditsBalanceError](Internal/type-aliases/GetApiV1CreditsBalanceError.md) | - |
 | [GetApiV1CreditsBalanceErrors](Internal/type-aliases/GetApiV1CreditsBalanceErrors.md) | - |
@@ -214,11 +281,25 @@
 | [GetApiV1GuestBootstrapErrors](Internal/type-aliases/GetApiV1GuestBootstrapErrors.md) | - |
 | [GetApiV1GuestBootstrapResponse](Internal/type-aliases/GetApiV1GuestBootstrapResponse.md) | - |
 | [GetApiV1GuestBootstrapResponses](Internal/type-aliases/GetApiV1GuestBootstrapResponses.md) | - |
+| [GetApiV1MeData](Internal/type-aliases/GetApiV1MeData.md) | - |
+| [GetApiV1MediaSharedBySlugData](Internal/type-aliases/GetApiV1MediaSharedBySlugData.md) | - |
+| [GetApiV1MediaSharedBySlugError](Internal/type-aliases/GetApiV1MediaSharedBySlugError.md) | - |
+| [GetApiV1MediaSharedBySlugErrors](Internal/type-aliases/GetApiV1MediaSharedBySlugErrors.md) | - |
+| [GetApiV1MediaSharedBySlugResponses](Internal/type-aliases/GetApiV1MediaSharedBySlugResponses.md) | - |
+| [GetApiV1MeError](Internal/type-aliases/GetApiV1MeError.md) | - |
+| [GetApiV1MeErrors](Internal/type-aliases/GetApiV1MeErrors.md) | - |
+| [GetApiV1MeResponse](Internal/type-aliases/GetApiV1MeResponse.md) | - |
+| [GetApiV1MeResponses](Internal/type-aliases/GetApiV1MeResponses.md) | - |
 | [GetApiV1ModelsData](Internal/type-aliases/GetApiV1ModelsData.md) | - |
 | [GetApiV1ModelsError](Internal/type-aliases/GetApiV1ModelsError.md) | - |
 | [GetApiV1ModelsErrors](Internal/type-aliases/GetApiV1ModelsErrors.md) | - |
 | [GetApiV1ModelsResponse](Internal/type-aliases/GetApiV1ModelsResponse.md) | - |
 | [GetApiV1ModelsResponses](Internal/type-aliases/GetApiV1ModelsResponses.md) | - |
+| [GetApiV1NotificationsPreferencesData](Internal/type-aliases/GetApiV1NotificationsPreferencesData.md) | - |
+| [GetApiV1NotificationsPreferencesError](Internal/type-aliases/GetApiV1NotificationsPreferencesError.md) | - |
+| [GetApiV1NotificationsPreferencesErrors](Internal/type-aliases/GetApiV1NotificationsPreferencesErrors.md) | - |
+| [GetApiV1NotificationsPreferencesResponse](Internal/type-aliases/GetApiV1NotificationsPreferencesResponse.md) | - |
+| [GetApiV1NotificationsPreferencesResponses](Internal/type-aliases/GetApiV1NotificationsPreferencesResponses.md) | - |
 | [GetApiV1PersonasByIdData](Internal/type-aliases/GetApiV1PersonasByIdData.md) | - |
 | [GetApiV1PersonasByIdError](Internal/type-aliases/GetApiV1PersonasByIdError.md) | - |
 | [GetApiV1PersonasByIdErrors](Internal/type-aliases/GetApiV1PersonasByIdErrors.md) | - |
@@ -234,6 +315,16 @@
 | [GetApiV1PhoneCallsByCallIdErrors](Internal/type-aliases/GetApiV1PhoneCallsByCallIdErrors.md) | - |
 | [GetApiV1PhoneCallsByCallIdResponse](Internal/type-aliases/GetApiV1PhoneCallsByCallIdResponse.md) | - |
 | [GetApiV1PhoneCallsByCallIdResponses](Internal/type-aliases/GetApiV1PhoneCallsByCallIdResponses.md) | - |
+| [GetApiV1SharesBySlugData](Internal/type-aliases/GetApiV1SharesBySlugData.md) | - |
+| [GetApiV1SharesBySlugError](Internal/type-aliases/GetApiV1SharesBySlugError.md) | - |
+| [GetApiV1SharesBySlugErrors](Internal/type-aliases/GetApiV1SharesBySlugErrors.md) | - |
+| [GetApiV1SharesBySlugResponse](Internal/type-aliases/GetApiV1SharesBySlugResponse.md) | - |
+| [GetApiV1SharesBySlugResponses](Internal/type-aliases/GetApiV1SharesBySlugResponses.md) | - |
+| [GetApiV1SharesData](Internal/type-aliases/GetApiV1SharesData.md) | - |
+| [GetApiV1SharesError](Internal/type-aliases/GetApiV1SharesError.md) | - |
+| [GetApiV1SharesErrors](Internal/type-aliases/GetApiV1SharesErrors.md) | - |
+| [GetApiV1SharesResponse](Internal/type-aliases/GetApiV1SharesResponse.md) | - |
+| [GetApiV1SharesResponses](Internal/type-aliases/GetApiV1SharesResponses.md) | - |
 | [GetApiV1SubscriptionsPlansData](Internal/type-aliases/GetApiV1SubscriptionsPlansData.md) | - |
 | [GetApiV1SubscriptionsPlansError](Internal/type-aliases/GetApiV1SubscriptionsPlansError.md) | - |
 | [GetApiV1SubscriptionsPlansErrors](Internal/type-aliases/GetApiV1SubscriptionsPlansErrors.md) | - |
@@ -244,16 +335,6 @@
 | [GetApiV1SubscriptionsStatusErrors](Internal/type-aliases/GetApiV1SubscriptionsStatusErrors.md) | - |
 | [GetApiV1SubscriptionsStatusResponse](Internal/type-aliases/GetApiV1SubscriptionsStatusResponse.md) | - |
 | [GetApiV1SubscriptionsStatusResponses](Internal/type-aliases/GetApiV1SubscriptionsStatusResponses.md) | - |
-| [GetApiV1TextByChannelLookupData](Internal/type-aliases/GetApiV1TextByChannelLookupData.md) | - |
-| [GetApiV1TextByChannelLookupError](Internal/type-aliases/GetApiV1TextByChannelLookupError.md) | - |
-| [GetApiV1TextByChannelLookupErrors](Internal/type-aliases/GetApiV1TextByChannelLookupErrors.md) | - |
-| [GetApiV1TextByChannelLookupResponse](Internal/type-aliases/GetApiV1TextByChannelLookupResponse.md) | - |
-| [GetApiV1TextByChannelLookupResponses](Internal/type-aliases/GetApiV1TextByChannelLookupResponses.md) | - |
-| [GetApiV1TextByChannelStatusData](Internal/type-aliases/GetApiV1TextByChannelStatusData.md) | - |
-| [GetApiV1TextByChannelStatusError](Internal/type-aliases/GetApiV1TextByChannelStatusError.md) | - |
-| [GetApiV1TextByChannelStatusErrors](Internal/type-aliases/GetApiV1TextByChannelStatusErrors.md) | - |
-| [GetApiV1TextByChannelStatusResponse](Internal/type-aliases/GetApiV1TextByChannelStatusResponse.md) | - |
-| [GetApiV1TextByChannelStatusResponses](Internal/type-aliases/GetApiV1TextByChannelStatusResponses.md) | - |
 | [GetApiV1ToolsData](Internal/type-aliases/GetApiV1ToolsData.md) | - |
 | [GetApiV1ToolsError](Internal/type-aliases/GetApiV1ToolsError.md) | - |
 | [GetApiV1ToolsErrors](Internal/type-aliases/GetApiV1ToolsErrors.md) | - |
@@ -264,11 +345,24 @@
 | [GetApiV1UsageByModalityErrors](Internal/type-aliases/GetApiV1UsageByModalityErrors.md) | - |
 | [GetApiV1UsageByModalityResponse](Internal/type-aliases/GetApiV1UsageByModalityResponse.md) | - |
 | [GetApiV1UsageByModalityResponses](Internal/type-aliases/GetApiV1UsageByModalityResponses.md) | - |
+| [GetApiV1UsageInferenceWeeklyData](Internal/type-aliases/GetApiV1UsageInferenceWeeklyData.md) | - |
+| [GetApiV1UsageInferenceWeeklyResponse](Internal/type-aliases/GetApiV1UsageInferenceWeeklyResponse.md) | - |
+| [GetApiV1UsageInferenceWeeklyResponses](Internal/type-aliases/GetApiV1UsageInferenceWeeklyResponses.md) | - |
 | [GetApiV1UsageModelsData](Internal/type-aliases/GetApiV1UsageModelsData.md) | - |
 | [GetApiV1UsageModelsError](Internal/type-aliases/GetApiV1UsageModelsError.md) | - |
 | [GetApiV1UsageModelsErrors](Internal/type-aliases/GetApiV1UsageModelsErrors.md) | - |
 | [GetApiV1UsageModelsResponse](Internal/type-aliases/GetApiV1UsageModelsResponse.md) | - |
 | [GetApiV1UsageModelsResponses](Internal/type-aliases/GetApiV1UsageModelsResponses.md) | - |
+| [GetApiV1UserAgentConsentsData](Internal/type-aliases/GetApiV1UserAgentConsentsData.md) | - |
+| [GetApiV1UserAgentConsentsError](Internal/type-aliases/GetApiV1UserAgentConsentsError.md) | - |
+| [GetApiV1UserAgentConsentsErrors](Internal/type-aliases/GetApiV1UserAgentConsentsErrors.md) | - |
+| [GetApiV1UserAgentConsentsResponse](Internal/type-aliases/GetApiV1UserAgentConsentsResponse.md) | - |
+| [GetApiV1UserAgentConsentsResponses](Internal/type-aliases/GetApiV1UserAgentConsentsResponses.md) | - |
+| [GetApiV1UserAgentGrantsData](Internal/type-aliases/GetApiV1UserAgentGrantsData.md) | - |
+| [GetApiV1UserAgentGrantsError](Internal/type-aliases/GetApiV1UserAgentGrantsError.md) | - |
+| [GetApiV1UserAgentGrantsErrors](Internal/type-aliases/GetApiV1UserAgentGrantsErrors.md) | - |
+| [GetApiV1UserAgentGrantsResponse](Internal/type-aliases/GetApiV1UserAgentGrantsResponse.md) | - |
+| [GetApiV1UserAgentGrantsResponses](Internal/type-aliases/GetApiV1UserAgentGrantsResponses.md) | - |
 | [GetApiV1UserApiKeysData](Internal/type-aliases/GetApiV1UserApiKeysData.md) | - |
 | [GetApiV1UserApiKeysError](Internal/type-aliases/GetApiV1UserApiKeysError.md) | - |
 | [GetApiV1UserApiKeysErrors](Internal/type-aliases/GetApiV1UserApiKeysErrors.md) | - |
@@ -279,11 +373,33 @@
 | [GetApiV1UserOauthGrantsErrors](Internal/type-aliases/GetApiV1UserOauthGrantsErrors.md) | - |
 | [GetApiV1UserOauthGrantsResponse](Internal/type-aliases/GetApiV1UserOauthGrantsResponse.md) | - |
 | [GetApiV1UserOauthGrantsResponses](Internal/type-aliases/GetApiV1UserOauthGrantsResponses.md) | - |
+| [GetApiV1WalletsBindingData](Internal/type-aliases/GetApiV1WalletsBindingData.md) | - |
+| [GetApiV1WalletsBindingError](Internal/type-aliases/GetApiV1WalletsBindingError.md) | - |
+| [GetApiV1WalletsBindingErrors](Internal/type-aliases/GetApiV1WalletsBindingErrors.md) | - |
+| [GetApiV1WalletsBindingResponse](Internal/type-aliases/GetApiV1WalletsBindingResponse.md) | - |
+| [GetApiV1WalletsBindingResponses](Internal/type-aliases/GetApiV1WalletsBindingResponses.md) | - |
+| [GetApiV1ZetaCreditRateData](Internal/type-aliases/GetApiV1ZetaCreditRateData.md) | - |
+| [GetApiV1ZetaCreditRateResponse](Internal/type-aliases/GetApiV1ZetaCreditRateResponse.md) | - |
+| [GetApiV1ZetaCreditRateResponses](Internal/type-aliases/GetApiV1ZetaCreditRateResponses.md) | - |
+| [GetApiV1ZetaMarketData](Internal/type-aliases/GetApiV1ZetaMarketData.md) | - |
+| [GetApiV1ZetaMarketResponse](Internal/type-aliases/GetApiV1ZetaMarketResponse.md) | - |
+| [GetApiV1ZetaMarketResponses](Internal/type-aliases/GetApiV1ZetaMarketResponses.md) | - |
+| [GetConnectorsByProviderCallbackData](Internal/type-aliases/GetConnectorsByProviderCallbackData.md) | - |
+| [GetConnectorsByProviderCallbackError](Internal/type-aliases/GetConnectorsByProviderCallbackError.md) | - |
+| [GetConnectorsByProviderCallbackErrors](Internal/type-aliases/GetConnectorsByProviderCallbackErrors.md) | - |
+| [GetConnectorsByProviderConnectData](Internal/type-aliases/GetConnectorsByProviderConnectData.md) | - |
+| [GetConnectorsByProviderConnectError](Internal/type-aliases/GetConnectorsByProviderConnectError.md) | - |
+| [GetConnectorsByProviderConnectErrors](Internal/type-aliases/GetConnectorsByProviderConnectErrors.md) | - |
 | [GetHealthData](Internal/type-aliases/GetHealthData.md) | - |
 | [GetHealthError](Internal/type-aliases/GetHealthError.md) | - |
 | [GetHealthErrors](Internal/type-aliases/GetHealthErrors.md) | - |
 | [GetHealthResponse](Internal/type-aliases/GetHealthResponse.md) | - |
 | [GetHealthResponses](Internal/type-aliases/GetHealthResponses.md) | - |
+| [GetInternalAccountsByDidByDidData](Internal/type-aliases/GetInternalAccountsByDidByDidData.md) | - |
+| [GetInternalAccountsByDidByDidError](Internal/type-aliases/GetInternalAccountsByDidByDidError.md) | - |
+| [GetInternalAccountsByDidByDidErrors](Internal/type-aliases/GetInternalAccountsByDidByDidErrors.md) | - |
+| [GetInternalAccountsByDidByDidResponse](Internal/type-aliases/GetInternalAccountsByDidByDidResponse.md) | - |
+| [GetInternalAccountsByDidByDidResponses](Internal/type-aliases/GetInternalAccountsByDidByDidResponses.md) | - |
 | [GetOauthAuthorizeData](Internal/type-aliases/GetOauthAuthorizeData.md) | - |
 | [GetOauthAuthorizeError](Internal/type-aliases/GetOauthAuthorizeError.md) | - |
 | [GetOauthAuthorizeErrors](Internal/type-aliases/GetOauthAuthorizeErrors.md) | - |
@@ -292,14 +408,24 @@
 | [GetOauthConsentErrors](Internal/type-aliases/GetOauthConsentErrors.md) | - |
 | [GetOauthConsentResponse](Internal/type-aliases/GetOauthConsentResponse.md) | - |
 | [GetOauthConsentResponses](Internal/type-aliases/GetOauthConsentResponses.md) | - |
+| [GetReferralMeData](Internal/type-aliases/GetReferralMeData.md) | - |
+| [GetReferralMeError](Internal/type-aliases/GetReferralMeError.md) | - |
+| [GetReferralMeErrors](Internal/type-aliases/GetReferralMeErrors.md) | - |
+| [GetReferralMeResponse](Internal/type-aliases/GetReferralMeResponse.md) | - |
+| [GetReferralMeResponses](Internal/type-aliases/GetReferralMeResponses.md) | - |
 | [GetWellKnownJwksJsonData](Internal/type-aliases/GetWellKnownJwksJsonData.md) | - |
 | [GetWellKnownJwksJsonResponse](Internal/type-aliases/GetWellKnownJwksJsonResponse.md) | - |
 | [GetWellKnownJwksJsonResponses](Internal/type-aliases/GetWellKnownJwksJsonResponses.md) | - |
+| [HandlersAccountByDidResponse](Internal/type-aliases/HandlersAccountByDidResponse.md) | - |
+| [HandlersAccountsByPhoneHashesRequest](Internal/type-aliases/HandlersAccountsByPhoneHashesRequest.md) | - |
+| [HandlersAccountsByPhoneHashesResponse](Internal/type-aliases/HandlersAccountsByPhoneHashesResponse.md) | - |
 | [HandlersAddCreditsRequest](Internal/type-aliases/HandlersAddCreditsRequest.md) | - |
 | [HandlersAddCreditsResponse](Internal/type-aliases/HandlersAddCreditsResponse.md) | - |
 | [HandlersAgentListItem](Internal/type-aliases/HandlersAgentListItem.md) | - |
 | [HandlersAgentListResponse](Internal/type-aliases/HandlersAgentListResponse.md) | - |
 | [HandlersAgentResponse](Internal/type-aliases/HandlersAgentResponse.md) | - |
+| [HandlersAnnounceModelRequest](Internal/type-aliases/HandlersAnnounceModelRequest.md) | - |
+| [HandlersAnnounceModelResponse](Internal/type-aliases/HandlersAnnounceModelResponse.md) | - |
 | [HandlersApiKeyResponse](Internal/type-aliases/HandlersApiKeyResponse.md) | - |
 | [HandlersApiKeyWithKeyResponse](Internal/type-aliases/HandlersApiKeyWithKeyResponse.md) | - |
 | [HandlersAppConfig](Internal/type-aliases/HandlersAppConfig.md) | - |
@@ -308,19 +434,42 @@
 | [HandlersAppUserUsageResponse](Internal/type-aliases/HandlersAppUserUsageResponse.md) | - |
 | [HandlersBillingHistoryResponse](Internal/type-aliases/HandlersBillingHistoryResponse.md) | - |
 | [HandlersBillingRecordResponse](Internal/type-aliases/HandlersBillingRecordResponse.md) | - |
+| [HandlersBindRequest](Internal/type-aliases/HandlersBindRequest.md) | - |
 | [HandlersBootstrapBuild](Internal/type-aliases/HandlersBootstrapBuild.md) | Build is the server build metadata at the time of bootstrap. |
 | [HandlersBootstrapResponse](Internal/type-aliases/HandlersBootstrapResponse.md) | - |
 | [HandlersBootstrapUser](Internal/type-aliases/HandlersBootstrapUser.md) | User is the authenticated identity context. |
+| [HandlersBoundWalletResponse](Internal/type-aliases/HandlersBoundWalletResponse.md) | - |
+| [HandlersCampaignRequest](Internal/type-aliases/HandlersCampaignRequest.md) | - |
+| [HandlersCampaignResponse](Internal/type-aliases/HandlersCampaignResponse.md) | - |
+| [HandlersCancelResponse](Internal/type-aliases/HandlersCancelResponse.md) | - |
 | [HandlersCancelScheduledDowngradeResponse](Internal/type-aliases/HandlersCancelScheduledDowngradeResponse.md) | - |
+| [HandlersCancelSubscriptionRequest](Internal/type-aliases/HandlersCancelSubscriptionRequest.md) | - |
 | [HandlersCancelSubscriptionResponse](Internal/type-aliases/HandlersCancelSubscriptionResponse.md) | - |
 | [HandlersCheckoutSessionResponse](Internal/type-aliases/HandlersCheckoutSessionResponse.md) | - |
+| [HandlersClaimTokenMintRequest](Internal/type-aliases/HandlersClaimTokenMintRequest.md) | - |
+| [HandlersClaimTokenMintResponse](Internal/type-aliases/HandlersClaimTokenMintResponse.md) | - |
 | [HandlersConfigResponse](Internal/type-aliases/HandlersConfigResponse.md) | - |
 | [HandlersConfigurePrivyRequest](Internal/type-aliases/HandlersConfigurePrivyRequest.md) | - |
+| [HandlersConnectorCapability](Internal/type-aliases/HandlersConnectorCapability.md) | - |
+| [HandlersConnectorImportRequest](Internal/type-aliases/HandlersConnectorImportRequest.md) | - |
+| [HandlersConnectorListItem](Internal/type-aliases/HandlersConnectorListItem.md) | - |
+| [HandlersConnectorListResponse](Internal/type-aliases/HandlersConnectorListResponse.md) | - |
+| [HandlersConnectorMintErrorResponse](Internal/type-aliases/HandlersConnectorMintErrorResponse.md) | - |
+| [HandlersConnectorProxyRequest](Internal/type-aliases/HandlersConnectorProxyRequest.md) | - |
+| [HandlersConnectorScopesResponse](Internal/type-aliases/HandlersConnectorScopesResponse.md) | - |
+| [HandlersConnectorSettingResponse](Internal/type-aliases/HandlersConnectorSettingResponse.md) | - |
+| [HandlersConnectorTokenRequest](Internal/type-aliases/HandlersConnectorTokenRequest.md) | - |
+| [HandlersConnectorTokenResponse](Internal/type-aliases/HandlersConnectorTokenResponse.md) | - |
+| [HandlersConnectorToolsResponse](Internal/type-aliases/HandlersConnectorToolsResponse.md) | - |
+| [HandlersConnectTicketRequest](Internal/type-aliases/HandlersConnectTicketRequest.md) | - |
+| [HandlersConnectTicketResponse](Internal/type-aliases/HandlersConnectTicketResponse.md) | - |
 | [HandlersConsentApproveResponse](Internal/type-aliases/HandlersConsentApproveResponse.md) | - |
+| [HandlersConsentResponse](Internal/type-aliases/HandlersConsentResponse.md) | - |
 | [HandlersCreateAgentRequest](Internal/type-aliases/HandlersCreateAgentRequest.md) | - |
 | [HandlersCreateApiKeyRequest](Internal/type-aliases/HandlersCreateApiKeyRequest.md) | - |
 | [HandlersCreateAppRequest](Internal/type-aliases/HandlersCreateAppRequest.md) | - |
 | [HandlersCreateCheckoutSessionRequest](Internal/type-aliases/HandlersCreateCheckoutSessionRequest.md) | - |
+| [HandlersCreateConsentRequest](Internal/type-aliases/HandlersCreateConsentRequest.md) | - |
 | [HandlersCreateCreditPackCheckoutRequest](Internal/type-aliases/HandlersCreateCreditPackCheckoutRequest.md) | - |
 | [HandlersCreateCustomerPortalRequest](Internal/type-aliases/HandlersCreateCustomerPortalRequest.md) | - |
 | [HandlersCreateDeveloperAppRequest](Internal/type-aliases/HandlersCreateDeveloperAppRequest.md) | - |
@@ -328,9 +477,12 @@
 | [HandlersCreateOAuthClientResponse](Internal/type-aliases/HandlersCreateOAuthClientResponse.md) | - |
 | [HandlersCreatePersonaRequest](Internal/type-aliases/HandlersCreatePersonaRequest.md) | - |
 | [HandlersCreatePhoneCallRequest](Internal/type-aliases/HandlersCreatePhoneCallRequest.md) | - |
+| [HandlersCreateShareRequest](Internal/type-aliases/HandlersCreateShareRequest.md) | - |
 | [HandlersCreditBalanceResponse](Internal/type-aliases/HandlersCreditBalanceResponse.md) | - |
 | [HandlersCreditPack](Internal/type-aliases/HandlersCreditPack.md) | - |
 | [HandlersCreditPacksResponse](Internal/type-aliases/HandlersCreditPacksResponse.md) | - |
+| [HandlersCreditRateResponse](Internal/type-aliases/HandlersCreditRateResponse.md) | - |
+| [HandlersCryptoPricesResponse](Internal/type-aliases/HandlersCryptoPricesResponse.md) | - |
 | [HandlersCustomerPortalResponse](Internal/type-aliases/HandlersCustomerPortalResponse.md) | - |
 | [HandlersDeleteUserResponse](Internal/type-aliases/HandlersDeleteUserResponse.md) | - |
 | [HandlersDeveloperApiKeyRequest](Internal/type-aliases/HandlersDeveloperApiKeyRequest.md) | - |
@@ -341,26 +493,49 @@
 | [HandlersDisableRequest](Internal/type-aliases/HandlersDisableRequest.md) | - |
 | [HandlersExchangeRequest](Internal/type-aliases/HandlersExchangeRequest.md) | - |
 | [HandlersExpiringCredits](Internal/type-aliases/HandlersExpiringCredits.md) | - |
+| [HandlersExtractPhotoFactsRequest](Internal/type-aliases/HandlersExtractPhotoFactsRequest.md) | - |
+| [HandlersExtractPhotoFactsResponse](Internal/type-aliases/HandlersExtractPhotoFactsResponse.md) | - |
+| [HandlersExtractPhotoFactsUsage](Internal/type-aliases/HandlersExtractPhotoFactsUsage.md) | - |
 | [HandlersFundDeveloperAppRequest](Internal/type-aliases/HandlersFundDeveloperAppRequest.md) | - |
 | [HandlersGeneratedApiKey](Internal/type-aliases/HandlersGeneratedApiKey.md) | - |
 | [HandlersGetToolsResponse](Internal/type-aliases/HandlersGetToolsResponse.md) | - |
+| [HandlersGrantLookupBody](Internal/type-aliases/HandlersGrantLookupBody.md) | - |
+| [HandlersGrantLookupResponse](Internal/type-aliases/HandlersGrantLookupResponse.md) | - |
 | [HandlersGrantResponse](Internal/type-aliases/HandlersGrantResponse.md) | - |
 | [HandlersGuestBootstrapResponse](Internal/type-aliases/HandlersGuestBootstrapResponse.md) | - |
 | [HandlersGuestChatResponse](Internal/type-aliases/HandlersGuestChatResponse.md) | - |
 | [HandlersGuestLimitResponse](Internal/type-aliases/HandlersGuestLimitResponse.md) | - |
 | [HandlersHealthResponse](Internal/type-aliases/HandlersHealthResponse.md) | - |
+| [HandlersInferenceWeeklyResponse](Internal/type-aliases/HandlersInferenceWeeklyResponse.md) | - |
 | [HandlersListApiKeysResponse](Internal/type-aliases/HandlersListApiKeysResponse.md) | - |
 | [HandlersListAppsResponse](Internal/type-aliases/HandlersListAppsResponse.md) | - |
+| [HandlersListCampaignsResponse](Internal/type-aliases/HandlersListCampaignsResponse.md) | - |
+| [HandlersListConsentsResponse](Internal/type-aliases/HandlersListConsentsResponse.md) | - |
 | [HandlersListDeveloperApiKeysResponse](Internal/type-aliases/HandlersListDeveloperApiKeysResponse.md) | - |
 | [HandlersListDeveloperAppsResponse](Internal/type-aliases/HandlersListDeveloperAppsResponse.md) | - |
 | [HandlersListOAuthClientsResponse](Internal/type-aliases/HandlersListOAuthClientsResponse.md) | - |
+| [HandlersListResponse](Internal/type-aliases/HandlersListResponse.md) | - |
+| [HandlersListTotals](Internal/type-aliases/HandlersListTotals.md) | - |
 | [HandlersListUserApiKeysResponse](Internal/type-aliases/HandlersListUserApiKeysResponse.md) | - |
 | [HandlersListUsersResponse](Internal/type-aliases/HandlersListUsersResponse.md) | - |
+| [HandlersMeResponse](Internal/type-aliases/HandlersMeResponse.md) | - |
 | [HandlersMfaSessionResponse](Internal/type-aliases/HandlersMfaSessionResponse.md) | - |
 | [HandlersMfaStatusResponse](Internal/type-aliases/HandlersMfaStatusResponse.md) | - |
+| [HandlersMobileAppVersions](Internal/type-aliases/HandlersMobileAppVersions.md) | MobileApp is the mobile app version info; absent when not configured |
+| [HandlersMobilePlatformVersions](Internal/type-aliases/HandlersMobilePlatformVersions.md) | Android versions for the Play Store build |
 | [HandlersModalityUsageItem](Internal/type-aliases/HandlersModalityUsageItem.md) | - |
 | [HandlersModelToolUsageItem](Internal/type-aliases/HandlersModelToolUsageItem.md) | - |
 | [HandlersModelUsageItem](Internal/type-aliases/HandlersModelUsageItem.md) | - |
+| [HandlersModerateRequest](Internal/type-aliases/HandlersModerateRequest.md) | - |
+| [HandlersModerateResponse](Internal/type-aliases/HandlersModerateResponse.md) | - |
+| [HandlersNearbyActivationGrantResponse](Internal/type-aliases/HandlersNearbyActivationGrantResponse.md) | - |
+| [HandlersNearbyActivationRequest](Internal/type-aliases/HandlersNearbyActivationRequest.md) | - |
+| [HandlersNearbyActivationResponse](Internal/type-aliases/HandlersNearbyActivationResponse.md) | - |
+| [HandlersNearbyModerateRequest](Internal/type-aliases/HandlersNearbyModerateRequest.md) | - |
+| [HandlersNonceResponse](Internal/type-aliases/HandlersNonceResponse.md) | - |
+| [HandlersNotificationDeviceResponse](Internal/type-aliases/HandlersNotificationDeviceResponse.md) | - |
+| [HandlersNotificationPreferenceItem](Internal/type-aliases/HandlersNotificationPreferenceItem.md) | - |
+| [HandlersNotificationPreferencesResponse](Internal/type-aliases/HandlersNotificationPreferencesResponse.md) | - |
 | [HandlersOAuthClientResponse](Internal/type-aliases/HandlersOAuthClientResponse.md) | - |
 | [HandlersOauthTokenError](Internal/type-aliases/HandlersOauthTokenError.md) | - |
 | [HandlersOAuthTokenResponse](Internal/type-aliases/HandlersOAuthTokenResponse.md) | - |
@@ -374,36 +549,70 @@
 | [HandlersPersonaResponse](Internal/type-aliases/HandlersPersonaResponse.md) | - |
 | [HandlersPhoneCallResponse](Internal/type-aliases/HandlersPhoneCallResponse.md) | - |
 | [HandlersPhoneCallTranscriptEntry](Internal/type-aliases/HandlersPhoneCallTranscriptEntry.md) | - |
+| [HandlersPhoneHashAuditEntry](Internal/type-aliases/HandlersPhoneHashAuditEntry.md) | - |
+| [HandlersPhoneHashAuditResponse](Internal/type-aliases/HandlersPhoneHashAuditResponse.md) | - |
+| [HandlersPhoneHashMatchResult](Internal/type-aliases/HandlersPhoneHashMatchResult.md) | - |
+| [HandlersPrefineryWebhookAck](Internal/type-aliases/HandlersPrefineryWebhookAck.md) | - |
+| [HandlersPreProcessorRequest](Internal/type-aliases/HandlersPreProcessorRequest.md) | - |
 | [HandlersPrivyIdentifierAuditEntry](Internal/type-aliases/HandlersPrivyIdentifierAuditEntry.md) | - |
 | [HandlersPrivyIdentifierAuditResponse](Internal/type-aliases/HandlersPrivyIdentifierAuditResponse.md) | - |
 | [HandlersPrivyIdentifierMigrateFailure](Internal/type-aliases/HandlersPrivyIdentifierMigrateFailure.md) | - |
 | [HandlersPrivyIdentifierMigrateResponse](Internal/type-aliases/HandlersPrivyIdentifierMigrateResponse.md) | - |
+| [HandlersProInfo](Internal/type-aliases/HandlersProInfo.md) | - |
 | [HandlersRedeemTokensRequest](Internal/type-aliases/HandlersRedeemTokensRequest.md) | - |
 | [HandlersRedeemTokensResponse](Internal/type-aliases/HandlersRedeemTokensResponse.md) | - |
+| [HandlersReferralClaimRequest](Internal/type-aliases/HandlersReferralClaimRequest.md) | - |
+| [HandlersReferralClaimResponse](Internal/type-aliases/HandlersReferralClaimResponse.md) | - |
+| [HandlersReferralGrantReferrerStatResponse](Internal/type-aliases/HandlersReferralGrantReferrerStatResponse.md) | - |
+| [HandlersReferralGrantStatsResponse](Internal/type-aliases/HandlersReferralGrantStatsResponse.md) | - |
+| [HandlersReferralIdentityResponse](Internal/type-aliases/HandlersReferralIdentityResponse.md) | - |
+| [HandlersReferralInviteRequest](Internal/type-aliases/HandlersReferralInviteRequest.md) | - |
+| [HandlersReferralInviteResponse](Internal/type-aliases/HandlersReferralInviteResponse.md) | - |
+| [HandlersReferralMeResponse](Internal/type-aliases/HandlersReferralMeResponse.md) | - |
+| [HandlersReferralRewardResponse](Internal/type-aliases/HandlersReferralRewardResponse.md) | - |
+| [HandlersReferralTesterResponse](Internal/type-aliases/HandlersReferralTesterResponse.md) | - |
 | [HandlersRefreshRequest](Internal/type-aliases/HandlersRefreshRequest.md) | - |
-| [HandlersRegisterTextResponse](Internal/type-aliases/HandlersRegisterTextResponse.md) | - |
+| [HandlersRegisterDeviceRequest](Internal/type-aliases/HandlersRegisterDeviceRequest.md) | - |
 | [HandlersRenewSubscriptionResponse](Internal/type-aliases/HandlersRenewSubscriptionResponse.md) | - |
 | [HandlersRevokeRequest](Internal/type-aliases/HandlersRevokeRequest.md) | - |
 | [HandlersScheduleDowngradeRequest](Internal/type-aliases/HandlersScheduleDowngradeRequest.md) | - |
 | [HandlersScheduleDowngradeResponse](Internal/type-aliases/HandlersScheduleDowngradeResponse.md) | - |
+| [HandlersSearchResponse](Internal/type-aliases/HandlersSearchResponse.md) | - |
+| [HandlersSearchResult](Internal/type-aliases/HandlersSearchResult.md) | - |
 | [HandlersSeedApiKeyInput](Internal/type-aliases/HandlersSeedApiKeyInput.md) | - |
 | [HandlersSeedAppInput](Internal/type-aliases/HandlersSeedAppInput.md) | - |
 | [HandlersSeedAppsRequest](Internal/type-aliases/HandlersSeedAppsRequest.md) | - |
 | [HandlersSeedAppsResponse](Internal/type-aliases/HandlersSeedAppsResponse.md) | - |
+| [HandlersSendTestPushRequest](Internal/type-aliases/HandlersSendTestPushRequest.md) | - |
+| [HandlersSendTestPushResponse](Internal/type-aliases/HandlersSendTestPushResponse.md) | - |
+| [HandlersSetConnectorEnabledRequest](Internal/type-aliases/HandlersSetConnectorEnabledRequest.md) | - |
+| [HandlersSetInternalTesterRequest](Internal/type-aliases/HandlersSetInternalTesterRequest.md) | - |
+| [HandlersSetInternalTesterResponse](Internal/type-aliases/HandlersSetInternalTesterResponse.md) | - |
+| [HandlersSetNotificationPreferenceInput](Internal/type-aliases/HandlersSetNotificationPreferenceInput.md) | - |
+| [HandlersSetNotificationPreferencesRequest](Internal/type-aliases/HandlersSetNotificationPreferencesRequest.md) | - |
+| [HandlersSetScopeItem](Internal/type-aliases/HandlersSetScopeItem.md) | - |
+| [HandlersSetScopesRequest](Internal/type-aliases/HandlersSetScopesRequest.md) | - |
 | [HandlersSetSubscriptionTierRequest](Internal/type-aliases/HandlersSetSubscriptionTierRequest.md) | - |
 | [HandlersSetSubscriptionTierResponse](Internal/type-aliases/HandlersSetSubscriptionTierResponse.md) | - |
+| [HandlersSetToolItem](Internal/type-aliases/HandlersSetToolItem.md) | - |
+| [HandlersSetToolsRequest](Internal/type-aliases/HandlersSetToolsRequest.md) | - |
 | [HandlersSetUserAgentPreferenceRequest](Internal/type-aliases/HandlersSetUserAgentPreferenceRequest.md) | - |
-| [HandlersSmsStatusDto](Internal/type-aliases/HandlersSmsStatusDto.md) | - |
+| [HandlersShareResponse](Internal/type-aliases/HandlersShareResponse.md) | - |
+| [HandlersStockPricesResponse](Internal/type-aliases/HandlersStockPricesResponse.md) | - |
 | [HandlersSubscriptionPlan](Internal/type-aliases/HandlersSubscriptionPlan.md) | - |
 | [HandlersSubscriptionPlansResponse](Internal/type-aliases/HandlersSubscriptionPlansResponse.md) | - |
 | [HandlersSubscriptionStatusResponse](Internal/type-aliases/HandlersSubscriptionStatusResponse.md) | - |
+| [HandlersSuspendAccountRequest](Internal/type-aliases/HandlersSuspendAccountRequest.md) | - |
+| [HandlersSuspendAccountResponse](Internal/type-aliases/HandlersSuspendAccountResponse.md) | - |
 | [HandlersTokenResponse](Internal/type-aliases/HandlersTokenResponse.md) | - |
 | [HandlersTool](Internal/type-aliases/HandlersTool.md) | - |
 | [HandlersToolCallDetailItem](Internal/type-aliases/HandlersToolCallDetailItem.md) | - |
 | [HandlersTopUpUserRequest](Internal/type-aliases/HandlersTopUpUserRequest.md) | - |
 | [HandlersTotpEnrollInitResponse](Internal/type-aliases/HandlersTotpEnrollInitResponse.md) | - |
 | [HandlersTotpVerifyRequest](Internal/type-aliases/HandlersTotpVerifyRequest.md) | - |
-| [HandlersUnregisterTextResponse](Internal/type-aliases/HandlersUnregisterTextResponse.md) | - |
+| [HandlersUnregisterDeviceRequest](Internal/type-aliases/HandlersUnregisterDeviceRequest.md) | - |
+| [HandlersUnsuspendAccountRequest](Internal/type-aliases/HandlersUnsuspendAccountRequest.md) | - |
+| [HandlersUnsuspendAccountResponse](Internal/type-aliases/HandlersUnsuspendAccountResponse.md) | - |
 | [HandlersUpdateAgentRequest](Internal/type-aliases/HandlersUpdateAgentRequest.md) | - |
 | [HandlersUpdateApiKeyRequest](Internal/type-aliases/HandlersUpdateApiKeyRequest.md) | - |
 | [HandlersUpdateAppRequest](Internal/type-aliases/HandlersUpdateAppRequest.md) | - |
@@ -425,27 +634,35 @@
 | [HandlersUserApiKeyRequest](Internal/type-aliases/HandlersUserApiKeyRequest.md) | - |
 | [HandlersUserApiKeyResponse](Internal/type-aliases/HandlersUserApiKeyResponse.md) | - |
 | [HandlersUserApiKeyWithSecretResponse](Internal/type-aliases/HandlersUserApiKeyWithSecretResponse.md) | - |
-| [HandlersUserLookupAccount](Internal/type-aliases/HandlersUserLookupAccount.md) | - |
+| [HandlersUserLookupAccount](Internal/type-aliases/HandlersUserLookupAccount.md) | Account is nil when the identifier resolves to a Privy user that has no portal account row yet (e.g. a Privy signup that never completed onboarding). |
 | [HandlersUserLookupEnrollment](Internal/type-aliases/HandlersUserLookupEnrollment.md) | - |
+| [HandlersUserLookupPrivy](Internal/type-aliases/HandlersUserLookupPrivy.md) | Privy is populated when the identifier was resolved through Privy (email lookup) or when there is no portal account but a Privy user exists for the wallet. nil when no Privy user was resolved. |
 | [HandlersUserLookupResponse](Internal/type-aliases/HandlersUserLookupResponse.md) | - |
 | [HandlersUserLookupTextReg](Internal/type-aliases/HandlersUserLookupTextReg.md) | - |
 | [HandlersUserUsageResponse](Internal/type-aliases/HandlersUserUsageResponse.md) | - |
 | [HandlersVerifyRequest](Internal/type-aliases/HandlersVerifyRequest.md) | - |
+| [HandlersWaitlistJoinRequest](Internal/type-aliases/HandlersWaitlistJoinRequest.md) | - |
+| [HandlersWaitlistJoinResponse](Internal/type-aliases/HandlersWaitlistJoinResponse.md) | - |
 | [HandlersWalletDetails](Internal/type-aliases/HandlersWalletDetails.md) | Wallet account details |
+| [HandlersWeatherResponse](Internal/type-aliases/HandlersWeatherResponse.md) | - |
+| [HandlersWeeklyInferenceItem](Internal/type-aliases/HandlersWeeklyInferenceItem.md) | - |
+| [HandlersWipePrivyDevUsersRequest](Internal/type-aliases/HandlersWipePrivyDevUsersRequest.md) | - |
+| [HandlersWipePrivyDevUsersResponse](Internal/type-aliases/HandlersWipePrivyDevUsersResponse.md) | - |
+| [HandlersWipePrivyDevUsersUserResult](Internal/type-aliases/HandlersWipePrivyDevUsersUserResult.md) | - |
+| [HandlersZetaMarketResponse](Internal/type-aliases/HandlersZetaMarketResponse.md) | - |
 | [LlmapiChatCompletionExtraFields](Internal/type-aliases/LlmapiChatCompletionExtraFields.md) | ExtraFields contains additional metadata |
 | [LlmapiChatCompletionRequest](Internal/type-aliases/LlmapiChatCompletionRequest.md) | - |
 | [LlmapiChatCompletionResponse](Internal/type-aliases/LlmapiChatCompletionResponse.md) | - |
 | [LlmapiChatCompletionTool](Internal/type-aliases/LlmapiChatCompletionTool.md) | - |
-| [LlmapiChatCompletionToolChoice](Internal/type-aliases/LlmapiChatCompletionToolChoice.md) | ToolChoice controls tool usage |
-| [LlmapiChatCompletionUsage](Internal/type-aliases/LlmapiChatCompletionUsage.md) | Usage contains token usage information |
-| [LlmapiChoice](Internal/type-aliases/LlmapiChoice.md) | - |
+| [LlmapiChatCompletionToolChoice](Internal/type-aliases/LlmapiChatCompletionToolChoice.md) | - |
+| [LlmapiChatCompletionUsage](Internal/type-aliases/LlmapiChatCompletionUsage.md) | The pre-migration usage shape: standard OpenAI token counts plus the portal's cost/credit fields all on one flat object. The new schema splits these — OpenAI tokens stay in `usage`, portal cost fields move to the `portal` envelope — so this type no longer appears in the generated client. |
 | [LlmapiEmbeddingData](Internal/type-aliases/LlmapiEmbeddingData.md) | - |
 | [LlmapiEmbeddingExtraFields](Internal/type-aliases/LlmapiEmbeddingExtraFields.md) | ExtraFields contains additional metadata |
 | [LlmapiEmbeddingRequest](Internal/type-aliases/LlmapiEmbeddingRequest.md) | - |
 | [LlmapiEmbeddingResponse](Internal/type-aliases/LlmapiEmbeddingResponse.md) | - |
 | [LlmapiEmbeddingUsage](Internal/type-aliases/LlmapiEmbeddingUsage.md) | Usage contains token usage information |
 | [LlmapiMcpTool](Internal/type-aliases/LlmapiMcpTool.md) | - |
-| [LlmapiMessage](Internal/type-aliases/LlmapiMessage.md) | Message is the generated message |
+| [LlmapiMessage](Internal/type-aliases/LlmapiMessage.md) | - |
 | [LlmapiMessageContentFile](Internal/type-aliases/LlmapiMessageContentFile.md) | File is used when Type=input\_file (for Responses API) |
 | [LlmapiMessageContentImage](Internal/type-aliases/LlmapiMessageContentImage.md) | ImageURL is used when Type=image\_url or Type=input\_image |
 | [LlmapiMessageContentPart](Internal/type-aliases/LlmapiMessageContentPart.md) | - |
@@ -456,13 +673,15 @@
 | [LlmapiModelsListExtraFields](Internal/type-aliases/LlmapiModelsListExtraFields.md) | ExtraFields contains additional metadata |
 | [LlmapiModelsListResponse](Internal/type-aliases/LlmapiModelsListResponse.md) | - |
 | [LlmapiModelTopProvider](Internal/type-aliases/LlmapiModelTopProvider.md) | TopProvider contains configuration details for the primary provider |
+| [LlmapiPortalChatCompletionRequest](Internal/type-aliases/LlmapiPortalChatCompletionRequest.md) | Portal carries non-OpenAI fields scoped to the portal under a single key so they don't collide with the embedded SDK type's custom JSON marshaling. |
+| [LlmapiPortalChatCompletionResponse](Internal/type-aliases/LlmapiPortalChatCompletionResponse.md) | Portal carries non-OpenAI fields scoped to the portal under a single key so they don't collide with the embedded SDK type's custom JSON marshaling. |
 | [LlmapiResponseExtraFields](Internal/type-aliases/LlmapiResponseExtraFields.md) | ExtraFields contains additional metadata |
 | [LlmapiResponseInput](Internal/type-aliases/LlmapiResponseInput.md) | Input can be a simple text string or an array of messages for multi-turn conversations. When continuing after client tool calls, pass the messages array from the previous response. |
 | [LlmapiResponseOutputContent](Internal/type-aliases/LlmapiResponseOutputContent.md) | - |
 | [LlmapiResponseOutputItem](Internal/type-aliases/LlmapiResponseOutputItem.md) | - |
 | [LlmapiResponseReasoning](Internal/type-aliases/LlmapiResponseReasoning.md) | Reasoning configures reasoning for o-series and other reasoning models |
 | [LlmapiResponseRequest](Internal/type-aliases/LlmapiResponseRequest.md) | - |
-| [LlmapiResponseResponse](Internal/type-aliases/LlmapiResponseResponse.md) | - |
+| [LlmapiResponseResponse](Internal/type-aliases/LlmapiResponseResponse.md) | Add the Responses API's terminal-state fields, which the portal's generated schema does not declare. |
 | [LlmapiResponseTool](Internal/type-aliases/LlmapiResponseTool.md) | - |
 | [LlmapiResponseToolChoice](Internal/type-aliases/LlmapiResponseToolChoice.md) | ToolChoice controls tool usage |
 | [LlmapiResponseUsage](Internal/type-aliases/LlmapiResponseUsage.md) | Usage contains token usage information |
@@ -472,11 +691,80 @@
 | [LlmapiToolCallEvent](Internal/type-aliases/LlmapiToolCallEvent.md) | - |
 | [LlmapiToolCallFunction](Internal/type-aliases/LlmapiToolCallFunction.md) | Function contains the function call details |
 | [McpToolSchema](Internal/type-aliases/McpToolSchema.md) | - |
-| [ModelsRegisterTextRequest](Internal/type-aliases/ModelsRegisterTextRequest.md) | - |
-| [ModelsTextChannel](Internal/type-aliases/ModelsTextChannel.md) | - |
-| [ModelsTextLookupResult](Internal/type-aliases/ModelsTextLookupResult.md) | - |
-| [ModelsTextStatusResponse](Internal/type-aliases/ModelsTextStatusResponse.md) | - |
+| [OpenaiChatCompletionAssistantMessageParam](Internal/type-aliases/OpenaiChatCompletionAssistantMessageParam.md) | - |
+| [OpenaiChatCompletionAssistantMessageParamAudio](Internal/type-aliases/OpenaiChatCompletionAssistantMessageParamAudio.md) | Data about a previous audio response from the model. [Learn more](https://platform.openai.com/docs/guides/audio). |
+| [OpenaiChatCompletionAssistantMessageParamContentArrayOfContentPartUnion](Internal/type-aliases/OpenaiChatCompletionAssistantMessageParamContentArrayOfContentPartUnion.md) | - |
+| [OpenaiChatCompletionAssistantMessageParamContentUnion](Internal/type-aliases/OpenaiChatCompletionAssistantMessageParamContentUnion.md) | The contents of the assistant message. Required unless `tool_calls` or `function_call` is specified. |
+| [OpenaiChatCompletionAssistantMessageParamFunctionCall](Internal/type-aliases/OpenaiChatCompletionAssistantMessageParamFunctionCall.md) | Deprecated and replaced by `tool_calls`. The name and arguments of a function that should be called, as generated by the model. |
+| [OpenaiChatCompletionAudio](Internal/type-aliases/OpenaiChatCompletionAudio.md) | If the audio output modality is requested, this object contains data about the audio response from the model. [Learn more](https://platform.openai.com/docs/guides/audio). |
+| [OpenaiChatCompletionAudioParam](Internal/type-aliases/OpenaiChatCompletionAudioParam.md) | Parameters for audio output. Required when audio output is requested with `modalities: ["audio"]`. [Learn more](https://platform.openai.com/docs/guides/audio). |
+| [OpenaiChatCompletionAudioParamFormat](Internal/type-aliases/OpenaiChatCompletionAudioParamFormat.md) | Specifies the output audio format. Must be one of `wav`, `mp3`, `flac`, `opus`, or `pcm16`. |
+| [OpenaiChatCompletionAudioParamVoice](Internal/type-aliases/OpenaiChatCompletionAudioParamVoice.md) | The voice the model uses to respond. Supported voices are `alloy`, `ash`, `ballad`, `coral`, `echo`, `fable`, `nova`, `onyx`, `sage`, and `shimmer`. |
+| [OpenaiChatCompletionChoice](Internal/type-aliases/OpenaiChatCompletionChoice.md) | - |
+| [OpenaiChatCompletionChoiceLogprobs](Internal/type-aliases/OpenaiChatCompletionChoiceLogprobs.md) | Log probability information for the choice. |
+| [OpenaiChatCompletionContentPartFileFileParam](Internal/type-aliases/OpenaiChatCompletionContentPartFileFileParam.md) | - |
+| [OpenaiChatCompletionContentPartFileParam](Internal/type-aliases/OpenaiChatCompletionContentPartFileParam.md) | - |
+| [OpenaiChatCompletionContentPartImageImageUrlParam](Internal/type-aliases/OpenaiChatCompletionContentPartImageImageUrlParam.md) | - |
+| [OpenaiChatCompletionContentPartImageParam](Internal/type-aliases/OpenaiChatCompletionContentPartImageParam.md) | - |
+| [OpenaiChatCompletionContentPartInputAudioInputAudioParam](Internal/type-aliases/OpenaiChatCompletionContentPartInputAudioInputAudioParam.md) | - |
+| [OpenaiChatCompletionContentPartInputAudioParam](Internal/type-aliases/OpenaiChatCompletionContentPartInputAudioParam.md) | - |
+| [OpenaiChatCompletionContentPartRefusalParam](Internal/type-aliases/OpenaiChatCompletionContentPartRefusalParam.md) | - |
+| [OpenaiChatCompletionContentPartTextParam](Internal/type-aliases/OpenaiChatCompletionContentPartTextParam.md) | - |
+| [OpenaiChatCompletionContentPartUnionParam](Internal/type-aliases/OpenaiChatCompletionContentPartUnionParam.md) | - |
+| [OpenaiChatCompletionDeveloperMessageParam](Internal/type-aliases/OpenaiChatCompletionDeveloperMessageParam.md) | - |
+| [OpenaiChatCompletionDeveloperMessageParamContentUnion](Internal/type-aliases/OpenaiChatCompletionDeveloperMessageParamContentUnion.md) | The contents of the developer message. |
+| [OpenaiChatCompletionFunctionCallOptionParam](Internal/type-aliases/OpenaiChatCompletionFunctionCallOptionParam.md) | - |
+| [OpenaiChatCompletionFunctionMessageParam](Internal/type-aliases/OpenaiChatCompletionFunctionMessageParam.md) | - |
+| [OpenaiChatCompletionMessage](Internal/type-aliases/OpenaiChatCompletionMessage.md) | A chat completion message generated by the model. |
+| [OpenaiChatCompletionMessageAnnotation](Internal/type-aliases/OpenaiChatCompletionMessageAnnotation.md) | - |
+| [OpenaiChatCompletionMessageAnnotationUrlCitation](Internal/type-aliases/OpenaiChatCompletionMessageAnnotationUrlCitation.md) | A URL citation when using web search. |
+| [OpenaiChatCompletionMessageFunctionCall](Internal/type-aliases/OpenaiChatCompletionMessageFunctionCall.md) | Deprecated and replaced by `tool_calls`. The name and arguments of a function that should be called, as generated by the model. |
+| [OpenaiChatCompletionMessageParamUnion](Internal/type-aliases/OpenaiChatCompletionMessageParamUnion.md) | - |
+| [OpenaiChatCompletionMessageToolCall](Internal/type-aliases/OpenaiChatCompletionMessageToolCall.md) | - |
+| [OpenaiChatCompletionMessageToolCallFunction](Internal/type-aliases/OpenaiChatCompletionMessageToolCallFunction.md) | The function that the model called. |
+| [OpenaiChatCompletionMessageToolCallFunctionParam](Internal/type-aliases/OpenaiChatCompletionMessageToolCallFunctionParam.md) | The function that the model called. |
+| [OpenaiChatCompletionMessageToolCallParam](Internal/type-aliases/OpenaiChatCompletionMessageToolCallParam.md) | - |
+| [OpenaiChatCompletionNamedToolChoiceFunctionParam](Internal/type-aliases/OpenaiChatCompletionNamedToolChoiceFunctionParam.md) | - |
+| [OpenaiChatCompletionNamedToolChoiceParam](Internal/type-aliases/OpenaiChatCompletionNamedToolChoiceParam.md) | - |
+| [OpenaiChatCompletionNewParamsFunction](Internal/type-aliases/OpenaiChatCompletionNewParamsFunction.md) | - |
+| [OpenaiChatCompletionNewParamsFunctionCallUnion](Internal/type-aliases/OpenaiChatCompletionNewParamsFunctionCallUnion.md) | Deprecated in favor of `tool_choice`. |
+| [OpenaiChatCompletionNewParamsResponseFormatUnion](Internal/type-aliases/OpenaiChatCompletionNewParamsResponseFormatUnion.md) | An object specifying the format that the model must output. |
+| [OpenaiChatCompletionNewParamsServiceTier](Internal/type-aliases/OpenaiChatCompletionNewParamsServiceTier.md) | Specifies the processing type used for serving the request. |
+| [OpenaiChatCompletionNewParamsStopUnion](Internal/type-aliases/OpenaiChatCompletionNewParamsStopUnion.md) | Not supported with latest reasoning models `o3` and `o4-mini`. |
+| [OpenaiChatCompletionNewParamsWebSearchOptions](Internal/type-aliases/OpenaiChatCompletionNewParamsWebSearchOptions.md) | This tool searches the web for relevant results to use in a response. Learn more about the [web search tool](https://platform.openai.com/docs/guides/tools-web-search?api-mode=chat). |
+| [OpenaiChatCompletionNewParamsWebSearchOptionsUserLocation](Internal/type-aliases/OpenaiChatCompletionNewParamsWebSearchOptionsUserLocation.md) | Approximate location parameters for the search. |
+| [OpenaiChatCompletionNewParamsWebSearchOptionsUserLocationApproximate](Internal/type-aliases/OpenaiChatCompletionNewParamsWebSearchOptionsUserLocationApproximate.md) | Approximate location parameters for the search. |
+| [OpenaiChatCompletionPredictionContentContentUnionParam](Internal/type-aliases/OpenaiChatCompletionPredictionContentContentUnionParam.md) | The content that should be matched when generating a model response. If generated tokens would match this content, the entire model response can be returned much more quickly. |
+| [OpenaiChatCompletionPredictionContentParam](Internal/type-aliases/OpenaiChatCompletionPredictionContentParam.md) | Static predicted output content, such as the content of a text file that is being regenerated. |
+| [OpenaiChatCompletionServiceTier](Internal/type-aliases/OpenaiChatCompletionServiceTier.md) | Specifies the processing type used for serving the request. |
+| [OpenaiChatCompletionStreamOptionsParam](Internal/type-aliases/OpenaiChatCompletionStreamOptionsParam.md) | Options for streaming response. Only set this when you set `stream: true`. |
+| [OpenaiChatCompletionSystemMessageParam](Internal/type-aliases/OpenaiChatCompletionSystemMessageParam.md) | - |
+| [OpenaiChatCompletionSystemMessageParamContentUnion](Internal/type-aliases/OpenaiChatCompletionSystemMessageParamContentUnion.md) | The contents of the system message. |
+| [OpenaiChatCompletionTokenLogprob](Internal/type-aliases/OpenaiChatCompletionTokenLogprob.md) | - |
+| [OpenaiChatCompletionTokenLogprobTopLogprob](Internal/type-aliases/OpenaiChatCompletionTokenLogprobTopLogprob.md) | - |
+| [OpenaiChatCompletionToolChoiceOptionUnionParam](Internal/type-aliases/OpenaiChatCompletionToolChoiceOptionUnionParam.md) | Controls which (if any) tool is called by the model. `none` means the model will not call any tool and instead generates a message. `auto` means the model can pick between generating a message or calling one or more tools. `required` means the model must call one or more tools. Specifying a particular tool via `{"type": "function", "function": {"name": "my_function"}}` forces the model to call that tool. |
+| [OpenaiChatCompletionToolMessageParam](Internal/type-aliases/OpenaiChatCompletionToolMessageParam.md) | - |
+| [OpenaiChatCompletionToolMessageParamContentUnion](Internal/type-aliases/OpenaiChatCompletionToolMessageParamContentUnion.md) | The contents of the tool message. |
+| [OpenaiChatCompletionToolParam](Internal/type-aliases/OpenaiChatCompletionToolParam.md) | - |
+| [OpenaiChatCompletionUserMessageParam](Internal/type-aliases/OpenaiChatCompletionUserMessageParam.md) | - |
+| [OpenaiChatCompletionUserMessageParamContentUnion](Internal/type-aliases/OpenaiChatCompletionUserMessageParamContentUnion.md) | The contents of the user message. |
+| [OpenaiCompletionUsage](Internal/type-aliases/OpenaiCompletionUsage.md) | Usage statistics for the completion request. |
+| [OpenaiCompletionUsageCompletionTokensDetails](Internal/type-aliases/OpenaiCompletionUsageCompletionTokensDetails.md) | Breakdown of tokens used in a completion. |
+| [OpenaiCompletionUsagePromptTokensDetails](Internal/type-aliases/OpenaiCompletionUsagePromptTokensDetails.md) | Breakdown of tokens used in the prompt. |
+| [OpenmeteoDayData](Internal/type-aliases/OpenmeteoDayData.md) | - |
+| [OpenmeteoForecast](Internal/type-aliases/OpenmeteoForecast.md) | - |
+| [OpenmeteoLocation](Internal/type-aliases/OpenmeteoLocation.md) | - |
+| [OpenmeteoSnapshot](Internal/type-aliases/OpenmeteoSnapshot.md) | - |
 | [Options](Internal/type-aliases/Options.md) | - |
+| [ParamOptBool](Internal/type-aliases/ParamOptBool.md) | Whether to enable strict schema adherence when generating the function call. If set to true, the model will follow the exact schema defined in the `parameters` field. Only a subset of JSON Schema is supported when `strict` is `true`. Learn more about Structured Outputs in the [function calling guide](https://platform.openai.com/docs/guides/function-calling). |
+| [ParamOptFloat64](Internal/type-aliases/ParamOptFloat64.md) | An alternative to sampling with temperature, called nucleus sampling, where the model considers the results of the tokens with top\_p probability mass. So 0.1 means only the tokens comprising the top 10% probability mass are considered. |
+| [ParamOptInt64](Internal/type-aliases/ParamOptInt64.md) | An integer between 0 and 20 specifying the number of most likely tokens to return at each token position, each with an associated log probability. `logprobs` must be set to `true` if this parameter is used. |
+| [ParamOptString](Internal/type-aliases/ParamOptString.md) | The [IANA timezone](https://timeapi.io/documentation/iana-timezones) of the user, e.g. `America/Los_Angeles`. |
+| [PatchApiV1AdminNotificationsCampaignsByCampaignIdData](Internal/type-aliases/PatchApiV1AdminNotificationsCampaignsByCampaignIdData.md) | - |
+| [PatchApiV1AdminNotificationsCampaignsByCampaignIdError](Internal/type-aliases/PatchApiV1AdminNotificationsCampaignsByCampaignIdError.md) | - |
+| [PatchApiV1AdminNotificationsCampaignsByCampaignIdErrors](Internal/type-aliases/PatchApiV1AdminNotificationsCampaignsByCampaignIdErrors.md) | - |
+| [PatchApiV1AdminNotificationsCampaignsByCampaignIdResponse](Internal/type-aliases/PatchApiV1AdminNotificationsCampaignsByCampaignIdResponse.md) | - |
+| [PatchApiV1AdminNotificationsCampaignsByCampaignIdResponses](Internal/type-aliases/PatchApiV1AdminNotificationsCampaignsByCampaignIdResponses.md) | - |
 | [PatchApiV1AdminOauthClientsByClientIdData](Internal/type-aliases/PatchApiV1AdminOauthClientsByClientIdData.md) | - |
 | [PatchApiV1AdminOauthClientsByClientIdError](Internal/type-aliases/PatchApiV1AdminOauthClientsByClientIdError.md) | - |
 | [PatchApiV1AdminOauthClientsByClientIdErrors](Internal/type-aliases/PatchApiV1AdminOauthClientsByClientIdErrors.md) | - |
@@ -517,6 +805,36 @@
 | [PostApiV1AdminAppsErrors](Internal/type-aliases/PostApiV1AdminAppsErrors.md) | - |
 | [PostApiV1AdminAppsResponse](Internal/type-aliases/PostApiV1AdminAppsResponse.md) | - |
 | [PostApiV1AdminAppsResponses](Internal/type-aliases/PostApiV1AdminAppsResponses.md) | - |
+| [PostApiV1AdminBotPollerStartData](Internal/type-aliases/PostApiV1AdminBotPollerStartData.md) | - |
+| [PostApiV1AdminBotPollerStartError](Internal/type-aliases/PostApiV1AdminBotPollerStartError.md) | - |
+| [PostApiV1AdminBotPollerStartErrors](Internal/type-aliases/PostApiV1AdminBotPollerStartErrors.md) | - |
+| [PostApiV1AdminBotPollerStartResponse](Internal/type-aliases/PostApiV1AdminBotPollerStartResponse.md) | - |
+| [PostApiV1AdminBotPollerStartResponses](Internal/type-aliases/PostApiV1AdminBotPollerStartResponses.md) | - |
+| [PostApiV1AdminBotPollerStopData](Internal/type-aliases/PostApiV1AdminBotPollerStopData.md) | - |
+| [PostApiV1AdminBotPollerStopError](Internal/type-aliases/PostApiV1AdminBotPollerStopError.md) | - |
+| [PostApiV1AdminBotPollerStopErrors](Internal/type-aliases/PostApiV1AdminBotPollerStopErrors.md) | - |
+| [PostApiV1AdminBotPollerStopResponse](Internal/type-aliases/PostApiV1AdminBotPollerStopResponse.md) | - |
+| [PostApiV1AdminBotPollerStopResponses](Internal/type-aliases/PostApiV1AdminBotPollerStopResponses.md) | - |
+| [PostApiV1AdminNotificationsAnnounceModelData](Internal/type-aliases/PostApiV1AdminNotificationsAnnounceModelData.md) | - |
+| [PostApiV1AdminNotificationsAnnounceModelError](Internal/type-aliases/PostApiV1AdminNotificationsAnnounceModelError.md) | - |
+| [PostApiV1AdminNotificationsAnnounceModelErrors](Internal/type-aliases/PostApiV1AdminNotificationsAnnounceModelErrors.md) | - |
+| [PostApiV1AdminNotificationsAnnounceModelResponse](Internal/type-aliases/PostApiV1AdminNotificationsAnnounceModelResponse.md) | - |
+| [PostApiV1AdminNotificationsAnnounceModelResponses](Internal/type-aliases/PostApiV1AdminNotificationsAnnounceModelResponses.md) | - |
+| [PostApiV1AdminNotificationsCampaignsByCampaignIdCancelData](Internal/type-aliases/PostApiV1AdminNotificationsCampaignsByCampaignIdCancelData.md) | - |
+| [PostApiV1AdminNotificationsCampaignsByCampaignIdCancelError](Internal/type-aliases/PostApiV1AdminNotificationsCampaignsByCampaignIdCancelError.md) | - |
+| [PostApiV1AdminNotificationsCampaignsByCampaignIdCancelErrors](Internal/type-aliases/PostApiV1AdminNotificationsCampaignsByCampaignIdCancelErrors.md) | - |
+| [PostApiV1AdminNotificationsCampaignsByCampaignIdCancelResponse](Internal/type-aliases/PostApiV1AdminNotificationsCampaignsByCampaignIdCancelResponse.md) | - |
+| [PostApiV1AdminNotificationsCampaignsByCampaignIdCancelResponses](Internal/type-aliases/PostApiV1AdminNotificationsCampaignsByCampaignIdCancelResponses.md) | - |
+| [PostApiV1AdminNotificationsCampaignsData](Internal/type-aliases/PostApiV1AdminNotificationsCampaignsData.md) | - |
+| [PostApiV1AdminNotificationsCampaignsError](Internal/type-aliases/PostApiV1AdminNotificationsCampaignsError.md) | - |
+| [PostApiV1AdminNotificationsCampaignsErrors](Internal/type-aliases/PostApiV1AdminNotificationsCampaignsErrors.md) | - |
+| [PostApiV1AdminNotificationsCampaignsResponse](Internal/type-aliases/PostApiV1AdminNotificationsCampaignsResponse.md) | - |
+| [PostApiV1AdminNotificationsCampaignsResponses](Internal/type-aliases/PostApiV1AdminNotificationsCampaignsResponses.md) | - |
+| [PostApiV1AdminNotificationsSendData](Internal/type-aliases/PostApiV1AdminNotificationsSendData.md) | - |
+| [PostApiV1AdminNotificationsSendError](Internal/type-aliases/PostApiV1AdminNotificationsSendError.md) | - |
+| [PostApiV1AdminNotificationsSendErrors](Internal/type-aliases/PostApiV1AdminNotificationsSendErrors.md) | - |
+| [PostApiV1AdminNotificationsSendResponse](Internal/type-aliases/PostApiV1AdminNotificationsSendResponse.md) | - |
+| [PostApiV1AdminNotificationsSendResponses](Internal/type-aliases/PostApiV1AdminNotificationsSendResponses.md) | - |
 | [PostApiV1AdminOauthClientsData](Internal/type-aliases/PostApiV1AdminOauthClientsData.md) | - |
 | [PostApiV1AdminOauthClientsError](Internal/type-aliases/PostApiV1AdminOauthClientsError.md) | - |
 | [PostApiV1AdminOauthClientsErrors](Internal/type-aliases/PostApiV1AdminOauthClientsErrors.md) | - |
@@ -527,6 +845,16 @@
 | [PostApiV1AdminPersonasErrors](Internal/type-aliases/PostApiV1AdminPersonasErrors.md) | - |
 | [PostApiV1AdminPersonasResponse](Internal/type-aliases/PostApiV1AdminPersonasResponse.md) | - |
 | [PostApiV1AdminPersonasResponses](Internal/type-aliases/PostApiV1AdminPersonasResponses.md) | - |
+| [PostApiV1AdminPhoneHashesBackfillData](Internal/type-aliases/PostApiV1AdminPhoneHashesBackfillData.md) | - |
+| [PostApiV1AdminPhoneHashesBackfillError](Internal/type-aliases/PostApiV1AdminPhoneHashesBackfillError.md) | - |
+| [PostApiV1AdminPhoneHashesBackfillErrors](Internal/type-aliases/PostApiV1AdminPhoneHashesBackfillErrors.md) | - |
+| [PostApiV1AdminPhoneHashesBackfillResponse](Internal/type-aliases/PostApiV1AdminPhoneHashesBackfillResponse.md) | - |
+| [PostApiV1AdminPhoneHashesBackfillResponses](Internal/type-aliases/PostApiV1AdminPhoneHashesBackfillResponses.md) | - |
+| [PostApiV1AdminPrivyDevWipeData](Internal/type-aliases/PostApiV1AdminPrivyDevWipeData.md) | - |
+| [PostApiV1AdminPrivyDevWipeError](Internal/type-aliases/PostApiV1AdminPrivyDevWipeError.md) | - |
+| [PostApiV1AdminPrivyDevWipeErrors](Internal/type-aliases/PostApiV1AdminPrivyDevWipeErrors.md) | - |
+| [PostApiV1AdminPrivyDevWipeResponse](Internal/type-aliases/PostApiV1AdminPrivyDevWipeResponse.md) | - |
+| [PostApiV1AdminPrivyDevWipeResponses](Internal/type-aliases/PostApiV1AdminPrivyDevWipeResponses.md) | - |
 | [PostApiV1AdminPrivyIdentifiersMigrateData](Internal/type-aliases/PostApiV1AdminPrivyIdentifiersMigrateData.md) | - |
 | [PostApiV1AdminPrivyIdentifiersMigrateError](Internal/type-aliases/PostApiV1AdminPrivyIdentifiersMigrateError.md) | - |
 | [PostApiV1AdminPrivyIdentifiersMigrateErrors](Internal/type-aliases/PostApiV1AdminPrivyIdentifiersMigrateErrors.md) | - |
@@ -542,6 +870,21 @@
 | [PostApiV1AdminSubscriptionTierErrors](Internal/type-aliases/PostApiV1AdminSubscriptionTierErrors.md) | - |
 | [PostApiV1AdminSubscriptionTierResponse](Internal/type-aliases/PostApiV1AdminSubscriptionTierResponse.md) | - |
 | [PostApiV1AdminSubscriptionTierResponses](Internal/type-aliases/PostApiV1AdminSubscriptionTierResponses.md) | - |
+| [PostApiV1AdminUsersInternalTesterData](Internal/type-aliases/PostApiV1AdminUsersInternalTesterData.md) | - |
+| [PostApiV1AdminUsersInternalTesterError](Internal/type-aliases/PostApiV1AdminUsersInternalTesterError.md) | - |
+| [PostApiV1AdminUsersInternalTesterErrors](Internal/type-aliases/PostApiV1AdminUsersInternalTesterErrors.md) | - |
+| [PostApiV1AdminUsersInternalTesterResponse](Internal/type-aliases/PostApiV1AdminUsersInternalTesterResponse.md) | - |
+| [PostApiV1AdminUsersInternalTesterResponses](Internal/type-aliases/PostApiV1AdminUsersInternalTesterResponses.md) | - |
+| [PostApiV1AdminUsersSuspendData](Internal/type-aliases/PostApiV1AdminUsersSuspendData.md) | - |
+| [PostApiV1AdminUsersSuspendError](Internal/type-aliases/PostApiV1AdminUsersSuspendError.md) | - |
+| [PostApiV1AdminUsersSuspendErrors](Internal/type-aliases/PostApiV1AdminUsersSuspendErrors.md) | - |
+| [PostApiV1AdminUsersSuspendResponse](Internal/type-aliases/PostApiV1AdminUsersSuspendResponse.md) | - |
+| [PostApiV1AdminUsersSuspendResponses](Internal/type-aliases/PostApiV1AdminUsersSuspendResponses.md) | - |
+| [PostApiV1AdminUsersUnsuspendData](Internal/type-aliases/PostApiV1AdminUsersUnsuspendData.md) | - |
+| [PostApiV1AdminUsersUnsuspendError](Internal/type-aliases/PostApiV1AdminUsersUnsuspendError.md) | - |
+| [PostApiV1AdminUsersUnsuspendErrors](Internal/type-aliases/PostApiV1AdminUsersUnsuspendErrors.md) | - |
+| [PostApiV1AdminUsersUnsuspendResponse](Internal/type-aliases/PostApiV1AdminUsersUnsuspendResponse.md) | - |
+| [PostApiV1AdminUsersUnsuspendResponses](Internal/type-aliases/PostApiV1AdminUsersUnsuspendResponses.md) | - |
 | [PostApiV1AuthMfaDisableData](Internal/type-aliases/PostApiV1AuthMfaDisableData.md) | - |
 | [PostApiV1AuthMfaDisableError](Internal/type-aliases/PostApiV1AuthMfaDisableError.md) | - |
 | [PostApiV1AuthMfaDisableErrors](Internal/type-aliases/PostApiV1AuthMfaDisableErrors.md) | - |
@@ -592,6 +935,36 @@
 | [PostApiV1ChatCompletionsErrors](Internal/type-aliases/PostApiV1ChatCompletionsErrors.md) | - |
 | [PostApiV1ChatCompletionsResponse](Internal/type-aliases/PostApiV1ChatCompletionsResponse.md) | - |
 | [PostApiV1ChatCompletionsResponses](Internal/type-aliases/PostApiV1ChatCompletionsResponses.md) | - |
+| [PostApiV1ChatStreamsByInferenceIdCancelData](Internal/type-aliases/PostApiV1ChatStreamsByInferenceIdCancelData.md) | - |
+| [PostApiV1ChatStreamsByInferenceIdCancelError](Internal/type-aliases/PostApiV1ChatStreamsByInferenceIdCancelError.md) | - |
+| [PostApiV1ChatStreamsByInferenceIdCancelErrors](Internal/type-aliases/PostApiV1ChatStreamsByInferenceIdCancelErrors.md) | - |
+| [PostApiV1ChatStreamsByInferenceIdCancelResponse](Internal/type-aliases/PostApiV1ChatStreamsByInferenceIdCancelResponse.md) | - |
+| [PostApiV1ChatStreamsByInferenceIdCancelResponses](Internal/type-aliases/PostApiV1ChatStreamsByInferenceIdCancelResponses.md) | - |
+| [PostApiV1ConnectorsByProviderDisconnectData](Internal/type-aliases/PostApiV1ConnectorsByProviderDisconnectData.md) | - |
+| [PostApiV1ConnectorsByProviderDisconnectError](Internal/type-aliases/PostApiV1ConnectorsByProviderDisconnectError.md) | - |
+| [PostApiV1ConnectorsByProviderDisconnectErrors](Internal/type-aliases/PostApiV1ConnectorsByProviderDisconnectErrors.md) | - |
+| [PostApiV1ConnectorsByProviderDisconnectResponse](Internal/type-aliases/PostApiV1ConnectorsByProviderDisconnectResponse.md) | - |
+| [PostApiV1ConnectorsByProviderDisconnectResponses](Internal/type-aliases/PostApiV1ConnectorsByProviderDisconnectResponses.md) | - |
+| [PostApiV1ConnectorsByProviderProxyData](Internal/type-aliases/PostApiV1ConnectorsByProviderProxyData.md) | - |
+| [PostApiV1ConnectorsByProviderProxyError](Internal/type-aliases/PostApiV1ConnectorsByProviderProxyError.md) | - |
+| [PostApiV1ConnectorsByProviderProxyErrors](Internal/type-aliases/PostApiV1ConnectorsByProviderProxyErrors.md) | - |
+| [PostApiV1ConnectorsByProviderProxyResponse](Internal/type-aliases/PostApiV1ConnectorsByProviderProxyResponse.md) | - |
+| [PostApiV1ConnectorsByProviderProxyResponses](Internal/type-aliases/PostApiV1ConnectorsByProviderProxyResponses.md) | - |
+| [PostApiV1ConnectorsImportData](Internal/type-aliases/PostApiV1ConnectorsImportData.md) | - |
+| [PostApiV1ConnectorsImportError](Internal/type-aliases/PostApiV1ConnectorsImportError.md) | - |
+| [PostApiV1ConnectorsImportErrors](Internal/type-aliases/PostApiV1ConnectorsImportErrors.md) | - |
+| [PostApiV1ConnectorsImportResponse](Internal/type-aliases/PostApiV1ConnectorsImportResponse.md) | - |
+| [PostApiV1ConnectorsImportResponses](Internal/type-aliases/PostApiV1ConnectorsImportResponses.md) | - |
+| [PostApiV1ConnectorTokensByProviderData](Internal/type-aliases/PostApiV1ConnectorTokensByProviderData.md) | - |
+| [PostApiV1ConnectorTokensByProviderError](Internal/type-aliases/PostApiV1ConnectorTokensByProviderError.md) | - |
+| [PostApiV1ConnectorTokensByProviderErrors](Internal/type-aliases/PostApiV1ConnectorTokensByProviderErrors.md) | - |
+| [PostApiV1ConnectorTokensByProviderResponse](Internal/type-aliases/PostApiV1ConnectorTokensByProviderResponse.md) | - |
+| [PostApiV1ConnectorTokensByProviderResponses](Internal/type-aliases/PostApiV1ConnectorTokensByProviderResponses.md) | - |
+| [PostApiV1ConnectTicketsData](Internal/type-aliases/PostApiV1ConnectTicketsData.md) | - |
+| [PostApiV1ConnectTicketsError](Internal/type-aliases/PostApiV1ConnectTicketsError.md) | - |
+| [PostApiV1ConnectTicketsErrors](Internal/type-aliases/PostApiV1ConnectTicketsErrors.md) | - |
+| [PostApiV1ConnectTicketsResponse](Internal/type-aliases/PostApiV1ConnectTicketsResponse.md) | - |
+| [PostApiV1ConnectTicketsResponses](Internal/type-aliases/PostApiV1ConnectTicketsResponses.md) | - |
 | [PostApiV1CreditsPurchaseData](Internal/type-aliases/PostApiV1CreditsPurchaseData.md) | - |
 | [PostApiV1CreditsPurchaseError](Internal/type-aliases/PostApiV1CreditsPurchaseError.md) | - |
 | [PostApiV1CreditsPurchaseErrors](Internal/type-aliases/PostApiV1CreditsPurchaseErrors.md) | - |
@@ -637,16 +1010,58 @@
 | [PostApiV1GuestChatCompletionsErrors](Internal/type-aliases/PostApiV1GuestChatCompletionsErrors.md) | - |
 | [PostApiV1GuestChatCompletionsResponse](Internal/type-aliases/PostApiV1GuestChatCompletionsResponse.md) | - |
 | [PostApiV1GuestChatCompletionsResponses](Internal/type-aliases/PostApiV1GuestChatCompletionsResponses.md) | - |
+| [PostApiV1ModerateData](Internal/type-aliases/PostApiV1ModerateData.md) | - |
+| [PostApiV1ModerateError](Internal/type-aliases/PostApiV1ModerateError.md) | - |
+| [PostApiV1ModerateErrors](Internal/type-aliases/PostApiV1ModerateErrors.md) | - |
+| [PostApiV1ModerateResponse](Internal/type-aliases/PostApiV1ModerateResponse.md) | - |
+| [PostApiV1ModerateResponses](Internal/type-aliases/PostApiV1ModerateResponses.md) | - |
+| [PostApiV1NotificationsDevicesData](Internal/type-aliases/PostApiV1NotificationsDevicesData.md) | - |
+| [PostApiV1NotificationsDevicesError](Internal/type-aliases/PostApiV1NotificationsDevicesError.md) | - |
+| [PostApiV1NotificationsDevicesErrors](Internal/type-aliases/PostApiV1NotificationsDevicesErrors.md) | - |
+| [PostApiV1NotificationsDevicesResponse](Internal/type-aliases/PostApiV1NotificationsDevicesResponse.md) | - |
+| [PostApiV1NotificationsDevicesResponses](Internal/type-aliases/PostApiV1NotificationsDevicesResponses.md) | - |
+| [PostApiV1NotificationsDevicesUnregisterData](Internal/type-aliases/PostApiV1NotificationsDevicesUnregisterData.md) | - |
+| [PostApiV1NotificationsDevicesUnregisterError](Internal/type-aliases/PostApiV1NotificationsDevicesUnregisterError.md) | - |
+| [PostApiV1NotificationsDevicesUnregisterErrors](Internal/type-aliases/PostApiV1NotificationsDevicesUnregisterErrors.md) | - |
+| [PostApiV1NotificationsDevicesUnregisterResponse](Internal/type-aliases/PostApiV1NotificationsDevicesUnregisterResponse.md) | - |
+| [PostApiV1NotificationsDevicesUnregisterResponses](Internal/type-aliases/PostApiV1NotificationsDevicesUnregisterResponses.md) | - |
 | [PostApiV1PhoneCallsData](Internal/type-aliases/PostApiV1PhoneCallsData.md) | - |
 | [PostApiV1PhoneCallsError](Internal/type-aliases/PostApiV1PhoneCallsError.md) | - |
 | [PostApiV1PhoneCallsErrors](Internal/type-aliases/PostApiV1PhoneCallsErrors.md) | - |
 | [PostApiV1PhoneCallsResponse](Internal/type-aliases/PostApiV1PhoneCallsResponse.md) | - |
 | [PostApiV1PhoneCallsResponses](Internal/type-aliases/PostApiV1PhoneCallsResponses.md) | - |
+| [PostApiV1PreprocessorsCryptoPricesData](Internal/type-aliases/PostApiV1PreprocessorsCryptoPricesData.md) | - |
+| [PostApiV1PreprocessorsCryptoPricesError](Internal/type-aliases/PostApiV1PreprocessorsCryptoPricesError.md) | - |
+| [PostApiV1PreprocessorsCryptoPricesErrors](Internal/type-aliases/PostApiV1PreprocessorsCryptoPricesErrors.md) | - |
+| [PostApiV1PreprocessorsCryptoPricesResponse](Internal/type-aliases/PostApiV1PreprocessorsCryptoPricesResponse.md) | - |
+| [PostApiV1PreprocessorsCryptoPricesResponses](Internal/type-aliases/PostApiV1PreprocessorsCryptoPricesResponses.md) | - |
+| [PostApiV1PreprocessorsSearchData](Internal/type-aliases/PostApiV1PreprocessorsSearchData.md) | - |
+| [PostApiV1PreprocessorsSearchError](Internal/type-aliases/PostApiV1PreprocessorsSearchError.md) | - |
+| [PostApiV1PreprocessorsSearchErrors](Internal/type-aliases/PostApiV1PreprocessorsSearchErrors.md) | - |
+| [PostApiV1PreprocessorsSearchResponse](Internal/type-aliases/PostApiV1PreprocessorsSearchResponse.md) | - |
+| [PostApiV1PreprocessorsSearchResponses](Internal/type-aliases/PostApiV1PreprocessorsSearchResponses.md) | - |
+| [PostApiV1PreprocessorsStockPricesData](Internal/type-aliases/PostApiV1PreprocessorsStockPricesData.md) | - |
+| [PostApiV1PreprocessorsStockPricesError](Internal/type-aliases/PostApiV1PreprocessorsStockPricesError.md) | - |
+| [PostApiV1PreprocessorsStockPricesErrors](Internal/type-aliases/PostApiV1PreprocessorsStockPricesErrors.md) | - |
+| [PostApiV1PreprocessorsStockPricesResponse](Internal/type-aliases/PostApiV1PreprocessorsStockPricesResponse.md) | - |
+| [PostApiV1PreprocessorsStockPricesResponses](Internal/type-aliases/PostApiV1PreprocessorsStockPricesResponses.md) | - |
+| [PostApiV1PreprocessorsWeatherData](Internal/type-aliases/PostApiV1PreprocessorsWeatherData.md) | - |
+| [PostApiV1PreprocessorsWeatherError](Internal/type-aliases/PostApiV1PreprocessorsWeatherError.md) | - |
+| [PostApiV1PreprocessorsWeatherErrors](Internal/type-aliases/PostApiV1PreprocessorsWeatherErrors.md) | - |
+| [PostApiV1PreprocessorsWeatherResponse](Internal/type-aliases/PostApiV1PreprocessorsWeatherResponse.md) | - |
+| [PostApiV1PreprocessorsWeatherResponses](Internal/type-aliases/PostApiV1PreprocessorsWeatherResponses.md) | - |
 | [PostApiV1ResponsesData](Internal/type-aliases/PostApiV1ResponsesData.md) | - |
 | [PostApiV1ResponsesError](Internal/type-aliases/PostApiV1ResponsesError.md) | - |
 | [PostApiV1ResponsesErrors](Internal/type-aliases/PostApiV1ResponsesErrors.md) | - |
 | [PostApiV1ResponsesResponse](Internal/type-aliases/PostApiV1ResponsesResponse.md) | - |
 | [PostApiV1ResponsesResponses](Internal/type-aliases/PostApiV1ResponsesResponses.md) | - |
+| [PostApiV1SharesBySlugReportData](Internal/type-aliases/PostApiV1SharesBySlugReportData.md) | - |
+| [PostApiV1SharesBySlugReportResponses](Internal/type-aliases/PostApiV1SharesBySlugReportResponses.md) | - |
+| [PostApiV1SharesData](Internal/type-aliases/PostApiV1SharesData.md) | - |
+| [PostApiV1SharesError](Internal/type-aliases/PostApiV1SharesError.md) | - |
+| [PostApiV1SharesErrors](Internal/type-aliases/PostApiV1SharesErrors.md) | - |
+| [PostApiV1SharesResponse](Internal/type-aliases/PostApiV1SharesResponse.md) | - |
+| [PostApiV1SharesResponses](Internal/type-aliases/PostApiV1SharesResponses.md) | - |
 | [PostApiV1SubscriptionsCancelData](Internal/type-aliases/PostApiV1SubscriptionsCancelData.md) | - |
 | [PostApiV1SubscriptionsCancelError](Internal/type-aliases/PostApiV1SubscriptionsCancelError.md) | - |
 | [PostApiV1SubscriptionsCancelErrors](Internal/type-aliases/PostApiV1SubscriptionsCancelErrors.md) | - |
@@ -687,16 +1102,36 @@
 | [PostApiV1SubscriptionsWebhookErrors](Internal/type-aliases/PostApiV1SubscriptionsWebhookErrors.md) | - |
 | [PostApiV1SubscriptionsWebhookResponse](Internal/type-aliases/PostApiV1SubscriptionsWebhookResponse.md) | - |
 | [PostApiV1SubscriptionsWebhookResponses](Internal/type-aliases/PostApiV1SubscriptionsWebhookResponses.md) | - |
-| [PostApiV1TextByChannelRegisterData](Internal/type-aliases/PostApiV1TextByChannelRegisterData.md) | - |
-| [PostApiV1TextByChannelRegisterError](Internal/type-aliases/PostApiV1TextByChannelRegisterError.md) | - |
-| [PostApiV1TextByChannelRegisterErrors](Internal/type-aliases/PostApiV1TextByChannelRegisterErrors.md) | - |
-| [PostApiV1TextByChannelRegisterResponse](Internal/type-aliases/PostApiV1TextByChannelRegisterResponse.md) | - |
-| [PostApiV1TextByChannelRegisterResponses](Internal/type-aliases/PostApiV1TextByChannelRegisterResponses.md) | - |
+| [PostApiV1UserAgentConsentsData](Internal/type-aliases/PostApiV1UserAgentConsentsData.md) | - |
+| [PostApiV1UserAgentConsentsError](Internal/type-aliases/PostApiV1UserAgentConsentsError.md) | - |
+| [PostApiV1UserAgentConsentsErrors](Internal/type-aliases/PostApiV1UserAgentConsentsErrors.md) | - |
+| [PostApiV1UserAgentConsentsResponse](Internal/type-aliases/PostApiV1UserAgentConsentsResponse.md) | - |
+| [PostApiV1UserAgentConsentsResponses](Internal/type-aliases/PostApiV1UserAgentConsentsResponses.md) | - |
 | [PostApiV1UserApiKeysData](Internal/type-aliases/PostApiV1UserApiKeysData.md) | - |
 | [PostApiV1UserApiKeysError](Internal/type-aliases/PostApiV1UserApiKeysError.md) | - |
 | [PostApiV1UserApiKeysErrors](Internal/type-aliases/PostApiV1UserApiKeysErrors.md) | - |
 | [PostApiV1UserApiKeysResponse](Internal/type-aliases/PostApiV1UserApiKeysResponse.md) | - |
 | [PostApiV1UserApiKeysResponses](Internal/type-aliases/PostApiV1UserApiKeysResponses.md) | - |
+| [PostApiV1UtilityChatCompletionsData](Internal/type-aliases/PostApiV1UtilityChatCompletionsData.md) | - |
+| [PostApiV1UtilityChatCompletionsError](Internal/type-aliases/PostApiV1UtilityChatCompletionsError.md) | - |
+| [PostApiV1UtilityChatCompletionsErrors](Internal/type-aliases/PostApiV1UtilityChatCompletionsErrors.md) | - |
+| [PostApiV1UtilityChatCompletionsResponse](Internal/type-aliases/PostApiV1UtilityChatCompletionsResponse.md) | - |
+| [PostApiV1UtilityChatCompletionsResponses](Internal/type-aliases/PostApiV1UtilityChatCompletionsResponses.md) | - |
+| [PostApiV1UtilityResponsesData](Internal/type-aliases/PostApiV1UtilityResponsesData.md) | - |
+| [PostApiV1UtilityResponsesError](Internal/type-aliases/PostApiV1UtilityResponsesError.md) | - |
+| [PostApiV1UtilityResponsesErrors](Internal/type-aliases/PostApiV1UtilityResponsesErrors.md) | - |
+| [PostApiV1UtilityResponsesResponse](Internal/type-aliases/PostApiV1UtilityResponsesResponse.md) | - |
+| [PostApiV1UtilityResponsesResponses](Internal/type-aliases/PostApiV1UtilityResponsesResponses.md) | - |
+| [PostApiV1WalletsBindingData](Internal/type-aliases/PostApiV1WalletsBindingData.md) | - |
+| [PostApiV1WalletsBindingError](Internal/type-aliases/PostApiV1WalletsBindingError.md) | - |
+| [PostApiV1WalletsBindingErrors](Internal/type-aliases/PostApiV1WalletsBindingErrors.md) | - |
+| [PostApiV1WalletsBindingNonceData](Internal/type-aliases/PostApiV1WalletsBindingNonceData.md) | - |
+| [PostApiV1WalletsBindingNonceError](Internal/type-aliases/PostApiV1WalletsBindingNonceError.md) | - |
+| [PostApiV1WalletsBindingNonceErrors](Internal/type-aliases/PostApiV1WalletsBindingNonceErrors.md) | - |
+| [PostApiV1WalletsBindingNonceResponse](Internal/type-aliases/PostApiV1WalletsBindingNonceResponse.md) | - |
+| [PostApiV1WalletsBindingNonceResponses](Internal/type-aliases/PostApiV1WalletsBindingNonceResponses.md) | - |
+| [PostApiV1WalletsBindingResponse](Internal/type-aliases/PostApiV1WalletsBindingResponse.md) | - |
+| [PostApiV1WalletsBindingResponses](Internal/type-aliases/PostApiV1WalletsBindingResponses.md) | - |
 | [PostApiV1WebhooksRevenuecatData](Internal/type-aliases/PostApiV1WebhooksRevenuecatData.md) | - |
 | [PostApiV1WebhooksRevenuecatError](Internal/type-aliases/PostApiV1WebhooksRevenuecatError.md) | - |
 | [PostApiV1WebhooksRevenuecatErrors](Internal/type-aliases/PostApiV1WebhooksRevenuecatErrors.md) | - |
@@ -717,6 +1152,46 @@
 | [PostAuthOauthByProviderRevokeErrors](Internal/type-aliases/PostAuthOauthByProviderRevokeErrors.md) | - |
 | [PostAuthOauthByProviderRevokeResponse](Internal/type-aliases/PostAuthOauthByProviderRevokeResponse.md) | - |
 | [PostAuthOauthByProviderRevokeResponses](Internal/type-aliases/PostAuthOauthByProviderRevokeResponses.md) | - |
+| [PostInternalAccountsByPhoneHashesData](Internal/type-aliases/PostInternalAccountsByPhoneHashesData.md) | - |
+| [PostInternalAccountsByPhoneHashesError](Internal/type-aliases/PostInternalAccountsByPhoneHashesError.md) | - |
+| [PostInternalAccountsByPhoneHashesErrors](Internal/type-aliases/PostInternalAccountsByPhoneHashesErrors.md) | - |
+| [PostInternalAccountsByPhoneHashesResponse](Internal/type-aliases/PostInternalAccountsByPhoneHashesResponse.md) | - |
+| [PostInternalAccountsByPhoneHashesResponses](Internal/type-aliases/PostInternalAccountsByPhoneHashesResponses.md) | - |
+| [PostInternalCompleteData](Internal/type-aliases/PostInternalCompleteData.md) | - |
+| [PostInternalCompleteError](Internal/type-aliases/PostInternalCompleteError.md) | - |
+| [PostInternalCompleteErrors](Internal/type-aliases/PostInternalCompleteErrors.md) | - |
+| [PostInternalCompleteResponse](Internal/type-aliases/PostInternalCompleteResponse.md) | - |
+| [PostInternalCompleteResponses](Internal/type-aliases/PostInternalCompleteResponses.md) | - |
+| [PostInternalEmbeddingsData](Internal/type-aliases/PostInternalEmbeddingsData.md) | - |
+| [PostInternalEmbeddingsError](Internal/type-aliases/PostInternalEmbeddingsError.md) | - |
+| [PostInternalEmbeddingsErrors](Internal/type-aliases/PostInternalEmbeddingsErrors.md) | - |
+| [PostInternalEmbeddingsResponse](Internal/type-aliases/PostInternalEmbeddingsResponse.md) | - |
+| [PostInternalEmbeddingsResponses](Internal/type-aliases/PostInternalEmbeddingsResponses.md) | - |
+| [PostInternalExtractPhotoFactsData](Internal/type-aliases/PostInternalExtractPhotoFactsData.md) | - |
+| [PostInternalExtractPhotoFactsError](Internal/type-aliases/PostInternalExtractPhotoFactsError.md) | - |
+| [PostInternalExtractPhotoFactsErrors](Internal/type-aliases/PostInternalExtractPhotoFactsErrors.md) | - |
+| [PostInternalExtractPhotoFactsResponse](Internal/type-aliases/PostInternalExtractPhotoFactsResponse.md) | - |
+| [PostInternalExtractPhotoFactsResponses](Internal/type-aliases/PostInternalExtractPhotoFactsResponses.md) | - |
+| [PostInternalModerateData](Internal/type-aliases/PostInternalModerateData.md) | - |
+| [PostInternalModerateError](Internal/type-aliases/PostInternalModerateError.md) | - |
+| [PostInternalModerateErrors](Internal/type-aliases/PostInternalModerateErrors.md) | - |
+| [PostInternalModerateResponse](Internal/type-aliases/PostInternalModerateResponse.md) | - |
+| [PostInternalModerateResponses](Internal/type-aliases/PostInternalModerateResponses.md) | - |
+| [PostInternalNearbyActivationsData](Internal/type-aliases/PostInternalNearbyActivationsData.md) | - |
+| [PostInternalNearbyActivationsError](Internal/type-aliases/PostInternalNearbyActivationsError.md) | - |
+| [PostInternalNearbyActivationsErrors](Internal/type-aliases/PostInternalNearbyActivationsErrors.md) | - |
+| [PostInternalNearbyActivationsResponse](Internal/type-aliases/PostInternalNearbyActivationsResponse.md) | - |
+| [PostInternalNearbyActivationsResponses](Internal/type-aliases/PostInternalNearbyActivationsResponses.md) | - |
+| [PostInternalPrefineryClaimTokensData](Internal/type-aliases/PostInternalPrefineryClaimTokensData.md) | - |
+| [PostInternalPrefineryClaimTokensError](Internal/type-aliases/PostInternalPrefineryClaimTokensError.md) | - |
+| [PostInternalPrefineryClaimTokensErrors](Internal/type-aliases/PostInternalPrefineryClaimTokensErrors.md) | - |
+| [PostInternalPrefineryClaimTokensResponse](Internal/type-aliases/PostInternalPrefineryClaimTokensResponse.md) | - |
+| [PostInternalPrefineryClaimTokensResponses](Internal/type-aliases/PostInternalPrefineryClaimTokensResponses.md) | - |
+| [PostNearbyWaitlistData](Internal/type-aliases/PostNearbyWaitlistData.md) | - |
+| [PostNearbyWaitlistError](Internal/type-aliases/PostNearbyWaitlistError.md) | - |
+| [PostNearbyWaitlistErrors](Internal/type-aliases/PostNearbyWaitlistErrors.md) | - |
+| [PostNearbyWaitlistResponse](Internal/type-aliases/PostNearbyWaitlistResponse.md) | - |
+| [PostNearbyWaitlistResponses](Internal/type-aliases/PostNearbyWaitlistResponses.md) | - |
 | [PostOauthConsentData](Internal/type-aliases/PostOauthConsentData.md) | - |
 | [PostOauthConsentError](Internal/type-aliases/PostOauthConsentError.md) | - |
 | [PostOauthConsentErrors](Internal/type-aliases/PostOauthConsentErrors.md) | - |
@@ -732,6 +1207,26 @@
 | [PostOauthTokenErrors](Internal/type-aliases/PostOauthTokenErrors.md) | - |
 | [PostOauthTokenResponse](Internal/type-aliases/PostOauthTokenResponse.md) | - |
 | [PostOauthTokenResponses](Internal/type-aliases/PostOauthTokenResponses.md) | - |
+| [PostReferralClaimData](Internal/type-aliases/PostReferralClaimData.md) | - |
+| [PostReferralClaimError](Internal/type-aliases/PostReferralClaimError.md) | - |
+| [PostReferralClaimErrors](Internal/type-aliases/PostReferralClaimErrors.md) | - |
+| [PostReferralClaimResponse](Internal/type-aliases/PostReferralClaimResponse.md) | - |
+| [PostReferralClaimResponses](Internal/type-aliases/PostReferralClaimResponses.md) | - |
+| [PostReferralIdentityData](Internal/type-aliases/PostReferralIdentityData.md) | - |
+| [PostReferralIdentityError](Internal/type-aliases/PostReferralIdentityError.md) | - |
+| [PostReferralIdentityErrors](Internal/type-aliases/PostReferralIdentityErrors.md) | - |
+| [PostReferralIdentityResponse](Internal/type-aliases/PostReferralIdentityResponse.md) | - |
+| [PostReferralIdentityResponses](Internal/type-aliases/PostReferralIdentityResponses.md) | - |
+| [PostReferralInviteData](Internal/type-aliases/PostReferralInviteData.md) | - |
+| [PostReferralInviteError](Internal/type-aliases/PostReferralInviteError.md) | - |
+| [PostReferralInviteErrors](Internal/type-aliases/PostReferralInviteErrors.md) | - |
+| [PostReferralInviteResponse](Internal/type-aliases/PostReferralInviteResponse.md) | - |
+| [PostReferralInviteResponses](Internal/type-aliases/PostReferralInviteResponses.md) | - |
+| [PostWebhooksPrefineryData](Internal/type-aliases/PostWebhooksPrefineryData.md) | - |
+| [PostWebhooksPrefineryError](Internal/type-aliases/PostWebhooksPrefineryError.md) | - |
+| [PostWebhooksPrefineryErrors](Internal/type-aliases/PostWebhooksPrefineryErrors.md) | - |
+| [PostWebhooksPrefineryResponse](Internal/type-aliases/PostWebhooksPrefineryResponse.md) | - |
+| [PostWebhooksPrefineryResponses](Internal/type-aliases/PostWebhooksPrefineryResponses.md) | - |
 | [PutApiV1AdminAgentsByIdData](Internal/type-aliases/PutApiV1AdminAgentsByIdData.md) | - |
 | [PutApiV1AdminAgentsByIdError](Internal/type-aliases/PutApiV1AdminAgentsByIdError.md) | - |
 | [PutApiV1AdminAgentsByIdErrors](Internal/type-aliases/PutApiV1AdminAgentsByIdErrors.md) | - |
@@ -747,6 +1242,16 @@
 | [PutApiV1AdminAppsByIdErrors](Internal/type-aliases/PutApiV1AdminAppsByIdErrors.md) | - |
 | [PutApiV1AdminAppsByIdResponse](Internal/type-aliases/PutApiV1AdminAppsByIdResponse.md) | - |
 | [PutApiV1AdminAppsByIdResponses](Internal/type-aliases/PutApiV1AdminAppsByIdResponses.md) | - |
+| [PutApiV1AdminBotConfigData](Internal/type-aliases/PutApiV1AdminBotConfigData.md) | - |
+| [PutApiV1AdminBotConfigError](Internal/type-aliases/PutApiV1AdminBotConfigError.md) | - |
+| [PutApiV1AdminBotConfigErrors](Internal/type-aliases/PutApiV1AdminBotConfigErrors.md) | - |
+| [PutApiV1AdminBotConfigResponse](Internal/type-aliases/PutApiV1AdminBotConfigResponse.md) | - |
+| [PutApiV1AdminBotConfigResponses](Internal/type-aliases/PutApiV1AdminBotConfigResponses.md) | - |
+| [PutApiV1AdminConnectorsByProviderData](Internal/type-aliases/PutApiV1AdminConnectorsByProviderData.md) | - |
+| [PutApiV1AdminConnectorsByProviderError](Internal/type-aliases/PutApiV1AdminConnectorsByProviderError.md) | - |
+| [PutApiV1AdminConnectorsByProviderErrors](Internal/type-aliases/PutApiV1AdminConnectorsByProviderErrors.md) | - |
+| [PutApiV1AdminConnectorsByProviderResponse](Internal/type-aliases/PutApiV1AdminConnectorsByProviderResponse.md) | - |
+| [PutApiV1AdminConnectorsByProviderResponses](Internal/type-aliases/PutApiV1AdminConnectorsByProviderResponses.md) | - |
 | [PutApiV1AdminPersonasByIdData](Internal/type-aliases/PutApiV1AdminPersonasByIdData.md) | - |
 | [PutApiV1AdminPersonasByIdError](Internal/type-aliases/PutApiV1AdminPersonasByIdError.md) | - |
 | [PutApiV1AdminPersonasByIdErrors](Internal/type-aliases/PutApiV1AdminPersonasByIdErrors.md) | - |
@@ -757,7 +1262,33 @@
 | [PutApiV1AgentsByIdPreferenceErrors](Internal/type-aliases/PutApiV1AgentsByIdPreferenceErrors.md) | - |
 | [PutApiV1AgentsByIdPreferenceResponse](Internal/type-aliases/PutApiV1AgentsByIdPreferenceResponse.md) | - |
 | [PutApiV1AgentsByIdPreferenceResponses](Internal/type-aliases/PutApiV1AgentsByIdPreferenceResponses.md) | - |
+| [PutApiV1ConnectorsByProviderScopesData](Internal/type-aliases/PutApiV1ConnectorsByProviderScopesData.md) | - |
+| [PutApiV1ConnectorsByProviderScopesError](Internal/type-aliases/PutApiV1ConnectorsByProviderScopesError.md) | - |
+| [PutApiV1ConnectorsByProviderScopesErrors](Internal/type-aliases/PutApiV1ConnectorsByProviderScopesErrors.md) | - |
+| [PutApiV1ConnectorsByProviderScopesResponse](Internal/type-aliases/PutApiV1ConnectorsByProviderScopesResponse.md) | - |
+| [PutApiV1ConnectorsByProviderScopesResponses](Internal/type-aliases/PutApiV1ConnectorsByProviderScopesResponses.md) | - |
+| [PutApiV1ConnectorsByProviderToolsData](Internal/type-aliases/PutApiV1ConnectorsByProviderToolsData.md) | - |
+| [PutApiV1ConnectorsByProviderToolsError](Internal/type-aliases/PutApiV1ConnectorsByProviderToolsError.md) | - |
+| [PutApiV1ConnectorsByProviderToolsErrors](Internal/type-aliases/PutApiV1ConnectorsByProviderToolsErrors.md) | - |
+| [PutApiV1ConnectorsByProviderToolsResponse](Internal/type-aliases/PutApiV1ConnectorsByProviderToolsResponse.md) | - |
+| [PutApiV1ConnectorsByProviderToolsResponses](Internal/type-aliases/PutApiV1ConnectorsByProviderToolsResponses.md) | - |
+| [PutApiV1NotificationsPreferencesData](Internal/type-aliases/PutApiV1NotificationsPreferencesData.md) | - |
+| [PutApiV1NotificationsPreferencesError](Internal/type-aliases/PutApiV1NotificationsPreferencesError.md) | - |
+| [PutApiV1NotificationsPreferencesErrors](Internal/type-aliases/PutApiV1NotificationsPreferencesErrors.md) | - |
+| [PutApiV1NotificationsPreferencesResponse](Internal/type-aliases/PutApiV1NotificationsPreferencesResponse.md) | - |
+| [PutApiV1NotificationsPreferencesResponses](Internal/type-aliases/PutApiV1NotificationsPreferencesResponses.md) | - |
 | [ResponseErrorResponse](Internal/type-aliases/ResponseErrorResponse.md) | - |
+| [ResponseInsufficientBalanceResponse](Internal/type-aliases/ResponseInsufficientBalanceResponse.md) | - |
+| [SharedChatModel](Internal/type-aliases/SharedChatModel.md) | Model ID used to generate the response, like `gpt-4o` or `o3`. OpenAI offers a wide range of models with different capabilities, performance characteristics, and price points. Refer to the [model guide](https://platform.openai.com/docs/models) to browse and compare available models. |
+| [SharedFunctionDefinitionParam](Internal/type-aliases/SharedFunctionDefinitionParam.md) | - |
+| [SharedFunctionParameters](Internal/type-aliases/SharedFunctionParameters.md) | The parameters the functions accepts, described as a JSON Schema object. See the [guide](https://platform.openai.com/docs/guides/function-calling) for examples, and the [JSON Schema reference](https://json-schema.org/understanding-json-schema/) for documentation about the format. |
+| [SharedMetadata](Internal/type-aliases/SharedMetadata.md) | Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format, and querying for objects via API or the dashboard. |
+| [SharedReasoningEffort](Internal/type-aliases/SharedReasoningEffort.md) | **o-series models only** |
+| [SharedResponseFormatJsonObjectParam](Internal/type-aliases/SharedResponseFormatJsonObjectParam.md) | - |
+| [SharedResponseFormatJsonSchemaJsonSchemaParam](Internal/type-aliases/SharedResponseFormatJsonSchemaJsonSchemaParam.md) | Structured Outputs configuration options, including a JSON Schema. |
+| [SharedResponseFormatJsonSchemaParam](Internal/type-aliases/SharedResponseFormatJsonSchemaParam.md) | - |
+| [SharedResponseFormatTextParam](Internal/type-aliases/SharedResponseFormatTextParam.md) | - |
+| [TwelvedataQuote](Internal/type-aliases/TwelvedataQuote.md) | - |
 
 ## Functions
 
@@ -769,21 +1300,30 @@
 | [deleteApiV1AdminAppsById](Internal/functions/deleteApiV1AdminAppsById.md) | Delete app |
 | [deleteApiV1AdminOauthClientsByClientId](Internal/functions/deleteApiV1AdminOauthClientsByClientId.md) | Revoke an OAuth client (soft delete) |
 | [deleteApiV1AdminPersonasById](Internal/functions/deleteApiV1AdminPersonasById.md) | Delete persona |
+| [deleteApiV1AdminSharesBySlug](Internal/functions/deleteApiV1AdminSharesBySlug.md) | Take down a shared artifact (admin) |
 | [deleteApiV1AdminTextReset](Internal/functions/deleteApiV1AdminTextReset.md) | Reset text registrations |
 | [deleteApiV1AdminUsersDelete](Internal/functions/deleteApiV1AdminUsersDelete.md) | Delete user account (admin) |
 | [deleteApiV1AuthMfaPasskeyCredentialsByCredentialId](Internal/functions/deleteApiV1AuthMfaPasskeyCredentialsByCredentialId.md) | Delete a passkey |
 | [deleteApiV1DeveloperAppsByAppUuid](Internal/functions/deleteApiV1DeveloperAppsByAppUuid.md) | Delete app |
 | [deleteApiV1DeveloperAppsByAppUuidApiKeysByKeyId](Internal/functions/deleteApiV1DeveloperAppsByAppUuidApiKeysByKeyId.md) | Delete API key |
 | [deleteApiV1DeveloperAppsByAppUuidPrivy](Internal/functions/deleteApiV1DeveloperAppsByAppUuidPrivy.md) | Remove Privy |
-| [deleteApiV1TextByChannelUnregister](Internal/functions/deleteApiV1TextByChannelUnregister.md) | Unregister text channel |
+| [deleteApiV1SharesBySlug](Internal/functions/deleteApiV1SharesBySlug.md) | Unpublish a shared artifact |
+| [deleteApiV1UserAgentConsentsByAgentId](Internal/functions/deleteApiV1UserAgentConsentsByAgentId.md) | Revoke per-platform agent consent |
 | [deleteApiV1UserApiKeysByKeyId](Internal/functions/deleteApiV1UserApiKeysByKeyId.md) | Delete user API key |
 | [deleteApiV1UserOauthGrantsById](Internal/functions/deleteApiV1UserOauthGrantsById.md) | Revoke OAuth grant |
+| [deleteApiV1WalletsBindingByAddress](Internal/functions/deleteApiV1WalletsBindingByAddress.md) | Unbind a wallet |
+| [getAdminReferralGrantsStats](Internal/functions/getAdminReferralGrantsStats.md) | Referral grant abuse statistics |
 | [getApiV1AdminApps](Internal/functions/getApiV1AdminApps.md) | List all apps |
 | [getApiV1AdminAppsByAppIdApiKeys](Internal/functions/getApiV1AdminAppsByAppIdApiKeys.md) | List API keys for an app |
 | [getApiV1AdminAppsByAppIdApiKeysById](Internal/functions/getApiV1AdminAppsByAppIdApiKeysById.md) | Get API key by ID |
 | [getApiV1AdminAppsById](Internal/functions/getApiV1AdminAppsById.md) | Get app by ID |
+| [getApiV1AdminBotStatus](Internal/functions/getApiV1AdminBotStatus.md) | Get X-bot status (admin) |
+| [getApiV1AdminConnectors](Internal/functions/getApiV1AdminConnectors.md) | List connector enable/disable state (admin) |
+| [getApiV1AdminNotificationsCampaigns](Internal/functions/getApiV1AdminNotificationsCampaigns.md) | List announcement campaigns (admin) |
+| [getApiV1AdminNotificationsCampaignsByCampaignId](Internal/functions/getApiV1AdminNotificationsCampaignsByCampaignId.md) | Get an announcement campaign with delivery counters (admin) |
 | [getApiV1AdminOauthClients](Internal/functions/getApiV1AdminOauthClients.md) | List OAuth clients |
 | [getApiV1AdminOauthClientsByClientId](Internal/functions/getApiV1AdminOauthClientsByClientId.md) | Get an OAuth client |
+| [getApiV1AdminPhoneHashesAudit](Internal/functions/getApiV1AdminPhoneHashesAudit.md) | Audit phone-hash coverage |
 | [getApiV1AdminPrivyIdentifiersAudit](Internal/functions/getApiV1AdminPrivyIdentifiersAudit.md) | Audit Privy wallet identifiers |
 | [getApiV1AdminUsersLookup](Internal/functions/getApiV1AdminUsersLookup.md) | Lookup user by identifier |
 | [getApiV1AgentPreferences](Internal/functions/getApiV1AgentPreferences.md) | List user agent preferences |
@@ -791,7 +1331,11 @@
 | [getApiV1AgentsById](Internal/functions/getApiV1AgentsById.md) | Get agent |
 | [getApiV1AuthMfaStatus](Internal/functions/getApiV1AuthMfaStatus.md) | MFA status |
 | [getApiV1Bootstrap](Internal/functions/getApiV1Bootstrap.md) | Bootstrap client session |
+| [getApiV1ChatStreamsByInferenceId](Internal/functions/getApiV1ChatStreamsByInferenceId.md) | Resume (replay + tail) a buffered chat stream |
 | [getApiV1Config](Internal/functions/getApiV1Config.md) | Get configuration |
+| [getApiV1Connectors](Internal/functions/getApiV1Connectors.md) | List the user's connected connectors |
+| [getApiV1ConnectorsByProviderScopes](Internal/functions/getApiV1ConnectorsByProviderScopes.md) | Capability catalog + Allow/Disable state for a connector |
+| [getApiV1ConnectorsByProviderTools](Internal/functions/getApiV1ConnectorsByProviderTools.md) | Denied tools for a connector |
 | [getApiV1CreditsBalance](Internal/functions/getApiV1CreditsBalance.md) | Get credit balance |
 | [getApiV1CreditsPacks](Internal/functions/getApiV1CreditsPacks.md) | List available credit packs |
 | [getApiV1CuratedModels](Internal/functions/getApiV1CuratedModels.md) | List curated models |
@@ -805,23 +1349,37 @@
 | [getApiV1DeveloperBilling](Internal/functions/getApiV1DeveloperBilling.md) | Get billing history |
 | [getApiV1DocsSwaggerJson](Internal/functions/getApiV1DocsSwaggerJson.md) | Get OpenAPI specification |
 | [getApiV1GuestBootstrap](Internal/functions/getApiV1GuestBootstrap.md) | Bootstrap guest session |
+| [getApiV1Me](Internal/functions/getApiV1Me.md) | Return the caller's identity and granted scopes |
+| [getApiV1MediaSharedBySlug](Internal/functions/getApiV1MediaSharedBySlug.md) | Resolve a public shared artifact's media |
 | [getApiV1Models](Internal/functions/getApiV1Models.md) | List available models |
+| [getApiV1NotificationsPreferences](Internal/functions/getApiV1NotificationsPreferences.md) | List notification preferences |
 | [getApiV1Personas](Internal/functions/getApiV1Personas.md) | List personas |
 | [getApiV1PersonasById](Internal/functions/getApiV1PersonasById.md) | Get persona |
 | [getApiV1PhoneCallsByCallId](Internal/functions/getApiV1PhoneCallsByCallId.md) | Get phone call |
+| [getApiV1Shares](Internal/functions/getApiV1Shares.md) | List my shared artifacts |
+| [getApiV1SharesBySlug](Internal/functions/getApiV1SharesBySlug.md) | Get a public shared artifact |
 | [getApiV1SubscriptionsPlans](Internal/functions/getApiV1SubscriptionsPlans.md) | List available subscription plans |
 | [getApiV1SubscriptionsStatus](Internal/functions/getApiV1SubscriptionsStatus.md) | Get subscription status |
-| [getApiV1TextByChannelLookup](Internal/functions/getApiV1TextByChannelLookup.md) | Lookup text channel registration by identifier |
-| [getApiV1TextByChannelStatus](Internal/functions/getApiV1TextByChannelStatus.md) | Get text channel registration status |
 | [getApiV1Tools](Internal/functions/getApiV1Tools.md) | List available tools |
 | [getApiV1UsageByModality](Internal/functions/getApiV1UsageByModality.md) | Get usage by modality |
+| [getApiV1UsageInferenceWeekly](Internal/functions/getApiV1UsageInferenceWeekly.md) | Weekly inference volume |
 | [getApiV1UsageModels](Internal/functions/getApiV1UsageModels.md) | Get usage by model |
+| [getApiV1UserAgentConsents](Internal/functions/getApiV1UserAgentConsents.md) | List active per-platform agent consents |
+| [getApiV1UserAgentGrants](Internal/functions/getApiV1UserAgentGrants.md) | Lookup active agent grant (service key) |
 | [getApiV1UserApiKeys](Internal/functions/getApiV1UserApiKeys.md) | List user API keys |
 | [getApiV1UserOauthGrants](Internal/functions/getApiV1UserOauthGrants.md) | List user OAuth grants |
+| [getApiV1WalletsBinding](Internal/functions/getApiV1WalletsBinding.md) | List bound wallets |
+| [getApiV1ZetaCreditRate](Internal/functions/getApiV1ZetaCreditRate.md) | Stake-to-earn credit rate |
+| [getApiV1ZetaMarket](Internal/functions/getApiV1ZetaMarket.md) | ZETA market stats |
+| [getConnectorsByProviderCallback](Internal/functions/getConnectorsByProviderCallback.md) | Upstream OAuth callback |
+| [getConnectorsByProviderConnect](Internal/functions/getConnectorsByProviderConnect.md) | Begin upstream OAuth connect flow |
 | [getHealth](Internal/functions/getHealth.md) | Health check |
+| [getInternalAccountsByDidByDid](Internal/functions/getInternalAccountsByDidByDid.md) | Resolve a Privy DID to an account ID |
 | [getOauthAuthorize](Internal/functions/getOauthAuthorize.md) | OAuth 2.0 authorization endpoint |
 | [getOauthConsent](Internal/functions/getOauthConsent.md) | OAuth consent screen |
+| [getReferralMe](Internal/functions/getReferralMe.md) | Read the caller's waitlist and referral state |
 | [getWellKnownJwksJson](Internal/functions/getWellKnownJwksJson.md) | OAuth 2.0 JSON Web Key Set |
+| [patchApiV1AdminNotificationsCampaignsByCampaignId](Internal/functions/patchApiV1AdminNotificationsCampaignsByCampaignId.md) | Edit a draft/scheduled announcement campaign (admin) |
 | [patchApiV1AdminOauthClientsByClientId](Internal/functions/patchApiV1AdminOauthClientsByClientId.md) | Update an OAuth client |
 | [patchApiV1DeveloperAppsByAppUuid](Internal/functions/patchApiV1DeveloperAppsByAppUuid.md) | Update app |
 | [patchApiV1DeveloperAppsByAppUuidUsersByAddress](Internal/functions/patchApiV1DeveloperAppsByAppUuidUsersByAddress.md) | Update user limit |
@@ -830,11 +1388,22 @@
 | [postApiV1AdminAgents](Internal/functions/postApiV1AdminAgents.md) | Create agent |
 | [postApiV1AdminApps](Internal/functions/postApiV1AdminApps.md) | Create app |
 | [postApiV1AdminAppsByAppIdApiKeys](Internal/functions/postApiV1AdminAppsByAppIdApiKeys.md) | Create API key |
+| [postApiV1AdminBotPollerStart](Internal/functions/postApiV1AdminBotPollerStart.md) | Start the X-bot poller (admin) |
+| [postApiV1AdminBotPollerStop](Internal/functions/postApiV1AdminBotPollerStop.md) | Stop the X-bot poller (admin) |
+| [postApiV1AdminNotificationsAnnounceModel](Internal/functions/postApiV1AdminNotificationsAnnounceModel.md) | Announce a new model via push notification (admin) |
+| [postApiV1AdminNotificationsCampaigns](Internal/functions/postApiV1AdminNotificationsCampaigns.md) | Create an announcement campaign (admin) |
+| [postApiV1AdminNotificationsCampaignsByCampaignIdCancel](Internal/functions/postApiV1AdminNotificationsCampaignsByCampaignIdCancel.md) | Cancel an announcement campaign (admin) |
+| [postApiV1AdminNotificationsSend](Internal/functions/postApiV1AdminNotificationsSend.md) | Send test push notification (admin) |
 | [postApiV1AdminOauthClients](Internal/functions/postApiV1AdminOauthClients.md) | Create an OAuth client (agent registration) |
 | [postApiV1AdminPersonas](Internal/functions/postApiV1AdminPersonas.md) | Create persona |
+| [postApiV1AdminPhoneHashesBackfill](Internal/functions/postApiV1AdminPhoneHashesBackfill.md) | Backfill phone hashes from Privy |
+| [postApiV1AdminPrivyDevWipe](Internal/functions/postApiV1AdminPrivyDevWipe.md) | Bulk-delete test users from the Privy dev app |
 | [postApiV1AdminPrivyIdentifiersMigrate](Internal/functions/postApiV1AdminPrivyIdentifiersMigrate.md) | Migrate Privy wallet identifiers |
 | [postApiV1AdminSeedApps](Internal/functions/postApiV1AdminSeedApps.md) | Seed apps and API keys |
 | [postApiV1AdminSubscriptionTier](Internal/functions/postApiV1AdminSubscriptionTier.md) | Set user subscription tier |
+| [postApiV1AdminUsersInternalTester](Internal/functions/postApiV1AdminUsersInternalTester.md) | Grant or revoke the People Nearby internal-tester flag |
+| [postApiV1AdminUsersSuspend](Internal/functions/postApiV1AdminUsersSuspend.md) | Suspend a user account |
+| [postApiV1AdminUsersUnsuspend](Internal/functions/postApiV1AdminUsersUnsuspend.md) | Unsuspend a user account |
 | [postApiV1AuthMfaDisable](Internal/functions/postApiV1AuthMfaDisable.md) | Disable MFA |
 | [postApiV1AuthMfaPasskeyEnrollBegin](Internal/functions/postApiV1AuthMfaPasskeyEnrollBegin.md) | Begin passkey enrollment |
 | [postApiV1AuthMfaPasskeyEnrollFinish](Internal/functions/postApiV1AuthMfaPasskeyEnrollFinish.md) | Finish passkey enrollment |
@@ -845,6 +1414,12 @@
 | [postApiV1AuthMfaTotpEnrollVerify](Internal/functions/postApiV1AuthMfaTotpEnrollVerify.md) | Verify TOTP enrollment |
 | [postApiV1AuthMfaVerify](Internal/functions/postApiV1AuthMfaVerify.md) | Verify MFA at login |
 | [postApiV1ChatCompletions](Internal/functions/postApiV1ChatCompletions.md) | Create chat completion |
+| [postApiV1ChatStreamsByInferenceIdCancel](Internal/functions/postApiV1ChatStreamsByInferenceIdCancel.md) | Cancel a buffered chat stream |
+| [postApiV1ConnectorsByProviderDisconnect](Internal/functions/postApiV1ConnectorsByProviderDisconnect.md) | Disconnect a connector |
+| [postApiV1ConnectorsByProviderProxy](Internal/functions/postApiV1ConnectorsByProviderProxy.md) | Proxy a connector API call |
+| [postApiV1ConnectorsImport](Internal/functions/postApiV1ConnectorsImport.md) | Import a browser-resident refresh token into the vault |
+| [postApiV1ConnectorTokensByProvider](Internal/functions/postApiV1ConnectorTokensByProvider.md) | Mint a short-lived upstream connector access token |
+| [postApiV1ConnectTickets](Internal/functions/postApiV1ConnectTickets.md) | Mint a connect-flow ticket |
 | [postApiV1CreditsPurchase](Internal/functions/postApiV1CreditsPurchase.md) | Create credit pack checkout session |
 | [postApiV1CreditsRedeemTokens](Internal/functions/postApiV1CreditsRedeemTokens.md) | Redeem Anuma Tokens for credits |
 | [postApiV1DeveloperApps](Internal/functions/postApiV1DeveloperApps.md) | Create app |
@@ -854,8 +1429,17 @@
 | [postApiV1DeveloperAppsByAppUuidUsersByAddressTopUp](Internal/functions/postApiV1DeveloperAppsByAppUuidUsersByAddressTopUp.md) | Top up user credits |
 | [postApiV1Embeddings](Internal/functions/postApiV1Embeddings.md) | Create embeddings |
 | [postApiV1GuestChatCompletions](Internal/functions/postApiV1GuestChatCompletions.md) | Guest chat completion (free trial) |
+| [postApiV1Moderate](Internal/functions/postApiV1Moderate.md) | Moderate content |
+| [postApiV1NotificationsDevices](Internal/functions/postApiV1NotificationsDevices.md) | Register push-notification device |
+| [postApiV1NotificationsDevicesUnregister](Internal/functions/postApiV1NotificationsDevicesUnregister.md) | Unregister push-notification device |
 | [postApiV1PhoneCalls](Internal/functions/postApiV1PhoneCalls.md) | Create phone call |
+| [postApiV1PreprocessorsCryptoPrices](Internal/functions/postApiV1PreprocessorsCryptoPrices.md) | Get crypto prices |
+| [postApiV1PreprocessorsSearch](Internal/functions/postApiV1PreprocessorsSearch.md) | Search the web |
+| [postApiV1PreprocessorsStockPrices](Internal/functions/postApiV1PreprocessorsStockPrices.md) | Get stock prices |
+| [postApiV1PreprocessorsWeather](Internal/functions/postApiV1PreprocessorsWeather.md) | Get weather |
 | [postApiV1Responses](Internal/functions/postApiV1Responses.md) | Create response |
+| [postApiV1Shares](Internal/functions/postApiV1Shares.md) | Publish an artifact to a public share link |
+| [postApiV1SharesBySlugReport](Internal/functions/postApiV1SharesBySlugReport.md) | Report a shared artifact |
 | [postApiV1SubscriptionsCancel](Internal/functions/postApiV1SubscriptionsCancel.md) | Cancel subscription |
 | [postApiV1SubscriptionsCancelScheduledDowngrade](Internal/functions/postApiV1SubscriptionsCancelScheduledDowngrade.md) | Cancel scheduled downgrade |
 | [postApiV1SubscriptionsCreateCheckoutSession](Internal/functions/postApiV1SubscriptionsCreateCheckoutSession.md) | Create checkout session |
@@ -864,17 +1448,44 @@
 | [postApiV1SubscriptionsScheduleDowngrade](Internal/functions/postApiV1SubscriptionsScheduleDowngrade.md) | Schedule subscription downgrade |
 | [postApiV1SubscriptionsUpgrade](Internal/functions/postApiV1SubscriptionsUpgrade.md) | Upgrade subscription |
 | [postApiV1SubscriptionsWebhook](Internal/functions/postApiV1SubscriptionsWebhook.md) | Handle Stripe webhook |
-| [postApiV1TextByChannelRegister](Internal/functions/postApiV1TextByChannelRegister.md) | Register identifier for text channel |
+| [postApiV1UserAgentConsents](Internal/functions/postApiV1UserAgentConsents.md) | Create per-platform agent consent |
 | [postApiV1UserApiKeys](Internal/functions/postApiV1UserApiKeys.md) | Create user API key |
+| [postApiV1UtilityChatCompletions](Internal/functions/postApiV1UtilityChatCompletions.md) | Utility chat completions (internal) |
+| [postApiV1UtilityResponses](Internal/functions/postApiV1UtilityResponses.md) | Create utility response |
+| [postApiV1WalletsBinding](Internal/functions/postApiV1WalletsBinding.md) | Bind a wallet |
+| [postApiV1WalletsBindingNonce](Internal/functions/postApiV1WalletsBindingNonce.md) | Issue a wallet-binding nonce |
 | [postApiV1WebhooksRevenuecat](Internal/functions/postApiV1WebhooksRevenuecat.md) | Handle RevenueCat webhook |
 | [postAuthOauthByProviderExchange](Internal/functions/postAuthOauthByProviderExchange.md) | Exchange authorization code for tokens |
 | [postAuthOauthByProviderRefresh](Internal/functions/postAuthOauthByProviderRefresh.md) | Refresh access token |
 | [postAuthOauthByProviderRevoke](Internal/functions/postAuthOauthByProviderRevoke.md) | Revoke OAuth token |
+| [postInternalAccountsByPhoneHashes](Internal/functions/postInternalAccountsByPhoneHashes.md) | Resolve phone hashes to account IDs (batch) |
+| [postInternalComplete](Internal/functions/postInternalComplete.md) | Create a chat completion (internal) |
+| [postInternalEmbeddings](Internal/functions/postInternalEmbeddings.md) | Create embeddings (internal) |
+| [postInternalExtractPhotoFacts](Internal/functions/postInternalExtractPhotoFacts.md) | Extract user facts from a photo (internal) |
+| [postInternalModerate](Internal/functions/postInternalModerate.md) | Moderate content (internal) |
+| [postInternalNearbyActivations](Internal/functions/postInternalNearbyActivations.md) | Record a People Nearby activation |
+| [postInternalPrefineryClaimTokens](Internal/functions/postInternalPrefineryClaimTokens.md) | Mint a waitlist claim token (internal) |
+| [postNearbyWaitlist](Internal/functions/postNearbyWaitlist.md) | Join the Prefinery waitlist |
 | [postOauthConsent](Internal/functions/postOauthConsent.md) | Process OAuth consent |
 | [postOauthRevoke](Internal/functions/postOauthRevoke.md) | OAuth 2.0 token revocation (RFC 7009) |
 | [postOauthToken](Internal/functions/postOauthToken.md) | OAuth 2.0 token endpoint |
+| [postReferralClaim](Internal/functions/postReferralClaim.md) | Redeem a waitlist claim token |
+| [postReferralIdentity](Internal/functions/postReferralIdentity.md) | Mint the Prefinery widget identity proof |
+| [postReferralInvite](Internal/functions/postReferralInvite.md) | Send a Prefinery friend invitation |
+| [postWebhooksPrefinery](Internal/functions/postWebhooksPrefinery.md) | Prefinery webhook receiver |
 | [putApiV1AdminAgentsById](Internal/functions/putApiV1AdminAgentsById.md) | Update agent |
 | [putApiV1AdminAppsByAppIdApiKeysById](Internal/functions/putApiV1AdminAppsByAppIdApiKeysById.md) | Update API key |
 | [putApiV1AdminAppsById](Internal/functions/putApiV1AdminAppsById.md) | Update app |
+| [putApiV1AdminBotConfig](Internal/functions/putApiV1AdminBotConfig.md) | Update X-bot config (admin) |
+| [putApiV1AdminConnectorsByProvider](Internal/functions/putApiV1AdminConnectorsByProvider.md) | Enable or disable a connector (admin) |
 | [putApiV1AdminPersonasById](Internal/functions/putApiV1AdminPersonasById.md) | Update persona |
 | [putApiV1AgentsByIdPreference](Internal/functions/putApiV1AgentsByIdPreference.md) | Set user agent preference |
+| [putApiV1ConnectorsByProviderScopes](Internal/functions/putApiV1ConnectorsByProviderScopes.md) | Batch Allow/Disable connector capabilities |
+| [putApiV1ConnectorsByProviderTools](Internal/functions/putApiV1ConnectorsByProviderTools.md) | Batch ALLOW/DENY connector tools |
+| [putApiV1NotificationsPreferences](Internal/functions/putApiV1NotificationsPreferences.md) | Set notification preferences |
+
+## References
+
+### LlmapiChoice
+
+Renames and re-exports [OpenaiChatCompletionChoice](Internal/type-aliases/OpenaiChatCompletionChoice.md)

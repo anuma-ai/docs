@@ -1,53 +1,14 @@
 # defaultServerToolsFilter
 
-> `const` **defaultServerToolsFilter**: (`embeddings`: `number`\[] | `number`\[]\[], `tools`: [`ServerTool`](../interfaces/ServerTool.md)\[]) => `string`\[]
+> `const` **defaultServerToolsFilter**: [`ServerToolsFilterFunction`](../type-aliases/ServerToolsFilterFunction.md)
 
-Defined in: [src/lib/tools/serverTools.ts:1113](https://github.com/anuma-ai/sdk/blob/main/src/lib/tools/serverTools.ts#1113)
+Defined in: [src/lib/tools/serverTools.ts:1707](https://github.com/anuma-ai/sdk/blob/main/src/lib/tools/serverTools.ts#1707)
 
 Pre-configured server-tools filter ready to drop into `useChatStorage`'s
-`serverTools` option. Pure semantic matching against the user prompt with
-the default exclusion list applied.
-
-## Parameters
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-`embeddings`
-
-</td>
-<td>
-
-`number`\[] | `number`\[]\[]
-
-</td>
-</tr>
-<tr>
-<td>
-
-`tools`
-
-</td>
-<td>
-
-[`ServerTool`](../interfaces/ServerTool.md)\[]
-
-</td>
-</tr>
-</tbody>
-</table>
-
-## Returns
-
-`string`\[]
+`serverTools` option. Semantic matching against the user prompt with the
+default exclusion list applied, plus call-chain expansion via
+[SERVER\_TOOL\_DEPENDENCY\_SETS](SERVER_TOOL_DEPENDENCY_SETS.md) so continuation tools (read-after-search,
+geocode-before-weather) ride in with their entry tool.
 
 ## Example
 

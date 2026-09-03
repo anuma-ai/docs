@@ -1,9 +1,9 @@
 # SendMessageWithStorageResult
 
-> **SendMessageWithStorageResult** = `BaseSendMessageWithStorageResult`
+> **SendMessageWithStorageResult** = `BaseSendMessageWithStorageResult` | [`SendMessageWithStorageDetachedResult`](../interfaces/SendMessageWithStorageDetachedResult.md)
 
-Defined in: [src/expo/useChatStorage.ts:259](https://github.com/anuma-ai/sdk/blob/main/src/expo/useChatStorage.ts#259)
+Defined in: [src/expo/useChatStorage.ts:542](https://github.com/anuma-ai/sdk/blob/main/src/expo/useChatStorage.ts#542)
 
-Result from sendMessage with storage (Expo version)
+Result from sendMessage with storage (Expo version).
 
-Uses the base result without tool execution information.
+Adds the detached variant on top of the base success/skipped/error shapes.

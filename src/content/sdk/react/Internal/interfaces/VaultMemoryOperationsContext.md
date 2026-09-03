@@ -1,6 +1,6 @@
 # VaultMemoryOperationsContext
 
-Defined in: [src/lib/db/memoryVault/operations.ts:13](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/memoryVault/operations.ts#13)
+Defined in: [src/lib/db/memoryVault/operations.ts:60](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/memoryVault/operations.ts#60)
 
 ## Properties
 
@@ -8,7 +8,7 @@ Defined in: [src/lib/db/memoryVault/operations.ts:13](https://github.com/anuma-a
 
 > **database**: `Database`
 
-Defined in: [src/lib/db/memoryVault/operations.ts:14](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/memoryVault/operations.ts#14)
+Defined in: [src/lib/db/memoryVault/operations.ts:61](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/memoryVault/operations.ts#61)
 
 ***
 
@@ -16,7 +16,19 @@ Defined in: [src/lib/db/memoryVault/operations.ts:14](https://github.com/anuma-a
 
 > `optional` **embeddedWalletSigner**: [`EmbeddedWalletSignerFn`](../type-aliases/EmbeddedWalletSignerFn.md)
 
-Defined in: [src/lib/db/memoryVault/operations.ts:18](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/memoryVault/operations.ts#18)
+Defined in: [src/lib/db/memoryVault/operations.ts:65](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/memoryVault/operations.ts#65)
+
+***
+
+### entityCtx?
+
+> `optional` **entityCtx**: [`EntityOperationsContext`](EntityOperationsContext.md)
+
+Defined in: [src/lib/db/memoryVault/operations.ts:85](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/memoryVault/operations.ts#85)
+
+When set, vault delete ops cascade to memory\_entity rows pointing at
+the deleted memories. Without this the W5 graph lane keeps returning
+IDs of soft-deleted memories and the join table grows unbounded.
 
 ***
 
@@ -24,7 +36,25 @@ Defined in: [src/lib/db/memoryVault/operations.ts:18](https://github.com/anuma-a
 
 > `optional` **signMessage**: [`SignMessageFn`](../type-aliases/SignMessageFn.md)
 
-Defined in: [src/lib/db/memoryVault/operations.ts:17](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/memoryVault/operations.ts#17)
+Defined in: [src/lib/db/memoryVault/operations.ts:64](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/memoryVault/operations.ts#64)
+
+***
+
+### singleTenant?
+
+> `optional` **singleTenant**: `boolean`
+
+Defined in: [src/lib/db/memoryVault/operations.ts:79](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/memoryVault/operations.ts#79)
+
+Asserts this context runs against a physically single-tenant database — one
+where every row belongs to the same owner (the per-wallet client DBs, which
+hold exactly one wallet's rows written with `user_id = null`). This is the
+ONLY thing that makes the decay sweep's unscoped scan/archive/delete safe
+without a `userId`: see assertVaultScopeForSweep. A shared /
+multi-tenant DB must NOT set this — it must scope by `userId` instead.
+`walletAddress` presence alone is NOT a substitute (the sweep query filters
+by `user_id` only, so a bare `walletAddress` on a shared DB would sweep
+every tenant).
 
 ***
 
@@ -32,7 +62,7 @@ Defined in: [src/lib/db/memoryVault/operations.ts:17](https://github.com/anuma-a
 
 > `optional` **userId**: `string`
 
-Defined in: [src/lib/db/memoryVault/operations.ts:20](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/memoryVault/operations.ts#20)
+Defined in: [src/lib/db/memoryVault/operations.ts:67](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/memoryVault/operations.ts#67)
 
 When set, operations scope to this user (server-side multi-user).
 
@@ -42,7 +72,7 @@ When set, operations scope to this user (server-side multi-user).
 
 > **vaultMemoryCollection**: `Collection`<[`StoredVaultMemoryModel`](../classes/StoredVaultMemoryModel.md)>
 
-Defined in: [src/lib/db/memoryVault/operations.ts:15](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/memoryVault/operations.ts#15)
+Defined in: [src/lib/db/memoryVault/operations.ts:62](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/memoryVault/operations.ts#62)
 
 ***
 
@@ -50,4 +80,4 @@ Defined in: [src/lib/db/memoryVault/operations.ts:15](https://github.com/anuma-a
 
 > `optional` **walletAddress**: `string`
 
-Defined in: [src/lib/db/memoryVault/operations.ts:16](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/memoryVault/operations.ts#16)
+Defined in: [src/lib/db/memoryVault/operations.ts:63](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/memoryVault/operations.ts#63)

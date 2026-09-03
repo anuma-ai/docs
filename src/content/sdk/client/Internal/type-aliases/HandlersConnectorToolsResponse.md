@@ -1,0 +1,21 @@
+# HandlersConnectorToolsResponse
+
+> **HandlersConnectorToolsResponse** = `object`
+
+Defined in: [src/client/types.gen.ts:1743](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#1743)
+
+## Properties
+
+### denied\_tools?
+
+> `optional` **denied\_tools**: `string`\[]
+
+Defined in: [src/client/types.gen.ts:1744](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#1744)
+
+***
+
+### provider?
+
+> `optional` **provider**: `string`
+
+Defined in: [src/client/types.gen.ts:1745](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#1745)

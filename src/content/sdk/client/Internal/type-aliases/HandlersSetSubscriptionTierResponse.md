@@ -2,15 +2,55 @@
 
 > **HandlersSetSubscriptionTierResponse** = `object`
 
-Defined in: [src/client/types.gen.ts:1221](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#1221)
+Defined in: [src/client/types.gen.ts:3078](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#3078)
 
 ## Properties
+
+### changed?
+
+> `optional` **changed**: `boolean`
+
+Defined in: [src/client/types.gen.ts:3079](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#3079)
+
+***
+
+### interval?
+
+> `optional` **interval**: `string`
+
+Defined in: [src/client/types.gen.ts:3080](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#3080)
+
+***
 
 ### message?
 
 > `optional` **message**: `string`
 
-Defined in: [src/client/types.gen.ts:1222](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#1222)
+Defined in: [src/client/types.gen.ts:3081](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#3081)
+
+***
+
+### scheduled\_interval?
+
+> `optional` **scheduled\_interval**: `string`
+
+Defined in: [src/client/types.gen.ts:3082](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#3082)
+
+***
+
+### scheduled\_tier?
+
+> `optional` **scheduled\_tier**: `string`
+
+Defined in: [src/client/types.gen.ts:3083](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#3083)
+
+***
+
+### status
+
+> **status**: `string`
+
+Defined in: [src/client/types.gen.ts:3084](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#3084)
 
 ***
 
@@ -18,7 +58,7 @@ Defined in: [src/client/types.gen.ts:1222](https://github.com/anuma-ai/sdk/blob/
 
 > **success**: `boolean`
 
-Defined in: [src/client/types.gen.ts:1223](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#1223)
+Defined in: [src/client/types.gen.ts:3085](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#3085)
 
 ***
 
@@ -26,7 +66,7 @@ Defined in: [src/client/types.gen.ts:1223](https://github.com/anuma-ai/sdk/blob/
 
 > **tier**: `string`
 
-Defined in: [src/client/types.gen.ts:1224](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#1224)
+Defined in: [src/client/types.gen.ts:3086](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#3086)
 
 ***
 
@@ -34,4 +74,4 @@ Defined in: [src/client/types.gen.ts:1224](https://github.com/anuma-ai/sdk/blob/
 
 > **user\_address**: `string`
 
-Defined in: [src/client/types.gen.ts:1225](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#1225)
+Defined in: [src/client/types.gen.ts:3087](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#3087)

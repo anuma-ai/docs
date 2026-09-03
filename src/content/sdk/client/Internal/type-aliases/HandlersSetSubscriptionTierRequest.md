@@ -2,7 +2,7 @@
 
 > **HandlersSetSubscriptionTierRequest** = `object`
 
-Defined in: [src/client/types.gen.ts:1209](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#1209)
+Defined in: [src/client/types.gen.ts:3062](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#3062)
 
 ## Properties
 
@@ -10,9 +10,19 @@ Defined in: [src/client/types.gen.ts:1209](https://github.com/anuma-ai/sdk/blob/
 
 > `optional` **app\_id**: `number`
 
-Defined in: [src/client/types.gen.ts:1213](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#1213)
+Defined in: [src/client/types.gen.ts:3066](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#3066)
 
 Required to identify which app enrollment to update
+
+***
+
+### interval?
+
+> `optional` **interval**: `string`
+
+Defined in: [src/client/types.gen.ts:3070](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#3070)
+
+"month" or "year"; ignored for basic
 
 ***
 
@@ -20,9 +30,9 @@ Required to identify which app enrollment to update
 
 > `optional` **tier**: `string`
 
-Defined in: [src/client/types.gen.ts:1217](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#1217)
+Defined in: [src/client/types.gen.ts:3074](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#3074)
 
-"basic" or "pro"
+"basic", "starter", or "pro"
 
 ***
 
@@ -30,4 +40,4 @@ Defined in: [src/client/types.gen.ts:1217](https://github.com/anuma-ai/sdk/blob/
 
 > `optional` **user\_address**: `string`
 
-Defined in: [src/client/types.gen.ts:1218](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#1218)
+Defined in: [src/client/types.gen.ts:3075](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#3075)

@@ -1,6 +1,6 @@
 # Database Schema
 
-Current version: **v27**
+Current version: **v45**
 
 ```mermaid
 graph LR
@@ -19,11 +19,14 @@ graph LR
 - [modelPreferences](#modelPreferences)
 - [userPreferences](#userPreferences)
 - [memory_vault](#memory_vault)
+- [entity](#entity)
+- [memory_entity](#memory_entity)
 - [vault_folders](#vault_folders)
 - [conversation_summaries](#conversation_summaries)
 - [media](#media)
 - [app_files](#app_files)
 - [saved_tools](#saved_tools)
+- [conversation_memory](#conversation_memory)
 
 ## history
 
@@ -52,6 +55,7 @@ graph LR
 | `parent_message_id` | string |  | ✓ |
 | `feedback` | string |  | ✓ |
 | `tool_call_events` | string |  | ✓ |
+| `origin` | string |  | ✓ |
 
 ## conversations
 
@@ -60,9 +64,10 @@ graph LR
 | `conversation_id` | string | ✓ |  |
 | `title` | string |  |  |
 | `project_id` | string | ✓ | ✓ |
-| `created_at` | number |  |  |
+| `created_at` | number | ✓ |  |
 | `updated_at` | number |  |  |
 | `is_deleted` | boolean | ✓ |  |
+| `pinned_at` | number |  | ✓ |
 
 ## projects
 
@@ -106,6 +111,47 @@ graph LR
 | `is_deleted` | boolean | ✓ |  |
 | `user_id` | string | ✓ | ✓ |
 | `embedding` | string |  | ✓ |
+| `embedding_model` | string |  | ✓ |
+| `source_chunk_ids` | string |  | ✓ |
+| `proof_count` | number |  | ✓ |
+| `source` | string |  | ✓ |
+| `event_time_start` | number | ✓ | ✓ |
+| `event_time_end` | number |  | ✓ |
+| `event_time_kind` | string |  | ✓ |
+| `topics_user_managed` | boolean |  | ✓ |
+| `topics` | string |  | ✓ |
+| `topics_updated_at` | number |  | ✓ |
+| `media` | string |  | ✓ |
+| `topics_extracted_at` | number |  | ✓ |
+| `superseded_by` | string | ✓ | ✓ |
+| `superseded_at` | number |  | ✓ |
+| `topics_extracted_version` | number |  | ✓ |
+| `last_observed_at` | number | ✓ | ✓ |
+| `fact_type` | string | ✓ | ✓ |
+| `archived_at` | number | ✓ | ✓ |
+| `trust_tier` | string | ✓ | ✓ |
+| `visibility` | string | ✓ | ✓ |
+| `twin_opt_in` | boolean |  | ✓ |
+| `published_at` | number |  | ✓ |
+| `geohash` | string |  | ✓ |
+
+## entity
+
+| Column | Type | Indexed | Optional |
+|--------|------|---------|----------|
+| `canonical_name` | string | ✓ |  |
+| `kind` | string |  | ✓ |
+| `created_at` | number |  |  |
+| `updated_at` | number |  |  |
+
+## memory_entity
+
+| Column | Type | Indexed | Optional |
+|--------|------|---------|----------|
+| `memory_id` | string | ✓ |  |
+| `entity_id` | string | ✓ |  |
+| `user_id` | string | ✓ | ✓ |
+| `created_at` | number |  |  |
 
 ## vault_folders
 
@@ -176,10 +222,37 @@ graph LR
 | `updated_at` | number |  |  |
 | `is_deleted` | boolean | ✓ |  |
 
+## conversation_memory
+
+| Column | Type | Indexed | Optional |
+|--------|------|---------|----------|
+| `conversation_id` | string | ✓ |  |
+| `memory_id` | string | ✓ |  |
+| `score` | number |  |  |
+| `created_at` | number | ✓ |  |
+
 ## Migration History
 
 | Version | Changes |
 |---------|---------|
+| v45 | Added `media` to `memory_vault` |
+| v44 | Added `origin` to `history` |
+| v43 | `CREATE INDEX IF NOT EXISTS conversations_is_deleted_created_at ON conversations (is_deleted, created_at);` |
+| v42 | Added `topics`, `topics_updated_at` to `memory_vault` |
+| v41 | Added `visibility`, `twin_opt_in`, `published_at`, `geohash` to `memory_vault` |
+| v40 | Added `fact_type`, `archived_at`, `trust_tier` to `memory_vault` |
+| v39 | Added `last_observed_at` to `memory_vault` |
+| v38 | Added `topics_extracted_version` to `memory_vault` |
+| v37 | Added `superseded_by`, `superseded_at` to `memory_vault` |
+| v36 | Added `topics_extracted_at` to `memory_vault` |
+| v35 | Added `conversation_memory` table |
+| v34 | Added `topics_user_managed` to `memory_vault` |
+| v33 | Added `embedding_model` to `memory_vault` |
+| v32 | Added `pinned_at` to `conversations` |
+| v31 | Added `user_id` to `memory_entity`; `UPDATE memory_entity SET user_id = (SELECT user_id FROM memory_vault WHERE memory_vault.id = memory_entity.memory_id) WHERE user_id IS NULL;` |
+| v30 | Added `event_time_start`, `event_time_end`, `event_time_kind` to `memory_vault` |
+| v29 | Added `entity` table; Added `memory_entity` table |
+| v28 | Added `source_chunk_ids`, `proof_count`, `source` to `memory_vault` |
 | v27 | Added `tool_call_events` to `history` |
 | v26 | Added `app_files` table |
 | v25 | Added `saved_tools` table |

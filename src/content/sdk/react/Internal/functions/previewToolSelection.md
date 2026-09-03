@@ -2,7 +2,7 @@
 
 > **previewToolSelection**(`options`: `object`): `Promise`<{ `clientToolNames`: `string`\[]; `serverToolNames`: `string`\[]; }>
 
-Defined in: [src/react/useChatStorage.ts:301](https://github.com/anuma-ai/sdk/blob/main/src/react/useChatStorage.ts#301)
+Defined in: [src/react/useChatStorage.ts:212](https://github.com/anuma-ai/sdk/blob/main/src/react/useChatStorage.ts#212)
 
 Preview which tools `useChatStorage` will include for a given prompt,
 without making the actual chat request.
@@ -70,6 +70,23 @@ Caveats:
 <td>
 
 ‐
+
+</td>
+</tr>
+<tr>
+<td>
+
+`options.apiKey?`
+
+</td>
+<td>
+
+`string`
+
+</td>
+<td>
+
+X-API-Key auth (server-side / test harnesses). Provide this or `getToken`.
 
 </td>
 </tr>
@@ -161,7 +178,7 @@ Optional cache of tool-description embeddings, shared across calls.
 <tr>
 <td>
 
-`options.getToken`
+`options.getToken?`
 
 </td>
 <td>
@@ -171,7 +188,7 @@ Optional cache of tool-description embeddings, shared across calls.
 </td>
 <td>
 
-‐
+Bearer-token auth (browser sessions). Provide this or `apiKey`.
 
 </td>
 </tr>
@@ -200,7 +217,24 @@ Optional cache of tool-description embeddings, shared across calls.
 </td>
 <td>
 
-{ `cacheExpirationMs?`: `number`; }
+{ `cache?`: `ToolsCacheBackend`; `cacheExpirationMs?`: `number`; `deferLoading?`: `DeferLoadingConfig`; }
+
+</td>
+<td>
+
+‐
+
+</td>
+</tr>
+<tr>
+<td>
+
+`options.serverToolsConfig.cache?`
+
+</td>
+<td>
+
+`ToolsCacheBackend`
 
 </td>
 <td>
@@ -218,6 +252,23 @@ Optional cache of tool-description embeddings, shared across calls.
 <td>
 
 `number`
+
+</td>
+<td>
+
+‐
+
+</td>
+</tr>
+<tr>
+<td>
+
+`options.serverToolsConfig.deferLoading?`
+
+</td>
+<td>
+
+`DeferLoadingConfig`
 
 </td>
 <td>

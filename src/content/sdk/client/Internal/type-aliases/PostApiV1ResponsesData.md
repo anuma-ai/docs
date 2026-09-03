@@ -2,7 +2,7 @@
 
 > **PostApiV1ResponsesData** = `object`
 
-Defined in: [src/client/types.gen.ts:5938](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#5938)
+Defined in: [src/client/types.gen.ts:9992](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#9992)
 
 ## Properties
 
@@ -10,9 +10,23 @@ Defined in: [src/client/types.gen.ts:5938](https://github.com/anuma-ai/sdk/blob/
 
 > **body**: [`LlmapiResponseRequest`](LlmapiResponseRequest.md)
 
-Defined in: [src/client/types.gen.ts:5942](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#5942)
+Defined in: [src/client/types.gen.ts:9996](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#9996)
 
 Response request
+
+***
+
+### headers?
+
+> `optional` **headers**: `object`
+
+Defined in: [src/client/types.gen.ts:9997](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#9997)
+
+**X-Stream-Resumable?**
+
+> `optional` **X-Stream-Resumable**: `string`
+
+Set to 1 to opt this stream into detach-on-disconnect (resumable streaming)
 
 ***
 
@@ -20,7 +34,7 @@ Response request
 
 > `optional` **path**: `never`
 
-Defined in: [src/client/types.gen.ts:5943](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#5943)
+Defined in: [src/client/types.gen.ts:10003](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#10003)
 
 ***
 
@@ -28,7 +42,7 @@ Defined in: [src/client/types.gen.ts:5943](https://github.com/anuma-ai/sdk/blob/
 
 > `optional` **query**: `never`
 
-Defined in: [src/client/types.gen.ts:5944](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#5944)
+Defined in: [src/client/types.gen.ts:10004](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#10004)
 
 ***
 
@@ -36,4 +50,4 @@ Defined in: [src/client/types.gen.ts:5944](https://github.com/anuma-ai/sdk/blob/
 
 > **url**: `"/api/v1/responses"`
 
-Defined in: [src/client/types.gen.ts:5945](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#5945)
+Defined in: [src/client/types.gen.ts:10005](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#10005)
