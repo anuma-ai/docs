@@ -2,7 +2,7 @@
 
 > `const` **sdkMigrations**: `Readonly`<{ `maxVersion`: `number`; `minVersion`: `number`; `sortedMigrations`: `Readonly`<{ `steps`: `MigrationStep`\[]; `toVersion`: `number`; }>\[]; `validated`: `true`; }>
 
-Defined in: [src/lib/db/schema.ts:300](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/schema.ts#300)
+Defined in: [src/lib/db/schema.ts:541](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/schema.ts#541)
 
 Combined migrations for all SDK storage modules.
 
@@ -40,3 +40,20 @@ Migration history:
 * v24 → v25: Added `saved_tools` table for user-saved display apps exposed as LLM tools
 * v25 → v26: Added `app_files` table for LLM-generated app source files (HTML/CSS/JS)
 * v26 → v27: Added `tool_call_events` column to history for reconstructing tool call history
+* v27 → v28: Added `source_chunk_ids`, `proof_count`, `source` columns to memory\_vault for auto-extraction provenance and supersession tracking
+* v28 → v29: Added `entity` + `memory_entity` tables for W5 knowledge-graph retrieval lane
+* v29 → v30: Added `event_time_start`, `event_time_end`, `event_time_kind` columns to memory\_vault for W6 temporal retrieval lane
+* v30 → v31: Added `user_id` column to memory\_entity for multi-user scoping of the W5 graph lane (with backfill from memory\_vault.user\_id)
+* v31 → v32: Added `pinned_at` column to conversations for pinning chats
+* v32 → v33: Added `embedding_model` column to memory\_vault (null grandfathered as current-model-compatible)
+* v33 → v34: Added `topics_user_managed` column to memory\_vault (null/false = auto-derived topics, the default)
+* v34 → v35: Added `conversation_memory` table (conversation ↔ recalled memory ids)
+* v35 → v36: Added `topics_extracted_at` column to memory\_vault (watermark for the background topic-extraction worker; null + existing links grandfathered as extracted)
+* v36 → v37: Added `superseded_by` + `superseded_at` columns to memory\_vault (write-time supersession; null = live, excluded from recall/dedup when set)
+* v37 → v38: Added `topics_extracted_version` column to memory\_vault (extraction-logic version; null read as 0 so a TOPICS\_EXTRACTION\_VERSION bump re-extracts stale rows)
+* v38 → v39: Added `last_observed_at` column to memory\_vault (C3 re-observation watermark; stamped on retain merge, distinct from updated\_at)
+* v39 → v40: Added `fact_type`, `archived_at`, `trust_tier` columns to memory\_vault for typed memory + decay + Tier-0 security (all nullable + plaintext, NULL backfill)
+* v40 → v41: Added `visibility`, `twin_opt_in`, `published_at`, `geohash` columns to memory\_vault for the People Nearby cross-user visibility axis (two-tier `private | public`; null/unknown grandfathered as 'private')
+* v41 → v42: Added `topics` + `topics_updated_at` columns to memory\_vault, making a memory's topics the durable synced record and `entity`/`memory_entity` a device-local index over it (null `topics` = pre-v42, backfilled from the row's current links by the sweep)
+* v42 → v43: Added a composite `(is_deleted, created_at)` index to conversations so the list reads stop temp-sorting (structural only, no data rewritten)
+* v43 → v44: Added `origin` column to history recording which producer synthesised a row, so the embedding sweep can skip never-rendered tool-result dumps (plaintext by design — the sweep has no wallet context; null = legacy, embedded as before)

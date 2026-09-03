@@ -1,0 +1,43 @@
+# VaultCandidateKey
+
+Defined in: [src/lib/db/memoryVault/operations.ts:739](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/memoryVault/operations.ts#739)
+
+## Properties
+
+### embeddingModel
+
+> **embeddingModel**: `string` | `null`
+
+Defined in: [src/lib/db/memoryVault/operations.ts:743](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/memoryVault/operations.ts#743)
+
+***
+
+### folderId
+
+> **folderId**: `string` | `null`
+
+Defined in: [src/lib/db/memoryVault/operations.ts:741](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/memoryVault/operations.ts#741)
+
+***
+
+### scope
+
+> **scope**: `string`
+
+Defined in: [src/lib/db/memoryVault/operations.ts:742](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/memoryVault/operations.ts#742)
+
+***
+
+### uniqueId
+
+> **uniqueId**: `string`
+
+Defined in: [src/lib/db/memoryVault/operations.ts:740](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/memoryVault/operations.ts#740)
+
+***
+
+### updatedAt
+
+> **updatedAt**: `Date`
+
+Defined in: [src/lib/db/memoryVault/operations.ts:744](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/memoryVault/operations.ts#744)

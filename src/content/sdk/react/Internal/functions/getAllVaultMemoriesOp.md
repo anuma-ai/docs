@@ -2,7 +2,7 @@
 
 > **getAllVaultMemoriesOp**(`ctx`: [`VaultMemoryOperationsContext`](../interfaces/VaultMemoryOperationsContext.md), `options?`: `object`): `Promise`<[`StoredVaultMemory`](../interfaces/StoredVaultMemory.md)\[]>
 
-Defined in: [src/lib/db/memoryVault/operations.ts:169](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/memoryVault/operations.ts#169)
+Defined in: [src/lib/db/memoryVault/operations.ts:628](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/memoryVault/operations.ts#628)
 
 ## Parameters
 
@@ -11,6 +11,7 @@ Defined in: [src/lib/db/memoryVault/operations.ts:169](https://github.com/anuma-
 <tr>
 <th>Parameter</th>
 <th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -25,6 +26,11 @@ Defined in: [src/lib/db/memoryVault/operations.ts:169](https://github.com/anuma-
 [`VaultMemoryOperationsContext`](../interfaces/VaultMemoryOperationsContext.md)
 
 </td>
+<td>
+
+‐
+
+</td>
 </tr>
 <tr>
 <td>
@@ -35,6 +41,28 @@ Defined in: [src/lib/db/memoryVault/operations.ts:169](https://github.com/anuma-
 <td>
 
 `object`
+
+</td>
+<td>
+
+‐
+
+</td>
+</tr>
+<tr>
+<td>
+
+`options.factTypes?`
+
+</td>
+<td>
+
+`string`\[]
+
+</td>
+<td>
+
+Typed memory (PR1) — restrict to these fact types. Omit for no filter.
 
 </td>
 </tr>
@@ -49,6 +77,84 @@ Defined in: [src/lib/db/memoryVault/operations.ts:169](https://github.com/anuma-
 `string` | `null`
 
 </td>
+<td>
+
+‐
+
+</td>
+</tr>
+<tr>
+<td>
+
+`options.includeArchived?`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+<td>
+
+Include archived (decayed) memories. Default `false` (PR1 choke point).
+
+</td>
+</tr>
+<tr>
+<td>
+
+`options.includeDeleted?`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+<td>
+
+Include soft-deleted memories in the result (each carries
+`isDeleted: true`). Default `false` — deleted rows are excluded, as
+they are from every other read path. Used by the Memory Graph to
+render "forgotten" nodes; ordinary consumers should leave this off.
+
+</td>
+</tr>
+<tr>
+<td>
+
+`options.includeQuarantined?`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+<td>
+
+Include quarantined memories. Default `false` (PR1 choke point).
+
+</td>
+</tr>
+<tr>
+<td>
+
+`options.includeSuperseded?`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+<td>
+
+Include A2-superseded memories (each carries `supersededBy`). Default
+`false` — superseded rows are excluded, as they are from recall/dedup.
+Used by a "memory history" view to render retired facts.
+
+</td>
 </tr>
 <tr>
 <td>
@@ -59,6 +165,11 @@ Defined in: [src/lib/db/memoryVault/operations.ts:169](https://github.com/anuma-
 <td>
 
 `number`
+
+</td>
+<td>
+
+‐
 
 </td>
 </tr>
@@ -73,6 +184,11 @@ Defined in: [src/lib/db/memoryVault/operations.ts:169](https://github.com/anuma-
 `string`\[]
 
 </td>
+<td>
+
+‐
+
+</td>
 </tr>
 <tr>
 <td>
@@ -83,6 +199,30 @@ Defined in: [src/lib/db/memoryVault/operations.ts:169](https://github.com/anuma-
 <td>
 
 `Date`
+
+</td>
+<td>
+
+‐
+
+</td>
+</tr>
+<tr>
+<td>
+
+`options.visibility?`
+
+</td>
+<td>
+
+[`VaultMemoryVisibility`](../type-aliases/VaultMemoryVisibility.md)\[]
+
+</td>
+<td>
+
+Filter by People Nearby visibility. Legacy rows with a NULL column
+count as "private". Used by the publish reconciler to fetch the
+published set to diff against the server index.
 
 </td>
 </tr>

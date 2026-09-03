@@ -1,8 +1,8 @@
 # SDK\_SCHEMA\_VERSION
 
-> `const` **SDK\_SCHEMA\_VERSION**: `27` = `27`
+> `const` **SDK\_SCHEMA\_VERSION**: `45` = `45`
 
-Defined in: [src/lib/db/schema.ts:52](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/schema.ts#52)
+Defined in: [src/lib/db/schema.ts:121](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/schema.ts#121)
 
 Current combined schema version for all SDK storage modules.
 
@@ -34,3 +34,70 @@ Version history:
 * v25: Added saved\_tools table for user-saved display apps exposed as LLM tools
 * v26: Added app\_files table for LLM-generated app source files (HTML/CSS/JS)
 * v27: Added tool\_call\_events column to history for reconstructing tool call history
+* v28: Added source\_chunk\_ids, proof\_count, source columns to memory\_vault for auto-extraction provenance and supersession tracking
+* v29: Added entity + memory\_entity tables for the W5 knowledge-graph retrieval lane
+* v30: Added event\_time\_start, event\_time\_end, event\_time\_kind columns to memory\_vault for the W6 temporal retrieval lane
+* v31: Added user\_id column to memory\_entity for multi-user server-side scoping of the W5 graph retrieval lane
+* v32: Added pinned\_at column to conversations for pinning chats to the top of the list
+* v33: Added embedding\_model column to memory\_vault so stale-model vectors are
+  detectable and re-embeddable after an embedding-model change (null = legacy
+  rows, grandfathered as compatible with the current model)
+* v34: Added topics\_user\_managed column to memory\_vault so a memory whose
+  entity links the user has taken manual control of is left alone by
+  auto-extraction (null/false = auto-derived, the default)
+* v35: Added conversation\_memory table recording which vault memories a
+  conversation drew on, so the conversation-level Memories panel survives reload
+* v36: Added topics\_extracted\_at column to memory\_vault — watermark of the last
+  LLM topic-extraction pass, so the background topic worker re-extracts only
+  memories edited since (updated\_at > topics\_extracted\_at) instead of
+  re-running the whole vault
+* v37: Added superseded\_by + superseded\_at columns to memory\_vault for
+  write-time supersession — a changed fact retires the stale one (points at
+  the newer memory) instead of both surviving; superseded rows are excluded
+  from recall/dedup by default
+* v38: Added topics\_extracted\_version column to memory\_vault — the extraction
+  logic version a memory was last stamped under. Bumping TOPICS\_EXTRACTION\_VERSION
+  (new prompt/model) makes the worker re-extract every row whose stored version
+  is behind, so topic-quality improvements propagate across the existing vault
+* v39: Added last\_observed\_at column to memory\_vault (C3) — a re-observation
+  watermark stamped each time retain() merges into an existing fact, kept
+  distinct from updated\_at (which merges preserve). Lets profile synthesis
+  weight facts by recency of reinforcement rather than last edit.
+* v40: Added fact\_type, archived\_at, trust\_tier columns to memory\_vault for
+  typed memory + decay + Tier-0 security. All nullable + plaintext, no
+  backfill (null = legacy/untyped, active, un-screened — content is
+  encrypted so in-migration classification is impossible; NULL = zero-risk,
+  exact embedding\_model precedent)
+* v41: Added visibility, twin\_opt\_in, published\_at, geohash columns to
+  memory\_vault for the People Nearby cross-user visibility axis. Visibility
+  is TWO-tier (`private | public`); null — and any unrecognised value —
+  reads as 'private', so nothing pre-existing is ever published without an
+  explicit visibility write
+* v42: Added topics, topics\_updated\_at columns to memory\_vault so a memory's
+  topics become the DURABLE record and `entity` / `memory_entity` become a
+  device-local index over it. Those two tables never sync (entity ids are
+  locally generated), so a restored device used to receive "curated" /
+  "already extracted" flags on memories with zero topic links and the graph
+  recall lane stayed dead. `topics` carries the names across devices;
+  `topics_updated_at` is a SECOND timestamp because every topic writer pins
+  `updated_at` on purpose (recall's recency multiplier) and both sync paths
+  key on `updated_at`, so a topic-only change would neither upload nor merge
+* v43: Added a (is\_deleted, created\_at) index to conversations. Every
+  conversation list read filters is\_deleted and orders by created\_at DESC,
+  which previously meant a temp B-tree sort of the whole live set on every
+  read. Structural only — no column added, no data rewritten
+* v44: Added origin column to history — provenance of a row, set by the
+  producer that synthesised it (`tool_result` = the hidden
+  `[Tool Execution Results]` message written from autoExecutedToolResults).
+  The embedding sweep skips those rows: they are machine-readable API dumps
+  that are never rendered, and chunking one cost 52 MB of vectors (620
+  chunks) against 0.2 MB of content. A content-prefix test cannot do this
+  job — `content` is `enc:v3:` ciphertext by the time the sweep reads it, so
+  provenance has to be recorded at write time. Deliberately NOT encrypted:
+  the sweep that must honour it runs with no wallet context, and an
+  unreadable flag would fail open. Existing rows stay NULL (= legacy,
+  unknown provenance, embedded as before) with no backfill, matching the v37
+  read-time-fallback precedent
+* v45: Added `media` to memory\_vault — the photo(s) a server-extracted
+  memory came from, as JSON `[{feed_item_id, object_key}]`. Null on every
+  row that did not come from a photo, which is all of them before this

@@ -2,35 +2,28 @@
 
 > **HandlersGuestChatResponse** = `object`
 
-Defined in: [src/client/types.gen.ts:819](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#819)
+Defined in: [src/client/types.gen.ts:2232](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#2232)
 
 ## Properties
 
 ### choices?
 
-> `optional` **choices**: [`LlmapiChoice`](LlmapiChoice.md)\[]
+> `optional` **choices**: [`OpenaiChatCompletionChoice`](OpenaiChatCompletionChoice.md)\[]
 
-Defined in: [src/client/types.gen.ts:823](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#823)
+Defined in: [src/client/types.gen.ts:2237](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#2237)
 
-Choices contains the completion choices
-
-***
-
-### client\_injected\_tools?
-
-> `optional` **client\_injected\_tools**: `string`\[]
-
-Defined in: [src/client/types.gen.ts:827](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#827)
-
-ClientInjectedTools are tool names the client provided in the original request.
+A list of chat completion choices. Can be more than one if `n` is greater
+than 1.
 
 ***
 
-### extra\_fields?
+### created?
 
-> `optional` **extra\_fields**: [`LlmapiChatCompletionExtraFields`](LlmapiChatCompletionExtraFields.md)
+> `optional` **created**: `number`
 
-Defined in: [src/client/types.gen.ts:828](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#828)
+Defined in: [src/client/types.gen.ts:2241](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#2241)
+
+The Unix timestamp (in seconds) of when the chat completion was created.
 
 ***
 
@@ -38,44 +31,9 @@ Defined in: [src/client/types.gen.ts:828](https://github.com/anuma-ai/sdk/blob/m
 
 > `optional` **id**: `string`
 
-Defined in: [src/client/types.gen.ts:832](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#832)
+Defined in: [src/client/types.gen.ts:2245](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#2245)
 
-ID is the completion ID
-
-***
-
-### image\_model?
-
-> `optional` **image\_model**: `string`
-
-Defined in: [src/client/types.gen.ts:838](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#838)
-
-ImageModel is set when an image generation tool was called during the request.
-This allows the client to detect that the response contains generated images
-and render them appropriately, even when the orchestrating model is a text model.
-
-***
-
-### inference\_id?
-
-> `optional` **inference\_id**: `string`
-
-Defined in: [src/client/types.gen.ts:842](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#842)
-
-InferenceID is the unique identifier for this inference request
-
-***
-
-### messages?
-
-> `optional` **messages**: [`LlmapiMessage`](LlmapiMessage.md)\[]
-
-Defined in: [src/client/types.gen.ts:849](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#849)
-
-Messages contains the full conversation history when local tools need execution.
-This is populated when the model requests tools that are not MCP tools (local/client-side tools).
-The client should execute these tools and send a new request with this message history
-plus the tool results appended.
+A unique identifier for the chat completion.
 
 ***
 
@@ -83,7 +41,7 @@ plus the tool results appended.
 
 > `optional` **messages\_remaining**: `number`
 
-Defined in: [src/client/types.gen.ts:850](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#850)
+Defined in: [src/client/types.gen.ts:2246](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#2246)
 
 ***
 
@@ -91,44 +49,53 @@ Defined in: [src/client/types.gen.ts:850](https://github.com/anuma-ai/sdk/blob/m
 
 > `optional` **model**: `string`
 
-Defined in: [src/client/types.gen.ts:854](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#854)
+Defined in: [src/client/types.gen.ts:2250](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#2250)
 
-Model is the model used
-
-***
-
-### portal\_injected\_tools?
-
-> `optional` **portal\_injected\_tools**: `string`\[]
-
-Defined in: [src/client/types.gen.ts:858](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#858)
-
-PortalInjectedTools are tool names the portal's classifier added to the request.
+The model used for the chat completion.
 
 ***
 
-### tool\_call\_events?
+### object?
 
-> `optional` **tool\_call\_events**: [`LlmapiToolCallEvent`](LlmapiToolCallEvent.md)\[]
+> `optional` **object**: `string`
 
-Defined in: [src/client/types.gen.ts:862](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#862)
+Defined in: [src/client/types.gen.ts:2254](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#2254)
 
-ToolCallEvents is an array of tool call events.
+The object type, which is always `chat.completion`.
 
 ***
 
-### tools\_checksum?
+### portal?
 
-> `optional` **tools\_checksum**: `string`
+> `optional` **portal**: [`LlmapiPortalChatCompletionResponse`](LlmapiPortalChatCompletionResponse.md)
 
-Defined in: [src/client/types.gen.ts:866](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#866)
+Defined in: [src/client/types.gen.ts:2255](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#2255)
 
-ToolsChecksum is the checksum of the tool schemas used by the AI Portal.
+***
+
+### service\_tier?
+
+> `optional` **service\_tier**: [`OpenaiChatCompletionServiceTier`](OpenaiChatCompletionServiceTier.md)
+
+Defined in: [src/client/types.gen.ts:2256](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#2256)
+
+***
+
+### system\_fingerprint?
+
+> `optional` **system\_fingerprint**: `string`
+
+Defined in: [src/client/types.gen.ts:2263](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#2263)
+
+This fingerprint represents the backend configuration that the model runs with.
+
+Can be used in conjunction with the `seed` request parameter to understand when
+backend changes have been made that might impact determinism.
 
 ***
 
 ### usage?
 
-> `optional` **usage**: [`LlmapiChatCompletionUsage`](LlmapiChatCompletionUsage.md)
+> `optional` **usage**: [`OpenaiCompletionUsage`](OpenaiCompletionUsage.md)
 
-Defined in: [src/client/types.gen.ts:867](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#867)
+Defined in: [src/client/types.gen.ts:2264](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#2264)

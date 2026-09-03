@@ -1,8 +1,8 @@
 # postOauthConsent
 
-> **postOauthConsent**<`ThrowOnError`>(`options?`: [`Options`](../type-aliases/Options.md)<[`PostOauthConsentData`](../type-aliases/PostOauthConsentData.md), `ThrowOnError`>): `RequestResult`<[`PostOauthConsentResponses`](../type-aliases/PostOauthConsentResponses.md), [`PostOauthConsentErrors`](../type-aliases/PostOauthConsentErrors.md), `ThrowOnError`>
+> **postOauthConsent**<`ThrowOnError`>(`options?`: [`Options`](../type-aliases/Options.md)<[`PostOauthConsentData`](../type-aliases/PostOauthConsentData.md), `ThrowOnError`, `unknown`>): `RequestResult`<[`PostOauthConsentResponses`](../type-aliases/PostOauthConsentResponses.md), [`PostOauthConsentErrors`](../type-aliases/PostOauthConsentErrors.md), `ThrowOnError`>
 
-Defined in: [src/client/sdk.gen.ts:1525](https://github.com/anuma-ai/sdk/blob/main/src/client/sdk.gen.ts#1525)
+Defined in: [src/client/sdk.gen.ts:1812](https://github.com/anuma-ai/sdk/blob/main/src/client/sdk.gen.ts#1812)
 
 Process OAuth consent
 
@@ -51,7 +51,7 @@ Handles the consent form submission. Approve creates a grant and returns the aut
 </td>
 <td>
 
-[`Options`](../type-aliases/Options.md)<[`PostOauthConsentData`](../type-aliases/PostOauthConsentData.md), `ThrowOnError`>
+[`Options`](../type-aliases/Options.md)<[`PostOauthConsentData`](../type-aliases/PostOauthConsentData.md), `ThrowOnError`, `unknown`>
 
 </td>
 </tr>

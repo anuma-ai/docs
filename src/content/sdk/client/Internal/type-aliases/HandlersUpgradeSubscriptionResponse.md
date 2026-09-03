@@ -2,15 +2,31 @@
 
 > **HandlersUpgradeSubscriptionResponse** = `object`
 
-Defined in: [src/client/types.gen.ts:1476](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#1476)
+Defined in: [src/client/types.gen.ts:3402](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#3402)
 
 ## Properties
+
+### changed?
+
+> `optional` **changed**: `boolean`
+
+Defined in: [src/client/types.gen.ts:3412](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#3412)
+
+Changed is false when the request was an idempotent no-op (the user was
+already on the requested tier+interval) and true when the subscription was
+actually upgraded. Clients should gate upgrade side-effects (success toast,
+plan\_upgraded analytics, ad-conversion events) on Changed so a stale client
+re-submitting the current plan doesn't emit spurious conversions. Either way
+NewPlan/NewInterval reflect the authoritative current plan, so clients can
+trust them to self-correct stale local state without a follow-up status fetch.
+
+***
 
 ### message
 
 > **message**: `string`
 
-Defined in: [src/client/types.gen.ts:1477](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#1477)
+Defined in: [src/client/types.gen.ts:3413](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#3413)
 
 ***
 
@@ -18,7 +34,7 @@ Defined in: [src/client/types.gen.ts:1477](https://github.com/anuma-ai/sdk/blob/
 
 > **new\_interval**: `string`
 
-Defined in: [src/client/types.gen.ts:1478](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#1478)
+Defined in: [src/client/types.gen.ts:3414](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#3414)
 
 ***
 
@@ -26,4 +42,4 @@ Defined in: [src/client/types.gen.ts:1478](https://github.com/anuma-ai/sdk/blob/
 
 > **new\_plan**: `string`
 
-Defined in: [src/client/types.gen.ts:1479](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#1479)
+Defined in: [src/client/types.gen.ts:3415](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#3415)

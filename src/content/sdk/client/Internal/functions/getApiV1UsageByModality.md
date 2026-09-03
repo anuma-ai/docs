@@ -1,8 +1,8 @@
 # getApiV1UsageByModality
 
-> **getApiV1UsageByModality**<`ThrowOnError`>(`options?`: [`Options`](../type-aliases/Options.md)<[`GetApiV1UsageByModalityData`](../type-aliases/GetApiV1UsageByModalityData.md), `ThrowOnError`>): `RequestResult`<[`GetApiV1UsageByModalityResponses`](../type-aliases/GetApiV1UsageByModalityResponses.md), [`GetApiV1UsageByModalityErrors`](../type-aliases/GetApiV1UsageByModalityErrors.md), `ThrowOnError`>
+> **getApiV1UsageByModality**<`ThrowOnError`>(`options?`: [`Options`](../type-aliases/Options.md)<[`GetApiV1UsageByModalityData`](../type-aliases/GetApiV1UsageByModalityData.md), `ThrowOnError`, `unknown`>): `RequestResult`<[`GetApiV1UsageByModalityResponses`](../type-aliases/GetApiV1UsageByModalityResponses.md), [`GetApiV1UsageByModalityErrors`](../type-aliases/GetApiV1UsageByModalityErrors.md), `ThrowOnError`>
 
-Defined in: [src/client/sdk.gen.ts:1321](https://github.com/anuma-ai/sdk/blob/main/src/client/sdk.gen.ts#1321)
+Defined in: [src/client/sdk.gen.ts:1427](https://github.com/anuma-ai/sdk/blob/main/src/client/sdk.gen.ts#1427)
 
 Get usage by modality
 
@@ -51,7 +51,7 @@ Returns usage grouped into the four user-facing modality buckets (text, image, v
 </td>
 <td>
 
-[`Options`](../type-aliases/Options.md)<[`GetApiV1UsageByModalityData`](../type-aliases/GetApiV1UsageByModalityData.md), `ThrowOnError`>
+[`Options`](../type-aliases/Options.md)<[`GetApiV1UsageByModalityData`](../type-aliases/GetApiV1UsageByModalityData.md), `ThrowOnError`, `unknown`>
 
 </td>
 </tr>

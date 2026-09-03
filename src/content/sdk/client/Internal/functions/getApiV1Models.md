@@ -1,8 +1,8 @@
 # getApiV1Models
 
-> **getApiV1Models**<`ThrowOnError`>(`options?`: [`Options`](../type-aliases/Options.md)<[`GetApiV1ModelsData`](../type-aliases/GetApiV1ModelsData.md), `ThrowOnError`>): `RequestResult`<[`GetApiV1ModelsResponses`](../type-aliases/GetApiV1ModelsResponses.md), [`GetApiV1ModelsErrors`](../type-aliases/GetApiV1ModelsErrors.md), `ThrowOnError`>
+> **getApiV1Models**<`ThrowOnError`>(`options?`: [`Options`](../type-aliases/Options.md)<[`GetApiV1ModelsData`](../type-aliases/GetApiV1ModelsData.md), `ThrowOnError`, `unknown`>): `RequestResult`<[`GetApiV1ModelsResponses`](../type-aliases/GetApiV1ModelsResponses.md), [`GetApiV1ModelsErrors`](../type-aliases/GetApiV1ModelsErrors.md), `ThrowOnError`>
 
-Defined in: [src/client/sdk.gen.ts:1036](https://github.com/anuma-ai/sdk/blob/main/src/client/sdk.gen.ts#1036)
+Defined in: [src/client/sdk.gen.ts:1098](https://github.com/anuma-ai/sdk/blob/main/src/client/sdk.gen.ts#1098)
 
 List available models
 
@@ -51,7 +51,7 @@ Returns a list of all available models from the configured gateway with optional
 </td>
 <td>
 
-[`Options`](../type-aliases/Options.md)<[`GetApiV1ModelsData`](../type-aliases/GetApiV1ModelsData.md), `ThrowOnError`>
+[`Options`](../type-aliases/Options.md)<[`GetApiV1ModelsData`](../type-aliases/GetApiV1ModelsData.md), `ThrowOnError`, `unknown`>
 
 </td>
 </tr>

@@ -2,7 +2,7 @@
 
 > **useChatStorage**(`options`: `object`): [`UseChatStorageResult`](../Internal/interfaces/UseChatStorageResult.md)
 
-Defined in: [src/expo/useChatStorage.ts:350](https://github.com/anuma-ai/sdk/blob/main/src/expo/useChatStorage.ts#350)
+Defined in: [src/expo/useChatStorage.ts:733](https://github.com/anuma-ai/sdk/blob/main/src/expo/useChatStorage.ts#733)
 
 A React hook that wraps useChat with automatic message persistence using WatermelonDB.
 
@@ -34,6 +34,34 @@ API-based chat completions. Local chat and client-side tools are not available.
 <td>
 
 Configuration options
+
+</td>
+</tr>
+<tr>
+<td>
+
+`options.activeToolSets?`
+
+</td>
+<td>
+
+`string`\[]
+
+</td>
+<td>
+
+Tool set names that should expand unconditionally for this request,
+bypassing the anchor-similarity check. Use when conversation state
+implies a set should be present regardless of how the prompt is phrased
+— e.g., pass `["documents"]` when the conversation already contains a
+generated document, so short follow-up prompts ("make the background red")
+still get the full document toolkit.
+
+Read via a ref so updates are visible to in-flight `sendMessage` calls
+without rebuilding the callback.
+
+Names must match a set's `name` from `BUILT_IN_TOOL_SETS` or
+`extraToolSets`. Unknown names are ignored.
 
 </td>
 </tr>
@@ -255,6 +283,29 @@ true
 <tr>
 <td>
 
+`options.extraToolSets?`
+
+</td>
+<td>
+
+[`ToolSet`](../../react/Internal/interfaces/ToolSet.md)\[]
+
+</td>
+<td>
+
+Additional tool sets to apply on top of the built-in ones (app-generation,
+slides, github). When any anchor tool in a custom set is selected by
+semantic matching, all members of that set are included automatically.
+
+Treated as static config — set once at hook setup. Changing it across
+renders does not affect in-flight `sendMessage` calls; use
+`activeToolSets` for dynamic, conversation-state-driven overrides.
+
+</td>
+</tr>
+<tr>
+<td>
+
 `options.fileProcessingOptions?`
 
 </td>
@@ -361,6 +412,37 @@ File preprocessors to use for automatic text extraction.
 <tr>
 <td>
 
+`options.foldToolResultsInHistory?`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+<td>
+
+Fold persisted `[Tool Execution Results]` rows onto the assistant turn that produced them
+when replaying stored history, instead of dropping them.
+
+**Defaults to `false`, and that default is deliberate.** Folding is the better behaviour —
+it is what lets a follow-up about a tool's output work after a reload — but it moves the
+payload from a `role: "user"` row onto an `assistant` row. Any consumer that scrubs these
+rows by checking `role === "user"` plus the content prefix (which is how both apps did it
+before this option existed) stops catching them the moment folding turns on, and starts
+replaying whatever the row held. Opting in is therefore a statement that the caller has
+checked its own filters and set [toolResultsHistoryExclude](../../react/Internal/interfaces/UseChatStorageOptions.md#toolresultshistoryexclude) for any payload that must
+not reach the model.
+
+With it off, rows are dropped from the replayed history rather than sent verbatim. Verbatim
+would put two consecutive `user` turns on the wire, and the model answers the previous turn
+instead of the new prompt.
+
+</td>
+</tr>
+<tr>
+<td>
+
 `options.getToken?`
 
 </td>
@@ -438,6 +520,49 @@ Messages shorter than this are skipped as they provide limited semantic value.
 <tr>
 <td>
 
+`options.nerDetector?`
+
+</td>
+<td>
+
+`NerDetector`
+
+</td>
+<td>
+
+Optional on-device NER detector for *unstructured* PII (names, locations,
+organizations) that regex can't catch. When supplied AND `piiRedaction` is
+active, the conversation redactor merges its spans into the outbound
+message redaction (chat-send path only). Supply e.g.
+`createTransformersNerDetector()` from `@anuma/sdk/pii/transformers` on web.
+Ignored when `piiRedaction` is off. See NerDetector.
+
+</td>
+</tr>
+<tr>
+<td>
+
+`options.onCancelResult?`
+
+</td>
+<td>
+
+(`result`: `object`) => `void`
+
+</td>
+<td>
+
+Observability for the fire-and-forget cancel POST that `stop()` issues for
+a resumable stream. Forwarded to the underlying `useChat`. The
+stop-without-cancel billing risk must be visible: once the capability
+header ships, the portal no longer treats a dropped socket as cancellation,
+so a `stop()` whose cancel POST silently fails bills the full generation.
+
+</td>
+</tr>
+<tr>
+<td>
+
 `options.onData?`
 
 </td>
@@ -489,6 +614,24 @@ Callback invoked when the response completes successfully
 <tr>
 <td>
 
+`options.onPiiRedacted?`
+
+</td>
+<td>
+
+(`matches`: [`PiiMatch`](../Internal/interfaces/PiiMatch.md)\[]) => `void`
+
+</td>
+<td>
+
+Called with the PII matches found whenever outbound messages are redacted.
+Only fired when `piiRedaction` is active and at least one match was found.
+
+</td>
+</tr>
+<tr>
+<td>
+
 `options.onServerToolCall?`
 
 </td>
@@ -501,6 +644,28 @@ Callback invoked when the response completes successfully
 
 Callback invoked when a server-side tool (MCP) is called during streaming.
 Use this to show activity indicators like "Searching..." in the UI.
+
+</td>
+</tr>
+<tr>
+<td>
+
+`options.onStreamMeta?`
+
+</td>
+<td>
+
+(`meta`: `object`) => `void`
+
+</td>
+<td>
+
+Observe the stream metadata the portal issues at HEADERS\_RECEIVED, once per
+round. Forwarded to the underlying `useChat`. The enriched payload carries
+the RESOLVED `apiType` and `model` alongside `inferenceId`, so a consumer
+can persist a rebuildable [StreamResumeHandle](../../react/Internal/type-aliases/StreamResumeHandle.md) for a cold-launch
+resume registry (mobile PR5). Additive — never alters the internal
+resume-handle capture.
 
 </td>
 </tr>
@@ -542,12 +707,56 @@ Use for live preview of artifacts (HTML, slides) being generated.
 <tr>
 <td>
 
+`options.onToolSelection?`
+
+</td>
+<td>
+
+(`info`: `object`) => `void`
+
+</td>
+<td>
+
+Observability hook fired once per send with the tools actually selected for
+the turn (after server + client filtering). Never throws into the send path.
+Mirrors react's onToolSelection.
+
+</td>
+</tr>
+<tr>
+<td>
+
+`options.piiRedaction?`
+
+</td>
+<td>
+
+`boolean` | [`PiiRedactor`](../Internal/classes/PiiRedactor.md)
+
+</td>
+<td>
+
+Enable best-effort, client-side PII obfuscation (NOT a compliance
+guarantee). Outbound message text is scanned for personally identifiable
+information and replaced with tagged placeholders before reaching the LLM
+provider; responses are de-anonymized automatically. Embedding inputs and
+the summarization prompt are redacted too. Regex-based detection does not
+cover names, non-text content, or tool-call arguments.
+
+* `true`: one redactor is shared per conversation
+* `PiiRedactor` instance: bring your own (tune via constructor options)
+
+</td>
+</tr>
+<tr>
+<td>
+
 `options.preProcessors?`
 
 </td>
 <td>
 
-`PromptPreProcessor`\[]
+[`PromptPreProcessor`](../../react/Internal/type-aliases/PromptPreProcessor.md)\[]
 
 </td>
 <td>
@@ -565,18 +774,64 @@ a custom one matching `PromptPreProcessor`.
 <tr>
 <td>
 
+`options.resumable?`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+<td>
+
+Opt into resumable streaming. When `true`, `sendMessage` sends the
+resumable capability header, a stable `assistantUniqueId` is allocated for
+every turn (so the partial and the resumed completion reconcile onto ONE
+row), and `detach()` / `resumeStream()` become usable. Off by default.
+
+**Default**
+
+```ts
+false
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
 `options.serverTools?`
 
 </td>
 <td>
 
-{ `cacheExpirationMs?`: `number`; }
+{ `cache?`: `ToolsCacheBackend`; `cacheExpirationMs?`: `number`; `deferLoading?`: `DeferLoadingConfig`; }
 
 </td>
 <td>
 
 Configuration for server-side tools fetching and caching.
 Server tools are fetched from /api/v1/tools and cached in localStorage.
+
+</td>
+</tr>
+<tr>
+<td>
+
+`options.serverTools.cache?`
+
+</td>
+<td>
+
+`ToolsCacheBackend`
+
+</td>
+<td>
+
+Where to read/write the cached server-tools catalog. Defaults to browser
+`localStorage`, which is a silent no-op on React Native — so on RN pass an
+AsyncStorage/MMKV-backed ToolsCacheBackend here or every send
+refetches the whole catalog. Forwarded to `getServerTools`.
 
 </td>
 </tr>
@@ -600,6 +855,27 @@ Cache expiration time in milliseconds (default: 86400000 = 1 day)
 <tr>
 <td>
 
+`options.serverTools.deferLoading?`
+
+</td>
+<td>
+
+`DeferLoadingConfig`
+
+</td>
+<td>
+
+Opt-in defer-loading (Phase 3). OFF by default → tools are sent exactly as today. When
+`enabled`, the full server catalog is emitted every turn in a deterministic, byte-stable order
+(`[tool-search] → [hot] → [deferred, name-sorted]`) with `defer_loading:true` on non-hot tools and
+an Anthropic tool-search tool prepended, so the leading `tools` prefix stays cacheable. See
+DeferLoadingConfig.
+
+</td>
+</tr>
+<tr>
+<td>
+
 `options.signMessage?`
 
 </td>
@@ -611,6 +887,35 @@ Cache expiration time in milliseconds (default: 86400000 = 1 day)
 <td>
 
 Function to sign a message for encryption key derivation.
+
+</td>
+</tr>
+<tr>
+<td>
+
+`options.toolResultsHistoryExclude?`
+
+</td>
+<td>
+
+`string`\[]
+
+</td>
+<td>
+
+Tool names whose persisted results must never be replayed to the model.
+
+A turn's auto-executed tool results are stored as a synthetic
+`[Tool Execution Results]` row and, on a replayed send, folded back onto the
+assistant turn they belong to — that is what lets a follow-up question about a
+tool's output work after a reload. Name a tool here when its payload exists for
+the RENDERER rather than the model: a display card can carry data the model was
+deliberately never given (People Nearby's card holds third parties' snapped
+coordinates, which the search result strips), and replaying it would hand that
+data straight back.
+
+Hook-level rather than per-send on purpose: an exclusion that has to be
+remembered at every call site is one bad send away from leaking.
 
 </td>
 </tr>
