@@ -2,7 +2,7 @@
 
 > **HandlersCreditBalanceResponse** = `object`
 
-Defined in: [src/client/types.gen.ts:642](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#642)
+Defined in: [src/client/types.gen.ts:2104](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#2104)
 
 ## Properties
 
@@ -10,7 +10,7 @@ Defined in: [src/client/types.gen.ts:642](https://github.com/anuma-ai/sdk/blob/m
 
 > **available\_credits**: `number`
 
-Defined in: [src/client/types.gen.ts:646](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#646)
+Defined in: [src/client/types.gen.ts:2108](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#2108)
 
 Available credits (1 credit = $0.01)
 
@@ -20,7 +20,7 @@ Available credits (1 credit = $0.01)
 
 > `optional` **expiring\_credits**: [`HandlersExpiringCredits`](HandlersExpiringCredits.md)\[]
 
-Defined in: [src/client/types.gen.ts:650](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#650)
+Defined in: [src/client/types.gen.ts:2112](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#2112)
 
 Upcoming credit expirations (soonest first)
 
@@ -30,9 +30,21 @@ Upcoming credit expirations (soonest first)
 
 > **lifetime\_credits**: `number`
 
-Defined in: [src/client/types.gen.ts:654](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#654)
+Defined in: [src/client/types.gen.ts:2116](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#2116)
 
 Total credits ever received (1 credit = $0.01)
+
+***
+
+### next\_reset\_date?
+
+> `optional` **next\_reset\_date**: `string`
+
+Defined in: [src/client/types.gen.ts:2122](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#2122)
+
+NextResetDate is the next monthly credit refill date (ISO8601), keyed on the
+credit\_expiry\_day anchor — the same anchor the monthly claim uses, NOT the grant
+expires\_at (which is anchor+1). Display-only; does not affect reset logic.
 
 ***
 
@@ -40,7 +52,7 @@ Total credits ever received (1 credit = $0.01)
 
 > **subscription\_tier**: `string`
 
-Defined in: [src/client/types.gen.ts:658](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#658)
+Defined in: [src/client/types.gen.ts:2126](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#2126)
 
 "basic" or "pro"
 
@@ -50,7 +62,7 @@ Defined in: [src/client/types.gen.ts:658](https://github.com/anuma-ai/sdk/blob/m
 
 > `optional` **total\_tokens\_redeemed**: `string`
 
-Defined in: [src/client/types.gen.ts:662](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#662)
+Defined in: [src/client/types.gen.ts:2130](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#2130)
 
 Sum of on-chain token amounts redeemed (raw units, format with token decimals)
 
@@ -60,4 +72,4 @@ Sum of on-chain token amounts redeemed (raw units, format with token decimals)
 
 > **wallet\_address**: `string`
 
-Defined in: [src/client/types.gen.ts:663](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#663)
+Defined in: [src/client/types.gen.ts:2131](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#2131)

@@ -2,7 +2,7 @@
 
 > **PatchApiV1UserOauthGrantsByIdResponses** = `object`
 
-Defined in: [src/client/types.gen.ts:6833](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#6833)
+Defined in: [src/client/types.gen.ts:11775](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#11775)
 
 ## Properties
 
@@ -10,7 +10,7 @@ Defined in: [src/client/types.gen.ts:6833](https://github.com/anuma-ai/sdk/blob/
 
 > **200**: `object`
 
-Defined in: [src/client/types.gen.ts:6837](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#6837)
+Defined in: [src/client/types.gen.ts:11779](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#11779)
 
 OK
 

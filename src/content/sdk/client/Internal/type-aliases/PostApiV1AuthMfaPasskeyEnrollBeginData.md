@@ -2,7 +2,7 @@
 
 > **PostApiV1AuthMfaPasskeyEnrollBeginData** = `object`
 
-Defined in: [src/client/types.gen.ts:4203](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#4203)
+Defined in: [src/client/types.gen.ts:8062](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#8062)
 
 ## Properties
 
@@ -10,7 +10,7 @@ Defined in: [src/client/types.gen.ts:4203](https://github.com/anuma-ai/sdk/blob/
 
 > `optional` **body**: `never`
 
-Defined in: [src/client/types.gen.ts:4204](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#4204)
+Defined in: [src/client/types.gen.ts:8063](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#8063)
 
 ***
 
@@ -18,7 +18,7 @@ Defined in: [src/client/types.gen.ts:4204](https://github.com/anuma-ai/sdk/blob/
 
 > `optional` **path**: `never`
 
-Defined in: [src/client/types.gen.ts:4205](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#4205)
+Defined in: [src/client/types.gen.ts:8064](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#8064)
 
 ***
 
@@ -26,7 +26,7 @@ Defined in: [src/client/types.gen.ts:4205](https://github.com/anuma-ai/sdk/blob/
 
 > `optional` **query**: `never`
 
-Defined in: [src/client/types.gen.ts:4206](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#4206)
+Defined in: [src/client/types.gen.ts:8065](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#8065)
 
 ***
 
@@ -34,4 +34,4 @@ Defined in: [src/client/types.gen.ts:4206](https://github.com/anuma-ai/sdk/blob/
 
 > **url**: `"/api/v1/auth/mfa/passkey/enroll/begin"`
 
-Defined in: [src/client/types.gen.ts:4207](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#4207)
+Defined in: [src/client/types.gen.ts:8066](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#8066)

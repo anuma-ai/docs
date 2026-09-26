@@ -2,7 +2,7 @@
 
 > **PostApiV1CreditsPurchaseData** = `object`
 
-Defined in: [src/client/types.gen.ts:4644](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#4644)
+Defined in: [src/client/types.gen.ts:9019](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#9019)
 
 ## Properties
 
@@ -10,7 +10,7 @@ Defined in: [src/client/types.gen.ts:4644](https://github.com/anuma-ai/sdk/blob/
 
 > **body**: [`HandlersCreateCreditPackCheckoutRequest`](HandlersCreateCreditPackCheckoutRequest.md)
 
-Defined in: [src/client/types.gen.ts:4648](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#4648)
+Defined in: [src/client/types.gen.ts:9023](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#9023)
 
 Credit pack checkout request
 
@@ -20,7 +20,7 @@ Credit pack checkout request
 
 > `optional` **path**: `never`
 
-Defined in: [src/client/types.gen.ts:4649](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#4649)
+Defined in: [src/client/types.gen.ts:9024](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#9024)
 
 ***
 
@@ -28,7 +28,7 @@ Defined in: [src/client/types.gen.ts:4649](https://github.com/anuma-ai/sdk/blob/
 
 > `optional` **query**: `never`
 
-Defined in: [src/client/types.gen.ts:4650](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#4650)
+Defined in: [src/client/types.gen.ts:9025](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#9025)
 
 ***
 
@@ -36,4 +36,4 @@ Defined in: [src/client/types.gen.ts:4650](https://github.com/anuma-ai/sdk/blob/
 
 > **url**: `"/api/v1/credits/purchase"`
 
-Defined in: [src/client/types.gen.ts:4651](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#4651)
+Defined in: [src/client/types.gen.ts:9026](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#9026)

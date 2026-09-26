@@ -2,7 +2,7 @@
 
 > **HandlersDeleteUserResponse** = `object`
 
-Defined in: [src/client/types.gen.ts:680](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#680)
+Defined in: [src/client/types.gen.ts:2186](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#2186)
 
 ## Properties
 
@@ -10,7 +10,7 @@ Defined in: [src/client/types.gen.ts:680](https://github.com/anuma-ai/sdk/blob/m
 
 > `optional` **account\_id**: `number`
 
-Defined in: [src/client/types.gen.ts:681](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#681)
+Defined in: [src/client/types.gen.ts:2187](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#2187)
 
 ***
 
@@ -18,7 +18,23 @@ Defined in: [src/client/types.gen.ts:681](https://github.com/anuma-ai/sdk/blob/m
 
 > `optional` **message**: `string`
 
-Defined in: [src/client/types.gen.ts:682](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#682)
+Defined in: [src/client/types.gen.ts:2188](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#2188)
+
+***
+
+### portal\_account\_deleted?
+
+> `optional` **portal\_account\_deleted**: `boolean`
+
+Defined in: [src/client/types.gen.ts:2189](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#2189)
+
+***
+
+### privy\_user\_deleted?
+
+> `optional` **privy\_user\_deleted**: `boolean`
+
+Defined in: [src/client/types.gen.ts:2190](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#2190)
 
 ***
 
@@ -26,7 +42,7 @@ Defined in: [src/client/types.gen.ts:682](https://github.com/anuma-ai/sdk/blob/m
 
 > `optional` **stripe\_cleanup\_succeeded**: `boolean`
 
-Defined in: [src/client/types.gen.ts:683](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#683)
+Defined in: [src/client/types.gen.ts:2191](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#2191)
 
 ***
 
@@ -34,4 +50,4 @@ Defined in: [src/client/types.gen.ts:683](https://github.com/anuma-ai/sdk/blob/m
 
 > `optional` **wallet\_address**: `string`
 
-Defined in: [src/client/types.gen.ts:684](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#684)
+Defined in: [src/client/types.gen.ts:2192](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#2192)
