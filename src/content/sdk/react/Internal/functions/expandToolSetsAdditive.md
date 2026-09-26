@@ -2,7 +2,7 @@
 
 > **expandToolSetsAdditive**(`matchedNames`: `Set`<`string`>, `availableNames`: `Set`<`string`>, `scores`: `Map`<`string`, `number`>, `toolSets`: [`ToolSet`](../interfaces/ToolSet.md)\[], `activeSetNames?`: `ReadonlySet`<`string`>): `Set`<`string`>
 
-Defined in: [src/lib/tools/serverTools.ts:976](https://github.com/anuma-ai/sdk/blob/main/src/lib/tools/serverTools.ts#976)
+Defined in: [src/lib/tools/serverTools.ts:1392](https://github.com/anuma-ai/sdk/blob/main/src/lib/tools/serverTools.ts#1392)
 
 Additively expand tool sets: when any anchor of a set scores at or above
 its `anchorMinSimilarity`, all set members are added to the result.
@@ -17,9 +17,9 @@ anchor threshold would silently break app-creation flows. Recall over
 precision.
 
 Use this for server-side toolkit suites where the LLM needs the full
-call chain (e.g. fal\_list\_models → fal\_model\_schema → fal\_queue\_submit →
-fal\_queue\_status → fal\_queue\_result). Differs from `applyToolSets`, which
-replaces non-set matches when a set activates.
+call chain (e.g. search\_web → anuma\_scrape\_url, or
+geocoding before the OpenMeteo data tools). Differs from `applyToolSets`,
+which replaces non-set matches when a set activates.
 
 To express "any member triggers the set" (not specific anchors), pass
 `anchors: members` when defining the ToolSet.
