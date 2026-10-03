@@ -121,6 +121,16 @@ Defined in: node\_modules/.pnpm/@nozbe+watermelondb@0.28.0/node\_modules/@nozbe/
 
 ***
 
+### archivedAt
+
+> **archivedAt**: `number` | `null`
+
+Defined in: [src/lib/db/memoryVault/models.ts:53](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/memoryVault/models.ts#53)
+
+Decay archive state (PR2) — Unix ms when archived, null when active.
+
+***
+
 ### collection
 
 > **collection**: `Collection`<`Model`>
@@ -145,7 +155,7 @@ Defined in: [src/lib/db/memoryVault/models.ts:7](https://github.com/anuma-ai/sdk
 
 > **createdAt**: `Date`
 
-Defined in: [src/lib/db/memoryVault/models.ts:12](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/memoryVault/models.ts#12)
+Defined in: [src/lib/db/memoryVault/models.ts:65](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/memoryVault/models.ts#65)
 
 ***
 
@@ -157,6 +167,56 @@ Defined in: [src/lib/db/memoryVault/models.ts:11](https://github.com/anuma-ai/sd
 
 ***
 
+### embeddingModel
+
+> **embeddingModel**: `string` | `null`
+
+Defined in: [src/lib/db/memoryVault/models.ts:13](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/memoryVault/models.ts#13)
+
+Model that produced `embedding`. Null on legacy rows (grandfathered).
+
+***
+
+### eventTimeEnd
+
+> **eventTimeEnd**: `number` | `null`
+
+Defined in: [src/lib/db/memoryVault/models.ts:20](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/memoryVault/models.ts#20)
+
+W6 temporal lane — Unix ms timestamp of event end (range/ongoing).
+
+***
+
+### eventTimeKind
+
+> **eventTimeKind**: `string` | `null`
+
+Defined in: [src/lib/db/memoryVault/models.ts:22](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/memoryVault/models.ts#22)
+
+W6 temporal lane — `point | range | ongoing | null`.
+
+***
+
+### eventTimeStart
+
+> **eventTimeStart**: `number` | `null`
+
+Defined in: [src/lib/db/memoryVault/models.ts:18](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/memoryVault/models.ts#18)
+
+W6 temporal lane — Unix ms timestamp of when the event occurred.
+
+***
+
+### factType
+
+> **factType**: `string` | `null`
+
+Defined in: [src/lib/db/memoryVault/models.ts:51](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/memoryVault/models.ts#51)
+
+Typed memory (PR1) — the extractor's FactType. Null on legacy/manual rows.
+
+***
+
 ### folderId
 
 > **folderId**: `string` | `null`
@@ -165,11 +225,61 @@ Defined in: [src/lib/db/memoryVault/models.ts:9](https://github.com/anuma-ai/sdk
 
 ***
 
+### geohash
+
+> **geohash**: `string` | `null`
+
+Defined in: [src/lib/db/memoryVault/models.ts:64](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/memoryVault/models.ts#64)
+
+Reserved coarse-geohash slot for landmark/Trail memories.
+
+***
+
 ### isDeleted
 
 > **isDeleted**: `boolean`
 
-Defined in: [src/lib/db/memoryVault/models.ts:14](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/memoryVault/models.ts#14)
+Defined in: [src/lib/db/memoryVault/models.ts:67](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/memoryVault/models.ts#67)
+
+***
+
+### lastObservedAt
+
+> **lastObservedAt**: `number` | `null`
+
+Defined in: [src/lib/db/memoryVault/models.ts:49](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/memoryVault/models.ts#49)
+
+C3 re-observation watermark: Unix ms of the last retain() merge, or null.
+
+***
+
+### media
+
+> **media**: `string` | `null`
+
+Defined in: [src/lib/db/memoryVault/models.ts:36](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/memoryVault/models.ts#36)
+
+The photo(s) a SERVER-EXTRACTED memory came from — JSON
+`[{feed_item_id, object_key}]`, exactly the shape
+GET /api/memories/published returns. Null on anything not from a photo.
+
+***
+
+### proofCount
+
+> **proofCount**: `number` | `null`
+
+Defined in: [src/lib/db/memoryVault/models.ts:15](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/memoryVault/models.ts#15)
+
+***
+
+### publishedAt
+
+> **publishedAt**: `number` | `null`
+
+Defined in: [src/lib/db/memoryVault/models.ts:62](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/memoryVault/models.ts#62)
+
+Unix ms when visibility last became non-private; null while private.
 
 ***
 
@@ -181,11 +291,123 @@ Defined in: [src/lib/db/memoryVault/models.ts:8](https://github.com/anuma-ai/sdk
 
 ***
 
+### source
+
+> **source**: `string` | `null`
+
+Defined in: [src/lib/db/memoryVault/models.ts:16](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/memoryVault/models.ts#16)
+
+***
+
+### sourceChunkIds
+
+> **sourceChunkIds**: `string` | `null`
+
+Defined in: [src/lib/db/memoryVault/models.ts:14](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/memoryVault/models.ts#14)
+
+***
+
+### supersededAt
+
+> **supersededAt**: `number` | `null`
+
+Defined in: [src/lib/db/memoryVault/models.ts:43](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/memoryVault/models.ts#43)
+
+***
+
+### supersededBy
+
+> **supersededBy**: `string` | `null`
+
+Defined in: [src/lib/db/memoryVault/models.ts:42](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/memoryVault/models.ts#42)
+
+A2 supersession: newer memory id that replaced this one, or null if live.
+
+***
+
+### topics
+
+> **topics**: `string` | `null`
+
+Defined in: [src/lib/db/memoryVault/models.ts:29](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/memoryVault/models.ts#29)
+
+The durable, synced record of this memory's topics — JSON `StoredTopic[]`.
+`entity` / `memory_entity` are a device-local index over it. Null = pre-v42
+(backfilled from the row's current links by the sweep).
+
+***
+
+### topicsExtractedAt
+
+> **topicsExtractedAt**: `number` | `null`
+
+Defined in: [src/lib/db/memoryVault/models.ts:40](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/memoryVault/models.ts#40)
+
+Unix ms of the last LLM topic-extraction pass. Null = never extracted
+standalone (linked legacy rows are grandfathered as extracted).
+DEPRECATED (v42) — subsumed by `topics_updated_at`; see the schema note.
+
+***
+
+### topicsExtractedVersion
+
+> **topicsExtractedVersion**: `number` | `null`
+
+Defined in: [src/lib/db/memoryVault/models.ts:47](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/memoryVault/models.ts#47)
+
+Extraction-logic version this memory was last stamped under. Null (pre-v38)
+reads as 0, so a TOPICS\_EXTRACTION\_VERSION bump re-extracts stale rows.
+DEPRECATED (v42) — subsumed by `topics_updated_at`; see the schema note.
+
+***
+
+### topicsUpdatedAt
+
+> **topicsUpdatedAt**: `number` | `null`
+
+Defined in: [src/lib/db/memoryVault/models.ts:32](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/memoryVault/models.ts#32)
+
+Unix ms of the last `topics` write. Separate from `updated_at`, which every
+topic writer pins on purpose (recall recency) — see the schema note.
+
+***
+
+### topicsUserManaged
+
+> **topicsUserManaged**: `boolean` | `null`
+
+Defined in: [src/lib/db/memoryVault/models.ts:25](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/memoryVault/models.ts#25)
+
+When true, the user has manually set this memory's topics; auto-extraction
+leaves its entity links alone. Null on legacy rows (treated as false).
+
+***
+
+### trustTier
+
+> **trustTier**: `string` | `null`
+
+Defined in: [src/lib/db/memoryVault/models.ts:55](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/memoryVault/models.ts#55)
+
+Tier-0 security (PR3) — "quarantined" | "trusted" | null.
+
+***
+
+### twinOptIn
+
+> **twinOptIn**: `boolean` | `null`
+
+Defined in: [src/lib/db/memoryVault/models.ts:60](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/memoryVault/models.ts#60)
+
+Owner opted this memory into their own digital twin (twin-scoped only).
+
+***
+
 ### updatedAt
 
 > **updatedAt**: `Date`
 
-Defined in: [src/lib/db/memoryVault/models.ts:13](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/memoryVault/models.ts#13)
+Defined in: [src/lib/db/memoryVault/models.ts:66](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/memoryVault/models.ts#66)
 
 ***
 
@@ -194,6 +416,17 @@ Defined in: [src/lib/db/memoryVault/models.ts:13](https://github.com/anuma-ai/sd
 > **userId**: `string` | `null`
 
 Defined in: [src/lib/db/memoryVault/models.ts:10](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/memoryVault/models.ts#10)
+
+***
+
+### visibility
+
+> **visibility**: `string` | `null`
+
+Defined in: [src/lib/db/memoryVault/models.ts:58](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/memoryVault/models.ts#58)
+
+People Nearby visibility: 'private' | 'public'. Null on legacy rows, and
+any unrecognised value, read as 'private' — never published without opt-in.
 
 ***
 

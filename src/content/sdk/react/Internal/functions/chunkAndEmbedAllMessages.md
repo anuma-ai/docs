@@ -2,10 +2,21 @@
 
 > **chunkAndEmbedAllMessages**(`ctx`: [`StorageOperationsContext`](../interfaces/StorageOperationsContext.md), `options`: [`MemoryEngineEmbeddingOptions`](../interfaces/MemoryEngineEmbeddingOptions.md) & [`ChunkingOptions`](../interfaces/ChunkingOptions.md), `filter?`: `object`): `Promise`<`number`>
 
-Defined in: [src/lib/memoryEngine/embeddings.ts:438](https://github.com/anuma-ai/sdk/blob/main/src/lib/memoryEngine/embeddings.ts#438)
+Defined in: [src/lib/memoryEngine/embeddings.ts:395](https://github.com/anuma-ai/sdk/blob/main/src/lib/memoryEngine/embeddings.ts#395)
 
-Chunk and embed all messages without embeddings/chunks in the database.
-Uses chunking for long messages, whole-message embedding for short ones.
+Chunk and embed messages that don't yet have embeddings/chunks in the
+database. Uses chunking for long messages, whole-message embedding for short
+ones.
+
+Upgrade note: by default this SKIPS messages that already have a whole-message
+vector. An app migrating from whole-message embeddings to chunk-based search
+must pass `filter.rechunkExisting: true` to (re)chunk those existing messages
+— otherwise they get no chunk rows and chunk search stays incomplete for the
+back-catalog.
+
+Requires embedding auth (`apiKey` or `getToken` in `options`; see
+[EmbeddingOptions](../interfaces/MemoryEngineEmbeddingOptions.md)) — rejects with `"Either apiKey or getToken must be
+provided"` if neither is set.
 
 ## Parameters
 
@@ -48,7 +59,7 @@ Storage operations context
 </td>
 <td>
 
-Embedding and chunking options
+Embedding and chunking options (auth required — see above)
 
 </td>
 </tr>
@@ -117,6 +128,34 @@ Minimum content length to embed (default: 30). Shorter messages are skipped.
 <td>
 
 Re-chunk messages that have whole-message embeddings but no chunks
+
+</td>
+</tr>
+<tr>
+<td>
+
+`filter.reembedDiscarded?`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+<td>
+
+Re-index rows the ciphertext sweep marked [CHUNKS\_DISCARDED\_ORIGIN](../variables/CHUNKS_DISCARDED_ORIGIN.md).
+Off by default: this spends the user's own embedding credits, so it belongs
+to an explicit user action, never to a background pass. Opens that marker
+only — `tool_result` rows stay excluded.
+
+`rechunkExisting` cannot substitute for it: a discarded row has neither
+chunks nor vector, so it never reaches that check and falls straight to the
+origin gate.
+
+Per call, not a state change: a row that re-indexes successfully keeps its
+marker, so a later pass that omits this flag skips it again. See
+[CHUNKS\_DISCARDED\_ORIGIN](../variables/CHUNKS_DISCARDED_ORIGIN.md).
 
 </td>
 </tr>
