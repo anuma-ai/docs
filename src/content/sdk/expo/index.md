@@ -14,7 +14,7 @@ See the polyfills module documentation for complete setup instructions.
 Quick setup summary:
 
 ```bash
-pnpm install @anuma/sdk@next web-streams-polyfill react-native-get-random-values @ethersproject/shims buffer
+pnpm install @anuma/sdk web-streams-polyfill react-native-get-random-values @ethersproject/shims buffer
 ```
 
 Then create an entrypoint file with all required polyfills. See
@@ -94,9 +94,75 @@ function ChatScreen() {
 
 ## Other
 
+### addConversationMemoriesOp
+
+Re-exports [addConversationMemoriesOp](../react/Internal/functions/addConversationMemoriesOp.md)
+
+***
+
+### archiveVaultMemoryOp
+
+Re-exports [archiveVaultMemoryOp](../react/Internal/functions/archiveVaultMemoryOp.md)
+
+***
+
+### assembleMemoryContext
+
+Re-exports [assembleMemoryContext](../react/Internal/functions/assembleMemoryContext.md)
+
+***
+
+### attachFileContextToLastUserMessage
+
+Re-exports [attachFileContextToLastUserMessage](../react/Internal/functions/attachFileContextToLastUserMessage.md)
+
+***
+
+### AutoExtractMessage
+
+Re-exports [AutoExtractMessage](../react/Internal/interfaces/AutoExtractMessage.md)
+
+***
+
+### AutoExtractor
+
+Re-exports [AutoExtractor](../react/Internal/interfaces/AutoExtractor.md)
+
+***
+
+### backfillMemoryTopicsOp
+
+Re-exports [backfillMemoryTopicsOp](../react/Internal/functions/backfillMemoryTopicsOp.md)
+
+***
+
+### Budget
+
+Re-exports [Budget](../react/Internal/type-aliases/Budget.md)
+
+***
+
+### buildAttachedFilesText
+
+Re-exports [buildAttachedFilesText](../react/Internal/functions/buildAttachedFilesText.md)
+
+***
+
+### CachedChunkVectors
+
+Re-exports [CachedChunkVectors](../react/Internal/interfaces/CachedChunkVectors.md)
+
+***
+
 ### CachedServerTools
 
 Re-exports [CachedServerTools](../react/Internal/interfaces/CachedServerTools.md)
+
+***
+
+### capHopsForDensity
+
+Re-exports [capHopsForDensity](../react/Internal/functions/capHopsForDensity.md)
 
 ***
 
@@ -130,6 +196,108 @@ Re-exports [chatStorageSchema](../react/Internal/variables/chatStorageSchema.md)
 
 ***
 
+### chunkAndEmbedAllMessages
+
+Re-exports [chunkAndEmbedAllMessages](../react/Internal/functions/chunkAndEmbedAllMessages.md)
+
+***
+
+### chunkAndEmbedMessage
+
+Re-exports [chunkAndEmbedMessage](../react/Internal/functions/chunkAndEmbedMessage.md)
+
+***
+
+### ChunkingOptions
+
+Re-exports [ChunkingOptions](../react/Internal/interfaces/ChunkingOptions.md)
+
+***
+
+### CHUNKS\_DISCARDED\_ORIGIN
+
+Re-exports [CHUNKS\_DISCARDED\_ORIGIN](../react/Internal/variables/CHUNKS_DISCARDED_ORIGIN.md)
+
+***
+
+### chunkText
+
+Re-exports [chunkText](../react/Internal/functions/chunkText.md)
+
+***
+
+### ChunkVectorCache
+
+Re-exports [ChunkVectorCache](../react/Internal/type-aliases/ChunkVectorCache.md)
+
+***
+
+### classifyCryptoPrice
+
+Re-exports [classifyCryptoPrice](../react/Internal/functions/classifyCryptoPrice.md)
+
+***
+
+### classifyCryptoPriceBatch
+
+Re-exports [classifyCryptoPriceBatch](../react/Internal/functions/classifyCryptoPriceBatch.md)
+
+***
+
+### classifyDecay
+
+Re-exports [classifyDecay](../react/Internal/functions/classifyDecay.md)
+
+***
+
+### classifyInjectionCandidates
+
+Re-exports [classifyInjectionCandidates](../react/Internal/functions/classifyInjectionCandidates.md)
+
+***
+
+### classifyObservationTrend
+
+Re-exports [classifyObservationTrend](../react/Internal/functions/classifyObservationTrend.md)
+
+***
+
+### classifyStockPrice
+
+Re-exports [classifyStockPrice](../react/Internal/functions/classifyStockPrice.md)
+
+***
+
+### classifyStockPriceBatch
+
+Re-exports [classifyStockPriceBatch](../react/Internal/functions/classifyStockPriceBatch.md)
+
+***
+
+### classifyWeather
+
+Re-exports [classifyWeather](../react/Internal/functions/classifyWeather.md)
+
+***
+
+### classifyWeatherBatch
+
+Re-exports [classifyWeatherBatch](../react/Internal/functions/classifyWeatherBatch.md)
+
+***
+
+### classifyWebSearch
+
+Re-exports [classifyWebSearch](../react/Internal/functions/classifyWebSearch.md)
+
+***
+
+### classifyWebSearchBatch
+
+Re-exports [classifyWebSearchBatch](../react/Internal/functions/classifyWebSearchBatch.md)
+
+***
+
 ### clearAllEncryptionKeys
 
 Re-exports [clearAllEncryptionKeys](../react/Internal/functions/clearAllEncryptionKeys.md)
@@ -139,6 +307,12 @@ Re-exports [clearAllEncryptionKeys](../react/Internal/functions/clearAllEncrypti
 ### clearAllEncryptionState
 
 Re-exports [clearAllEncryptionState](../react/Internal/functions/clearAllEncryptionState.md)
+
+***
+
+### clearConversationMemoriesOp
+
+Re-exports [clearConversationMemoriesOp](../react/Internal/functions/clearConversationMemoriesOp.md)
 
 ***
 
@@ -160,9 +334,69 @@ Re-exports [clearServerToolsCache](../react/Internal/functions/clearServerToolsC
 
 ***
 
+### consoleLogger
+
+Re-exports [consoleLogger](../react/Internal/variables/consoleLogger.md)
+
+***
+
+### ConsolidationAction
+
+Re-exports [ConsolidationAction](../react/Internal/type-aliases/ConsolidationAction.md)
+
+***
+
+### ConsolidationFallbackReason
+
+Re-exports [ConsolidationFallbackReason](../react/Internal/type-aliases/ConsolidationFallbackReason.md)
+
+***
+
+### ConversationMemoryInput
+
+Re-exports [ConversationMemoryInput](../react/Internal/interfaces/ConversationMemoryInput.md)
+
+***
+
+### ConversationMemoryModel
+
+Re-exports [ConversationMemoryModel](../react/Internal/classes/ConversationMemoryModel.md)
+
+***
+
+### ConversationMemoryOperationsContext
+
+Re-exports [ConversationMemoryOperationsContext](../react/Internal/interfaces/ConversationMemoryOperationsContext.md)
+
+***
+
+### conversationMemoryToStored
+
+Re-exports [conversationMemoryToStored](../react/Internal/functions/conversationMemoryToStored.md)
+
+***
+
 ### cosineInt8
 
 Re-exports [cosineInt8](../react/Internal/functions/cosineInt8.md)
+
+***
+
+### createAutoExtractor
+
+Re-exports [createAutoExtractor](../react/Internal/functions/createAutoExtractor.md)
+
+***
+
+### CreateAutoExtractorOptions
+
+Re-exports [CreateAutoExtractorOptions](../react/Internal/interfaces/CreateAutoExtractorOptions.md)
+
+***
+
+### createChunkVectorCache
+
+Re-exports [createChunkVectorCache](../react/Internal/functions/createChunkVectorCache.md)
 
 ***
 
@@ -172,9 +406,51 @@ Re-exports [CreateConversationOptions](../react/Internal/interfaces/CreateConver
 
 ***
 
+### createCryptoPricePreProcessor
+
+Re-exports [createCryptoPricePreProcessor](../react/Internal/functions/createCryptoPricePreProcessor.md)
+
+***
+
+### createDecaySweeper
+
+Re-exports [createDecaySweeper](../react/Internal/functions/createDecaySweeper.md)
+
+***
+
+### CreateDecaySweeperOptions
+
+Re-exports [CreateDecaySweeperOptions](../react/Internal/interfaces/CreateDecaySweeperOptions.md)
+
+***
+
+### createDurableAutoExtractor
+
+Re-exports [createDurableAutoExtractor](../react/Internal/functions/createDurableAutoExtractor.md)
+
+***
+
+### createLlmDecayClassifier
+
+Re-exports [createLlmDecayClassifier](../react/Internal/functions/createLlmDecayClassifier.md)
+
+***
+
+### createLlmNeighborRefiner
+
+Re-exports [createLlmNeighborRefiner](../react/Internal/functions/createLlmNeighborRefiner.md)
+
+***
+
 ### createMemoryEngineTool
 
 Re-exports [createMemoryEngineTool](../react/Internal/functions/createMemoryEngineTool.md)
+
+***
+
+### createMemoryVaultSearchTool
+
+Re-exports [createMemoryVaultSearchTool](../react/Internal/functions/createMemoryVaultSearchTool.md)
 
 ***
 
@@ -187,6 +463,36 @@ Re-exports [createMemoryVaultTool](../react/Internal/functions/createMemoryVault
 ### CreateMessageOptions
 
 Re-exports [CreateMessageOptions](../react/Internal/interfaces/CreateMessageOptions.md)
+
+***
+
+### createMessageSourceResolver
+
+Re-exports [createMessageSourceResolver](../react/Internal/functions/createMessageSourceResolver.md)
+
+***
+
+### createPlatformCursorStore
+
+Re-exports [createPlatformCursorStore](../react/Internal/functions/createPlatformCursorStore.md)
+
+***
+
+### createRecallTool
+
+Re-exports [createRecallTool](../react/Internal/functions/createRecallTool.md)
+
+***
+
+### createStockPricePreProcessor
+
+Re-exports [createStockPricePreProcessor](../react/Internal/functions/createStockPricePreProcessor.md)
+
+***
+
+### createVaultEmbeddingCache
+
+Re-exports [createVaultEmbeddingCache](../react/Internal/functions/createVaultEmbeddingCache.md)
 
 ***
 
@@ -220,6 +526,30 @@ Re-exports [CreateVaultMemoryOptions](../react/Internal/interfaces/CreateVaultMe
 
 ***
 
+### createWeatherPreProcessor
+
+Re-exports [createWeatherPreProcessor](../react/Internal/functions/createWeatherPreProcessor.md)
+
+***
+
+### createWebSearchPreProcessor
+
+Re-exports [createWebSearchPreProcessor](../react/Internal/functions/createWebSearchPreProcessor.md)
+
+***
+
+### CryptoPriceClassification
+
+Re-exports [CryptoPriceClassification](../react/Internal/interfaces/CryptoPriceClassification.md)
+
+***
+
+### CryptoPricePreProcessorOptions
+
+Re-exports [CryptoPricePreProcessorOptions](../react/Internal/interfaces/CryptoPricePreProcessorOptions.md)
+
+***
+
 ### DatabaseManager
 
 Re-exports [DatabaseManager](../react/Internal/classes/DatabaseManager.md)
@@ -238,6 +568,54 @@ Re-exports [DatabaseManagerOptions](../react/Internal/interfaces/DatabaseManager
 
 ***
 
+### DecayCandidateRaw
+
+Re-exports [DecayCandidateRaw](../react/Internal/interfaces/DecayCandidateRaw.md)
+
+***
+
+### DecayClassifier
+
+Re-exports [DecayClassifier](../react/Internal/interfaces/DecayClassifier.md)
+
+***
+
+### DecayInput
+
+Re-exports [DecayInput](../react/Internal/interfaces/DecayInput.md)
+
+***
+
+### DecayPolicy
+
+Re-exports [DecayPolicy](../react/Internal/interfaces/DecayPolicy.md)
+
+***
+
+### DecaySweeper
+
+Re-exports [DecaySweeper](../react/Internal/interfaces/DecaySweeper.md)
+
+***
+
+### DecaySweepResult
+
+Re-exports [DecaySweepResult](../react/Internal/interfaces/DecaySweepResult.md)
+
+***
+
+### DecayVerdict
+
+Re-exports [DecayVerdict](../react/Internal/type-aliases/DecayVerdict.md)
+
+***
+
+### decodeChunkVector
+
+Re-exports [decodeChunkVector](../react/Internal/functions/decodeChunkVector.md)
+
+***
+
 ### decryptConversationTitle
 
 Re-exports [decryptConversationTitle](../react/Internal/functions/decryptConversationTitle.md)
@@ -250,9 +628,81 @@ Re-exports [DEFAULT\_CACHE\_EXPIRATION\_MS](../react/Internal/variables/DEFAULT_
 
 ***
 
+### DEFAULT\_CHUNK\_CACHE\_SIZE
+
+Re-exports [DEFAULT\_CHUNK\_CACHE\_SIZE](../react/Internal/variables/DEFAULT_CHUNK_CACHE_SIZE.md)
+
+***
+
+### DEFAULT\_CHUNK\_OVERLAP
+
+Re-exports [DEFAULT\_CHUNK\_OVERLAP](../react/Internal/variables/DEFAULT_CHUNK_OVERLAP.md)
+
+***
+
+### DEFAULT\_CHUNK\_SIZE
+
+Re-exports [DEFAULT\_CHUNK\_SIZE](../react/Internal/variables/DEFAULT_CHUNK_SIZE.md)
+
+***
+
+### DEFAULT\_DECAY\_POLICY
+
+Re-exports [DEFAULT\_DECAY\_POLICY](../react/Internal/variables/DEFAULT_DECAY_POLICY.md)
+
+***
+
+### DEFAULT\_MAX\_CLASSIFIER\_CALLS\_PER\_SWEEP
+
+Re-exports [DEFAULT\_MAX\_CLASSIFIER\_CALLS\_PER\_SWEEP](../react/Internal/variables/DEFAULT_MAX_CLASSIFIER_CALLS_PER_SWEEP.md)
+
+***
+
+### DEFAULT\_MIN\_CHUNK\_SIZE
+
+Re-exports [DEFAULT\_MIN\_CHUNK\_SIZE](../react/Internal/variables/DEFAULT_MIN_CHUNK_SIZE.md)
+
+***
+
+### DEFAULT\_PROFILE\_FACETS
+
+Re-exports [DEFAULT\_PROFILE\_FACETS](../react/Internal/variables/DEFAULT_PROFILE_FACETS.md)
+
+***
+
+### DEFAULT\_PROFILE\_FACT\_TYPE\_WEIGHTS
+
+Re-exports [DEFAULT\_PROFILE\_FACT\_TYPE\_WEIGHTS](../react/Internal/variables/DEFAULT_PROFILE_FACT_TYPE_WEIGHTS.md)
+
+***
+
+### DEFAULT\_PROFILE\_PROOF\_ALPHA
+
+Re-exports [DEFAULT\_PROFILE\_PROOF\_ALPHA](../react/Internal/variables/DEFAULT_PROFILE_PROOF_ALPHA.md)
+
+***
+
+### DEFAULT\_PROFILE\_TREND\_MULTIPLIERS
+
+Re-exports [DEFAULT\_PROFILE\_TREND\_MULTIPLIERS](../react/Internal/variables/DEFAULT_PROFILE_TREND_MULTIPLIERS.md)
+
+***
+
+### DEFAULT\_VAULT\_CACHE\_SIZE
+
+Re-exports [DEFAULT\_VAULT\_CACHE\_SIZE](../react/Internal/variables/DEFAULT_VAULT_CACHE_SIZE.md)
+
+***
+
 ### deleteAllVaultMemoriesForUserOp
 
 Re-exports [deleteAllVaultMemoriesForUserOp](../react/Internal/functions/deleteAllVaultMemoriesForUserOp.md)
+
+***
+
+### deleteMessageOp
+
+Re-exports [deleteMessageOp](../react/Internal/functions/deleteMessageOp.md)
 
 ***
 
@@ -274,6 +724,24 @@ Re-exports [dequantizeEmbedding](../react/Internal/functions/dequantizeEmbedding
 
 ***
 
+### deriveKeyFromSignatureBytes
+
+Re-exports [deriveKeyFromSignatureBytes](../react/Encryption/deriveKeyFromSignatureBytes.md)
+
+***
+
+### DurableAutoExtractorOptions
+
+Re-exports [DurableAutoExtractorOptions](../react/Internal/interfaces/DurableAutoExtractorOptions.md)
+
+***
+
+### eagerEmbedContent
+
+Re-exports [eagerEmbedContent](../react/Internal/functions/eagerEmbedContent.md)
+
+***
+
 ### embedAllMessages
 
 Re-exports [embedAllMessages](../react/Internal/functions/embedAllMessages.md)
@@ -292,9 +760,99 @@ Re-exports [embedMessage](../react/Internal/functions/embedMessage.md)
 
 ***
 
+### encodeChunkVector
+
+Re-exports [encodeChunkVector](../react/Internal/functions/encodeChunkVector.md)
+
+***
+
+### EncryptionKeyMissingError
+
+Re-exports [EncryptionKeyMissingError](../react/Internal/classes/EncryptionKeyMissingError.md)
+
+***
+
 ### ensureDefaultFoldersOp
 
 Re-exports [ensureDefaultFoldersOp](../react/Internal/functions/ensureDefaultFoldersOp.md)
+
+***
+
+### ENTITY\_FANOUT
+
+Re-exports [ENTITY\_FANOUT](../react/Internal/variables/ENTITY_FANOUT.md)
+
+***
+
+### extractAndLinkEntitiesForMemoriesOp
+
+Re-exports [extractAndLinkEntitiesForMemoriesOp](../react/Internal/functions/extractAndLinkEntitiesForMemoriesOp.md)
+
+***
+
+### extractAndRetain
+
+Re-exports [extractAndRetain](../react/Internal/functions/extractAndRetain.md)
+
+***
+
+### ExtractedCandidate
+
+Re-exports [ExtractedCandidate](../react/Internal/interfaces/ExtractedCandidate.md)
+
+***
+
+### ExtractedEntity
+
+Re-exports [ExtractedEntity](../react/Internal/interfaces/ExtractedEntity.md)
+
+***
+
+### extractEntitiesForMemories
+
+Re-exports [extractEntitiesForMemories](../react/Internal/functions/extractEntitiesForMemories.md)
+
+***
+
+### extractFacts
+
+Re-exports [extractFacts](../react/Internal/functions/extractFacts.md)
+
+***
+
+### ExtractFactsOptions
+
+Re-exports [ExtractFactsOptions](../react/Internal/interfaces/ExtractFactsOptions.md)
+
+***
+
+### ExtractionCursorStore
+
+Re-exports [ExtractionCursorStore](../react/Internal/interfaces/ExtractionCursorStore.md)
+
+***
+
+### ExtractionFunnel
+
+Re-exports [ExtractionFunnel](../react/Internal/interfaces/ExtractionFunnel.md)
+
+***
+
+### ExtractionTimings
+
+Re-exports [ExtractionTimings](../react/Internal/interfaces/ExtractionTimings.md)
+
+***
+
+### ExtractOutcome
+
+Re-exports [ExtractOutcome](../react/Internal/type-aliases/ExtractOutcome.md)
+
+***
+
+### FactType
+
+Re-exports [FactType](../react/Internal/type-aliases/FactType.md)
 
 ***
 
@@ -304,9 +862,27 @@ Re-exports [FileMetadata](../react/Internal/interfaces/FileMetadata.md)
 
 ***
 
+### FileProcessingReason
+
+Re-exports [FileProcessingReason](../react/Internal/type-aliases/FileProcessingReason.md)
+
+***
+
+### FileProcessingStatus
+
+Re-exports [FileProcessingStatus](../react/Internal/interfaces/FileProcessingStatus.md)
+
+***
+
 ### FlushResult
 
 Re-exports [FlushResult](../react/Internal/interfaces/FlushResult.md)
+
+***
+
+### formatFileProcessingNotes
+
+Re-exports [formatFileProcessingNotes](../react/Internal/functions/formatFileProcessingNotes.md)
 
 ***
 
@@ -352,6 +928,12 @@ Re-exports [getCachedServerTools](../react/Internal/functions/getCachedServerToo
 
 ***
 
+### getConversationMemoriesOp
+
+Re-exports [getConversationMemoriesOp](../react/Internal/functions/getConversationMemoriesOp.md)
+
+***
+
 ### getConversationsByProjectLazyOp
 
 Re-exports [getConversationsByProjectLazyOp](../react/Internal/functions/getConversationsByProjectLazyOp.md)
@@ -361,6 +943,42 @@ Re-exports [getConversationsByProjectLazyOp](../react/Internal/functions/getConv
 ### getConversationsLazyOp
 
 Re-exports [getConversationsLazyOp](../react/Internal/functions/getConversationsLazyOp.md)
+
+***
+
+### getConversationsPageOp
+
+Re-exports [getConversationsPageOp](../react/Internal/functions/getConversationsPageOp.md)
+
+***
+
+### GetConversationsPageOptions
+
+Re-exports [GetConversationsPageOptions](../react/Internal/interfaces/GetConversationsPageOptions.md)
+
+***
+
+### getDecayCandidatesRawOp
+
+Re-exports [getDecayCandidatesRawOp](../react/Internal/functions/getDecayCandidatesRawOp.md)
+
+***
+
+### getLogger
+
+Re-exports [getLogger](../react/Internal/functions/getLogger.md)
+
+***
+
+### getMemoriesNeedingTopicExtractionOp
+
+Re-exports [getMemoriesNeedingTopicExtractionOp](../react/Internal/functions/getMemoriesNeedingTopicExtractionOp.md)
+
+***
+
+### GetMessagesPageOptions
+
+Re-exports [GetMessagesPageOptions](../react/Internal/interfaces/GetMessagesPageOptions.md)
 
 ***
 
@@ -382,9 +1000,39 @@ Re-exports [getVaultFolderMemoryCountOp](../react/Internal/functions/getVaultFol
 
 ***
 
+### getVaultMemoriesByIdsOp
+
+Re-exports [getVaultMemoriesByIdsOp](../react/Internal/functions/getVaultMemoriesByIdsOp.md)
+
+***
+
 ### getVaultMemoryOp
 
 Re-exports [getVaultMemoryOp](../react/Internal/functions/getVaultMemoryOp.md)
+
+***
+
+### getVaultRankingProjectionsOp
+
+Re-exports [getVaultRankingProjectionsOp](../react/Internal/functions/getVaultRankingProjectionsOp.md)
+
+***
+
+### GraphTraversalOptions
+
+Re-exports [GraphTraversalOptions](../react/Internal/interfaces/GraphTraversalOptions.md)
+
+***
+
+### HARD\_DELETE\_WINDOW\_MS
+
+Re-exports [HARD\_DELETE\_WINDOW\_MS](../react/Internal/variables/HARD_DELETE_WINDOW_MS.md)
+
+***
+
+### hardDeleteDecayedOp
+
+Re-exports [hardDeleteDecayedOp](../react/Internal/functions/hardDeleteDecayedOp.md)
 
 ***
 
@@ -394,9 +1042,147 @@ Re-exports [hasEncryptionKey](../react/Internal/functions/hasEncryptionKey.md)
 
 ***
 
+### INFERENCE\_ID\_HEADER
+
+Re-exports [INFERENCE\_ID\_HEADER](../react/Internal/variables/INFERENCE_ID_HEADER.md)
+
+***
+
+### ingestPublishedPhotoMemoriesOp
+
+Re-exports [ingestPublishedPhotoMemoriesOp](../react/Internal/functions/ingestPublishedPhotoMemoriesOp.md)
+
+***
+
+### InjectionClassifierOptions
+
+Re-exports [InjectionClassifierOptions](../react/Internal/interfaces/InjectionClassifierOptions.md)
+
+***
+
+### InjectionReason
+
+Re-exports [InjectionReason](../react/Internal/type-aliases/InjectionReason.md)
+
+***
+
+### injectionSignatureCatalog
+
+Re-exports [injectionSignatureCatalog](../react/Internal/functions/injectionSignatureCatalog.md)
+
+***
+
+### isAttachedFilesText
+
+Re-exports [isAttachedFilesText](../react/Internal/functions/isAttachedFilesText.md)
+
+***
+
+### isDegradedTopicSkip
+
+Re-exports [isDegradedTopicSkip](../react/Internal/functions/isDegradedTopicSkip.md)
+
+***
+
+### isEncrypted
+
+Re-exports [isEncrypted](../react/Internal/functions/isEncrypted.md)
+
+***
+
+### isRerankerAvailable
+
+Re-exports [isRerankerAvailable](../react/Internal/functions/isRerankerAvailable.md)
+
+***
+
 ### LazyStoredConversation
 
 Re-exports [LazyStoredConversation](../react/Internal/interfaces/LazyStoredConversation.md)
+
+***
+
+### LlmDecayClassifierOptions
+
+Re-exports [LlmDecayClassifierOptions](../react/Internal/interfaces/LlmDecayClassifierOptions.md)
+
+***
+
+### LlmNeighborRefinerOptions
+
+Re-exports [LlmNeighborRefinerOptions](../react/Internal/interfaces/LlmNeighborRefinerOptions.md)
+
+***
+
+### Logger
+
+Re-exports [Logger](../react/Internal/interfaces/Logger.md)
+
+***
+
+### LoggerProvider
+
+Re-exports [LoggerProvider](../react/Internal/functions/LoggerProvider.md)
+
+***
+
+### LoggerProviderProps
+
+Re-exports [LoggerProviderProps](../react/Internal/interfaces/LoggerProviderProps.md)
+
+***
+
+### ManualFactType
+
+Re-exports [ManualFactType](../react/Internal/type-aliases/ManualFactType.md)
+
+***
+
+### maskScopedEmbeddingCache
+
+Re-exports [maskScopedEmbeddingCache](../react/Internal/functions/maskScopedEmbeddingCache.md)
+
+***
+
+### MAX\_HOPS
+
+Re-exports [MAX\_HOPS](../react/Internal/variables/MAX_HOPS.md)
+
+***
+
+### MEDIUM\_TTL\_MS
+
+Re-exports [MEDIUM\_TTL\_MS](../react/Internal/variables/MEDIUM_TTL_MS.md)
+
+***
+
+### MemoriesNeedingTopicExtraction
+
+Re-exports [MemoriesNeedingTopicExtraction](../react/Internal/interfaces/MemoriesNeedingTopicExtraction.md)
+
+***
+
+### MemoryContextItem
+
+Re-exports [MemoryContextItem](../react/Internal/interfaces/MemoryContextItem.md)
+
+***
+
+### MemoryContextLane
+
+Re-exports [MemoryContextLane](../react/Internal/type-aliases/MemoryContextLane.md)
+
+***
+
+### MemoryContextOptions
+
+Re-exports [MemoryContextOptions](../react/Internal/interfaces/MemoryContextOptions.md)
+
+***
+
+### MemoryContextResult
+
+Re-exports [MemoryContextResult](../react/Internal/interfaces/MemoryContextResult.md)
 
 ***
 
@@ -418,9 +1204,51 @@ Re-exports [MemoryEngineSearchOptions](../react/Internal/interfaces/MemoryEngine
 
 ***
 
+### MemoryExtractedEvent
+
+Re-exports [MemoryExtractedEvent](../react/Internal/interfaces/MemoryExtractedEvent.md)
+
+***
+
+### MemoryKind
+
+Re-exports [MemoryKind](../react/Internal/type-aliases/MemoryKind.md)
+
+***
+
+### MemoryQuarantinedEvent
+
+Re-exports [MemoryQuarantinedEvent](../react/Internal/interfaces/MemoryQuarantinedEvent.md)
+
+***
+
+### MemoryToVerify
+
+Re-exports [MemoryToVerify](../react/Internal/type-aliases/MemoryToVerify.md)
+
+***
+
+### MemoryVaultSearchOptions
+
+Re-exports [MemoryVaultSearchOptions](../react/Internal/interfaces/MemoryVaultSearchOptions.md)
+
+***
+
 ### MemoryVaultToolOptions
 
 Re-exports [MemoryVaultToolOptions](../react/Internal/interfaces/MemoryVaultToolOptions.md)
+
+***
+
+### MemoryVerification
+
+Re-exports [MemoryVerification](../react/Internal/type-aliases/MemoryVerification.md)
+
+***
+
+### MessageSkeleton
+
+Re-exports [MessageSkeleton](../react/Internal/interfaces/MessageSkeleton.md)
 
 ***
 
@@ -430,15 +1258,165 @@ Re-exports [moveMemoriesToFolderOp](../react/Internal/functions/moveMemoriesToFo
 
 ***
 
+### NeighborRefiner
+
+Re-exports [NeighborRefiner](../react/Internal/interfaces/NeighborRefiner.md)
+
+***
+
+### NEVER\_TTL\_MS
+
+Re-exports [NEVER\_TTL\_MS](../react/Internal/variables/NEVER_TTL_MS.md)
+
+***
+
+### NODE\_BUDGET
+
+Re-exports [NODE\_BUDGET](../react/Internal/variables/NODE_BUDGET.md)
+
+***
+
+### noopLogger
+
+Re-exports [noopLogger](../react/Internal/variables/noopLogger.md)
+
+***
+
+### NowSource
+
+Re-exports [NowSource](../react/Internal/type-aliases/NowSource.md)
+
+***
+
+### ObservationTrend
+
+Re-exports [ObservationTrend](../react/Internal/type-aliases/ObservationTrend.md)
+
+***
+
+### ObservationTrendInput
+
+Re-exports [ObservationTrendInput](../react/Internal/interfaces/ObservationTrendInput.md)
+
+***
+
 ### onKeyAvailable
 
 Re-exports [onKeyAvailable](../react/Internal/functions/onKeyAvailable.md)
 
 ***
 
+### parseMedia
+
+Re-exports [parseMedia](../react/Internal/functions/parseMedia.md)
+
+***
+
+### PAST\_EVENT\_GRACE\_MS
+
+Re-exports [PAST\_EVENT\_GRACE\_MS](../react/Internal/variables/PAST_EVENT_GRACE_MS.md)
+
+***
+
+### PhotoIngestResult
+
+Re-exports [PhotoIngestResult](../react/Internal/interfaces/PhotoIngestResult.md)
+
+***
+
+### PhotoMediaRef
+
+Re-exports [PhotoMediaRef](../react/Internal/interfaces/PhotoMediaRef.md)
+
+***
+
 ### PlatformStorage
 
 Re-exports [PlatformStorage](../react/Internal/interfaces/PlatformStorage.md)
+
+***
+
+### PortalLlmAuth
+
+Re-exports [PortalLlmAuth](../react/Internal/interfaces/PortalLlmAuth.md)
+
+***
+
+### PortalLlmFailure
+
+Re-exports [PortalLlmFailure](../react/Internal/interfaces/PortalLlmFailure.md)
+
+***
+
+### PortalLlmFailureReason
+
+Re-exports [PortalLlmFailureReason](../react/Internal/type-aliases/PortalLlmFailureReason.md)
+
+***
+
+### preEmbedVaultMemories
+
+Re-exports [preEmbedVaultMemories](../react/Internal/functions/preEmbedVaultMemories.md)
+
+***
+
+### PROFILE\_DOC\_VERSION
+
+Re-exports [PROFILE\_DOC\_VERSION](../react/Internal/variables/PROFILE_DOC_VERSION.md)
+
+***
+
+### ProfileConfigFingerprint
+
+Re-exports [ProfileConfigFingerprint](../react/Internal/interfaces/ProfileConfigFingerprint.md)
+
+***
+
+### ProfileDoc
+
+Re-exports [ProfileDoc](../react/Internal/interfaces/ProfileDoc.md)
+
+***
+
+### ProfileFacet
+
+Re-exports [ProfileFacet](../react/Internal/interfaces/ProfileFacet.md)
+
+***
+
+### ProfileFacetKey
+
+Re-exports [ProfileFacetKey](../react/Internal/type-aliases/ProfileFacetKey.md)
+
+***
+
+### ProfileSalienceInput
+
+Re-exports [ProfileSalienceInput](../react/Internal/interfaces/ProfileSalienceInput.md)
+
+***
+
+### ProfileSection
+
+Re-exports [ProfileSection](../react/Internal/interfaces/ProfileSection.md)
+
+***
+
+### PromptPreProcessor
+
+Re-exports [PromptPreProcessor](../react/Internal/type-aliases/PromptPreProcessor.md)
+
+***
+
+### PromptPreProcessorContext
+
+Re-exports [PromptPreProcessorContext](../react/Internal/type-aliases/PromptPreProcessorContext.md)
+
+***
+
+### PublishedPhotoMemory
+
+Re-exports [PublishedPhotoMemory](../react/Internal/interfaces/PublishedPhotoMemory.md)
 
 ***
 
@@ -451,6 +1429,12 @@ Re-exports [QuantizedEmbedding](../react/Internal/interfaces/QuantizedEmbedding.
 ### quantizeEmbedding
 
 Re-exports [quantizeEmbedding](../react/Internal/functions/quantizeEmbedding.md)
+
+***
+
+### QuarantinedMemoryInfo
+
+Re-exports [QuarantinedMemoryInfo](../react/Internal/interfaces/QuarantinedMemoryInfo.md)
 
 ***
 
@@ -472,9 +1456,243 @@ Re-exports [QueueStatus](../react/Internal/interfaces/QueueStatus.md)
 
 ***
 
+### RankableVaultMemory
+
+Re-exports [RankableVaultMemory](../react/Internal/interfaces/RankableVaultMemory.md)
+
+***
+
+### RankedMemory
+
+Re-exports [RankedMemory](../react/Internal/interfaces/RankedMemory.md)
+
+***
+
+### RankedProfileCandidate
+
+Re-exports [RankedProfileCandidate](../react/Internal/interfaces/RankedProfileCandidate.md)
+
+***
+
+### rankProfileCandidates
+
+Re-exports [rankProfileCandidates](../react/Internal/functions/rankProfileCandidates.md)
+
+***
+
+### recall
+
+Re-exports [recall](../react/Internal/functions/recall.md)
+
+***
+
+### RECALL\_MAX\_LIMIT
+
+Re-exports [RECALL\_MAX\_LIMIT](../react/Internal/variables/RECALL_MAX_LIMIT.md)
+
+***
+
+### RECALL\_TOOL\_NAME
+
+Re-exports [RECALL\_TOOL\_NAME](../react/Internal/variables/RECALL_TOOL_NAME.md)
+
+***
+
+### RecallContext
+
+Re-exports [RecallContext](../react/Internal/interfaces/RecallContext.md)
+
+***
+
+### RecallDegradation
+
+Re-exports [RecallDegradation](../react/Internal/type-aliases/RecallDegradation.md)
+
+***
+
+### RecallDiagnostics
+
+Re-exports [RecallDiagnostics](../react/Internal/interfaces/RecallDiagnostics.md)
+
+***
+
+### RecallEmptyReason
+
+Re-exports [RecallEmptyReason](../react/Internal/type-aliases/RecallEmptyReason.md)
+
+***
+
+### RecallOptions
+
+Re-exports [RecallOptions](../react/Internal/interfaces/RecallOptions.md)
+
+***
+
+### RecallResult
+
+Re-exports [RecallResult](../react/Internal/interfaces/RecallResult.md)
+
+***
+
+### RecallToolCallbacks
+
+Re-exports [RecallToolCallbacks](../react/Internal/interfaces/RecallToolCallbacks.md)
+
+***
+
+### RecallToolOptions
+
+Re-exports [RecallToolOptions](../react/Internal/interfaces/RecallToolOptions.md)
+
+***
+
+### RecencyOptions
+
+Re-exports [RecencyOptions](../react/Internal/interfaces/RecencyOptions.md)
+
+***
+
+### reflect
+
+Re-exports [reflect](../react/Internal/functions/reflect.md)
+
+***
+
+### ReflectOptions
+
+Re-exports [ReflectOptions](../react/Internal/interfaces/ReflectOptions.md)
+
+***
+
+### ReflectResult
+
+Re-exports [ReflectResult](../react/Internal/interfaces/ReflectResult.md)
+
+***
+
+### refreshEncryptionKeyIfMatches
+
+Re-exports [refreshEncryptionKeyIfMatches](../react/Internal/functions/refreshEncryptionKeyIfMatches.md)
+
+***
+
+### relinkMemoryTopicsOp
+
+Re-exports [relinkMemoryTopicsOp](../react/Internal/functions/relinkMemoryTopicsOp.md)
+
+***
+
 ### requestEncryptionKey
 
 Re-exports [requestEncryptionKey](../react/Internal/functions/requestEncryptionKey.md)
+
+***
+
+### RequestEncryptionKeyOptions
+
+Re-exports [RequestEncryptionKeyOptions](../react/Internal/interfaces/RequestEncryptionKeyOptions.md)
+
+***
+
+### RerankerUnavailableError
+
+Re-exports [RerankerUnavailableError](../react/Internal/classes/RerankerUnavailableError.md)
+
+***
+
+### restoreVaultMemoryOp
+
+Re-exports [restoreVaultMemoryOp](../react/Internal/functions/restoreVaultMemoryOp.md)
+
+***
+
+### resumeStream
+
+Re-exports [resumeStream](../react/Internal/functions/resumeStream.md)
+
+***
+
+### ResumeStreamOptions
+
+Re-exports [ResumeStreamOptions](../react/Internal/interfaces/ResumeStreamOptions.md)
+
+***
+
+### ResumeStreamResult
+
+Re-exports [ResumeStreamResult](../react/Internal/type-aliases/ResumeStreamResult.md)
+
+***
+
+### retain
+
+Re-exports [retain](../react/Internal/functions/retain.md)
+
+***
+
+### RetainAction
+
+Re-exports [RetainAction](../react/Internal/type-aliases/RetainAction.md)
+
+***
+
+### RetainContext
+
+Re-exports [RetainContext](../react/Internal/interfaces/RetainContext.md)
+
+***
+
+### RetainOptions
+
+Re-exports [RetainOptions](../react/Internal/interfaces/RetainOptions.md)
+
+***
+
+### RetainResult
+
+Re-exports [RetainResult](../react/Internal/interfaces/RetainResult.md)
+
+***
+
+### RetainSource
+
+Re-exports [RetainSource](../react/Internal/type-aliases/RetainSource.md)
+
+***
+
+### ScoreBreakdown
+
+Re-exports [ScoreBreakdown](../react/Internal/interfaces/ScoreBreakdown.md)
+
+***
+
+### scoreProfileSalience
+
+Re-exports [scoreProfileSalience](../react/Internal/functions/scoreProfileSalience.md)
+
+***
+
+### ScoreProfileSalienceOptions
+
+Re-exports [ScoreProfileSalienceOptions](../react/Internal/interfaces/ScoreProfileSalienceOptions.md)
+
+***
+
+### screenCandidatesForInjection
+
+Re-exports [screenCandidatesForInjection](../react/Internal/functions/screenCandidatesForInjection.md)
+
+***
+
+### ScreenedCandidate
+
+Re-exports [ScreenedCandidate](../react/Internal/interfaces/ScreenedCandidate.md)
+
+***
+
+### ScreenResult
+
+Re-exports [ScreenResult](../react/Internal/interfaces/ScreenResult.md)
 
 ***
 
@@ -508,6 +1726,18 @@ Re-exports [SearchSource](../react/Internal/interfaces/SearchSource.md)
 
 ***
 
+### searchVaultMemories
+
+Re-exports [searchVaultMemories](../react/Internal/functions/searchVaultMemories.md)
+
+***
+
+### seedEncryptionKeys
+
+Re-exports [seedEncryptionKeys](../react/Internal/functions/seedEncryptionKeys.md)
+
+***
+
 ### ServerToolsOptions
 
 Re-exports [ServerToolsOptions](../react/Internal/interfaces/ServerToolsOptions.md)
@@ -520,9 +1750,57 @@ Re-exports [ServerToolsResponse](../react/Internal/type-aliases/ServerToolsRespo
 
 ***
 
+### setLogger
+
+Re-exports [setLogger](../react/Internal/functions/setLogger.md)
+
+***
+
+### setMemoryVisibilityOp
+
+Re-exports [setMemoryVisibilityOp](../react/Internal/functions/setMemoryVisibilityOp.md)
+
+***
+
+### SHORT\_TTL\_MS
+
+Re-exports [SHORT\_TTL\_MS](../react/Internal/variables/SHORT_TTL_MS.md)
+
+***
+
+### shouldChunkMessage
+
+Re-exports [shouldChunkMessage](../react/Internal/functions/shouldChunkMessage.md)
+
+***
+
+### shouldRecallMemory
+
+Re-exports [shouldRecallMemory](../react/Internal/functions/shouldRecallMemory.md)
+
+***
+
 ### SignMessageFn
 
 Re-exports [SignMessageFn](../react/Internal/type-aliases/SignMessageFn.md)
+
+***
+
+### stampTopicsExtractedAtOp
+
+Re-exports [stampTopicsExtractedAtOp](../react/Internal/functions/stampTopicsExtractedAtOp.md)
+
+***
+
+### StockPriceClassification
+
+Re-exports [StockPriceClassification](../react/Internal/interfaces/StockPriceClassification.md)
+
+***
+
+### StockPricePreProcessorOptions
+
+Re-exports [StockPricePreProcessorOptions](../react/Internal/interfaces/StockPricePreProcessorOptions.md)
 
 ***
 
@@ -535,6 +1813,12 @@ Re-exports [StoredChatCompletionUsage](../react/Internal/interfaces/StoredChatCo
 ### StoredConversation
 
 Re-exports [StoredConversation](../react/Internal/interfaces/StoredConversation.md)
+
+***
+
+### StoredConversationMemory
+
+Re-exports [StoredConversationMemory](../react/Internal/interfaces/StoredConversationMemory.md)
 
 ***
 
@@ -571,6 +1855,168 @@ Re-exports [StoredVaultMemory](../react/Internal/interfaces/StoredVaultMemory.md
 ### StoredVaultMemoryModel
 
 Re-exports [StoredVaultMemoryModel](../react/Internal/classes/StoredVaultMemoryModel.md)
+
+***
+
+### STREAM\_RESUMABLE\_HEADER
+
+Re-exports [STREAM\_RESUMABLE\_HEADER](../react/Internal/variables/STREAM_RESUMABLE_HEADER.md)
+
+***
+
+### streamCancelPath
+
+Re-exports [streamCancelPath](../react/Internal/functions/streamCancelPath.md)
+
+***
+
+### StreamExpiredError
+
+Re-exports [StreamExpiredError](../react/Internal/classes/StreamExpiredError.md)
+
+***
+
+### StreamMetaEvent
+
+Re-exports [StreamMetaEvent](../react/Internal/type-aliases/StreamMetaEvent.md)
+
+***
+
+### streamReplayPath
+
+Re-exports [streamReplayPath](../react/Internal/functions/streamReplayPath.md)
+
+***
+
+### StreamResumeHandle
+
+Re-exports [StreamResumeHandle](../react/Internal/type-aliases/StreamResumeHandle.md)
+
+***
+
+### StreamSmoothingConfig
+
+Re-exports [StreamSmoothingConfig](../react/Internal/type-aliases/StreamSmoothingConfig.md)
+
+***
+
+### summarizeObservationTrends
+
+Re-exports [summarizeObservationTrends](../react/Internal/functions/summarizeObservationTrends.md)
+
+***
+
+### supersedeVaultMemoryOp
+
+Re-exports [supersedeVaultMemoryOp](../react/Internal/functions/supersedeVaultMemoryOp.md)
+
+***
+
+### synthesizeProfile
+
+Re-exports [synthesizeProfile](../react/Internal/functions/synthesizeProfile.md)
+
+***
+
+### SynthesizeProfileOptions
+
+Re-exports [SynthesizeProfileOptions](../react/Internal/interfaces/SynthesizeProfileOptions.md)
+
+***
+
+### TextChunk
+
+Re-exports [TextChunk](../react/Internal/interfaces/TextChunk.md)
+
+***
+
+### TOOL\_RESULT\_ORIGIN
+
+Re-exports [TOOL\_RESULT\_ORIGIN](../react/Internal/variables/TOOL_RESULT_ORIGIN.md)
+
+***
+
+### TOPIC\_EXTRACTION\_BATCH\_SIZE
+
+Re-exports [TOPIC\_EXTRACTION\_BATCH\_SIZE](../react/Internal/variables/TOPIC_EXTRACTION_BATCH_SIZE.md)
+
+***
+
+### TopicExtractionInput
+
+Re-exports [TopicExtractionInput](../react/Internal/interfaces/TopicExtractionInput.md)
+
+***
+
+### TopicExtractionRunResult
+
+Re-exports [TopicExtractionRunResult](../react/Internal/interfaces/TopicExtractionRunResult.md)
+
+***
+
+### TopicExtractOptions
+
+Re-exports [TopicExtractOptions](../react/Internal/interfaces/TopicExtractOptions.md)
+
+***
+
+### TOPICS\_EXTRACTION\_VERSION
+
+Re-exports [TOPICS\_EXTRACTION\_VERSION](../react/Internal/variables/TOPICS_EXTRACTION_VERSION.md)
+
+***
+
+### TopicSkipReason
+
+Re-exports [TopicSkipReason](../react/Internal/type-aliases/TopicSkipReason.md)
+
+***
+
+### traverseGraphLane
+
+Re-exports [traverseGraphLane](../react/Internal/functions/traverseGraphLane.md)
+
+***
+
+### TREND\_RECENT\_WINDOW\_DAYS
+
+Re-exports [TREND\_RECENT\_WINDOW\_DAYS](../react/Internal/variables/TREND_RECENT_WINDOW_DAYS.md)
+
+***
+
+### TREND\_STALE\_WINDOW\_DAYS
+
+Re-exports [TREND\_STALE\_WINDOW\_DAYS](../react/Internal/variables/TREND_STALE_WINDOW_DAYS.md)
+
+***
+
+### ttlForType
+
+Re-exports [ttlForType](../react/Internal/functions/ttlForType.md)
+
+***
+
+### TurnCompleteEvent
+
+Re-exports [TurnCompleteEvent](../react/Internal/interfaces/TurnCompleteEvent.md)
+
+***
+
+### TurnSkippedEvent
+
+Re-exports [TurnSkippedEvent](../react/Internal/interfaces/TurnSkippedEvent.md)
+
+***
+
+### UncheckedReason
+
+Re-exports [UncheckedReason](../react/Internal/type-aliases/UncheckedReason.md)
+
+***
+
+### UnverifiableReason
+
+Re-exports [UnverifiableReason](../react/Internal/type-aliases/UnverifiableReason.md)
 
 ***
 
@@ -646,6 +2092,24 @@ Re-exports [UseModelsResult](../react/Internal/type-aliases/UseModelsResult.md)
 
 ***
 
+### VAULT\_SIZE\_HOP\_CAP
+
+Re-exports [VAULT\_SIZE\_HOP\_CAP](../react/Internal/variables/VAULT_SIZE_HOP_CAP.md)
+
+***
+
+### VaultEmbeddingCache
+
+Re-exports [VaultEmbeddingCache](../react/Internal/type-aliases/VaultEmbeddingCache.md)
+
+***
+
+### VaultEmbeddingExpectation
+
+Re-exports [VaultEmbeddingExpectation](../react/Internal/interfaces/VaultEmbeddingExpectation.md)
+
+***
+
 ### VaultFolderOperationsContext
 
 Re-exports [VaultFolderOperationsContext](../react/Internal/interfaces/VaultFolderOperationsContext.md)
@@ -658,12 +2122,90 @@ Re-exports [VaultMemoryOperationsContext](../react/Internal/interfaces/VaultMemo
 
 ***
 
+### VaultMemoryVisibility
+
+Re-exports [VaultMemoryVisibility](../react/Internal/type-aliases/VaultMemoryVisibility.md)
+
+***
+
+### VaultMemoryWriter
+
+Re-exports [VaultMemoryWriter](../react/Internal/type-aliases/VaultMemoryWriter.md)
+
+***
+
 ### VaultSaveOperation
 
 Re-exports [VaultSaveOperation](../react/Internal/interfaces/VaultSaveOperation.md)
 
 ***
 
+### VaultSearchResult
+
+Re-exports [VaultSearchResult](../react/Internal/interfaces/VaultSearchResult.md)
+
+***
+
+### VaultWriteAction
+
+Re-exports [VaultWriteAction](../react/Internal/type-aliases/VaultWriteAction.md)
+
+***
+
+### VaultWriteInput
+
+Re-exports [VaultWriteInput](../react/Internal/interfaces/VaultWriteInput.md)
+
+***
+
+### VaultWriteOutcome
+
+Re-exports [VaultWriteOutcome](../react/Internal/interfaces/VaultWriteOutcome.md)
+
+***
+
+### VerificationSources
+
+Re-exports [VerificationSources](../react/Internal/interfaces/VerificationSources.md)
+
+***
+
+### verifyMemoriesForPublish
+
+Re-exports [verifyMemoriesForPublish](../react/Internal/functions/verifyMemoriesForPublish.md)
+
+***
+
+### VerifyMemoriesForPublishOptions
+
+Re-exports [VerifyMemoriesForPublishOptions](../react/Internal/interfaces/VerifyMemoriesForPublishOptions.md)
+
+***
+
 ### WalletPoller
 
 Re-exports [WalletPoller](../react/Internal/classes/WalletPoller.md)
+
+***
+
+### WeatherClassification
+
+Re-exports [WeatherClassification](../react/Internal/interfaces/WeatherClassification.md)
+
+***
+
+### WeatherPreProcessorOptions
+
+Re-exports [WeatherPreProcessorOptions](../react/Internal/interfaces/WeatherPreProcessorOptions.md)
+
+***
+
+### WebSearchClassification
+
+Re-exports [WebSearchClassification](../react/Internal/interfaces/WebSearchClassification.md)
+
+***
+
+### WebSearchPreProcessorOptions
+
+Re-exports [WebSearchPreProcessorOptions](../react/Internal/interfaces/WebSearchPreProcessorOptions.md)
