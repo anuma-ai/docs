@@ -2,7 +2,7 @@
 
 > **revokeGithubToken**(`apiClient?`: `Client`, `walletAddress?`: `string`): `Promise`<`void`>
 
-Defined in: [src/lib/auth/github.ts:420](https://github.com/anuma-ai/sdk/blob/main/src/lib/auth/github.ts#420)
+Defined in: [src/lib/auth/github.ts:325](https://github.com/anuma-ai/sdk/blob/main/src/lib/auth/github.ts#325)
 
 Revoke the OAuth token
 

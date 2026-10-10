@@ -2,7 +2,7 @@
 
 > **useChat**(`options?`: `object`): `UseChatResult`
 
-Defined in: [src/react/useChat.ts:141](https://github.com/anuma-ai/sdk/blob/main/src/react/useChat.ts#141)
+Defined in: [src/react/useChat.ts:156](https://github.com/anuma-ai/sdk/blob/main/src/react/useChat.ts#156)
 
 A React hook for managing chat completions with authentication.
 
@@ -155,6 +155,25 @@ Receives raw API response - either Responses API or Completions API format.
 <tr>
 <td>
 
+`options.onPiiRedacted?`
+
+</td>
+<td>
+
+(`matches`: [`PiiMatch`](../../expo/Internal/interfaces/PiiMatch.md)\[]) => `void`
+
+</td>
+<td>
+
+Called with the PII matches found whenever outbound messages are redacted.
+Useful for surfacing what was redacted to the user. Only fired when
+`piiRedaction` is active and at least one match was found.
+
+</td>
+</tr>
+<tr>
+<td>
+
 `options.onServerToolCall?`
 
 </td>
@@ -186,6 +205,23 @@ Use this to show activity indicators like "Searching..." in the UI.
 Called after each tool execution round completes.
 Receives the round index, model content, tool calls, results, and token usage.
 Useful for progress indicators, cost tracking, and custom early-exit logic.
+
+</td>
+</tr>
+<tr>
+<td>
+
+`options.onStreamMeta?`
+
+</td>
+<td>
+
+(`meta`: `object`) => `void`
+
+</td>
+<td>
+
+Inference identifier for each HTTP round, including client-tool continuations.
 
 </td>
 </tr>
@@ -246,12 +282,42 @@ Use for live preview of artifacts (HTML, slides) being generated.
 <tr>
 <td>
 
+`options.piiRedaction?`
+
+</td>
+<td>
+
+`boolean` | [`PiiRedactor`](../../expo/Internal/classes/PiiRedactor.md)
+
+</td>
+<td>
+
+Enable best-effort, client-side PII obfuscation (NOT a compliance
+guarantee). Outbound message text is scanned for personally identifiable
+information (emails, phone numbers, SSNs, credit cards, API keys,
+addresses) and matches are replaced with tagged placeholders before
+reaching the LLM provider; both streamed and final responses are
+de-anonymized automatically.
+
+Detection is regex-based and does not cover names, non-text content
+(images/files/attachments), or model-generated tool-call arguments.
+
+* `true`: the hook keeps one redactor and shares placeholder state across
+  turns (per conversation in `useChatStorage`)
+* `PiiRedactor` instance: bring your own; tune categories via
+  `new PiiRedactor({ excludeCategories, extraPatterns })`
+
+</td>
+</tr>
+<tr>
+<td>
+
 `options.preProcessors?`
 
 </td>
 <td>
 
-`PromptPreProcessor`\[]
+[`PromptPreProcessor`](../Internal/type-aliases/PromptPreProcessor.md)\[]
 
 </td>
 <td>
@@ -269,12 +335,29 @@ conversation. See `createWebSearchPreProcessor`,
 <tr>
 <td>
 
+`options.resumable?`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+<td>
+
+Buffer streamed rounds so a service can verify their canonical output.
+
+</td>
+</tr>
+<tr>
+<td>
+
 `options.smoothing?`
 
 </td>
 <td>
 
-`boolean` | `StreamSmoothingConfig`
+`boolean` | [`StreamSmoothingConfig`](../Internal/type-aliases/StreamSmoothingConfig.md)
 
 </td>
 <td>

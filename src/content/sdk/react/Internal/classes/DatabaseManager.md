@@ -1,6 +1,6 @@
 # DatabaseManager
 
-Defined in: [src/lib/db/manager.ts:154](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/manager.ts#154)
+Defined in: [src/lib/db/manager.ts:146](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/manager.ts#146)
 
 Manages per-wallet WatermelonDB database instances.
 
@@ -40,7 +40,7 @@ const database = dbManager.getDatabase(walletAddress);
 
 > **new DatabaseManager**(`options`: [`DatabaseManagerOptions`](../interfaces/DatabaseManagerOptions.md)): `DatabaseManager`
 
-Defined in: [src/lib/db/manager.ts:165](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/manager.ts#165)
+Defined in: [src/lib/db/manager.ts:167](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/manager.ts#167)
 
 **Parameters**
 
@@ -77,12 +77,13 @@ Defined in: [src/lib/db/manager.ts:165](https://github.com/anuma-ai/sdk/blob/mai
 
 > **getDatabase**(`walletAddress?`: `string`): `Database`
 
-Defined in: [src/lib/db/manager.ts:191](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/manager.ts#191)
+Defined in: [src/lib/db/manager.ts:194](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/manager.ts#194)
 
 Get or create a WatermelonDB Database instance for the given wallet.
 
-If the wallet address has changed since the last call, the previous
-database instance is discarded and a new one is created.
+Instances are cached per derived dbName and reused across calls (including
+repeat/guest-interleaved requests for the same wallet); a new one is built
+only for a dbName not yet seen. See the `databases` field for why.
 
 **Parameters**
 
@@ -132,7 +133,7 @@ If a destructive migration is in progress
 
 > **getDbName**(`walletAddress?`: `string`): `string`
 
-Defined in: [src/lib/db/manager.ts:176](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/manager.ts#176)
+Defined in: [src/lib/db/manager.ts:178](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/manager.ts#178)
 
 Get the database name for a given wallet address.
 
@@ -171,9 +172,9 @@ Get the database name for a given wallet address.
 
 > **resetDatabase**(): `Promise`<`void`>
 
-Defined in: [src/lib/db/manager.ts:234](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/manager.ts#234)
+Defined in: [src/lib/db/manager.ts:227](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/manager.ts#227)
 
-Reset the current database (useful for logout or testing).
+Reset ALL cached databases (useful for logout or testing).
 
 **Returns**
 
