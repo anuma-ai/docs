@@ -59,8 +59,11 @@ function ChatComponent() {
 | ------ | ------ |
 | [decryptData](Encryption/decryptData.md) | Decrypts data using AES-GCM with the stored encryption key. |
 | [decryptDataBatch](Encryption/decryptDataBatch.md) | Batch decrypt multiple values efficiently with a single key lookup. Much faster than calling decryptData for each value individually. |
+| [decryptDataBytesFromBytes](Encryption/decryptDataBytesFromBytes.md) | Like [decryptDataBytes](Internal/functions/decryptDataBytes.md) but takes the raw encrypted bytes (`[IV][ciphertext+tag]`) directly instead of a hex string. Skips the `hexToBytes` conversion — for large binary media the hex string the caller would otherwise build is a ~1.37x copy of the whole payload (a ~1GB string for a 500MB video), plus this avoids a second byte copy. Same key resolution as decryptDataBytes. |
+| [deriveKeyFromSignatureBytes](Encryption/deriveKeyFromSignatureBytes.md) | Derives the bytes-native AES key from a raw signature. |
 | [encryptData](Encryption/encryptData.md) | Encrypts data using AES-GCM with the stored encryption key. |
 | [encryptDataBatch](Encryption/encryptDataBatch.md) | Batch encrypt multiple values efficiently with a single key lookup. Much faster than calling encryptData for each value individually. |
+| [encryptDataBytes](Encryption/encryptDataBytes.md) | Like [encryptData](Encryption/encryptData.md) but takes raw bytes and returns the raw encrypted `[IV][ciphertext+tag]` Uint8Array instead of a hex string. Avoids the hex round-trip (`encryptData` returns hex, which callers immediately convert back to bytes) — for large binary media that hex string is a ~1.37x copy of the whole payload. Use for binary uploads (e.g. enc:v3 media frames). |
 
 ## Hooks
 
@@ -75,7 +78,7 @@ function ChatComponent() {
 | [useBackup](Hooks/useBackup.md) | Unified React hook for backup and restore functionality. |
 | [useBackupAuth](Hooks/useBackupAuth.md) | Hook to access unified backup authentication state and methods. |
 | [useChat](Hooks/useChat.md) | A React hook for managing chat completions with authentication. |
-| [useChatStorage](Hooks/useChatStorage.md) | A React hook that wraps useChat with automatic message persistence using WatermelonDB. |
+| [useChatStorage](Hooks/useChatStorage.md) | A React hook that wraps useChat and persists messages and conversations to WatermelonDB as they are sent and received. |
 | [useCredits](Hooks/useCredits.md) | React hook for managing credits: checking balance, browsing packs, and purchasing credits. |
 | [useDropboxAuth](Hooks/useDropboxAuth.md) | Hook to access Dropbox authentication state and methods. |
 | [useDropboxBackup](Hooks/useDropboxBackup.md) | React hook for Dropbox backup and restore functionality. |
@@ -95,30 +98,31 @@ function ChatComponent() {
 | [useSubscription](Hooks/useSubscription.md) | React hook for managing subscription status and billing operations. Provides methods to check status, upgrade, manage billing, cancel, and renew subscriptions. |
 | [useTools](Hooks/useTools.md) | React hook for fetching and caching server-side tools. |
 | [useVoice](Hooks/useVoice.md) | React hook for recording voice and transcribing it on-device using Whisper. |
+| [useWalletBinding](Hooks/useWalletBinding.md) | React hook for managing ZETA wallet bindings and reading staked-based Pro status. Provides methods to list bound wallets, request a binding nonce, bind a wallet with a signed proof, and unbind a wallet. |
 
 ## Other
 
-### BACKUP\_DRIVE\_CONVERSATIONS\_FOLDER
+### DEFAULT\_BACKUP\_FOLDER
 
-Renames and re-exports [DEFAULT\_DRIVE\_CONVERSATIONS\_FOLDER](Internal/variables/DEFAULT_DRIVE_CONVERSATIONS_FOLDER.md)
-
-***
-
-### BACKUP\_DRIVE\_ROOT\_FOLDER
-
-Renames and re-exports [DEFAULT\_DRIVE\_ROOT\_FOLDER](Internal/variables/DEFAULT_DRIVE_ROOT_FOLDER.md)
+Renames and re-exports [DEFAULT\_DROPBOX\_FOLDER](Internal/variables/DEFAULT_DROPBOX_FOLDER.md)
 
 ***
 
-### BACKUP\_ICLOUD\_FOLDER
+### DEFAULT\_DRIVE\_CONVERSATIONS\_FOLDER
 
-Renames and re-exports [DEFAULT\_ICLOUD\_BACKUP\_FOLDER](Internal/variables/DEFAULT_ICLOUD_BACKUP_FOLDER.md)
+Renames and re-exports [BACKUP\_DRIVE\_CONVERSATIONS\_FOLDER](Internal/variables/BACKUP_DRIVE_CONVERSATIONS_FOLDER.md)
 
 ***
 
-### DEFAULT\_DROPBOX\_FOLDER
+### DEFAULT\_DRIVE\_ROOT\_FOLDER
 
-Renames and re-exports [DEFAULT\_BACKUP\_FOLDER](Internal/variables/DEFAULT_BACKUP_FOLDER.md)
+Renames and re-exports [BACKUP\_DRIVE\_ROOT\_FOLDER](Internal/variables/BACKUP_DRIVE_ROOT_FOLDER.md)
+
+***
+
+### DEFAULT\_ICLOUD\_BACKUP\_FOLDER
+
+Renames and re-exports [BACKUP\_ICLOUD\_FOLDER](Internal/variables/BACKUP_ICLOUD_FOLDER.md)
 
 ## PDF Export
 
