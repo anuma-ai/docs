@@ -1,0 +1,77 @@
+# ExtractedCandidate
+
+Defined in: [src/lib/memory/autoExtract.ts:139](https://github.com/anuma-ai/sdk/blob/main/src/lib/memory/autoExtract.ts#139)
+
+## Properties
+
+### confidence
+
+> **confidence**: `number`
+
+Defined in: [src/lib/memory/autoExtract.ts:142](https://github.com/anuma-ai/sdk/blob/main/src/lib/memory/autoExtract.ts#142)
+
+***
+
+### content
+
+> **content**: `string`
+
+Defined in: [src/lib/memory/autoExtract.ts:140](https://github.com/anuma-ai/sdk/blob/main/src/lib/memory/autoExtract.ts#140)
+
+***
+
+### entities
+
+> **entities**: [`ExtractedEntity`](ExtractedEntity.md)\[]
+
+Defined in: [src/lib/memory/autoExtract.ts:144](https://github.com/anuma-ai/sdk/blob/main/src/lib/memory/autoExtract.ts#144)
+
+***
+
+### eventTime
+
+> **eventTime**: { `end`: `number` | `null`; `kind`: `"point"` | `"range"` | `"ongoing"`; `start`: `number`; } | `null`
+
+Defined in: [src/lib/memory/autoExtract.ts:148](https://github.com/anuma-ai/sdk/blob/main/src/lib/memory/autoExtract.ts#148)
+
+W6 temporal lane — when the event in this fact occurred. Resolved
+to absolute timestamps by the LLM; null when the fact has no
+temporal anchor.
+
+**Type Declaration**
+
+{ `end`: `number` | `null`; `kind`: `"point"` | `"range"` | `"ongoing"`; `start`: `number`; }
+
+**end**
+
+> **end**: `number` | `null`
+
+Unix ms timestamp of the event end. Only set when kind='range'.
+
+**kind**
+
+> **kind**: `"point"` | `"range"` | `"ongoing"`
+
+**start**
+
+> **start**: `number`
+
+Unix ms timestamp of the event start (or point).
+
+`null`
+
+***
+
+### sourceMessageIds
+
+> **sourceMessageIds**: `string`\[]
+
+Defined in: [src/lib/memory/autoExtract.ts:143](https://github.com/anuma-ai/sdk/blob/main/src/lib/memory/autoExtract.ts#143)
+
+***
+
+### type
+
+> **type**: `"other"` | `"identity"` | `"preference"` | `"relationship"` | `"plan"` | `"ongoing_context"` | `"constraint"`
+
+Defined in: [src/lib/memory/autoExtract.ts:141](https://github.com/anuma-ai/sdk/blob/main/src/lib/memory/autoExtract.ts#141)
