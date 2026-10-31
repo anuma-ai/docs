@@ -1,6 +1,6 @@
 # UseChatStorageOptions
 
-Defined in: [src/react/useChatStorage.ts:599](https://github.com/anuma-ai/sdk/blob/main/src/react/useChatStorage.ts#599)
+Defined in: [src/react/useChatStorage.ts:546](https://github.com/anuma-ai/sdk/blob/main/src/react/useChatStorage.ts#546)
 
 Options for useChatStorage hook (React version)
 
@@ -16,7 +16,7 @@ Extends base options with apiType support.
 
 > `optional` **activeToolSets**: `string`\[]
 
-Defined in: [src/react/useChatStorage.ts:681](https://github.com/anuma-ai/sdk/blob/main/src/react/useChatStorage.ts#681)
+Defined in: [src/react/useChatStorage.ts:645](https://github.com/anuma-ai/sdk/blob/main/src/react/useChatStorage.ts#645)
 
 Tool set names that should expand unconditionally for this request,
 bypassing the anchor-similarity check. Use when conversation state
@@ -37,7 +37,7 @@ Names must match a set's `name` from `BUILT_IN_TOOL_SETS` or
 
 > `optional` **apiType**: `ApiType`
 
-Defined in: [src/react/useChatStorage.ts:605](https://github.com/anuma-ai/sdk/blob/main/src/react/useChatStorage.ts#605)
+Defined in: [src/react/useChatStorage.ts:556](https://github.com/anuma-ai/sdk/blob/main/src/react/useChatStorage.ts#556)
 
 Which API endpoint to use. Default: "responses"
 
@@ -50,7 +50,7 @@ Which API endpoint to use. Default: "responses"
 
 > `optional` **autoCreateConversation**: `boolean`
 
-Defined in: [src/lib/db/chat/types.ts:336](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#336)
+Defined in: [src/lib/db/chat/types.ts:516](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#516)
 
 Automatically create a new conversation if none is set (default: true)
 
@@ -64,7 +64,7 @@ Automatically create a new conversation if none is set (default: true)
 
 > `optional` **autoEmbedMessages**: `boolean`
 
-Defined in: [src/lib/db/chat/types.ts:394](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#394)
+Defined in: [src/lib/db/chat/types.ts:589](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#589)
 
 Automatically generate embeddings for messages after saving.
 Enables semantic search over past conversations via searchMessages().
@@ -85,7 +85,7 @@ true
 
 > `optional` **autoFlushOnKeyAvailable**: `boolean`
 
-Defined in: [src/react/useChatStorage.ts:654](https://github.com/anuma-ai/sdk/blob/main/src/react/useChatStorage.ts#654)
+Defined in: [src/react/useChatStorage.ts:618](https://github.com/anuma-ai/sdk/blob/main/src/react/useChatStorage.ts#618)
 
 Automatically flush queued operations when the encryption key becomes
 available. Requires `enableQueue` to be true.
@@ -102,7 +102,7 @@ true
 
 > `optional` **baseUrl**: `string`
 
-Defined in: [src/lib/db/chat/types.ts:342](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#342)
+Defined in: [src/lib/db/chat/types.ts:522](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#522)
 
 Base URL for the chat API endpoint
 
@@ -112,11 +112,25 @@ Base URL for the chat API endpoint
 
 ***
 
+### chatBackend?
+
+> `optional` **chatBackend**: [`ChatBackendFactory`](../type-aliases/ChatBackendFactory.md)
+
+Defined in: [src/lib/db/chat/types.ts:512](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#512)
+
+Builds the chat storage backend (default: this `database`); keep it stable across renders, since a new factory rebuilds the backend and every callback.
+
+**Inherited from**
+
+`BaseUseChatStorageOptions.chatBackend`
+
+***
+
 ### conversationId?
 
 > `optional` **conversationId**: `string`
 
-Defined in: [src/lib/db/chat/types.ts:334](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#334)
+Defined in: [src/lib/db/chat/types.ts:514](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#514)
 
 ID of an existing conversation to load and continue
 
@@ -130,7 +144,7 @@ ID of an existing conversation to load and continue
 
 > **database**: `Database`
 
-Defined in: [src/lib/db/chat/types.ts:332](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#332)
+Defined in: [src/lib/db/chat/types.ts:508](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#508)
 
 WatermelonDB database instance for storing conversations and messages
 
@@ -144,7 +158,7 @@ WatermelonDB database instance for storing conversations and messages
 
 > `optional` **defaultConversationTitle**: `string`
 
-Defined in: [src/lib/db/chat/types.ts:338](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#338)
+Defined in: [src/lib/db/chat/types.ts:518](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#518)
 
 Title for auto-created conversations (default: "New conversation")
 
@@ -158,7 +172,7 @@ Title for auto-created conversations (default: "New conversation")
 
 > `optional` **embeddedWalletSigner**: [`EmbeddedWalletSignerFn`](../type-aliases/EmbeddedWalletSignerFn.md)
 
-Defined in: [src/react/useChatStorage.ts:632](https://github.com/anuma-ai/sdk/blob/main/src/react/useChatStorage.ts#632)
+Defined in: [src/react/useChatStorage.ts:596](https://github.com/anuma-ai/sdk/blob/main/src/react/useChatStorage.ts#596)
 
 Function for silent signing with Privy embedded wallets.
 When provided, enables automatic encryption key derivation without
@@ -170,7 +184,7 @@ user confirmation modals.
 
 > `optional` **embeddingModel**: `string`
 
-Defined in: [src/lib/db/chat/types.ts:399](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#399)
+Defined in: [src/lib/db/chat/types.ts:594](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#594)
 
 Embedding model to use when autoEmbedMessages is enabled.
 
@@ -190,7 +204,7 @@ DEFAULT_API_EMBEDDING_MODEL
 
 > `optional` **enableQueue**: `boolean`
 
-Defined in: [src/react/useChatStorage.ts:647](https://github.com/anuma-ai/sdk/blob/main/src/react/useChatStorage.ts#647)
+Defined in: [src/react/useChatStorage.ts:611](https://github.com/anuma-ai/sdk/blob/main/src/react/useChatStorage.ts#611)
 
 Enable the in-memory write queue for operations when encryption key
 isn't yet available. When enabled, operations are held in memory and
@@ -208,7 +222,7 @@ true
 
 > `optional` **extraToolSets**: [`ToolSet`](ToolSet.md)\[]
 
-Defined in: [src/react/useChatStorage.ts:665](https://github.com/anuma-ai/sdk/blob/main/src/react/useChatStorage.ts#665)
+Defined in: [src/react/useChatStorage.ts:629](https://github.com/anuma-ai/sdk/blob/main/src/react/useChatStorage.ts#629)
 
 Additional tool sets to apply on top of the built-in ones (app-generation,
 slides, github). When any anchor tool in a custom set is selected by
@@ -224,7 +238,7 @@ renders does not affect in-flight `sendMessage` calls; use
 
 > `optional` **fileProcessingOptions**: `object`
 
-Defined in: [src/lib/db/chat/types.ts:371](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#371)
+Defined in: [src/lib/db/chat/types.ts:551](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#551)
 
 Options for file preprocessing behavior
 
@@ -356,7 +370,7 @@ Callback for progress updates
 
 > `optional` **fileProcessors**: [`FileProcessor`](FileProcessor.md)\[] | `null`
 
-Defined in: [src/lib/db/chat/types.ts:367](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#367)
+Defined in: [src/lib/db/chat/types.ts:547](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#547)
 
 File preprocessors to use for automatic text extraction.
 
@@ -370,11 +384,39 @@ File preprocessors to use for automatic text extraction.
 
 ***
 
+### foldToolResultsInHistory?
+
+> `optional` **foldToolResultsInHistory**: `boolean`
+
+Defined in: [src/lib/db/chat/types.ts:640](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#640)
+
+Fold persisted `[Tool Execution Results]` rows onto the assistant turn that produced them
+when replaying stored history, instead of dropping them.
+
+**Defaults to `false`, and that default is deliberate.** Folding is the better behaviour —
+it is what lets a follow-up about a tool's output work after a reload — but it moves the
+payload from a `role: "user"` row onto an `assistant` row. Any consumer that scrubs these
+rows by checking `role === "user"` plus the content prefix (which is how both apps did it
+before this option existed) stops catching them the moment folding turns on, and starts
+replaying whatever the row held. Opting in is therefore a statement that the caller has
+checked its own filters and set [toolResultsHistoryExclude](#toolresultshistoryexclude) for any payload that must
+not reach the model.
+
+With it off, rows are dropped from the replayed history rather than sent verbatim. Verbatim
+would put two consecutive `user` turns on the wire, and the model answers the previous turn
+instead of the new prompt.
+
+**Inherited from**
+
+`BaseUseChatStorageOptions.foldToolResultsInHistory`
+
+***
+
 ### getToken()?
 
 > `optional` **getToken**: () => `Promise`<`string` | `null`>
 
-Defined in: [src/lib/db/chat/types.ts:340](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#340)
+Defined in: [src/lib/db/chat/types.ts:520](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#520)
 
 Function to retrieve the auth token for API requests
 
@@ -392,7 +434,7 @@ Function to retrieve the auth token for API requests
 
 > `optional` **getWalletAddress**: () => `Promise`<`string` | `null`>
 
-Defined in: [src/react/useChatStorage.ts:639](https://github.com/anuma-ai/sdk/blob/main/src/react/useChatStorage.ts#639)
+Defined in: [src/react/useChatStorage.ts:603](https://github.com/anuma-ai/sdk/blob/main/src/react/useChatStorage.ts#603)
 
 Async function that returns the wallet address when available.
 Used for polling during Privy embedded wallet initialization.
@@ -404,11 +446,25 @@ When the wallet isn't ready yet, should return null.
 
 ***
 
+### hooks?
+
+> `optional` **hooks**: `RunHooks` | `RunHooks`\[]
+
+Defined in: [src/lib/db/chat/types.ts:506](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#506)
+
+Run lifecycle hooks for telemetry and tracing, for example from `createMetricsHooks`
+
+**Inherited from**
+
+`BaseUseChatStorageOptions.hooks`
+
+***
+
 ### mcpR2Domain?
 
 > `optional` **mcpR2Domain**: `string`
 
-Defined in: [src/lib/db/chat/types.ts:411](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#411)
+Defined in: [src/lib/db/chat/types.ts:606](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#606)
 
 R2 domain for identifying MCP-generated image URLs.
 When set, enables OPFS caching of generated images.
@@ -420,11 +476,25 @@ Defaults to the hardcoded MCP\_R2\_DOMAIN from clientConfig.
 
 ***
 
+### memoryStore?
+
+> `optional` **memoryStore**: [`MemoryStore`](MemoryStore.md) | `null`
+
+Defined in: [src/lib/db/chat/types.ts:510](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#510)
+
+Route memory operations through this store; `null` disables memory access while `undefined` uses the local vault. Folders are unsupported. With `piiRedaction` on, build the store with `embeddingOptions.maskInput` or its memory calls throw.
+
+**Inherited from**
+
+`BaseUseChatStorageOptions.memoryStore`
+
+***
+
 ### minContentLength?
 
 > `optional` **minContentLength**: `number`
 
-Defined in: [src/lib/db/chat/types.ts:405](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#405)
+Defined in: [src/lib/db/chat/types.ts:600](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#600)
 
 Minimum content length required to generate embeddings.
 Messages shorter than this are skipped as they provide limited semantic value.
@@ -441,11 +511,30 @@ Messages shorter than this are skipped as they provide limited semantic value.
 
 ***
 
+### nerDetector?
+
+> `optional` **nerDetector**: `NerDetector`
+
+Defined in: [src/lib/db/chat/types.ts:678](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#678)
+
+Optional on-device NER detector for *unstructured* PII (names, locations,
+organizations) that regex can't catch. When supplied AND `piiRedaction` is
+active, the conversation redactor merges its spans into the outbound
+message redaction (chat-send path only). Supply e.g.
+`createTransformersNerDetector()` from `@anuma/sdk/pii/transformers` on web.
+Ignored when `piiRedaction` is off. See NerDetector.
+
+**Inherited from**
+
+`BaseUseChatStorageOptions.nerDetector`
+
+***
+
 ### onData()?
 
 > `optional` **onData**: (`chunk`: `string`) => `void`
 
-Defined in: [src/lib/db/chat/types.ts:344](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#344)
+Defined in: [src/lib/db/chat/types.ts:524](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#524)
 
 Callback invoked with each streamed response chunk
 
@@ -488,7 +577,7 @@ Callback invoked with each streamed response chunk
 
 > `optional` **onError**: (`error`: `Error`) => `void`
 
-Defined in: [src/lib/db/chat/types.ts:350](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#350)
+Defined in: [src/lib/db/chat/types.ts:530](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#530)
 
 Callback invoked when an error occurs during the request
 
@@ -531,7 +620,7 @@ Callback invoked when an error occurs during the request
 
 > `optional` **onFinish**: (`response`: [`LlmapiResponseResponse`](../../../client/Internal/type-aliases/LlmapiResponseResponse.md)) => `void`
 
-Defined in: [src/lib/db/chat/types.ts:348](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#348)
+Defined in: [src/lib/db/chat/types.ts:528](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#528)
 
 Callback invoked when the response completes successfully
 
@@ -570,11 +659,55 @@ Callback invoked when the response completes successfully
 
 ***
 
+### onPiiRedacted()?
+
+> `optional` **onPiiRedacted**: (`matches`: [`PiiMatch`](../../../expo/Internal/interfaces/PiiMatch.md)\[]) => `void`
+
+Defined in: [src/lib/db/chat/types.ts:669](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#669)
+
+Called with the PII matches found whenever outbound messages are redacted.
+Only fired when `piiRedaction` is active and at least one match was found.
+
+**Parameters**
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`matches`
+
+</td>
+<td>
+
+[`PiiMatch`](../../../expo/Internal/interfaces/PiiMatch.md)\[]
+
+</td>
+</tr>
+</tbody>
+</table>
+
+**Returns**
+
+`void`
+
+**Inherited from**
+
+`BaseUseChatStorageOptions.onPiiRedacted`
+
+***
+
 ### onServerToolCall()?
 
 > `optional` **onServerToolCall**: (`toolCall`: `ServerToolCallEvent`) => `void`
 
-Defined in: [src/lib/db/chat/types.ts:355](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#355)
+Defined in: [src/lib/db/chat/types.ts:535](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#535)
 
 Callback invoked when a server-side tool (MCP) is called during streaming.
 Use this to show activity indicators like "Searching..." in the UI.
@@ -614,11 +747,74 @@ Use this to show activity indicators like "Searching..." in the UI.
 
 ***
 
+### onStreamMeta()?
+
+> `optional` **onStreamMeta**: (`meta`: `object`) => `void`
+
+Defined in: [src/react/useChatStorage.ts:550](https://github.com/anuma-ai/sdk/blob/main/src/react/useChatStorage.ts#550)
+
+Inference identifier for each HTTP round, including client-tool continuations.
+
+**Parameters**
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`meta`
+
+</td>
+<td>
+
+`object`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`meta.inferenceId`
+
+</td>
+<td>
+
+`string`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`meta.round`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+**Returns**
+
+`void`
+
+***
+
 ### onThinking()?
 
 > `optional` **onThinking**: (`chunk`: `string`) => `void`
 
-Defined in: [src/lib/db/chat/types.ts:346](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#346)
+Defined in: [src/lib/db/chat/types.ts:526](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#526)
 
 Callback invoked when thinking/reasoning content is received (from `<think>` tags or API reasoning)
 
@@ -661,7 +857,7 @@ Callback invoked when thinking/reasoning content is received (from `<think>` tag
 
 > `optional` **onToolCallArgumentsDelta**: (`event`: [`ToolCallArgumentsDeltaEvent`](../type-aliases/ToolCallArgumentsDeltaEvent.md)) => `void`
 
-Defined in: [src/lib/db/chat/types.ts:360](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#360)
+Defined in: [src/lib/db/chat/types.ts:540](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#540)
 
 Called with partial tool call arguments as they stream in.
 Use for live preview of artifacts (HTML, slides) being generated.
@@ -701,11 +897,112 @@ Use for live preview of artifacts (HTML, slides) being generated.
 
 ***
 
+### onToolSelection()?
+
+> `optional` **onToolSelection**: (`info`: `object`) => `void`
+
+Defined in: [src/react/useChatStorage.ts:565](https://github.com/anuma-ai/sdk/blob/main/src/react/useChatStorage.ts#565)
+
+Called once per `sendMessage` with the user prompt and the FINAL tool
+selection — after semantic filtering, tool-set expansion, and exclusions;
+exactly the tools the request carries. Intended for debug logging and
+selection QA (e.g. a prefixed plain-text console line you can filter on).
+Errors thrown by the callback are swallowed.
+
+**Parameters**
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`info`
+
+</td>
+<td>
+
+`object`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`info.clientToolNames`
+
+</td>
+<td>
+
+`string`\[]
+
+</td>
+</tr>
+<tr>
+<td>
+
+`info.prompt`
+
+</td>
+<td>
+
+`string`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`info.serverToolNames`
+
+</td>
+<td>
+
+`string`\[]
+
+</td>
+</tr>
+</tbody>
+</table>
+
+**Returns**
+
+`void`
+
+***
+
+### piiRedaction?
+
+> `optional` **piiRedaction**: `boolean` | [`PiiRedactor`](../../../expo/Internal/classes/PiiRedactor.md)
+
+Defined in: [src/lib/db/chat/types.ts:664](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#664)
+
+Enable best-effort, client-side PII obfuscation (NOT a compliance
+guarantee). Outbound message text is scanned for personally identifiable
+information and replaced with tagged placeholders before reaching the LLM
+provider; responses are de-anonymized automatically. Embedding inputs and
+the summarization prompt are redacted too. Regex-based detection does not
+cover names, non-text content, or tool-call arguments.
+
+* `true`: one redactor is shared per conversation
+* `PiiRedactor` instance: bring your own (tune via constructor options)
+
+**Inherited from**
+
+`BaseUseChatStorageOptions.piiRedaction`
+
+***
+
 ### preProcessors?
 
-> `optional` **preProcessors**: `PromptPreProcessor`\[]
+> `optional` **preProcessors**: [`PromptPreProcessor`](../type-aliases/PromptPreProcessor.md)\[]
 
-Defined in: [src/lib/db/chat/types.ts:421](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#421)
+Defined in: [src/lib/db/chat/types.ts:650](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#650)
 
 Pre-processors run after the last user message is received but before
 the first LLM request. Each receives the prompt text and a shared
@@ -721,20 +1018,49 @@ a custom one matching `PromptPreProcessor`.
 
 ***
 
+### resumable?
+
+> `optional` **resumable**: `boolean`
+
+Defined in: [src/react/useChatStorage.ts:548](https://github.com/anuma-ai/sdk/blob/main/src/react/useChatStorage.ts#548)
+
+Opt into the portal stream buffer for every generated round.
+
+***
+
 ### serverTools?
 
 > `optional` **serverTools**: `object`
 
-Defined in: [src/lib/db/chat/types.ts:385](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#385)
+Defined in: [src/lib/db/chat/types.ts:565](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#565)
 
 Configuration for server-side tools fetching and caching.
 Server tools are fetched from /api/v1/tools and cached in localStorage.
+
+**cache?**
+
+> `optional` **cache**: `ToolsCacheBackend`
+
+Where to read/write the cached server-tools catalog. Defaults to browser
+`localStorage`, which is a silent no-op on React Native — so on RN pass an
+AsyncStorage/MMKV-backed ToolsCacheBackend here or every send
+refetches the whole catalog. Forwarded to `getServerTools`.
 
 **cacheExpirationMs?**
 
 > `optional` **cacheExpirationMs**: `number`
 
 Cache expiration time in milliseconds (default: 86400000 = 1 day)
+
+**deferLoading?**
+
+> `optional` **deferLoading**: `DeferLoadingConfig`
+
+Opt-in defer-loading (Phase 3). OFF by default → tools are sent exactly as today. When
+`enabled`, the full server catalog is emitted every turn in a deterministic, byte-stable order
+(`[tool-search] → [hot] → [deferred, name-sorted]`) with `defer_loading:true` on non-hot tools and
+an Anthropic tool-search tool prepended, so the leading `tools` prefix stays cacheable. See
+DeferLoadingConfig.
 
 **Inherited from**
 
@@ -746,7 +1072,7 @@ Cache expiration time in milliseconds (default: 86400000 = 1 day)
 
 > `optional` **signMessage**: [`SignMessageFn`](../type-aliases/SignMessageFn.md)
 
-Defined in: [src/react/useChatStorage.ts:625](https://github.com/anuma-ai/sdk/blob/main/src/react/useChatStorage.ts#625)
+Defined in: [src/react/useChatStorage.ts:589](https://github.com/anuma-ai/sdk/blob/main/src/react/useChatStorage.ts#589)
 
 Function to sign a message for encryption key derivation.
 Typically from Privy's useSignMessage hook.
@@ -754,11 +1080,51 @@ Required together with walletAddress for field-level encryption.
 
 ***
 
+### smoothing?
+
+> `optional` **smoothing**: `boolean` | [`StreamSmoothingConfig`](../type-aliases/StreamSmoothingConfig.md)
+
+Defined in: [src/lib/db/chat/types.ts:652](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#652)
+
+Output pacing forwarded to useChat. Set false when the UI batches streamed updates.
+
+**Inherited from**
+
+`BaseUseChatStorageOptions.smoothing`
+
+***
+
+### toolResultsHistoryExclude?
+
+> `optional` **toolResultsHistoryExclude**: `string`\[]
+
+Defined in: [src/lib/db/chat/types.ts:622](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/chat/types.ts#622)
+
+Tool names whose persisted results must never be replayed to the model.
+
+A turn's auto-executed tool results are stored as a synthetic
+`[Tool Execution Results]` row and, on a replayed send, folded back onto the
+assistant turn they belong to — that is what lets a follow-up question about a
+tool's output work after a reload. Name a tool here when its payload exists for
+the RENDERER rather than the model: a display card can carry data the model was
+deliberately never given (People Nearby's card holds third parties' snapped
+coordinates, which the search result strips), and replaying it would hand that
+data straight back.
+
+Hook-level rather than per-send on purpose: an exclusion that has to be
+remembered at every call site is one bad send away from leaking.
+
+**Inherited from**
+
+`BaseUseChatStorageOptions.toolResultsHistoryExclude`
+
+***
+
 ### walletAddress?
 
 > `optional` **walletAddress**: `string`
 
-Defined in: [src/react/useChatStorage.ts:618](https://github.com/anuma-ai/sdk/blob/main/src/react/useChatStorage.ts#618)
+Defined in: [src/react/useChatStorage.ts:582](https://github.com/anuma-ai/sdk/blob/main/src/react/useChatStorage.ts#582)
 
 Wallet address for encrypted file storage and field-level encryption.
 When provided with signMessage, all sensitive message content, conversation titles,
