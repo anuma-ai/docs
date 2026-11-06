@@ -1,6 +1,6 @@
 # FlushResult
 
-Defined in: [src/lib/db/queue/types.ts:64](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/queue/types.ts#64)
+Defined in: [src/lib/db/queue/types.ts:58](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/queue/types.ts#58)
 
 Result of a flush operation.
 
@@ -10,7 +10,7 @@ Result of a flush operation.
 
 > **failed**: `object`\[]
 
-Defined in: [src/lib/db/queue/types.ts:68](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/queue/types.ts#68)
+Defined in: [src/lib/db/queue/types.ts:62](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/queue/types.ts#62)
 
 Operations that failed with their errors
 
@@ -28,7 +28,7 @@ Operations that failed with their errors
 
 > **succeeded**: `string`\[]
 
-Defined in: [src/lib/db/queue/types.ts:66](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/queue/types.ts#66)
+Defined in: [src/lib/db/queue/types.ts:60](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/queue/types.ts#60)
 
 IDs of operations that succeeded
 
@@ -38,6 +38,6 @@ IDs of operations that succeeded
 
 > **total**: `number`
 
-Defined in: [src/lib/db/queue/types.ts:70](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/queue/types.ts#70)
+Defined in: [src/lib/db/queue/types.ts:64](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/queue/types.ts#64)
 
 Total number of operations attempted

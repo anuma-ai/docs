@@ -8,8 +8,22 @@ To learn more, check out the [Documentation](https://docs.anuma.ai/).
 ## Installation
 
 ```bash
+npm install @anuma/sdk
+```
+
+### Testing prereleases
+
+Stable releases go to the default `latest` tag (the command above). Prerelease
+builds for trying out unreleased changes are published to the `next` tag —
+install them explicitly:
+
+```bash
 npm install @anuma/sdk@next
 ```
+
+These carry a `X.Y.Z-next.<timestamp>` version and never affect `latest`.
+Maintainers publish them on demand via the **Publish Next (prerelease)** GitHub
+Actions workflow.
 
 ## Getting Started
 
@@ -60,6 +74,35 @@ The SDK provides entry points for different platforms:
 * `@anuma/sdk/expo` — React Native / Expo
 * `@anuma/sdk/client` — Generated API client and types
 
+### Encrypted remote chat storage
+
+`createRemoteChatStore` is available from the main, React and Expo entry points. Pass the account's
+canonical `keyId` and `memoryCipher` callbacks, the Nearby base URL and an authenticated `getToken`.
+The store encrypts each complete JSON record, including titles, messages, tool events, attachment
+references and vectors. It preserves routing/order metadata in an authenticated envelope and binds
+every request to the account that opened the store. The server never receives the content key.
+
+`get`, `list` and `putMany` always use the server. Creates use `expectedVersion: 0`; edits and
+tombstones use the returned `version`. Conflicts and ambiguous network outcomes are surfaced to
+the caller without automatic write retries. Use `AbortSignal` to cancel work when its account or
+screen changes. Failed decryption rejects the read rather than returning an empty history.
+
+Records have kinds `conversation`, `message`, `summary`, `project` and `memory_links`; `data` contains
+complete JSON-compatible fields, with dates serialized explicitly. Create the conversation before
+its children. Follow `nextCursor` for complete lists. Batches accept at most 25 records and 8 MiB of
+ciphertext; each record accepts 2 MiB. Existing `useChatStorage` hooks still use their current local
+persistence until the separate verified app migration lands. See [the migration epic](https://github.com/anuma-ai/nearby/issues/1001).
+
+### iCloud backups
+
+Add a `backupRevision` field with type `String` to the `ConversationBackup`
+record type in the development schema.
+[Deploy the schema to production](https://developer.apple.com/documentation/cloudkit/deploying-an-icloud-container-s-schema)
+before you release a client that uses iCloud backup.
+
+The SDK compares this saved revision with the local conversation and message
+data. The next backup replaces older files that have no saved revision.
+
 ## Features
 
 The SDK gives you access to a unified API across multiple LLM providers through
@@ -68,6 +111,7 @@ a single integration. Key capabilities include:
 * Streaming chat completions with tool calling and auto-execution
 * Extended thinking and reasoning support
 * Long-term memory with semantic search and encrypted storage
+* Best-effort client-side PII redaction (see [PII\_REDACTION.md](_media/PII_REDACTION.md))
 * Voice recording and transcription via Whisper
 * PDF and image text extraction (OCR)
 * Phone call integration
@@ -82,6 +126,26 @@ https://docs.anuma.ai/
 
 Contributions are welcome. Please open an issue or pull request on
 [GitHub](https://github.com/anuma-ai/sdk).
+
+Before opening a PR, run `pnpm test` and `pnpm check`.
+
+### Tool e2e tests
+
+`pnpm e2e:tools` runs the live-model tests in `test/tools/` and
+`test/classifier/` (`vitest.e2e.config.mts`) against a real portal. Copy
+`.env.example` to `.env` and set `PORTAL_API_KEY` (and `ANUMA_API_URL` to
+point at a portal other than dev). Pass a file-name filter to run a subset:
+
+```sh
+pnpm e2e:tools              # everything
+pnpm e2e:tools weather      # test/tools/weather.ts only
+```
+
+CI runs the same suite on PRs that touch the tool code
+(see the `changes` job in `.github/workflows/e2e-tools.yml` for the exact paths)
+and again in the merge queue. PRs without access to the `PORTAL_API_KEY` secret
+(forks, Dependabot) skip it and get their result in the queue. On a PR the result
+is advisory; the queue run is the one that blocks.
 
 ## Modules
 

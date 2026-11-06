@@ -1,6 +1,6 @@
 # CachedServerTools
 
-Defined in: [src/lib/tools/serverTools.ts:81](https://github.com/anuma-ai/sdk/blob/main/src/lib/tools/serverTools.ts#81)
+Defined in: [src/lib/tools/serverTools.ts:78](https://github.com/anuma-ai/sdk/blob/main/src/lib/tools/serverTools.ts#78)
 
 Cached tools structure stored in localStorage
 
@@ -10,9 +10,19 @@ Cached tools structure stored in localStorage
 
 > `optional` **checksum**: `string`
 
-Defined in: [src/lib/tools/serverTools.ts:86](https://github.com/anuma-ai/sdk/blob/main/src/lib/tools/serverTools.ts#86)
+Defined in: [src/lib/tools/serverTools.ts:83](https://github.com/anuma-ai/sdk/blob/main/src/lib/tools/serverTools.ts#83)
 
 Checksum from the server for cache invalidation
+
+***
+
+### etag?
+
+> `optional` **etag**: `string`
+
+Defined in: [src/lib/tools/serverTools.ts:85](https://github.com/anuma-ai/sdk/blob/main/src/lib/tools/serverTools.ts#85)
+
+ETag from the server. The next refresh sends it in an If-None-Match header.
 
 ***
 
@@ -20,7 +30,7 @@ Checksum from the server for cache invalidation
 
 > **timestamp**: `number`
 
-Defined in: [src/lib/tools/serverTools.ts:83](https://github.com/anuma-ai/sdk/blob/main/src/lib/tools/serverTools.ts#83)
+Defined in: [src/lib/tools/serverTools.ts:80](https://github.com/anuma-ai/sdk/blob/main/src/lib/tools/serverTools.ts#80)
 
 ***
 
@@ -28,7 +38,7 @@ Defined in: [src/lib/tools/serverTools.ts:83](https://github.com/anuma-ai/sdk/bl
 
 > **tools**: [`ServerTool`](ServerTool.md)\[]
 
-Defined in: [src/lib/tools/serverTools.ts:82](https://github.com/anuma-ai/sdk/blob/main/src/lib/tools/serverTools.ts#82)
+Defined in: [src/lib/tools/serverTools.ts:79](https://github.com/anuma-ai/sdk/blob/main/src/lib/tools/serverTools.ts#79)
 
 ***
 
@@ -36,4 +46,4 @@ Defined in: [src/lib/tools/serverTools.ts:82](https://github.com/anuma-ai/sdk/bl
 
 > **version**: `string`
 
-Defined in: [src/lib/tools/serverTools.ts:84](https://github.com/anuma-ai/sdk/blob/main/src/lib/tools/serverTools.ts#84)
+Defined in: [src/lib/tools/serverTools.ts:81](https://github.com/anuma-ai/sdk/blob/main/src/lib/tools/serverTools.ts#81)
