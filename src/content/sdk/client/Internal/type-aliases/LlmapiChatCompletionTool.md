@@ -2,7 +2,7 @@
 
 > **LlmapiChatCompletionTool** = `object`
 
-Defined in: [src/client/types.gen.ts:1837](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#1837)
+Defined in: [src/clientCompat.ts:9](https://github.com/anuma-ai/sdk/blob/main/src/clientCompat.ts#9)
 
 ## Index Signature
 
