@@ -1,6 +1,6 @@
 # StoredUserPreference
 
-Defined in: [src/lib/db/userPreferences/types.ts:95](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/userPreferences/types.ts#95)
+Defined in: [src/lib/db/userPreferences/types.ts:91](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/userPreferences/types.ts#91)
 
 Stored user preference record from the database
 
@@ -10,7 +10,7 @@ Stored user preference record from the database
 
 > **createdAt**: `number`
 
-Defined in: [src/lib/db/userPreferences/types.ts:106](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/userPreferences/types.ts#106)
+Defined in: [src/lib/db/userPreferences/types.ts:101](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/userPreferences/types.ts#101)
 
 ***
 
@@ -18,7 +18,17 @@ Defined in: [src/lib/db/userPreferences/types.ts:106](https://github.com/anuma-a
 
 > `optional` **description**: `string`
 
-Defined in: [src/lib/db/userPreferences/types.ts:101](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/userPreferences/types.ts#101)
+Defined in: [src/lib/db/userPreferences/types.ts:96](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/userPreferences/types.ts#96)
+
+***
+
+### externalWallets?
+
+> `optional` **externalWallets**: `string`
+
+Defined in: [src/lib/db/userPreferences/types.ts:100](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/userPreferences/types.ts#100)
+
+JSON array of the user's saved external wallets, stored as given.
 
 ***
 
@@ -26,7 +36,7 @@ Defined in: [src/lib/db/userPreferences/types.ts:101](https://github.com/anuma-a
 
 > `optional` **models**: `string`
 
-Defined in: [src/lib/db/userPreferences/types.ts:103](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/userPreferences/types.ts#103)
+Defined in: [src/lib/db/userPreferences/types.ts:97](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/userPreferences/types.ts#97)
 
 ***
 
@@ -34,7 +44,7 @@ Defined in: [src/lib/db/userPreferences/types.ts:103](https://github.com/anuma-a
 
 > `optional` **nickname**: `string`
 
-Defined in: [src/lib/db/userPreferences/types.ts:99](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/userPreferences/types.ts#99)
+Defined in: [src/lib/db/userPreferences/types.ts:94](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/userPreferences/types.ts#94)
 
 ***
 
@@ -42,7 +52,7 @@ Defined in: [src/lib/db/userPreferences/types.ts:99](https://github.com/anuma-ai
 
 > `optional` **occupation**: `string`
 
-Defined in: [src/lib/db/userPreferences/types.ts:100](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/userPreferences/types.ts#100)
+Defined in: [src/lib/db/userPreferences/types.ts:95](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/userPreferences/types.ts#95)
 
 ***
 
@@ -50,7 +60,7 @@ Defined in: [src/lib/db/userPreferences/types.ts:100](https://github.com/anuma-a
 
 > `optional` **personality**: `string`
 
-Defined in: [src/lib/db/userPreferences/types.ts:104](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/userPreferences/types.ts#104)
+Defined in: [src/lib/db/userPreferences/types.ts:98](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/userPreferences/types.ts#98)
 
 ***
 
@@ -58,7 +68,7 @@ Defined in: [src/lib/db/userPreferences/types.ts:104](https://github.com/anuma-a
 
 > **uniqueId**: `string`
 
-Defined in: [src/lib/db/userPreferences/types.ts:96](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/userPreferences/types.ts#96)
+Defined in: [src/lib/db/userPreferences/types.ts:92](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/userPreferences/types.ts#92)
 
 ***
 
@@ -66,7 +76,7 @@ Defined in: [src/lib/db/userPreferences/types.ts:96](https://github.com/anuma-ai
 
 > **updatedAt**: `number`
 
-Defined in: [src/lib/db/userPreferences/types.ts:107](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/userPreferences/types.ts#107)
+Defined in: [src/lib/db/userPreferences/types.ts:102](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/userPreferences/types.ts#102)
 
 ***
 
@@ -74,4 +84,4 @@ Defined in: [src/lib/db/userPreferences/types.ts:107](https://github.com/anuma-a
 
 > **walletAddress**: `string`
 
-Defined in: [src/lib/db/userPreferences/types.ts:97](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/userPreferences/types.ts#97)
+Defined in: [src/lib/db/userPreferences/types.ts:93](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/userPreferences/types.ts#93)

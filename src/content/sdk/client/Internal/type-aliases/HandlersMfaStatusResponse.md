@@ -2,15 +2,23 @@
 
 > **HandlersMfaStatusResponse** = `object`
 
-Defined in: [src/client/types.gen.ts:924](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#924)
+Defined in: [src/client/types.gen.ts:2532](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#2532)
 
 ## Properties
+
+### challenge\_required?
+
+> `optional` **challenge\_required**: `boolean`
+
+Defined in: [src/client/types.gen.ts:2533](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#2533)
+
+***
 
 ### enabled?
 
 > `optional` **enabled**: `boolean`
 
-Defined in: [src/client/types.gen.ts:925](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#925)
+Defined in: [src/client/types.gen.ts:2534](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#2534)
 
 ***
 
@@ -18,7 +26,7 @@ Defined in: [src/client/types.gen.ts:925](https://github.com/anuma-ai/sdk/blob/m
 
 > `optional` **enrolled\_at**: `string`
 
-Defined in: [src/client/types.gen.ts:926](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#926)
+Defined in: [src/client/types.gen.ts:2535](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#2535)
 
 ***
 
@@ -26,7 +34,7 @@ Defined in: [src/client/types.gen.ts:926](https://github.com/anuma-ai/sdk/blob/m
 
 > `optional` **methods**: `string`\[]
 
-Defined in: [src/client/types.gen.ts:927](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#927)
+Defined in: [src/client/types.gen.ts:2536](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#2536)
 
 ***
 
@@ -34,7 +42,7 @@ Defined in: [src/client/types.gen.ts:927](https://github.com/anuma-ai/sdk/blob/m
 
 > `optional` **passkey\_credentials**: [`HandlersPasskeyCredentialDto`](HandlersPasskeyCredentialDto.md)\[]
 
-Defined in: [src/client/types.gen.ts:928](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#928)
+Defined in: [src/client/types.gen.ts:2537](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#2537)
 
 ***
 
@@ -42,20 +50,4 @@ Defined in: [src/client/types.gen.ts:928](https://github.com/anuma-ai/sdk/blob/m
 
 > `optional` **recovery\_codes\_remaining**: `number`
 
-Defined in: [src/client/types.gen.ts:929](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#929)
-
-***
-
-### sms?
-
-> `optional` **sms**: [`HandlersSmsStatusDto`](HandlersSmsStatusDto.md)
-
-Defined in: [src/client/types.gen.ts:930](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#930)
-
-***
-
-### sms\_eligible\_for\_enrollment?
-
-> `optional` **sms\_eligible\_for\_enrollment**: `boolean`
-
-Defined in: [src/client/types.gen.ts:931](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#931)
+Defined in: [src/client/types.gen.ts:2538](https://github.com/anuma-ai/sdk/blob/main/src/client/types.gen.ts#2538)
