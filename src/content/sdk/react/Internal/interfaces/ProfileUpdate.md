@@ -1,6 +1,6 @@
 # ProfileUpdate
 
-Defined in: [src/lib/db/userPreferences/types.ts:136](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/userPreferences/types.ts#136)
+Defined in: [src/lib/db/userPreferences/types.ts:133](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/userPreferences/types.ts#133)
 
 Profile-only update options
 
@@ -10,7 +10,7 @@ Profile-only update options
 
 > `optional` **description**: `string`
 
-Defined in: [src/lib/db/userPreferences/types.ts:139](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/userPreferences/types.ts#139)
+Defined in: [src/lib/db/userPreferences/types.ts:136](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/userPreferences/types.ts#136)
 
 ***
 
@@ -18,7 +18,7 @@ Defined in: [src/lib/db/userPreferences/types.ts:139](https://github.com/anuma-a
 
 > `optional` **nickname**: `string`
 
-Defined in: [src/lib/db/userPreferences/types.ts:137](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/userPreferences/types.ts#137)
+Defined in: [src/lib/db/userPreferences/types.ts:134](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/userPreferences/types.ts#134)
 
 ***
 
@@ -26,4 +26,4 @@ Defined in: [src/lib/db/userPreferences/types.ts:137](https://github.com/anuma-a
 
 > `optional` **occupation**: `string`
 
-Defined in: [src/lib/db/userPreferences/types.ts:138](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/userPreferences/types.ts#138)
+Defined in: [src/lib/db/userPreferences/types.ts:135](https://github.com/anuma-ai/sdk/blob/main/src/lib/db/userPreferences/types.ts#135)
